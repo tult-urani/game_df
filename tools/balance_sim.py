@@ -83,9 +83,15 @@ class Geometry:
 # ── Kinh tế: dòng tiền tích luỹ ─────────────────────────────────────────────
 
 def hp_mult(wave, waves_cfg):
-    """hpMultiplier(wave) từ công thức trơn. Thay 3 hệ số bậc thang theo act."""
+    """Hệ số HP cuối cùng = đường cong trơn × milestone gần nhất đã đi qua."""
     h = waves_cfg["hpScaling"]
-    return h["base"] * h["growthPerWave"] ** (wave - 1)
+    milestone = 1.0
+    for item in h.get("milestones", []):
+        if wave >= item["wave"]:
+            milestone = item["multiplier"]
+        else:
+            break
+    return h["base"] * h["growthPerWave"] ** (wave - 1) * milestone
 
 
 def act_of(wave, acts):
@@ -339,8 +345,13 @@ def analyse(wave, cfg, geo, use_arbitro=True):
     boss = None
     bosses = boss_ids(spec)
     if bosses:
-        b = next(x for x in enemies["bosses"] if x["id"] == bosses[0])
-        bhp = next(ap["hp"] for ap in b["appearances"] if ap["wave"] == wave)
+        boss_defs = [next(x for x in enemies["bosses"] if x["id"] == boss_id)
+                     for boss_id in bosses]
+        # Hai boss cùng wave là hai thanh máu mà đội hình phải xử lý. Chấm một
+        # con rồi bỏ quên con còn lại làm headroom W15/W20 cao giả đúng 2 lần.
+        bhp = sum(next(ap["hp"] for ap in b["appearances"] if ap["wave"] == wave)
+                  for b in boss_defs)
+        b = boss_defs[0]
         # kháng chậm: τ chỉ ăn phần lọt qua kháng
         btau = 1 + (tau - 1) * (1 - b["slowResistPercent"] / 100)
         crowd = focus_damage(placed, geo, towers, econ, b["speed"]) * btau
@@ -350,7 +361,7 @@ def analyse(wave, cfg, geo, use_arbitro=True):
         # thắng không. Khoảng cách giữa hai con số = mức độ boss ép đổi đội hình.
         aware_pl, _ = build_for(cash, geo, towers, econ, spread, None, focus=True)
         aware = focus_damage(aware_pl, geo, towers, econ, b["speed"]) * btau
-        boss = {"hp": bhp, "dmg": aware, "head": aware / bhp,
+        boss = {"count": len(bosses), "hp": bhp, "dmg": aware, "head": aware / bhp,
                 "crowd_head": crowd / bhp, "aware_build": aware_pl}
     return {"wave": wave, "act": a["id"], "n": n, "hp": hp, "cash": cash,
             "left": left, "placed": placed, "tau": tau, "dmg": dmg,
@@ -402,7 +413,7 @@ def solve(cfg, geo):
             # boss: hoả lực tập trung, mục tiêu 1.30 — chặt hơn wave thường vì
             # thua boss là thua nguyên trận (leakDamage 5)
             b = r["boss"]
-            boss_hp[w] = int(round(b["dmg"] / 1.30 / 100) * 100)
+            boss_hp[w] = int(round(b["dmg"] / 1.30 / b["count"] / 100) * 100)
     return mults, boss_hp
 
 
@@ -435,7 +446,8 @@ def main():
         for w, hp in boss_hp.items():
             old = next(ap_["hp"] for b in cfg[1]["bosses"]
                        for ap_ in b["appearances"] if ap_["wave"] == w)
-            print(f"  Boss W{w}: máu {old} → {hp}")
+            count = len(boss_ids(next(x for x in cfg[0]["waves"] if x["wave"] == w)))
+            print(f"  Boss W{w}: {count} con · máu mỗi con {old} → {hp}")
         return 0
 
     cfg = (load("waves"), load("enemies"), load("towers"), load("economy"))
@@ -471,7 +483,7 @@ def main():
         if r["boss"]:
             b = r["boss"]
             bv = "✅" if hard_lo <= b["head"] <= hard_hi else "❌ VỠ"
-            print(f"{'':>3}{'':>4}{'BOSS':>4}{'':>7}{'':>6}{b['hp']:>8}"
+            print(f"{'':>3}{'':>4}{('B×' + str(b['count'])):>4}{'':>7}{'':>6}{b['hp']:>8}"
                   f"{'':>6}{b['dmg']:>12.0f}{b['head']:>7.2f}  {bv:<9}"
                   f"build có-tính-boss · build đám-đông chỉ {b['crowd_head']:.2f}"
                   f"{' → ÉP đổi đội hình ✅' if b['crowd_head'] < 1.0 else ' → boss KHÔNG ép gì'}")

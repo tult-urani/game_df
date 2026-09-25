@@ -94,6 +94,9 @@
     },
     {
       "wave": 5,
+      "bosses": [
+        { "id": "o_capitao", "lane": "L1" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -300,6 +303,10 @@
     },
     {
       "wave": 15,
+      "bosses": [
+        { "id": "o_capitao", "lane": "L1" },
+        { "id": "o_capitao", "lane": "L1" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -421,15 +428,25 @@
         {
           "id": "o_capitao",
           "lane": "L1"
+        },
+        {
+          "id": "o_capitao",
+          "lane": "L1"
         }
       ]
     }
   ],
   "hpScaling": {
-    "_comment": "MÁU quái = baseHp × hpMultiplier(wave), làm tròn half_up. Thay 3 hệ số bậc thang theo act (1.0/1.8/3.8) bằng MỘT công thức trơn.",
-    "formula": "hpMultiplier(wave) = base × pow(growthPerWave, wave - 1)",
+    "_comment": "MÁU quái = baseHp × đường cong trơn × hệ số Hard của mốc gần nhất, làm tròn half_up. Các mốc KHÔNG cộng dồn.",
+    "formula": "hpMultiplier(wave) = base × pow(growthPerWave, wave - 1) × latestMilestoneMultiplier(wave)",
     "base": 0.67,
     "growthPerWave": 1.09,
+    "milestones": [
+      { "wave": 5, "multiplier": 1.2 },
+      { "wave": 10, "multiplier": 1.4 },
+      { "wave": 15, "multiplier": 1.7 },
+      { "wave": 20, "multiplier": 2.0 }
+    ],
     "_derivedBy": "tools/balance_sim.py --solve — quét (base, growth), chọn bộ đưa nhiều wave vào dải headroom nhất. KHÔNG chỉnh tay: đổi số ở đây thì chạy lại sim để biết wave nào vỡ.",
     "_whyNotPerAct": "Hệ số bậc thang theo act tạo VÁCH ĐỨNG ngay sau ranh giới act: đo được W8 headroom 1.00 và W15 0.97 (thua) trong khi W14 cuối act 1.81 (quá dễ) — biên độ 1.81× trong cùng act. Một hệ số cho 7 wave không thể vừa cứu đầu act vừa ghì cuối act. Công thức trơn: 20/20 wave trong dải.",
     "_monotone": "BẮT BUỘC đơn điệu tăng — máu MỖI CON quái không bao giờ được giảm giữa hai wave. Kích thước wave thì ĐƯỢC reset ở đầu act (W8, W15): đó là nhịp xả hơi cố ý sau cao trào cuối act, không phải lỗi."

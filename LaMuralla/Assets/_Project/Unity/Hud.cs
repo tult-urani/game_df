@@ -28,10 +28,24 @@ namespace LaMuralla.Unity
         private PathDef _def = null!;
         private MatchView _view = null!;
         private GUIStyle? _big, _mid, _tiny, _btn;
+        private System.Action _healReward = null!;
+        private System.Action _continueReward = null!;
 
         internal void Bind(MatchController m, PathDef def, MatchView view)
         {
             _m = m; _def = def; _view = view;
+            _healReward = ApplyRewardedHeal;
+            _continueReward = ApplyRewardedContinue;
+        }
+
+        private void ApplyRewardedHeal()
+        {
+            if (_m.RewardedRecovery.TryHeal()) AudioService.Play("save", 0.8f);
+        }
+
+        private void ApplyRewardedContinue()
+        {
+            if (_m.RewardedRecovery.TryContinue()) AudioService.Play("wave_start", 0.8f);
         }
 
         // Style DẪN XUẤT + GUIContent tái dùng. `EnsureStyles` đã chặn dựng lại
@@ -113,13 +127,166 @@ namespace LaMuralla.Unity
         /// GIỮA LÚC wave đang chạy chính là trò chơi — `01` §8 **FM-03** còn chốt rõ
         /// "Bán tướng ngay khi wave đang chạy → Cho phép". Người chơi báo đúng lỗi này.
         internal float BarTopPixels =>
-            _m != null && _m.Phase is MatchPhase.Preparing or MatchPhase.Fighting
-                ? BarHeight + Screen.safeArea.y : 0;
+            BarVisible ? BarHeight + Screen.safeArea.y : 0;
+
+        /// <summary>
+        /// Thanh chọn tướng có ĐANG được vẽ không.
+        ///
+        /// 🔴 SỬA LỖI TỰ KHOÁ: "ô sát cầu môn không bấm được".
+        ///
+        /// `BarTopPixels` trước đây trả về chiều cao thanh với MỌI khung hình đang
+        /// chơi, trong khi `DrawTowerBar` thoát ngay khi chưa chọn ô nào. Tức là dải
+        /// đáy cao 12.9% màn hình (292px thanh + 34px home indicator trên iPhone 12)
+        /// nuốt cú chạm cho một thanh KHÔNG TỒN TẠI trên màn hình.
+        ///
+        /// Nó tự khoá: muốn thanh hiện thì phải chọn được một ô, mà ô nằm trong dải
+        /// đó thì không chọn được. Đo ra 14 ô ở 9 map rơi vào vùng chết — trong đó
+        /// có ô Dibu của m00, m02, m03, m04, m05, m07, m08. Người chơi mua thủ môn
+        /// không được và không có cách nào biết vì sao.
+        ///
+        /// Chặn theo cái ĐANG VẼ, không theo cái CÓ THỂ vẽ. Các nút còn lại vẫn được
+        /// che riêng từng khung trong <see cref="BlocksTouch"/>, nên bỏ dải chặn tổng
+        /// không mở đường cho cú chạm nào lọt qua nút.
+        /// </summary>
+        private bool BarVisible =>
+            _m != null
+            && _m.Phase is MatchPhase.Preparing or MatchPhase.Fighting
+            && !_view.Paused
+            && _view.SelectedSlot != null;
 
         // 0.20 → 0.25: thẻ giờ có chân dung, ở 0.20 thì mặt tướng chỉ còn ~70px
         // và ba dòng chữ chồng lên nhau. Thanh chỉ hiện khi đã chọn ô nên phần màn
         // bị che là tạm thời.
         private float BarHeight => Screen.width * 0.25f;
+
+        // ── Hình học khung HUD ──────────────────────────────────────────────
+        //
+        // 🔴 MỘT NGUỒN DUY NHẤT cho mọi khung chạm được. Trước đây `OnGUI`,
+        // `DrawPrepare` và `DrawSpeed` mỗi chỗ tự dựng lại `Rect` của mình từ
+        // `pad`/`top`/`bottom`/`chip`. Chừng nào chỉ có bản thân chúng đọc thì
+        // không sao — nhưng giờ `BlocksTouch` cũng phải biết ĐÚNG những khung đó,
+        // và một bản sao thứ tư là hẹn ngày nút dời đi mà vùng chặn ở lại.
+
+        private float Unit => Screen.width / 1080f;
+        private float PadPx => 24f * Unit;
+
+        /// <summary>Mép trên vùng an toàn (hệ GUI, đo từ ĐỈNH).</summary>
+        private float TopEdge
+        {
+            get
+            {
+                Rect safe = Screen.safeArea;
+                return Screen.height - safe.y - safe.height + PadPx;
+            }
+        }
+
+        /// <summary>Mép dưới vùng an toàn, đo từ ĐÁY.</summary>
+        private float BottomEdge => Screen.safeArea.y + PadPx;
+
+        /// <summary>Cạnh vùng chạm tối thiểu 48pt, quy ra pixel của máy đang chạy.</summary>
+        private float ChipSize => (float)(_def.MinTouchTargetPt / _def.DesignWidthPt) * Screen.width;
+
+        private Rect PauseChipRect =>
+            new(Screen.width - PadPx - ChipSize, TopEdge, ChipSize, ChipSize);
+
+        /// <summary>
+        /// Nút START / WAVE n — khối lớn giữa đáy lúc chuẩn bị.
+        ///
+        /// 🔵 HẠ XUỐNG ĐÁY, cùng lý do với hai chip ×2/loa.
+        ///
+        /// Trước đây nút này luôn bị đẩy lên một khoảng đúng bằng chiều cao thanh mua
+        /// tướng — kể cả khi thanh không hiện — nên nó nổi lên giữa sân và để lại một
+        /// dải trống 353px bên dưới. Nó ĂN cú chạm vào ô đặt tướng nằm gần đó
+        /// (`BlocksTouch` chặn theo khung này).
+        ///
+        /// Đo trên iPhone 12, m10: tâm ô Dibu `gk01` ở (308, 593) tính từ đáy, bán
+        /// kính vùng chạm 68px; góc trái-trên của nút nằm cách tâm ô 23px — góc
+        /// dưới-phải của ô bị nuốt. Ô `gk02` cùng độ cao nhưng ở x=993, ngoài bề ngang
+        /// nút, nên KHÔNG dính. Đúng như người chơi báo: chỉ line 1 hỏng.
+        ///
+        /// Neo vào `BottomStack` thì lúc chưa mở thanh nút nằm sát đáy, xa mọi ô; lúc
+        /// thanh bung ra nút trèo lên trên thanh (nếu không nó chui xuống dưới thanh
+        /// và không bấm được).
+        /// </summary>
+        private Rect PrepareButtonRect
+        {
+            get
+            {
+                float h = ChipSize * 1.6f;
+                float w = Screen.width * 0.44f;
+                return new Rect(Screen.width / 2f - w / 2f,
+                                Screen.height - BottomStack - h, w, h);
+            }
+        }
+
+        private Rect RewardedHealButtonRect
+        {
+            get
+            {
+                Rect start = PrepareButtonRect;
+                float h = ChipSize * 1.15f;
+                return new Rect(PadPx, start.y + (start.height - h) / 2f,
+                                Screen.width * 0.24f, h);
+            }
+        }
+
+        /// <summary>
+        /// Hai chip ×2 và loa, nằm sát nhau ở đáy trái lúc đang đánh.
+        ///
+        /// 🔵 HẠ XUỐNG ĐÁY. Trước đây hai chip này luôn bị đẩy lên trên một khoảng
+        /// đúng bằng chiều cao thanh mua tướng — kể cả khi thanh không hiện. Chúng
+        /// nổi lên giữa khu vực có ô đặt tướng và ăn mất cú chạm vào ô (xem
+        /// `BlocksTouch`: khung của chúng chặn thật). Người chơi báo đúng.
+        ///
+        /// Giờ neo vào mép an toàn dưới, và CHỈ trèo lên khi thanh mua tướng thật sự
+        /// bung ra — lúc đó dưới chân chúng là thanh chứ không phải sân, nên không
+        /// còn ô nào để che.
+        /// </summary>
+        private Rect SpeedChipsRect =>
+            new(16f * Unit, Screen.height - BottomStack - ChipSize, ChipSize * 2f, ChipSize);
+
+        /// <summary>Mép trên của phần HUD đáy: sát đáy khi chưa mở thanh, trên thanh khi đã mở.</summary>
+        private float BottomStack => BottomEdge + (BarVisible ? BarHeight : 0f);
+
+        /// <summary>
+        /// Cú chạm này thuộc về HUD hay thuộc về sân?
+        ///
+        /// 🔴 SỬA LỖI "BẤM START MÀ KHÔNG START ĐƯỢC". Cơ chế đầy đủ:
+        /// `MatchView.TapPosition` bắn ở `wasPressedThisFrame` (lúc NGÓN TAY CHẠM),
+        /// còn `Button` của IMGUI chỉ chốt ở lúc NHẢ TAY. Nên một cú bấm START đi
+        /// qua hai đường: khung đó `HandleTouch` chọn luôn ô đặt tướng nằm dưới nút,
+        /// khung sau `DrawTowerBar` bung ra vì đã có ô được chọn, việc bung thanh
+        /// CẤP THÊM mã điều khiển IMGUI nên mã của START trượt đi, `hotControl`
+        /// đang giữ không còn khớp ai, và cú nhả tay rơi vào hư không. Người chơi
+        /// bấm mãi không vào được trận — đúng như báo.
+        ///
+        /// Kiểm theo KHUNG chứ không theo "có mã điều khiển nào không": lúc `Update`
+        /// chạy thì `OnGUI` của khung đó chưa xảy ra, nên hỏi trạng thái IMGUI ở đây
+        /// luôn nhận được câu trả lời của khung TRƯỚC.
+        /// </summary>
+        internal bool BlocksTouch(Vector2 tapFromBottom)
+        {
+            if (_m == null) return false;
+
+            // Thanh chọn tướng: giữ nguyên luật cũ, nó đã đúng.
+            if (tapFromBottom.y < BarTopPixels) return true;
+
+            bool live = _m.Phase is MatchPhase.Preparing or MatchPhase.Fighting;
+
+            // Đã dừng hoặc đã kết thúc: cả màn hình là menu. Chọn một ô sau lớp phủ
+            // để lúc mở lại thấy vòng sáng ở nơi mình không hề bấm là trạng thái ma.
+            if (_m.Phase is MatchPhase.Won or MatchPhase.Lost) return true;
+            if (live && _view.Paused) return true;
+
+            // GUI đo y từ ĐỈNH, Input System đo từ ĐÁY — lật trước khi so khung.
+            var p = new Vector2(tapFromBottom.x, Screen.height - tapFromBottom.y);
+
+            if (live && PauseChipRect.Contains(p)) return true;
+            if (_m.Phase == MatchPhase.Preparing && PrepareButtonRect.Contains(p)) return true;
+            if (_m.RewardedRecovery.CanHeal && RewardedHealButtonRect.Contains(p)) return true;
+            if (_m.Phase == MatchPhase.Fighting && SpeedChipsRect.Contains(p)) return true;
+            return false;
+        }
 
         // 🔴 KHÔNG EMOJI TRONG BẤT KỲ CHUỖI NÀO VẼ RA MÀN HÌNH.
         // Font mặc định của IMGUI trên iOS là LiberationSans — có Latin-1 (× · À-ỹ)
@@ -822,7 +989,6 @@ namespace LaMuralla.Unity
             // iPhone 12 ở vòng 8). Vẽ đè lên đó thì chữ chui vào tai thỏ.
             Rect safe = Screen.safeArea;
             float top = Screen.height - safe.y - safe.height + pad;
-            float bottom = safe.y + pad;
 
             IconText(new Rect(pad, top, 500 * u, 60 * u), Icons.Coin,
                      $"{_m.Economy.Balance}", _mid!, Coin, u, centre: false);
@@ -840,6 +1006,17 @@ namespace LaMuralla.Unity
             IconText(new Rect(rightX, top + 55 * u, 300 * u, 60 * u), Icons.Save,
                      $"{_m.SavedCount}", _mid!, Color.white, u, centre: false);
 
+            // "MAP 08 · TRES PUERTAS" — dòng thứ ba của cột trái.
+            //
+            // Vì sao cần: vào trận là scene NẠP LẠI (xem `MapSession`), nên cái tên
+            // vừa bấm ở màn chọn map biến mất khỏi màn hình. Chơi lại vài lần hoặc
+            // đi tiếp map sau thì không còn gì cho biết mình đang ở đâu trong 11 map.
+            //
+            // Chữ mờ, cỡ nhỏ, đặt DƯỚI tiền và máu cầu môn: đây là thông tin để LIẾC,
+            // không phải thứ phải tranh chú ý với hai con số quyết định nước đi.
+            GUI.Label(new Rect(pad, top + 112 * u, 620 * u, 46 * u), _view.MapLabel,
+                      _tinyDim ??= new GUIStyle(_tiny!) { normal = { textColor = Dim } });
+
             bool live = _m.Phase is MatchPhase.Preparing or MatchPhase.Fighting;
             bool paused = live && _view.Paused;
 
@@ -848,7 +1025,7 @@ namespace LaMuralla.Unity
             // chơi phải đoán xem chúng có khác nhau không.
             if (live && !paused)
             {
-                var pr = new Rect(Screen.width - pad - chip, top, chip, chip);
+                Rect pr = PauseChipRect;
                 bool hit = Chip(pr, "pause", "", false, u);
                 PauseGlyph(ChipBody(pr), new Color(0.86f, 0.88f, 0.92f));
                 if (hit)
@@ -867,12 +1044,12 @@ namespace LaMuralla.Unity
                     // chặn thật là việc mấy nút này không tồn tại trong khung hình đó.
                     if (paused) break;
                     DrawTowerBar(u);
-                    DrawPrepare(u, bottom + BarHeight);
+                    DrawPrepare(u);
                     break;
                 case MatchPhase.Fighting:
                     if (paused) break;
                     DrawTowerBar(u);                       // mua/nâng/bán GIỮA wave
-                    DrawSpeed(u, bottom + BarHeight);
+                    DrawSpeed(u);
                     break;
                 case MatchPhase.Won:
                 case MatchPhase.Lost:
@@ -958,7 +1135,7 @@ namespace LaMuralla.Unity
             // Panel cao theo SỐ NÚT đang hiện, không phải một tỉ lệ màn hình cố định:
             // lúc hỏi lại chỉ còn 2 nút, và một panel chừa sẵn chỗ cho 3 nút sẽ có
             // một khoảng trống không ai giải thích được.
-            int rows = _ask == Ask.None ? 3 : 2;
+            int rows = _ask == Ask.None ? (_view.PrivacyOptionsRequired ? 4 : 3) : 2;
             float ph = titleH + edge * 3 + bh * rows + gap * (rows - 1);
 
             // `ph` là tổ hợp tuyến tính thuần của bốn số dưới, nên nhân cả bốn với
@@ -996,6 +1173,15 @@ namespace LaMuralla.Unity
                 if (Button(new Rect(x, y, bw, bh), "RESTART", Btn.Upgrade, u))
                 { _ask = Ask.Restart; AudioService.Play("tap", 0.6f); }
                 y += bh + gap;
+                if (_view.PrivacyOptionsRequired)
+                {
+                    if (Button(new Rect(x, y, bw, bh), "PRIVACY", Btn.Neutral, u))
+                    {
+                        if (_view.ShowPrivacyOptions()) AudioService.Play("tap", 0.6f);
+                        else AudioService.Play("denied", 0.6f);
+                    }
+                    y += bh + gap;
+                }
                 // 🔵 "QUIT" → "HOME". Trước đây nút này gọi `Application.Quit()` —
                 // thoát hẳn app. Trên điện thoại đó gần như không bao giờ là thứ người
                 // chơi muốn: bỏ dở một trận nghĩa là muốn CHỌN MAP KHÁC, không phải
@@ -1020,30 +1206,40 @@ namespace LaMuralla.Unity
             { _ask = Ask.None; AudioService.Play("tap", 0.6f); }
         }
 
-        private void DrawPrepare(float u, float bottom)
+        private void DrawPrepare(float u)
         {
             // 48pt vùng chạm tối thiểu (HIG của Apple) — cùng hằng số path.json dùng
             // cho ô đặt tướng. 48pt ≈ 132px trên 1080-design.
             // 48pt là SÀN của HIG, không phải cỡ nên dùng. 2.4× = 316px trên
             // 1080-design — to bằng một phần sáu màn hình, nhìn ra tấm biển. 1.6×
             // = 211px, vẫn gấp rưỡi ngưỡng chạm mà ra dáng nút.
-            float h = (float)(_def.MinTouchTargetPt / _def.DesignWidthPt) * Screen.width * 1.6f;
-            float w = Screen.width * 0.44f;
+            Rect btn = PrepareButtonRect;
+            float h = btn.height;
+            float w = btn.width;
 
             string label = _m.Wave == 0 ? "START" : $"WAVE {_m.Wave + 1}";
-            if (Button(new Rect(Screen.width / 2f - w / 2, Screen.height - bottom - h, w, h),
-                       label, Btn.Primary, u))
+            if (Button(btn, label, Btn.Primary, u))
             {
                 _view.CloseMenu();
                 if (_m.RestRemaining > 0) _m.SkipRest();
                 else _m.StartNextWave();
             }
 
+            if (_m.RewardedRecovery.CanHeal &&
+                Button(RewardedHealButtonRect, "WATCH +5 HP", Btn.Upgrade, u,
+                       _view.RewardedAdReady))
+            {
+                if (!_view.TryShowRewarded(_healReward)) AudioService.Play("denied", 0.6f);
+            }
+
+            // Hai nhãn dưới đây phải BÁM NÚT, không bám `bottom`. Nút giờ trượt lên
+            // xuống theo thanh mua tướng (xem `PrepareButtonRect`); tính riêng từ
+            // `bottom` là chúng đứng lại giữa sân khi nút đã đi.
             if (_m.RestRemaining > 0)
-                GUI.Label(new Rect(Screen.width / 2f - w / 2, Screen.height - bottom - h - 50 * u, w, 46 * u),
+                GUI.Label(new Rect(btn.x, btn.y - 50 * u, w, 46 * u),
                           $"Skip: +{Round.HalfUp(_m.RestRemaining * 3)}", _mid);
 
-            DrawLanePreview(u, bottom, h, w);
+            DrawLanePreview(u, btn, w);
         }
 
         /// <summary>
@@ -1054,7 +1250,7 @@ namespace LaMuralla.Unity
         /// thì nửa số wave người chơi phải ĐOÁN nên xây bên nào — trò tung đồng xu,
         /// không phải bài toán bố trí. Vẽ trong lúc CHUẨN BỊ, tức là lúc còn kịp xây.
         /// </summary>
-        private void DrawLanePreview(float u, float bottom, float h, float w)
+        private void DrawLanePreview(float u, Rect btn, float w)
         {
             if (_m.LaneCount < 2) return;
 
@@ -1078,7 +1274,7 @@ namespace LaMuralla.Unity
             }
             if (_lanePreviewText == null) return;
 
-            GUI.Label(new Rect(Screen.width / 2f - w, Screen.height - bottom - h - 100 * u, w * 2, 46 * u),
+            GUI.Label(new Rect(Screen.width / 2f - w, btn.y - 100 * u, w * 2, 46 * u),
                       _lanePreviewText, _mid);
         }
 
@@ -1087,12 +1283,13 @@ namespace LaMuralla.Unity
         /// không đổi khi ×2 — chỉ thời gian TRẬN nhanh lên. Nên nó nhân vào tham số
         /// của `MatchController.Tick`, không nhân vào đồng hồ của Unity.
         /// </summary>
-        private void DrawSpeed(float u, float bottom)
+        private void DrawSpeed(float u)
         {
             // Cạnh vùng chạm = ĐÚNG 48pt của `path.json → ui`, không phải số gõ tay.
             // Đổi `minTouchTargetPt` trong config là hai nút này tự đi theo.
-            float s = (float)(_def.MinTouchTargetPt / _def.DesignWidthPt) * Screen.width;
-            float x = 16 * u, ty = Screen.height - bottom - s;
+            Rect chips = SpeedChipsRect;
+            float s = chips.height;
+            float x = chips.x, ty = chips.y;
 
             // Icon tua nhanh thay cho chữ "×1/×2": nhất quán với chip âm thanh bên
             // cạnh, và bỏ nốt ký tự ngoài ASCII cuối cùng còn vẽ ra màn hình.
@@ -1132,8 +1329,10 @@ namespace LaMuralla.Unity
         private void DrawEnd(float u)
         {
             bool won = _m.Phase == MatchPhase.Won;
+            bool offerContinue = !won && _m.RewardedRecovery.CanContinue;
             float bh = MenuButtonHeight;
-            float boxH = (won ? 320f : 250f) * u + bh;
+            float boxH = (won ? 320f : offerContinue ? 280f : 250f) * u
+                         + bh + (offerContinue ? bh + 22f * u : 0f);
 
             // Cùng phép kẹp với menu tạm dừng — xem `FitScale`. Ghi đè `u` để MỌI
             // toạ độ bên dưới (vốn đều là bội của `u`) co theo một nhịp; sửa từng
@@ -1173,8 +1372,14 @@ namespace LaMuralla.Unity
             // Hai nút bằng nhau, neo vào MÉP DƯỚI hộp — nội dung phía trên khác nhau
             // giữa thắng và thua (thắng có dãy sao), neo vào mép trên là hai bố cục
             // phải chỉnh riêng.
-            float half = (box.width - gap * 3) / 2f;
             float by = box.yMax - 26 * u - bh;
+
+            if (offerContinue &&
+                Button(new Rect(box.x + gap, by - bh - gap, box.width - gap * 2, bh),
+                       "WATCH & CONTINUE", Btn.Upgrade, u, _view.RewardedAdReady))
+            {
+                if (!_view.TryShowRewarded(_continueReward)) AudioService.Play("denied", 0.6f);
+            }
             // 🔵 KHÔNG có QUIT ở đây. Trên điện thoại "thoát game" bằng nút là thao
             // tác lạ; thứ người chơi thật sự muốn sau một trận là ĐI TIẾP hoặc CHỌN
             // MAP KHÁC. QUIT vẫn còn trong menu tạm dừng cho ai cần.

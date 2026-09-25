@@ -27,7 +27,8 @@ namespace LaMuralla.Core.Config
             // của nó chứng minh được là không đổi. Xem docs/08-MAPS-ARCHITECTURE.md §2.
             JsonObject waveSrc = p.Has("waves") ? p : w;
             JsonObject actSrc = p.Has("acts") ? p : w;
-            JsonObject hpSrc = p.Has("hpScaling") ? p : w;
+            JsonObject sharedHp = w["hpScaling"].AsObject();
+            JsonObject hp = p.Has("hpScaling") ? p["hpScaling"].AsObject() : sharedHp;
 
             return new GameConfig
             {
@@ -38,7 +39,7 @@ namespace LaMuralla.Core.Config
                 Bosses = MapBosses(e["bosses"].AsArray(), p),
                 Waves = MapList(waveSrc["waves"].AsArray(), MapWave),
                 Acts = MapList(actSrc["acts"].AsArray(), MapAct),
-                HpScaling = MapHpScaling(hpSrc["hpScaling"].AsObject()),
+                HpScaling = MapHpScaling(hp, sharedHp),
                 Economy = MapEconomy(ec, p),
                 Path = MapPath(p),
                 // Không dùng `Opt(...) ?? false`: thiếu cờ này thì mặc định im lặng
@@ -219,11 +220,20 @@ namespace LaMuralla.Core.Config
             };
         }
 
-        private static HpScaling MapHpScaling(JsonObject o) => new()
+        private static HpScaling MapHpScaling(JsonObject o, JsonObject shared)
         {
-            Base = o["base"].AsNumber(),
-            GrowthPerWave = o["growthPerWave"].AsNumber(),
-        };
+            JsonObject milestoneSource = o.Has("milestones") ? o : shared;
+            return new HpScaling
+            {
+                Base = o["base"].AsNumber(),
+                GrowthPerWave = o["growthPerWave"].AsNumber(),
+                Milestones = MapList(milestoneSource["milestones"].AsArray(), m => new HpMilestone
+                {
+                    Wave = m["wave"].AsInt(),
+                    Multiplier = m["multiplier"].AsNumber(),
+                }),
+            };
+        }
 
         /// <summary>
         /// Boss dùng chung từ `enemies.json`, nhưng file map được vá `slowResistPercent`
@@ -273,16 +283,24 @@ namespace LaMuralla.Core.Config
             return ec;
         }
 
-        private static EconomyDef MapEconomy(JsonObject o) => new()
+        private static EconomyDef MapEconomy(JsonObject o)
         {
-            StartingCash = o["startingCash"].AsInt(),
-            GoalHealth = o["goalHealth"].AsInt(),
-            SlowCapPercent = o["slowCapPercent"].AsInt(),
-            SkipBonusPerSecond = o["skipBonusPerSecond"].AsInt(),
-            SellRefundRatio = o["sellRefundRatio"].AsNumber(),
-            FieldSlots = o["fieldSlots"].AsInt(),
-            GoalkeeperSlots = o["goalkeeperSlots"].AsInt(),
-            RoundingMode = o["roundingMode"].AsString(),
-        };
+            JsonObject recovery = o["rewardedRecovery"].AsObject();
+            return new EconomyDef
+            {
+                StartingCash = o["startingCash"].AsInt(),
+                GoalHealth = o["goalHealth"].AsInt(),
+                SlowCapPercent = o["slowCapPercent"].AsInt(),
+                SkipBonusPerSecond = o["skipBonusPerSecond"].AsInt(),
+                SellRefundRatio = o["sellRefundRatio"].AsNumber(),
+                FieldSlots = o["fieldSlots"].AsInt(),
+                GoalkeeperSlots = o["goalkeeperSlots"].AsInt(),
+                RoundingMode = o["roundingMode"].AsString(),
+                RewardedHealAmount = recovery["healAmount"].AsInt(),
+                RewardedHealUsesPerMatch = recovery["healUsesPerMatch"].AsInt(),
+                RewardedContinueHealth = recovery["continueHealth"].AsInt(),
+                RewardedContinueUsesPerMatch = recovery["continueUsesPerMatch"].AsInt(),
+            };
+        }
     }
 }

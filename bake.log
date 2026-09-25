@@ -1,0 +1,606 @@
+Unity Editor version:    6000.5.4f1 (d550df8bd089)
+Branch:                  6000.5/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.2 (Build 24C101)
+Darwin version:          24.2.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        16384 MB
+Date:                    2026-08-24T09:23:33Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-tuantu doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 49955)
+Launching external process: /Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/MacOS/Unity
+-projectPath
+/Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla
+-batchmode
+-nographics
+-quit
+-executeMethod
+LaMuralla.EditorTools.ConfigBaker.Bake
+-logFile
+/Users/tuantu/Desktop/dev/AI/mobile/game_df/bake.log
+Successfully changed project path to: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla
+/Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=0"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.Player connection [8362099264]  Target information:
+
+Player connection [8362099264]  * "[IP] 192.168.1.12 [Port] 55504 [Flags] 2 [Guid] 2046872557 [EditorId] 2046872557 [Version] 1048832 [Id] OSXEditor(0,Mac-mini-cua-Le.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8362099264]  * "[IP] 169.254.16.34 [Port] 55504 [Flags] 2 [Guid] 2046872557 [EditorId] 2046872557 [Version] 1048832 [Id] OSXEditor(0,Mac-mini-cua-Le.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8362099264] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8362099264] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-tuantu" at "2026-08-24T09:23:33.789471Z"
+[Package Manager] Connected to IPC stream "Upm-49954" after 0.3 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              da3d015476c64cb495c79597570c0139
+  Correlation Id:          920cba15cb1cffaeea6b5893170982bc
+  External correlation Id: 1037887339835243714
+  Machine Id:              tZ6ndV0Sv7z2pvARXWdt0M81v+k=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-tuantu" (connect: 0.25s, validation: 0.03s, handshake: 0.16s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-tuantu-notifications" at "2026-08-24T09:23:33.980202Z"
+[Licensing::Module] Connected to LicensingClient (PId: 49955, launch time: 0.00, total connection time: 0.44s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968467365468-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.45s
+[Licensing::Module] Licensing is initialized (took 0.08s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Licensing::Client] Successfully resolved entitlement details
+Initialize engine version: 6000.5.4f1 (d550df8bd089)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/Scripting/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/Scripting/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = '/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56954
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.5.4f1/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.5.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.001049 seconds.
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+[usbmuxd] Attached: 50 00008101-000E446C3CFA001E
+Native extension for iOS target not found
+Native extension for OSXStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.243 seconds
+Domain Reload Profiling: 572ms
+	BeginReloadAssembly (96ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (3ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (177ms)
+		LoadAssemblies (74ms)
+		AnalyzeDomain (135ms)
+			TypeCache.Refresh (132ms)
+				TypeCache.ScanAssembly (121ms)
+	FinalizeReload (243ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (39ms)
+			BeforeProcessingInitializeOnLoad (44ms)
+			ProcessInitializeOnLoadAttributes (51ms)
+			ProcessInitializeOnLoadMethodAttributes (71ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 33 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.inputsystem@1.19.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.inputsystem@21a28c3a6c83)
+    com.unity.ide.rider@3.0.38 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@2.0.26 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.searcher@4.9.4 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.searcher@d45a78918735)
+    com.unity.burst@1.8.29 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.burst@6bb9aca3ef38)
+    com.unity.nuget.mono-cecil@1.11.6 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.5.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.test-framework.performance@8b56083ec0f0)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.2d.sprite@053a968eab56)
+    com.unity.render-pipelines.universal@17.5.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.render-pipelines.universal@e38be786c41e)
+    com.unity.test-framework@1.7.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.test-framework@1405238725ab)
+    com.unity.ugui@2.5.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.ugui@f2d87ebaaa32)
+    com.unity.modules.animation@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.animation)
+    com.unity.modules.audio@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.audio)
+    com.unity.modules.director@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.particlesystem)
+    com.unity.modules.physics2d@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.screencapture)
+    com.unity.modules.ui@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.uielements)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.unitywebrequest)
+    com.unity.modules.hierarchycore@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.hierarchycore)
+    com.unity.modules.physics@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.physics)
+    com.unity.ext.nunit@2.1.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.ext.nunit@44f7d31723bd)
+    com.unity.render-pipelines.core@17.5.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.render-pipelines.core@539ef1c759fb)
+    com.unity.shadergraph@17.5.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.shadergraph@636559dc59a3)
+    com.unity.render-pipelines.universal-config@17.5.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.render-pipelines.universal-config@fdda01c80fe3)
+    com.unity.collections@6.5.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.collections@a43cabe808ca)
+    com.unity.modules.terrain@1.0.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.modules.terrain)
+    com.unity.mathematics@1.4.0 (location: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Library/PackageCache/com.unity.mathematics@981956d94fb6)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.01 seconds
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://unix:/tmp/ilpp.sock-98c753a53bcdc717560c8df2da6dc7cd
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping - application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping - 200 - application/grpc 23.2922ms
+Starting: /Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla
+DisplayProgressbar: Compiling Scripts
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors - application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly unityeditor.ios.extensions.xcode has duplicate hint path. Ignoring "/Applications/Unity/Hub/Editor/6000.5.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll" in favor of "/Applications/Unity/Hub/Editor/6000.5.4f1/PlaybackEngines/MacStandaloneSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/Scripting/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/Scripting/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/Scripting/UnityReferenceAssemblies/unity-4.8-api/System.ComponentModel.Composition.dll" in favor of "/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Resources/Scripting/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.6.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library/PackageCache/com.unity.burst@6bb9aca3ef38/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.5.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors - 200 - application/grpc 15.6119ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly - application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly - application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      Processing assembly Library/Bee/artifacts/900b0aE.dag/LaMuralla.Unity.dll, with 144 defines and 268 references
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      Processing assembly Library/Bee/artifacts/900b0aE.dag/LaMuralla.Editor.dll, with 142 defines and 301 references
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      running Unity.Jobs.CodeGen.JobsILPostProcessor
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      running Unity.Jobs.CodeGen.JobsILPostProcessor
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+info: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly - 200 - application/grpc 8.4377ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly - 200 - application/grpc 11.0575ms
+ExitCode: 0 Duration: 2s18ms
+[517/658    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[650/658    1s] Csc Library/Bee/artifacts/900b0aE.dag/LaMuralla.Unity.dll (+2 others)
+Assets/_Project/Unity/MapProgress.cs(67,29): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(25,37): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(154,100): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(88,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(101,74): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(18,29): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(15,42): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(446,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(488,38): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(580,36): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(693,60): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(93,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(26,23): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1239,42): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(16,42): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(30,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(17,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1444,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1518,24): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1520,36): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1542,45): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1560,24): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1571,24): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(50,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(40,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(41,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(42,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(43,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(92,28): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(444,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(804,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(347,37): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(25,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(26,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(27,21): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(28,21): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(30,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(31,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(32,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(33,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(34,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(35,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(36,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(37,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(75,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(76,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(77,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(78,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(87,29): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/PerfHud.cs(41,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(33,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Icons.cs(33,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/PerfHud.cs(44,27): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(544,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/BakedConfig.cs(48,22): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Pitch.cs(201,33): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Pitch.cs(242,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1226,70): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Icons.cs(39,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(83,22): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(95,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(159,64): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(220,19): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(485,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(448,56): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(824,64): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(840,60): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(673,19): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(687,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(740,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(766,23): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(861,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(906,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(911,62): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(847,23): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(848,87): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(850,81): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(875,22): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1154,63): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1170,66): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1241,73): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1306,64): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1318,67): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1326,73): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1348,63): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1349,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1367,64): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1376,69): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1425,68): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1482,66): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1512,20): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1547,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1574,20): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1707,60): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+[652/658    0s] ILPostProcess Library/Bee/artifacts/900b0aE.dag/post-processed/LaMuralla.Unity.dll (+pdb)
+Processing assembly Library/Bee/artifacts/900b0aE.dag/LaMuralla.Unity.dll, with 144 defines and 268 references
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[653/658    0s] ILPostProcess Library/Bee/artifacts/900b0aE.dag/post-processed/LaMuralla.Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/900b0aE.dag/LaMuralla.Editor.dll, with 142 defines and 301 references
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[656/658    0s] CopyFiles Library/ScriptAssemblies/LaMuralla.Unity.dll
+[657/658    0s] CopyFiles Library/ScriptAssemblies/LaMuralla.Unity.pdb
+*** Tundra build success (2.00 seconds), 6 items updated, 658 evaluated
+Assets/_Project/Unity/MapProgress.cs(67,29): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(25,37): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(154,100): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(88,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(101,74): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(18,29): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(15,42): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(446,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(488,38): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(580,36): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(693,60): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(93,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(26,23): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1239,42): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(16,42): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(30,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(17,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1444,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1518,24): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1520,36): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1542,45): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1560,24): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1571,24): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(50,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(40,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(41,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(42,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(43,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(92,28): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(444,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(804,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(347,37): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(25,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(26,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(27,21): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(28,21): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(30,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(31,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(32,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(33,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(34,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(35,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(36,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MapSelect.cs(37,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(75,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(76,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(77,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(78,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(87,29): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/PerfHud.cs(41,25): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(33,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Icons.cs(33,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/PerfHud.cs(44,27): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(544,32): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/BakedConfig.cs(48,22): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Pitch.cs(201,33): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Pitch.cs(242,30): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1226,70): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Icons.cs(39,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(83,22): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/AudioService.cs(95,54): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Draw.cs(159,64): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(220,19): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(485,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(448,56): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(824,64): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(840,60): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(673,19): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(687,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(740,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(766,23): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(861,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(906,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(911,62): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(847,23): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(848,87): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(850,81): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/Hud.cs(875,22): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1154,63): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1170,66): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1241,73): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1306,64): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1318,67): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1326,73): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1348,63): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1349,61): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1367,64): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1376,69): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1425,68): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1482,66): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1512,20): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1547,26): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1574,20): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+Assets/_Project/Unity/MatchView.cs(1707,60): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+AssetDatabase: script compilation time: 2.489993s
+Begin MonoManager ReloadAssembly
+Native extension for iOS target not found
+Native extension for OSXStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.567 seconds
+Domain Reload Profiling: 1997ms
+	BeginReloadAssembly (199ms)
+		DisableScriptedObjects (12ms)
+		CreateAndSetChildDomain (128ms)
+	RebuildCommonClasses (5ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (200ms)
+		LoadAssemblies (114ms)
+		AnalyzeDomain (71ms)
+			TypeCache.Refresh (52ms)
+				TypeCache.ScanAssembly (46ms)
+			BuildScriptInfoCaches (15ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1568ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			BeforeProcessingInitializeOnLoad (43ms)
+			ProcessInitializeOnLoadAttributes (1231ms)
+			ProcessInitializeOnLoadMethodAttributes (170ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Starting new worker id: 0 with log in /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla/Logs/AssetImportWorkerHW0.log
+
+Asset Pipeline Refresh (id=349235742cf0b415ab954cf67e370fa8): Total: 5.198 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1958 ms
+		Asset DB Callback time: managed=238 ms, native=53 ms
+		Scripting: domain reloads=1, domain reload time=440 ms, compile time=2491 ms, other=17 ms
+		Project Asset Count: scripts=864, non-scripts=1714
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokePackagesCallback: 8.202ms
+	ApplyChangesToAssetFolders: 0.121ms
+	Scan: 194.153ms
+	Collect global state as custom dependencies: 1.551ms
+	OnSourceAssetsModified: 0.379ms
+	CategorizeScriptCompilationAssets: 15.593ms
+	ProcessAssetsWithTransientArtifactChanges: 19.783ms
+	CategorizeAssets: 66.148ms
+	CompileScripts: 2490.633ms
+	ImportOutOfDateAssets: 1596.752ms (1573.170ms without children)
+		UnloadImportedAssets: 0.468ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.238ms
+		ImportSchedulerStart: 22.854ms
+	PostProcessAllAssets: 282.465ms
+		VCAutoAddAssetPostprocess 43.751ms
+		MonoPostProcessAllAssets: 238.059ms
+			AssetPostprocessor.OnPostprocessAllAssets 86.394ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 55.704ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 10.005ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 6.954ms
+			SyncVS.PostprocessSyncProject 5.071ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 1.777ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 1.070ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 0.880ms
+			AssetChangedListener.OnPostprocessAllAssets 0.874ms
+			SampleDependencyImporterPostProcessor.OnPostprocessAllAssets 0.828ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 0.764ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.750ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 0.617ms
+			MaterialPostprocessor.OnPostprocessAllAssets 0.357ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.322ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.297ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.272ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.243ms
+			ShaderReflectionAssetPostProcessor.OnPostprocessAllAssets 0.190ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 0.166ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.164ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.158ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.158ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.145ms
+			PostProcessor.OnPostprocessAllAssets 0.135ms
+			AssetEvents.OnPostprocessAllAssets 0.132ms
+			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 0.119ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.097ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.076ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.068ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.068ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.062ms
+	PostAssetChangesProfiler: 0.797ms
+	UnloadStreamsBegin: 1.602ms
+	PersistCurrentRevisions: 0.054ms
+	GenerateScriptTypeHashes: 0.884ms
+	GenerateScriptTypeSerializationHashes: 1.674ms
+	Untracked: 517.718ms
+
+Application.AssetDatabase Initial Refresh End
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Scanning for USB devices : 0.633ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Football Tower Defense
+Unloading 27 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3731 unused Assets / (0.7 MB). Loaded Objects now: 4641.
+Memory consumption went from 213.8 MB to 213.1 MB.
+Total: 5.615125 ms (FindLiveObjects: 0.181583 ms CreateObjectMapping: 0.543917 ms MarkObjects: 4.348250 ms  DeleteObjects: 0.540792 ms)
+
+Curl error 7: Failed to connect to config.uca.cloud.unity3d.com port 443 after 17 ms: Error
+Importing 'GUID: e110005fae3db4da8851156050906537 - Path: Assets/_Project/Resources/BakedConfig.asset' with importer (NativeFormatImporter)
+Imported 'GUID: e110005fae3db4da8851156050906537' -> (Import Result ID: 'c69efe7e511a94ab05f8972fae797479') in 0.005 seconds [static dependencies only]. Details - ImportResultOutputID=200140d2301e094a91e7d1315f79be51 DependenciesID=b2876ff6ec1ee1ab6e26fb3da9c65a58 StaticDependenciesID=82ab13980c9ec76a1ae35f43fff8e2d1 
+Asset Pipeline Refresh (id=58898f78460bc49deb00e2f4fc32bb34): Total: 0.051 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[ConfigBaker] OK — 5 tướng, 3 quân, 20 wave, 12 ô · 11 map (m00, m01, m02, m03, m04, m05, m06, m07, m08, m09, m10) → Assets/_Project/Resources/BakedConfig.asset
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LaMuralla.EditorTools.ConfigBaker:BakeOrThrow () (at Assets/_Project/Editor/ConfigBaker.cs:95)
+LaMuralla.EditorTools.ConfigBaker:Bake () (at Assets/_Project/Editor/ConfigBaker.cs:30)
+
+(Filename: Assets/_Project/Editor/ConfigBaker.cs Line: 95)
+
+Thread 0x312047000 may have been prematurely finalized
+Batchmode quit successfully invoked - shutting down!
+Curl error 7: Failed to connect to cdp.cloud.unity3d.com port 443 after 1 ms: Error
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      ALC ILPP context 1 is unloading

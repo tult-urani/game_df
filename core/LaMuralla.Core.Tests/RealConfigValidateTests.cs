@@ -70,6 +70,45 @@ namespace LaMuralla.Core.Tests
                     $"W{w} máu ×{c.HpScaling.MultiplierAt(w):0.###} không lớn hơn W{w - 1}");
         }
 
+        [Theory]
+        [InlineData(1, 1.00)]
+        [InlineData(4, 1.00)]
+        [InlineData(5, 1.20)]
+        [InlineData(9, 1.20)]
+        [InlineData(10, 1.40)]
+        [InlineData(14, 1.40)]
+        [InlineData(15, 1.70)]
+        [InlineData(19, 1.70)]
+        [InlineData(20, 2.00)]
+        public void Moc_mau_Hard_ap_dung_dung_wave(int wave, double expected)
+        {
+            GameConfig c = Load();
+            Assert.Equal(expected, c.HpScaling.MilestoneMultiplierAt(wave), precision: 6);
+        }
+
+        [Fact]
+        public void Moi_map_ke_thua_cung_bon_moc_mau_Hard()
+        {
+            string dir = Path.Combine(TestPaths.Root, "config", "maps");
+            foreach (string f in Directory.GetFiles(dir, "*.json"))
+            {
+                GameConfig c = Load(Path.GetFileName(f));
+                Assert.Equal(new[] { 5, 10, 15, 20 }, c.HpScaling.Milestones.Select(x => x.Wave));
+                Assert.Equal(new[] { 1.20, 1.40, 1.70, 2.00 },
+                             c.HpScaling.Milestones.Select(x => x.Multiplier));
+            }
+        }
+
+        [Fact]
+        public void Rewarded_recovery_dung_contract_da_chot()
+        {
+            EconomyDef economy = Load().Economy;
+            Assert.Equal(5, economy.RewardedHealAmount);
+            Assert.Equal(1, economy.RewardedHealUsesPerMatch);
+            Assert.Equal(5, economy.RewardedContinueHealth);
+            Assert.Equal(1, economy.RewardedContinueUsesPerMatch);
+        }
+
         [Fact]
         public void Bang_may_khop_bang_python_khong_lech_lam_tron()
         {

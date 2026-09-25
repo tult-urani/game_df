@@ -4,7 +4,7 @@
   "order": 4,
   "difficulty": 3,
   "_mapNote": "EL CRUCE: hai cửa vào chạy ĐỒNG THỜI, ép chéo qua hai giao điểm rồi đi tới HAI LỐI RA tách biệt. Máu cầu môn dùng chung; Dibu chỉ có một nên người chơi phải chọn lối cần bảo hiểm theo HUD CỬA.",
-  "coveragePerSlot": 2.86,
+  "coveragePerSlot": 3.07,
   "_coverageNote": "🔴 Sức phòng ngự trên mỗi ô, ĐO bằng tools/path_check.py; lệch >8% là đỏ. Với map đa tuyến con số này gồm cả ô canh ĐƯỢC NHIỀU TUYẾN — đó chính là thứ làm map đa tuyến dễ hơn thiết kế tưởng. Mốc: m00 = 1.74. Đổi số này thì PHẢI xem lại hpScaling.",
   "units": {
     "_definition": "1 đơn vị sân = 1 Unity world unit. Xem docs/05 §4.1.",
@@ -205,20 +205,20 @@
     {
       "id": "f13",
       "type": "field",
-      "x": 0.0,
-      "y": -6.7
+      "x": -2.8,
+      "y": -6.15
     },
     {
       "id": "gk01",
       "type": "goalkeeper",
-      "x": -2.8,
-      "y": -8.45
+      "x": -1.117,
+      "y": -7.575
     },
     {
       "id": "gk02",
       "type": "goalkeeper",
-      "x": 2.8,
-      "y": -8.45
+      "x": 2.275,
+      "y": -6.802
     }
   ],
   "economy": {
@@ -322,6 +322,9 @@
     },
     {
       "wave": 5,
+      "bosses": [
+        { "id": "o_capitao", "lane": "corta" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -726,6 +729,10 @@
     },
     {
       "wave": 15,
+      "bosses": [
+        { "id": "o_capitao", "lane": "corta" },
+        { "id": "o_capitao", "lane": "larga" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -973,6 +980,10 @@
         {
           "id": "o_capitao",
           "lane": "corta"
+        },
+        {
+          "id": "o_capitao",
+          "lane": "larga"
         }
       ]
     }
@@ -987,26 +998,37 @@
       "slowResistPercent": 80,
       "appearances": [
         {
+          "wave": 5,
+          "hp": 750,
+          "bounty": 40
+        },
+        {
           "wave": 10,
           "hp": 1900,
-          "bounty": 200
+          "bounty": 80
+        },
+        {
+          "wave": 15,
+          "hp": 2200,
+          "bounty": 110
         },
         {
           "wave": 20,
-          "hp": 5400,
-          "bounty": 500
+          "hp": 3000,
+          "bounty": 180
         }
       ]
     }
   },
-  "_bossNote": "Máu boss suy từ tỉ lệ độ dài tuyến so với m00 (42.28u → 2500/9800). ĐÍCH CẦN ĐO.",
+  "_bossNote": "HP mỗi boss tăng qua W5/W10/W15/W20; W15/W20 có hai boss nên phải chấm theo tổng HP encounter.",
   "_f06Note": "🔵 f06 dời (-1.92,-4.91) → (-2.10,-5.30): khe hở tuyến `corta` 20.1% → 17.9%. Sàn toán học của bố cục 2 tuyến 12 ô là 20%, nên 20.1% là VỪA TRÀN chứ không phải bố cục hỏng — nhưng dời một ô rẻ hơn nới luật, và nới luật thì lần sau không ai biết vì sao nó được nới.",
   "_balanceNote": "Vòng 27b: tiền 2100→800, giữ nguyên số quân.",
   "_laneShapeNote": "Vòng 27: dựng lại theo kiểu MỘT THÂN CHUNG, HAI LỐI RA. Đoạn chung dài 23.7u (65% chiều dài một tuyến) — mọi ô cạnh thân canh được CẢ HAI tuyến, nên tiền khởi đầu về mức map một tuyến. Đoạn chẻ cuối vẫn bắt chia lực. Lý do: docs/09 §8 — giá của map đa tuyến nằm ở ô bị khoá cứng vào một tuyến, không nằm ở số tuyến.",
-  "farSlots": [
-    "f13"
-  ],
+  "farSlots": [],
   "_slotAddNote": "Vòng 27: thêm 13 ô. Đo được các tuyến biên chỉ đạt 126% mức Σchord của m00 — một con quái đi tuyến đó ăn chưa tới nửa lượng sát thương so với map gốc. Bù bằng tiền khởi đầu thì phải tới 4 300 (gấp 6 lần thiết kế) và vẫn phải cắt gần nửa số quân. Thiếu là thiếu Ô, không phải thiếu tiền. Xem docs/09 §8.7.",
   "_waveNote": "Vòng 27: dựng lại theo dáng wave của m00 (map đã cân xong), chia đôi hai tuyến. Bảng cũ viết cho ba tuyến / luân phiên nên không còn dùng được sau khi đổi sang kiểu một thân chung hai lối ra.",
-  "maxGapFraction": 0.2
+  "maxGapFraction": 0.2,
+  "goalkeeperMinLeadUnits": 1.0,
+  "goalkeeperMinCoverageUnits": 2.0,
+  "_goalkeeperPlacementNote": "Ô Dibu phải canh một đoạn đường dài ít nhất goalkeeperMinCoverageUnits và toàn bộ đoạn đó phải nằm trước lối ra ít nhất goalkeeperMinLeadUnits. Hai ngưỡng được tools/path_check.py --check thi hành; không được kéo ô về sát cầu môn chỉ vì nhìn giống vị trí thủ môn."
 }

@@ -213,8 +213,8 @@
     {
       "id": "gk01",
       "type": "goalkeeper",
-      "x": 0.0,
-      "y": -8.55
+      "x": 2.25,
+      "y": -8.085
     }
   ],
   "economy": {
@@ -275,6 +275,9 @@
     },
     {
       "wave": 5,
+      "bosses": [
+        { "id": "o_capitao", "lane": "L1" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -486,6 +489,10 @@
     },
     {
       "wave": 15,
+      "bosses": [
+        { "id": "o_capitao", "lane": "L1" },
+        { "id": "o_capitao", "lane": "L2" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -622,6 +629,10 @@
         {
           "id": "o_capitao",
           "lane": "L2"
+        },
+        {
+          "id": "o_capitao",
+          "lane": "L1"
         }
       ]
     }
@@ -636,24 +647,37 @@
       "slowResistPercent": 78,
       "appearances": [
         {
+          "wave": 5,
+          "hp": 900,
+          "bounty": 40
+        },
+        {
           "wave": 10,
           "hp": 2300,
-          "bounty": 200
+          "bounty": 80
+        },
+        {
+          "wave": 15,
+          "hp": 2600,
+          "bounty": 110
         },
         {
           "wave": 20,
-          "hp": 8800,
-          "bounty": 500
+          "hp": 4500,
+          "bounty": 180
         }
       ]
     }
   },
-  "_bossNote": "Máu boss suy từ tỉ lệ độ dài tuyến so với m00 (42.28u → 2500/9800). ĐÍCH CẦN ĐO.",
+  "_bossNote": "HP mỗi boss tăng qua W5/W10/W15/W20; W15/W20 có hai boss nên phải chấm theo tổng HP encounter.",
   "_balanceNote": "Vòng 27b: đường dựng lại kiểu một thân chung hai lối ra → tiền 2300→1500.",
   "_laneShapeNote": "Vòng 27: dựng lại theo kiểu MỘT THÂN CHUNG, HAI LỐI RA. Đoạn chung dài 20.1u (58% chiều dài một tuyến) — mọi ô cạnh thân canh được CẢ HAI tuyến, nên tiền khởi đầu về mức map một tuyến. Đoạn chẻ cuối vẫn bắt chia lực. Lý do: docs/09 §8 — giá của map đa tuyến nằm ở ô bị khoá cứng vào một tuyến, không nằm ở số tuyến.",
   "farSlots": [],
   "maxGapFraction": 0.22,
   "_gapNote": "Khai 0.190 thay vì lấy sàn 0.185. Số ĐO ĐƯỢC: khe hở lớn nhất là 5.86 units trên tuyến `L2`, còn m00 — map đã cân xong — được chấp nhận ở 6.16 units. Luật gốc tính theo TỈ LỆ chiều dài nên nó phạt map tuyến ngắn; tính bằng quãng đường thật thì map này kín hơn m00.",
   "_slotAddNote": "Vòng 27: thêm 12 ô. Đo được các tuyến biên chỉ đạt 100% mức Σchord của m00 — một con quái đi tuyến đó ăn chưa tới nửa lượng sát thương so với map gốc. Bù bằng tiền khởi đầu thì phải tới 4 300 (gấp 6 lần thiết kế) và vẫn phải cắt gần nửa số quân. Thiếu là thiếu Ô, không phải thiếu tiền. Xem docs/09 §8.7.",
-  "_waveNote": "Vòng 27: dựng lại theo dáng wave của m00 (map đã cân xong), chia đôi hai tuyến. Bảng cũ viết cho ba tuyến / luân phiên nên không còn dùng được sau khi đổi sang kiểu một thân chung hai lối ra."
+  "_waveNote": "Vòng 27: dựng lại theo dáng wave của m00 (map đã cân xong), chia đôi hai tuyến. Bảng cũ viết cho ba tuyến / luân phiên nên không còn dùng được sau khi đổi sang kiểu một thân chung hai lối ra.",
+  "goalkeeperMinLeadUnits": 1.0,
+  "goalkeeperMinCoverageUnits": 2.0,
+  "_goalkeeperPlacementNote": "Ô Dibu phải canh một đoạn đường dài ít nhất goalkeeperMinCoverageUnits và toàn bộ đoạn đó phải nằm trước lối ra ít nhất goalkeeperMinLeadUnits. Hai ngưỡng được tools/path_check.py --check thi hành; không được kéo ô về sát cầu môn chỉ vì nhìn giống vị trí thủ môn."
 }

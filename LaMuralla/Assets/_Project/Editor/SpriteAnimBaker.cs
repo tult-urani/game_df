@@ -32,6 +32,12 @@ namespace LaMuralla.EditorTools
         private const int Cols = 5;
         private const int Rows = 4;
         private const float HeroPpu = 232f;
+        // Dải kỹ năng cuồng nộ Lv3 của El Cinco là 5 frame ngang riêng; canvas
+        // cao hơn sheet hero gốc nên PPU được chốt theo chiều cao dải để art không
+        // phình khi MatchView áp SpriteArtScale.
+        private const float BatigolBerserkPpu = 724f;
+        private const string BatigolBerserkPath =
+            "Assets/_Project/Art/Characters/batigol_berserk_charge.png";
 
         [MenuItem("La Muralla/Bake All Hero Anim")]
         public static void BakeAll()
@@ -81,7 +87,9 @@ namespace LaMuralla.EditorTools
             if (!wasReadable) { importer.isReadable = true; importer.SaveAndReimport(); }
 
             var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(sheet);
-            int cw = tex.width / Cols, ch = tex.height / Rows;
+            int portraitRows = id == "la_pulga" ? 3 : Rows;
+            int cw = Mathf.RoundToInt(tex.width / (float)Cols);
+            int ch = Mathf.RoundToInt(tex.height / (float)portraitRows);
             // Frame 0 = ô trái trên. Gốc toạ độ texture ở DƯỚI nên hàng trên = y cao.
             Color[] cell = tex.GetPixels(0, tex.height - ch, cw, ch);
 
@@ -132,36 +140,59 @@ namespace LaMuralla.EditorTools
             Debug.Log($"[SpriteAnimBaker] chân dung {id}: {side}×{side} → {path}");
         }
 
-        // ── La Pulga (Messi áo Argentina) ───────────────────────────────────
-        // Mỗi CẤP một cú xút (2026-08-20) — trước đó cả 3 cấp dùng CHUNG một clip
-        // `kick` nên nâng cấp không đổi gì trên màn hình. Nay theo đúng hợp đồng
-        // 4 hàng như d10s/dibu/batigol (docs/06 §4b): hàng = cấp.
-        //   0-4   đứng thủ (idle=0)   · 5-8   xút thường (Lv1 `solo_run`)
-        //   10-13 xút xoáy (Lv2 `nhan_quan`) · 15-18 vô-lê (Lv3 `so_10`)
+        // ── La Pulga: sheet riêng 5 cột × 3 hàng, mỗi hàng là một cấp. ──
+        // PNG 1619×971 không chia hết cho 5×3; SliceGrid tính từng biên bằng
+        // toạ độ làm tròn nên không mượn pixel từ frame kế bên.
+        //   0-4 xút thường (Lv1) · 5-9 xút phạt (Lv2) · 10-14 vô-lê (Lv3)
         [MenuItem("La Muralla/Bake La Pulga Anim")]
         public static void BakeLaPulga()
         {
             const string id = "la_pulga";
-            Sprite[] frames = LoadFrames(id);
-            if (frames == null) return;
+            const int pulgaCols = 5;
+            const int pulgaRows = 3;
+            const float pulgaPpu = 324f;
+            string sheet = $"{CharDir}/{id}_hero.png";
+            if (AssetDatabase.LoadAssetAtPath<Texture2D>(sheet) == null)
+            {
+                Debug.LogError($"[SpriteAnimBaker] Không thấy sheet {sheet}.");
+                return;
+            }
+            // Frame 12 (frame thứ 3 của Lv3) có 24px cuối bên phải thuộc pose kế
+            // tiếp ngay trong PNG nguồn. Cắt riêng phần dư, giữ tâm ô bằng pivot.
+            Sprite[] frames = SliceGrid(sheet, id, pulgaCols, pulgaRows, pulgaPpu,
+                                        trimRightFrame: 12, trimRightPixels: 24);
+            if (frames.Length != pulgaCols * pulgaRows)
+            {
+                Debug.LogError($"[SpriteAnimBaker] {id}: slice ra {frames.Length} frame, cần {pulgaCols * pulgaRows}.");
+                return;
+            }
 
             EnsureFolder(OutDir);
 
-            Sprite[] kick = Pick(frames, 5, 6, 7, 8);
-            Sprite[] curl = Pick(frames, 10, 11, 12, 13);
-            Sprite[] volley = Pick(frames, 15, 16, 17, 18);
-            SaveClip(BuildClip($"{id}_idle", new[] { frames[0] }, 1, true), $"{OutDir}/{id}_idle.anim");
+            Sprite[] kick = Pick(frames, 0, 1, 2, 3, 4);
+            Sprite[] curl = Pick(frames, 5, 6, 7, 8, 9);
+            Sprite[] volley = Pick(frames, 10, 11, 12, 13, 14);
+            SaveClip(BuildClip($"{id}_idle_lv1", new[] { kick[0] }, 1, true), $"{OutDir}/{id}_idle_lv1.anim");
+            SaveClip(BuildClip($"{id}_idle_lv2", new[] { curl[0] }, 1, true), $"{OutDir}/{id}_idle_lv2.anim");
+            SaveClip(BuildClip($"{id}_idle_lv3", new[] { volley[0] }, 1, true), $"{OutDir}/{id}_idle_lv3.anim");
             SaveClip(BuildClip($"{id}_kick", kick, 12, false), $"{OutDir}/{id}_kick.anim");
             SaveClip(BuildClip($"{id}_curl", curl, 12, false), $"{OutDir}/{id}_curl.anim");
             SaveClip(BuildClip($"{id}_volley", volley, 12, false), $"{OutDir}/{id}_volley.anim");
-            BuildPulgaController($"{OutDir}/{id}.controller", $"{OutDir}/{id}_idle.anim",
+            BuildPulgaController($"{OutDir}/{id}.controller",
+                                 $"{OutDir}/{id}_idle_lv1.anim", $"{OutDir}/{id}_idle_lv2.anim",
+                                 $"{OutDir}/{id}_idle_lv3.anim",
                                  $"{OutDir}/{id}_kick.anim", $"{OutDir}/{id}_curl.anim",
                                  $"{OutDir}/{id}_volley.anim");
 
             ConfigureBall();
+            ConfigureProjectile(PulgaNormalBallPath, PulgaBallPpu);
+            // Bóng vàng có đuôi lửa vẽ hướng sang phải. Pivot đặt ở tâm bóng
+            // để điểm chạm nằm ở quả bóng, phần đuôi chỉ kéo lại phía sau.
+            ConfigureProjectile(PulgaGoldBallPath, PulgaGoldBallPpu,
+                                new Vector2(0.74f, 0.5f));
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            Debug.Log($"[SpriteAnimBaker] Xong {id}: idle=0 · xút=5-8 · xoáy=10-13 · vô-lê=15-18 → {OutDir}/{id}.controller");
+            Debug.Log($"[SpriteAnimBaker] Xong {id}: idle theo cấp · xút=0-4 · phạt=5-9 · vô-lê=10-14 → {OutDir}/{id}.controller");
         }
 
         // ── El Árbitro (trọng tài) ──────────────────────────────────────────
@@ -228,33 +259,45 @@ namespace LaMuralla.EditorTools
         }
 
         // ── El Cinco (batigol — Paredes áo #5) ──────────────────────────────
-        // Mỗi cấp một đòn NỔ (splash ở core): đấm / đá / đạp. Vai trò frame (sheet 5×4):
+        // Mỗi cấp một đòn NỔ (splash ở core): đấm / đá / húc cuồng nộ. Vai trò frame:
         //   0-4   thủ thế (idle=0)   · 5-9   đấm (streak@7)
-        //   10-14 đá/chạy (streak@11) · 15-19 đạp/chạy (streak@15)
+        //   10-14 đá/chạy (streak@11) · Lv3 dùng dải 5 frame riêng:
+        //   bùng nộ → hóa cuồng → lao → húc → chỉ còn vụ nổ.
         [MenuItem("La Muralla/Bake Batigol Anim")]
         public static void BakeBatigol()
         {
             const string id = "batigol";
             Sprite[] frames = LoadFrames(id);
             if (frames == null) return;
+            Sprite[] berserk = SliceBatigolBerserkFrames();
+            if (berserk.Length != 4)
+            {
+                Debug.LogError("[SpriteAnimBaker] El Cinco: dải cuồng nộ cần đúng 4 frame.");
+                return;
+            }
 
             EnsureFolder(OutDir);
 
             Sprite[] punch = Pick(frames, 5, 6, 7, 8);
             Sprite[] kick = Pick(frames, 10, 11, 12, 13);
-            Sprite[] stomp = Pick(frames, 15, 16, 17, 18);
-            SaveClip(BuildClip($"{id}_idle", new[] { frames[0] }, 1, true), $"{OutDir}/{id}_idle.anim");
+            // Idle theo cấp lấy frame đầu của CHÍNH action cấp đó. Khi tấn công xong
+            // sprite không giật về tư thế gốc không liên quan, nên mắt đọc chuỗi
+            // đấm/đá/húc là một động tác liền mạch.
+            SaveClip(BuildClip($"{id}_idle_lv1", new[] { punch[0] }, 1, true), $"{OutDir}/{id}_idle_lv1.anim");
+            SaveClip(BuildClip($"{id}_idle_lv2", new[] { kick[0] }, 1, true), $"{OutDir}/{id}_idle_lv2.anim");
+            SaveClip(BuildClip($"{id}_idle_lv3", new[] { berserk[0] }, 1, true), $"{OutDir}/{id}_idle_lv3.anim");
             SaveClip(BuildClip($"{id}_punch", punch, 12, false), $"{OutDir}/{id}_punch.anim");
             SaveClip(BuildClip($"{id}_kick", kick, 12, false), $"{OutDir}/{id}_kick.anim");
-            SaveClip(BuildClip($"{id}_stomp", stomp, 12, false), $"{OutDir}/{id}_stomp.anim");
-            BuildCincoController($"{OutDir}/{id}.controller", $"{OutDir}/{id}_idle.anim",
+            SaveClip(BuildClip($"{id}_stomp", berserk, 12, false), $"{OutDir}/{id}_stomp.anim");
+            BuildCincoController($"{OutDir}/{id}.controller", $"{OutDir}/{id}_idle_lv1.anim",
+                                 $"{OutDir}/{id}_idle_lv2.anim", $"{OutDir}/{id}_idle_lv3.anim",
                                  $"{OutDir}/{id}_punch.anim", $"{OutDir}/{id}_kick.anim",
                                  $"{OutDir}/{id}_stomp.anim");
 
             ConfigureFireStrip();
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            Debug.Log($"[SpriteAnimBaker] Xong {id} (El Cinco): idle=0 · đấm=5-8 · đá=10-13 · đạp=15-18 → {OutDir}/{id}.controller");
+            Debug.Log($"[SpriteAnimBaker] Xong {id} (El Cinco): idle theo frame đầu mỗi cấp · đấm=5-8 · đá=10-13 · húc cuồng nộ=4 frame → {OutDir}/{id}.controller");
         }
 
         // ── D10S (Maradona, áo Argentina) ────────────────────────────────────
@@ -376,8 +419,74 @@ namespace LaMuralla.EditorTools
         private static Sprite[] Pick(Sprite[] frames, params int[] idx) =>
             idx.Select(i => frames[i]).ToArray();
 
+        /// <summary>
+        /// Dải cuồng nộ không phải lưới 5 ô đều: ImageGen để viền lửa/trail của
+        /// từng pose có bề rộng khác nhau. Chia W/5 đã khiến frame trước ăn sang
+        /// frame sau. Frame 4 dùng vùng độc lập (không sát frame 3) để đủ cả đầu;
+        /// frame 5 bị bỏ vì MatchView đã có FX nổ tại điểm va chạm.
+        /// </summary>
+        private static Sprite[] SliceBatigolBerserkFrames()
+        {
+            const int expectedWidth = 2172;
+            Rect[] regions =
+            {
+                new(0, 0, 340, 724),
+                new(340, 0, 350, 724),
+                new(690, 0, 410, 724),
+                new(1160, 0, 500, 724),
+            };
+            var importer = (TextureImporter)AssetImporter.GetAtPath(BatigolBerserkPath);
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Multiple;
+            importer.spritePixelsPerUnit = BatigolBerserkPpu;
+            // Strip gốc rộng 2172px. Mặc định 2048px làm Unity resize trước khi
+            // chia, khiến mọi mốc pixel bên dưới lệch sang frame kế tiếp.
+            importer.maxTextureSize = 4096;
+            importer.filterMode = FilterMode.Bilinear;
+            importer.mipmapEnabled = false;
+            importer.SaveAndReimport();
+
+            var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(BatigolBerserkPath);
+            if (tex.width != expectedWidth)
+            {
+                Debug.LogError($"[SpriteAnimBaker] El Cinco: strip cuồng nộ rộng {tex.width}px, cần {expectedWidth}px.");
+                return System.Array.Empty<Sprite>();
+            }
+
+            var factory = new SpriteDataProviderFactories();
+            factory.Init();
+            ISpriteEditorDataProvider dp = factory.GetSpriteEditorDataProviderFromObject(importer);
+            dp.InitSpriteEditorDataProvider();
+            var rects = new SpriteRect[regions.Length];
+            var pairs = new List<SpriteNameFileIdPair>(rects.Length);
+            for (int i = 0; i < rects.Length; i++)
+            {
+                var sr = new SpriteRect
+                {
+                    name = $"batigol_berserk_{i}",
+                    spriteID = GUID.Generate(),
+                    rect = regions[i],
+                    alignment = SpriteAlignment.Center,
+                    pivot = new Vector2(0.5f, 0.5f),
+                };
+                rects[i] = sr;
+                pairs.Add(new SpriteNameFileIdPair(sr.name, sr.spriteID));
+            }
+            dp.SetSpriteRects(rects);
+            var nameIdDp = dp.GetDataProvider<ISpriteNameFileIdDataProvider>();
+            nameIdDp?.SetNameFileIdPairs(pairs);
+            dp.Apply();
+            importer.SaveAndReimport();
+
+            return AssetDatabase.LoadAllAssetsAtPath(BatigolBerserkPath)
+                .OfType<Sprite>()
+                .OrderBy(s => FrameIndex(s.name))
+                .ToArray();
+        }
+
         // ── Slice lưới đều bằng ISpriteEditorDataProvider (API Unity 6) ──────
-        private static Sprite[] SliceGrid(string pngPath, string id, int cols, int rows, float ppu)
+        private static Sprite[] SliceGrid(string pngPath, string id, int cols, int rows, float ppu,
+                                          int trimRightFrame = -1, int trimRightPixels = 0)
         {
             var importer = (TextureImporter)AssetImporter.GetAtPath(pngPath);
             importer.textureType = TextureImporterType.Sprite;
@@ -406,13 +515,28 @@ namespace LaMuralla.EditorTools
                     // Hàng đọc trên→xuống, nhưng gốc toạ độ texture ở DƯỚI → lật.
                     int y0 = Mathf.RoundToInt((rows - 1 - r) * H / (float)rows);
                     int y1 = Mathf.RoundToInt((rows - r) * H / (float)rows);
+                    float pivotX = 0.5f;
+                    if (idx == trimRightFrame && trimRightPixels > 0)
+                    {
+                        int fullWidth = x1 - x0;
+                        int trimmedWidth = fullWidth - trimRightPixels;
+                        if (trimmedWidth <= 0)
+                        {
+                            Debug.LogError($"[SpriteAnimBaker] {id}_{idx}: trim {trimRightPixels}px >= rộng {fullWidth}px.");
+                            return System.Array.Empty<Sprite>();
+                        }
+                        // Pivot mới vẫn trỏ vào tâm ô gốc, nên animation không
+                        // dịch sang trái sau khi bỏ phần nhiễu ở mép phải.
+                        pivotX = (fullWidth * 0.5f) / trimmedWidth;
+                        x1 -= trimRightPixels;
+                    }
                     var sr = new SpriteRect
                     {
                         name = $"{id}_{idx}",
                         spriteID = GUID.Generate(),
                         rect = new Rect(x0, y0, x1 - x0, y1 - y0),
                         alignment = SpriteAlignment.Center,
-                        pivot = new Vector2(0.5f, 0.5f),
+                        pivot = new Vector2(pivotX, 0.5f),
                     };
                     rects[idx] = sr;
                     pairs.Add(new SpriteNameFileIdPair(sr.name, sr.spriteID));
@@ -438,7 +562,11 @@ namespace LaMuralla.EditorTools
 
         // ── Quả cầu lửa (ảnh đơn) ───────────────────────────────────────────
         private const string BallPath = "Assets/_Project/Resources/Art/la_pulga_ball.png";
+        private const string PulgaNormalBallPath = "Assets/_Project/Resources/Art/pulga_ball_normal.png";
+        private const string PulgaGoldBallPath = "Assets/_Project/Resources/Art/pulga_ball_gold.png";
         private const float BallPpu = 768f;
+        private const float PulgaBallPpu = 128f;
+        private const float PulgaGoldBallPpu = 900f;
         private const float BallPivotX = 0.771f;   // tâm lõi lửa (đo từ pixel)
         private const float BallPivotY = 0.492f;
 
@@ -474,7 +602,8 @@ namespace LaMuralla.EditorTools
         private const string BottlePath = "Assets/_Project/Resources/Art/d10s_bottle.png";
         private const float ProjPpu = 900f;
 
-        private static void ConfigureProjectile(string path, float ppu = ProjPpu)
+        private static void ConfigureProjectile(string path, float ppu = ProjPpu,
+                                                Vector2? customPivot = null)
         {
             if (AssetDatabase.LoadAssetAtPath<Texture2D>(path) == null)
             {
@@ -490,7 +619,10 @@ namespace LaMuralla.EditorTools
 
             var s = new TextureImporterSettings();
             imp.ReadTextureSettings(s);
-            s.spriteAlignment = (int)SpriteAlignment.Center;
+            s.spriteAlignment = customPivot.HasValue
+                ? (int)SpriteAlignment.Custom
+                : (int)SpriteAlignment.Center;
+            if (customPivot.HasValue) s.spritePivot = customPivot.Value;
             imp.SetTextureSettings(s);
             imp.SaveAndReimport();
         }
@@ -545,9 +677,10 @@ namespace LaMuralla.EditorTools
             }
         }
 
-        // ── Controller La Pulga: Idle mặc định; trigger Kick/Curl/Volley theo cấp
-        // (MatchView kích theo cấp la_pulga lúc bắn) → cú xút → về Idle. ──
-        private static void BuildPulgaController(string path, string idlePath,
+        // ── Controller La Pulga: mỗi cấp dùng frame đầu action làm idle.
+        // MatchView đặt Level khi mua/nâng cấp, cú xút xong trở về đúng idle. ──
+        private static void BuildPulgaController(string path, string idleLv1Path,
+                                                 string idleLv2Path, string idleLv3Path,
                                                  string kickPath, string curlPath, string volleyPath)
         {
             AssetDatabase.DeleteAsset(path);
@@ -555,24 +688,35 @@ namespace LaMuralla.EditorTools
             ac.AddParameter("Kick", AnimatorControllerParameterType.Trigger);
             ac.AddParameter("Curl", AnimatorControllerParameterType.Trigger);
             ac.AddParameter("Volley", AnimatorControllerParameterType.Trigger);
+            ac.AddParameter("Level", AnimatorControllerParameterType.Int);
 
             AnimatorStateMachine sm = ac.layers[0].stateMachine;
-            AnimatorState idle = sm.AddState("Idle");
-            idle.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(idlePath);
+            AnimatorState idleLv1 = sm.AddState("Idle Lv1");
+            idleLv1.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(idleLv1Path);
+            AnimatorState idleLv2 = sm.AddState("Idle Lv2");
+            idleLv2.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(idleLv2Path);
+            AnimatorState idleLv3 = sm.AddState("Idle Lv3");
+            idleLv3.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(idleLv3Path);
             AnimatorState kick = sm.AddState("Kick");
             kick.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(kickPath);
             AnimatorState curl = sm.AddState("Curl");
             curl.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(curlPath);
             AnimatorState volley = sm.AddState("Volley");
             volley.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(volleyPath);
-            sm.defaultState = idle;
+            sm.defaultState = idleLv1;
 
-            AddTrigger(idle, kick, "Kick");
-            AddTrigger(idle, curl, "Curl");
-            AddTrigger(idle, volley, "Volley");
-            AddReturn(kick, idle);
-            AddReturn(curl, idle);
-            AddReturn(volley, idle);
+            AnimatorState[] idles = { idleLv1, idleLv2, idleLv3 };
+            for (int i = 0; i < idles.Length; i++)
+            {
+                AddTrigger(idles[i], kick, "Kick");
+                AddTrigger(idles[i], curl, "Curl");
+                AddTrigger(idles[i], volley, "Volley");
+                for (int j = 0; j < idles.Length; j++)
+                    if (i != j) AddLevelTransition(idles[i], idles[j], j + 1, false);
+            }
+            foreach (AnimatorState attack in new[] { kick, curl, volley })
+                for (int level = 1; level <= idles.Length; level++)
+                    AddLevelTransition(attack, idles[level - 1], level, true);
         }
 
         // ── Controller kiểu RÚT THẺ: Idle mặc định; trigger Yellow/Red → giơ
@@ -660,9 +804,11 @@ namespace LaMuralla.EditorTools
             AddReturn(mortar, idle);
         }
 
-        // ── Controller El Cinco: Idle mặc định; trigger Punch/Kick/Stomp theo cấp
-        // (MatchView kích theo cấp batigol lúc bắn) → đòn → về Idle. ──
-        private static void BuildCincoController(string path, string idlePath,
+        // ── Controller El Cinco: mỗi cấp có idle riêng là frame đầu action của nó.
+        // MatchView đặt param Level khi mua/nâng, rồi trigger Punch/Kick/Stomp đưa
+        // từ idle hiện tại vào đòn và trở về đúng idle cấp đó. ───────────────────
+        private static void BuildCincoController(string path, string idleLv1Path,
+                                                 string idleLv2Path, string idleLv3Path,
                                                  string punchPath, string kickPath, string stompPath)
         {
             AssetDatabase.DeleteAsset(path);
@@ -670,24 +816,35 @@ namespace LaMuralla.EditorTools
             ac.AddParameter("Punch", AnimatorControllerParameterType.Trigger);
             ac.AddParameter("Kick", AnimatorControllerParameterType.Trigger);
             ac.AddParameter("Stomp", AnimatorControllerParameterType.Trigger);
+            ac.AddParameter("Level", AnimatorControllerParameterType.Int);
 
             AnimatorStateMachine sm = ac.layers[0].stateMachine;
-            AnimatorState idle = sm.AddState("Idle");
-            idle.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(idlePath);
+            AnimatorState idleLv1 = sm.AddState("Idle Lv1");
+            idleLv1.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(idleLv1Path);
+            AnimatorState idleLv2 = sm.AddState("Idle Lv2");
+            idleLv2.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(idleLv2Path);
+            AnimatorState idleLv3 = sm.AddState("Idle Lv3");
+            idleLv3.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(idleLv3Path);
             AnimatorState punch = sm.AddState("Punch");
             punch.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(punchPath);
             AnimatorState kick = sm.AddState("Kick");
             kick.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(kickPath);
             AnimatorState stomp = sm.AddState("Stomp");
             stomp.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>(stompPath);
-            sm.defaultState = idle;
+            sm.defaultState = idleLv1;
 
-            AddTrigger(idle, punch, "Punch");
-            AddTrigger(idle, kick, "Kick");
-            AddTrigger(idle, stomp, "Stomp");
-            AddReturn(punch, idle);
-            AddReturn(kick, idle);
-            AddReturn(stomp, idle);
+            AnimatorState[] idles = { idleLv1, idleLv2, idleLv3 };
+            for (int i = 0; i < idles.Length; i++)
+            {
+                AddTrigger(idles[i], punch, "Punch");
+                AddTrigger(idles[i], kick, "Kick");
+                AddTrigger(idles[i], stomp, "Stomp");
+                for (int j = 0; j < idles.Length; j++)
+                    if (i != j) AddLevelTransition(idles[i], idles[j], j + 1, false);
+            }
+            foreach (AnimatorState attack in new[] { punch, kick, stomp })
+                for (int level = 1; level <= idles.Length; level++)
+                    AddLevelTransition(attack, idles[level - 1], level, true);
         }
 
         // ── Controller kiểu ĐI: đúng một state, lặp mãi, không trigger nào.
@@ -715,6 +872,16 @@ namespace LaMuralla.EditorTools
         {
             AnimatorStateTransition tr = from.AddTransition(to);
             tr.hasExitTime = true;
+            tr.exitTime = 1f;
+            tr.duration = 0f;
+        }
+
+        private static void AddLevelTransition(AnimatorState from, AnimatorState to, int level,
+                                               bool waitForClipEnd)
+        {
+            AnimatorStateTransition tr = from.AddTransition(to);
+            tr.AddCondition(AnimatorConditionMode.Equals, level, "Level");
+            tr.hasExitTime = waitForClipEnd;
             tr.exitTime = 1f;
             tr.duration = 0f;
         }

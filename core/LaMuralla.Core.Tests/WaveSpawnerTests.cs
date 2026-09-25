@@ -50,15 +50,17 @@ namespace LaMuralla.Core.Tests
         [Fact]
         public void Boss_ra_SAU_moi_con_thuong()
         {
-            foreach (int wave in new[] { 10, 20 })
+            foreach (int wave in new[] { 5, 10, 15, 20 })
             {
                 var s = New().Schedule(wave).ToList();
-                ScheduledSpawn boss = s.Single(x => x.IsBoss);
+                var bosses = s.Where(x => x.IsBoss).ToList();
+                Assert.NotEmpty(bosses);
 
-                Assert.Equal(s.Count - 1, s.IndexOf(boss));           // đứng cuối list
+                int firstBoss = s.FindIndex(x => x.IsBoss);
+                Assert.Equal(s.Count - bosses.Count, firstBoss);
                 Assert.All(s.Where(x => !x.IsBoss),
-                           x => Assert.True(x.TimeSec < boss.TimeSec,
-                               $"W{wave}: {x.EnemyId} ra lúc {x.TimeSec} ≥ boss {boss.TimeSec}"));
+                           x => Assert.True(x.TimeSec < bosses[0].TimeSec,
+                               $"W{wave}: {x.EnemyId} ra lúc {x.TimeSec} ≥ boss {bosses[0].TimeSec}"));
             }
         }
 
@@ -68,17 +70,23 @@ namespace LaMuralla.Core.Tests
         public void Mau_boss_lay_thang_tu_appearances()
         {
             BossDef b = Cfg.Bosses.First(x => x.Id == "o_capitao");
-            Assert.Equal(b.Appearances.First(a => a.Wave == 10).Hp,
-                         New().Schedule(10).Single(x => x.IsBoss).Hp);
-            Assert.Equal(b.Appearances.First(a => a.Wave == 20).Hp,
-                         New().Schedule(20).Single(x => x.IsBoss).Hp);
+            foreach (int wave in new[] { 5, 10, 15, 20 })
+            {
+                int hp = b.Appearances.First(a => a.Wave == wave).Hp;
+                Assert.All(New().Schedule(wave).Where(x => x.IsBoss), x => Assert.Equal(hp, x.Hp));
+            }
         }
 
         [Fact]
-        public void Khong_wave_nao_co_2_boss()
+        public void Boss_tang_tan_suat_theo_moc_da_chot()
         {
-            for (int w = 1; w <= 20; w++)
-                Assert.True(New().Schedule(w).Count(x => x.IsBoss) <= 1);
+            (int Wave, int Count)[] expected = { (5, 1), (10, 1), (15, 2), (20, 2) };
+            foreach ((int wave, int count) in expected)
+                Assert.Equal(count, New().Schedule(wave).Count(x => x.IsBoss));
+
+            for (int wave = 1; wave <= 20; wave++)
+                if (wave is not (5 or 10 or 15 or 20))
+                    Assert.DoesNotContain(New().Schedule(wave), x => x.IsBoss);
         }
 
         [Fact]
@@ -136,7 +144,7 @@ namespace LaMuralla.Core.Tests
             for (int w = 1; w <= 20; w++)
             {
                 WaveDef def = Cfg.Waves.First(x => x.Wave == w);
-                int expected = def.TotalEnemies + (def.Boss != null ? 1 : 0);
+                int expected = def.TotalEnemies + def.Bosses.Count;
                 Assert.Equal(expected, New().CountAt(w));
             }
         }

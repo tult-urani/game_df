@@ -39,7 +39,7 @@
 |---|---------|------|-----------|
 | 1 | Ăn theo World Cup 2026? | **Không** — làm tử tế, không deadline thị trường | `07` giữ nguyên; store listing bỏ mọi tham chiếu giải đấu |
 | 2 | Dibu không thuộc top-5 nổi tiếng | **Giữ Dibu** — thủ môn hợp theme, chấp nhận lệch tiêu chí | `02` §1 ghi rõ đây là lệch chuẩn có chủ đích |
-| 3 | Phe địch vô danh, không có Ronaldo | **Thêm boss `O Capitão`** ở W10 + W20 | Đảo ràng buộc "chỉ 3 loại"; `03` §2, `04` §3.3 |
+| 3 | Phe địch vô danh, không có Ronaldo | **Thêm boss `O Capitão`** ở W5/W10/W15/W20, số lượng 1/1/2/2 | Đảo ràng buộc "chỉ 3 loại"; `03` §2, `04` §3.3 |
 | 4 | "Kỹ năng khi lên cấp" nghĩa là gì | **Mỗi cấp mở 1 kỹ năng MỚI, cộng dồn** → 18 kỹ năng (sau khi thêm Trọng tài) | `02` viết lại; `05` schema `abilities[]` |
 | 5 | Tên boss (CR7 là nhãn hiệu đăng ký) | **`O Capitão`** — generic, không ai sở hữu | `03` §2, `06` §5 |
 | 6 | Thêm tướng Trọng tài | **`El Árbitro`** — tướng thứ 6, 0 DPS, chậm vĩnh viễn bằng thẻ | `02` §4.6, `04` §3.4b |
@@ -167,7 +167,7 @@ Một tướng **nhân** sức mạnh cả sân rất dễ trượt từ "lựa 
 
 ### Q10. Kiếm tiền?
 
-Hiện tại **không có gì** — không IAP, không ads. Đúng cho MVP, ngõ cụt cho sản phẩm thật. **Bàn sau khi có beta.**
+Đã tích hợp **AdMob rewarded-only**: hồi 5 máu trong giờ nghỉ và continue với 5 máu sau khi thua, mỗi loại một lần/trận. Hiện dùng test ID; release guard buộc nhập App ID/ad unit ID thật, chọn audience `General`/`UnderAgeOfConsent` và tắt test mode trước khi phát hành. Không có banner/interstitial/IAP.
 
 ### Q11. Ngôn ngữ trong game?
 
@@ -185,7 +185,7 @@ Một trận ~11 phút. Thắng lần đầu là hết game trong 11 phút. Khô
 
 | # | Quyết định | Lý do tôi chọn | Ở đâu |
 |---|-----------|---------------|-------|
-| 1 | Tiền khởi đầu **550** (không phải số tròn) | Thiếu đúng 30 Peso để mua cặp mạnh nhất → ép quyết định mở màn | `04` §5 |
+| 1 | Tiền khởi đầu **700** | Giá trị hiện hành ở `config/economy.json`; thay đổi phải chạy lại mô phỏng kinh tế | `04` §5 |
 | 2 | Dibu là **thủ môn ô riêng**, không phải tower thường | Thủ môn đứng giữa sân bắn người là phản theme | `02` §4.5 |
 | 3 | **Tách `hpMultiplier` khỏi `bountyMultiplier`** | Một hệ số chung làm độ khó **phẳng** — quân khoẻ gấp đôi thì bạn cũng giàu gấp đôi. Vòng 1 tôi làm sai và còn khen nó. | `03` §3 |
 | 4 | Máu boss **ghi thẳng**, không nhân hệ số act | Boss là set-piece, dẫn xuất ngược từ mô hình hoả lực tập trung | `03` §2 |

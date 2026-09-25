@@ -1,6 +1,6 @@
 # 03 — Cổ động viên & Wave
 
-> 3 loại cổ động viên thường + **1 boss `O Capitão`** ở W10 và W20.
+> 3 loại cổ động viên thường + **boss `O Capitão`** ở W5/W10/W15/W20, số lượng 1/1/2/2.
 > ⚠️ Bảng wave ở đây **được dẫn xuất từ mô hình cân bằng** ở [`04-ECONOMY-BALANCE.md`](04-ECONOMY-BALANCE.md) §4. Đổi bất kỳ số nào ở đây → phải chạy lại kiểm chứng ở doc 04.
 
 ---
@@ -25,13 +25,13 @@
 
 ## 2. Boss — `O Capitão`
 
-> Thủ lĩnh hội cổ động viên Bồ Đào Nha. Xuất hiện đúng **2 lần cả trận**: W10 và W20.
+> Thủ lĩnh hội cổ động viên Bồ Đào Nha. Có **6 boss cả trận**: W5/W10 một con, W15/W20 hai con.
 
 | Thuộc tính | Giá trị |
 |-----------|---------|
-| Máu | **W10: 5 500** · **W20: 22 000** (ghi thẳng, không nhân hệ số act) |
+| Máu mỗi boss | **W5: 1 000** · **W10: 2 500** · **W15: 2 800** · **W20: 5 000** (ghi thẳng, không nhân `hpScaling`) |
 | Tốc độ | **0.4** — chậm nhất game |
-| Thưởng khi hạ | W10: **200** · W20: **500** |
+| Thưởng mỗi boss | W5: **40** · W10: **80** · W15: **110** · W20: **180** |
 | **Trừ máu khi lọt** | **5** — một phần tư cầu môn |
 | **Kháng chậm** | **75%** — mọi hiệu ứng chậm chỉ còn 1/4 (cap thực tế: **17.5%**) |
 | Truất quyền thi đấu | **Không tồn tại trong game** — thẻ đỏ chỉ làm chậm, không xoá sổ ai (`02` §4.6) |
@@ -79,21 +79,19 @@ Boss là **mồi ngon nhất** của cơ chế thẻ — nó chậm nhất game 
 
 ## 3. Công thức scaling
 
-Độ khó tăng bằng hệ số nhân theo act — **máu và thưởng dùng hai hệ số KHÁC NHAU**:
+Độ khó tăng bằng đường cong trơn cộng bốn milestone Hard; **máu và thưởng dùng hai hệ số KHÁC NHAU**:
 
 ```
-Máu    = round(máu_gốc    × hpMultiplier)
+Máu    = round(máu_gốc × 0.67 × 1.09^(wave-1) × milestone_gần_nhất)
 Thưởng = round(thưởng_gốc × bountyMultiplier)
 Tốc độ, trừ máu = KHÔNG đổi
 ```
 
-| Act | Wave | `hpMultiplier` | `bountyMultiplier` | Ý đồ |
-|-----|------|---------------|-------------------|------|
-| **Act 1** | W1–W7 | **1.0** | **1.0** | Dạy chơi. Kết act là bài kiểm tra thật đầu tiên. |
-| **Act 2** | W8–W14 | **1.8** | **1.6** | Đội hình Lv1 không còn đủ. Ép nâng cấp. |
-| **Act 3** | W15–W20 | **3.8** 🔴 | **2.5** | Ô đặt hết, phải bán và xây lại. |
+| Mốc | W1–4 | W5–9 | W10–14 | W15–19 | W20 |
+|-----|------|------|--------|--------|-----|
+| Milestone HP | ×1.0 | **×1.2** | **×1.4** | **×1.7** | **×2.0** |
 
-✅ **`hpMultiplier` không còn là hệ số theo act.** Vòng 5b thay 3 số bậc thang (1.0 / 1.8 / 3.8) bằng **một công thức trơn**: `hpMultiplier(wave) = 0.69 × 1.09^(wave-1)` — máu tăng **9%/wave**, dẫn xuất bằng `tools/balance_sim.py --solve`, cho **20/20 wave trong dải headroom**.
+✅ **`hpMultiplier` không còn là hệ số theo act.** Công thức hiện tại là `0.67 × 1.09^(wave-1) × milestone_gần_nhất`; milestone không cộng dồn. Bốn bước tăng W5/W10/W15/W20 khắc phục việc tướng Lv3 AoE quét sạch phần cuối trận.
 
 🔴 **Vì sao bỏ hệ số theo act:** bậc thang tạo **vách đứng** ngay sau ranh giới act. Đo được: W8 headroom **1.00** và W15 **0.97** (người chơi tối ưu *thua*), trong khi W14 cuối act **1.81** (quá dễ) — biên độ **1.81× trong cùng một act**. Một hệ số cho 7 wave không thể vừa cứu đầu act vừa ghì cuối act. Act giờ chỉ điều khiển **thưởng** và ý đồ kể chuyện.
 
@@ -103,7 +101,7 @@ Bản đầu dùng **một hệ số cho cả máu lẫn thưởng**, và tôi c
 
 Máu và thưởng scale cùng nhịp nghĩa là: quân khoẻ gấp đôi thì bạn cũng giàu gấp đôi, mua được gấp đôi hoả lực. **Độ khó thực tế đứng yên.** Cả trận là một đường phẳng đội lốt đường dốc.
 
-Tách đôi thì máu vượt lên trước thưởng → sức mua tụt lại sau độ khó → người chơi thật sự phải chơi giỏi hơn, không chỉ mua nhiều hơn. Giờ máu chạy theo công thức trơn `0.69 × 1.09^(w-1)` (W20 ≈ **×3.66**) còn thưởng vẫn bậc thang theo act (**1.0 / 1.6 / 2.2**) — máu cuối trận gấp 3.66× trong khi thưởng chỉ gấp 2.2×.
+Tách đôi thì máu vượt lên trước thưởng → sức mua tụt lại sau độ khó → người chơi thật sự phải chơi giỏi hơn, không chỉ mua nhiều hơn. Giờ máu chạy theo `0.67 × 1.09^(w-1) × milestone` (W20 ≈ **×6.89**) còn thưởng vẫn bậc thang theo act (**1.0 / 1.6 / 2.2**) — sức mua không tăng kịp HP cuối trận.
 
 💡 *Bài học: "một hệ số, hai cột" nghe gọn gàng nên nghe có vẻ đúng. Sự gọn gàng không phải bằng chứng. Cái làm lộ ra lỗi là phép tính ở doc 04 §6, không phải việc đọc lại doc.*
 
@@ -112,10 +110,10 @@ Tách đôi thì máu vượt lên trước thưởng → sức mua tụt lại 
 <!-- GEN:scaled_stats -->
 | Loại | Act 1 máu | Act 2 máu | Act 3 máu | Act 1 thưởng | Act 2 thưởng | Act 3 thưởng |
 |------|-----------|-----------|-----------|-----------|-----------|-----------|
-| Adepto | 67 | 122 | 224 | 5 | 8 | 11 |
-| Tifoso Kèn | 147 | 269 | 493 | 11 | 18 | 24 |
-| Tambor Giáp | 369 | 674 | 1 231 | 24 | 38 | 53 |
-| `O Capitão` | — | **2 500** | **9 800** | — | **200** | **500** |
+| Adepto | 67 | 147 | 381 | 5 | 8 | 11 |
+| Tifoso Kèn | 147 | 323 | 837 | 11 | 18 | 24 |
+| Tambor Giáp | 369 | 808 | 2 093 | 24 | 38 | 53 |
+| `O Capitão` | W5 **1 000** | W10 **2 500** | W15 **2 800** / W20 **5 000** | W5 **40** | W10 **80** | W15 **110** / W20 **180** |
 <!-- /GEN:scaled_stats -->
 
 ---
@@ -127,7 +125,7 @@ Tách đôi thì máu vượt lên trước thưởng → sức mua tụt lại 
 Cột `Ví sau wave` = tổng tiền đã cầm được từ đầu trận (khởi đầu 550), **chưa trừ chi tiêu**.
 
 <!-- GEN:wave_tables -->
-### Act 1 — W1–W7 (máu ×0.67→×1.12 · thưởng ×1)
+### Act 1 — W1–W7 (máu ×0.67→×1.35 · thưởng ×1)
 
 | W | Adepto | Tifoso | Tambor | Boss | Quân | Tổng máu | Thưởng hạ | Clear | Tiền wave | Ví sau wave |
 |---|--------|--------|--------|------|------|----------|-----------|-------|-----------|-------------|
@@ -135,32 +133,32 @@ Cột `Ví sau wave` = tổng tiền đã cầm được từ đầu trận (kh�
 | 2 | 13 | — | — | — | 13 | 949 | 65 | 25 | 90 | 850 |
 | 3 | 10 | 4 | — | — | 14 | 1 500 | 94 | 30 | 124 | 974 |
 | 4 | 10 | 8 | — | — | 18 | 2 398 | 138 | 35 | 173 | 1 147 |
-| 5 | 8 | 6 | 1 | — | 15 | 2 528 | 130 | 40 | 170 | 1 317 |
-| 6 | 10 | 8 | 1 | — | 19 | 3 413 | 162 | 45 | 207 | 1 524 |
-| 7 | 8 | 8 | 3 | — | 19 | 4 726 | 200 | 50 | 250 | 1 774 |
+| **5** | 8 | 6 | 1 | **1** | 16 | **4 028** | 130 + **40** | 40 | 210 | 1 357 |
+| 6 | 10 | 8 | 1 | — | 19 | 4 096 | 162 | 45 | 207 | 1 564 |
+| 7 | 8 | 8 | 3 | — | 19 | 5 682 | 200 | 50 | 250 | 1 814 |
 
-### Act 2 — W8–W14 (máu ×1.22→×2.05 · thưởng ×1.6)
-
-| W | Adepto | Tifoso | Tambor | Boss | Quân | Tổng máu | Thưởng hạ | Clear | Tiền wave | Ví sau wave |
-|---|--------|--------|--------|------|------|----------|-----------|-------|-----------|-------------|
-| 8 | 8 | 6 | 1 | — | 15 | 3 264 | 210 | 55 | 265 | 2 039 |
-| 9 | 10 | 8 | 1 | — | 19 | 4 426 | 262 | 60 | 322 | 2 361 |
-| **10** | 8 | 8 | 3 | **1** | 20 | **8 628** | 322 + **200** | 65 | 587 | 2 948 |
-| 11 | 10 | 9 | 3 | — | 22 | 7 347 | 356 | 70 | 426 | 3 374 |
-| 12 | 10 | 10 | 4 | — | 24 | 9 334 | 412 | 75 | 487 | 3 861 |
-| 13 | 10 | 13 | 4 | — | 27 | 11 419 | 466 | 80 | 546 | 4 407 |
-| 14 | 13 | 13 | 5 | — | 31 | 14 191 | 528 | 85 | 613 | 5 020 |
-
-### Act 3 — W15–W20 (máu ×2.24→×3.44 · thưởng ×2.2)
+### Act 2 — W8–W14 (máu ×1.47→×2.88 · thưởng ×1.6)
 
 | W | Adepto | Tifoso | Tambor | Boss | Quân | Tổng máu | Thưởng hạ | Clear | Tiền wave | Ví sau wave |
 |---|--------|--------|--------|------|------|----------|-----------|-------|-----------|-------------|
-| 15 | 10 | 10 | 4 | — | 24 | 12 094 | 562 | 90 | 652 | 5 672 |
-| 16 | 10 | 13 | 4 | — | 27 | 14 789 | 634 | 95 | 729 | 6 401 |
-| 17 | 13 | 13 | 5 | — | 31 | 18 378 | 720 | 100 | 820 | 7 221 |
-| 18 | 13 | 15 | 6 | — | 34 | 22 910 | 821 | 105 | 926 | 8 147 |
-| 19 | 15 | 16 | 8 | — | 39 | 29 764 | 973 | 110 | 1 083 | 9 230 |
-| **20** | 18 | 20 | 9 | **1** | 48 | **48 207** | 1 155 + **500** | **150** | 1 805 | **11 035** |
+| 8 | 8 | 6 | 1 | — | 15 | 3 922 | 210 | 55 | 265 | 2 079 |
+| 9 | 10 | 8 | 1 | — | 19 | 5 297 | 262 | 60 | 322 | 2 401 |
+| **10** | 8 | 8 | 3 | **1** | 20 | **11 076** | 322 + **80** | 65 | 467 | 2 868 |
+| 11 | 10 | 9 | 3 | — | 22 | 10 284 | 356 | 70 | 426 | 3 294 |
+| 12 | 10 | 10 | 4 | — | 24 | 13 064 | 412 | 75 | 487 | 3 781 |
+| 13 | 10 | 13 | 4 | — | 27 | 15 984 | 466 | 80 | 546 | 4 327 |
+| 14 | 13 | 13 | 5 | — | 31 | 19 883 | 528 | 85 | 613 | 4 940 |
+
+### Act 3 — W15–W20 (máu ×3.81→×6.89 · thưởng ×2.2)
+
+| W | Adepto | Tifoso | Tambor | Boss | Quân | Tổng máu | Thưởng hạ | Clear | Tiền wave | Ví sau wave |
+|---|--------|--------|--------|------|------|----------|-----------|-------|-----------|-------------|
+| **15** | 10 | 10 | 4 | **2** | 26 | **26 152** | 562 + **220** | 90 | 872 | 5 812 |
+| 16 | 10 | 13 | 4 | — | 27 | 25 147 | 634 | 95 | 729 | 6 541 |
+| 17 | 13 | 13 | 5 | — | 31 | 31 246 | 720 | 100 | 820 | 7 361 |
+| 18 | 13 | 15 | 6 | — | 34 | 38 935 | 821 | 105 | 926 | 8 287 |
+| 19 | 15 | 16 | 8 | — | 39 | 50 607 | 973 | 110 | 1 083 | 9 370 |
+| **20** | 18 | 20 | 9 | **2** | 49 | **86 823** | 1 155 + **360** | **150** | 1 665 | **11 035** |
 <!-- /GEN:wave_tables -->
 
 **Nhịp dạy chơi:** W1–2 chỉ Adepto (học đặt tướng). W3 giới thiệu Tifoso. W5 giới thiệu Tambor. W7 là bài kiểm tra — cả 3 loại, và là wave sát nút nhất Act 1.
@@ -182,9 +180,9 @@ Nếu `Cản Phá` của Dibu còn sẵn đúng lúc boss chạm vạch → **c�
 <!-- GEN:wave_summary -->
 | | Act 1 | Act 2 | Act 3 | **Cả trận** |
 |---|-------|-------|-------|-------------|
-| Số quân | 106 | 158 | 203 | **467** |
-| Tổng máu | 16 050 | 58 609 | 146 142 | **220 801** |
-| Tiền sinh ra | 1 074 | 3 246 | 6 015 | **10 335** |
+| Số quân | 107 | 158 | 206 | **471** |
+| Tổng máu | 19 189 | 79 510 | 258 910 | **357 609** |
+| Tiền sinh ra | 1 114 | 3 126 | 6 095 | **10 335** |
 
 Cộng 700 khởi đầu → **tổng tiền cả đời một trận = 11 035 Peso**.
 <!-- /GEN:wave_summary -->

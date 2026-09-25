@@ -1,0 +1,27 @@
+Unity Editor version:    6000.5.4f1 (d550df8bd089)
+Branch:                  6000.5/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.2 (Build 24C101)
+Darwin version:          24.2.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        16384 MB
+Date:                    2026-09-24T07:15:51Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-tuantu" at "2026-09-24T07:15:51.995728Z"
+Launching external process: /Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.5.4f1/Unity.app/Contents/MacOS/Unity
+-batchmode
+-quit
+-projectPath
+/Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla
+-executeMethod
+LaMuralla.EditorTools.SpriteAnimBaker.BakeBatigol
+-logFile
+/Users/tuantu/Desktop/dev/AI/mobile/game_df/bake-batigol-berserk.log
+Successfully changed project path to: /Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla
+/Users/tuantu/Desktop/dev/AI/mobile/game_df/LaMuralla
+[Package Manager] Server process was shutdown

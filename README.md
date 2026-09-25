@@ -62,7 +62,7 @@ Tower Defense top-down 2D, một trận đủ 20 wave: ~11 phút ở tốc thư�
 | 4 | Top-down 2D, đặt tower theo ô lưới cố định | Tap chính xác trên màn 6"; pathing tĩnh, không cần re-path động | 2026-07-16 |
 | 5 | **Không ăn theo World Cup 2026** | Giải kết thúc 19/07/2026; ship sớm nhất là tháng 9. Chủ đề bóng đá là vĩnh viễn, không gắn giải cụ thể. | 2026-07-16 |
 | 6 | **Mỗi cấp mở 1 kỹ năng mới, cộng dồn** (18 kỹ năng) | Nâng cấp phải cảm thấy như được thêm. Kỹ năng cũ **không** tự mạnh lên — nếu không Lv3 mạnh 5–6× mà chỉ tốn 3.4× tiền. | 2026-07-16 |
-| 7 | **Thêm boss `O Capitão`** (W10, W20) | 5 huyền thoại có tên vs 3 cổ động viên vô danh là bất đối xứng làm nhạt nửa game. Boss cũng là chốt chặn chống đội hình lệch. | 2026-07-16 |
+| 7 | **Thêm boss `O Capitão`** tại W5/W10/W15/W20, số lượng 1/1/2/2 | Boss là chốt chặn chống đội hình AoE lệch; tổng HP encounter tăng dần qua bốn mốc. | 2026-08-26 |
 | 8 | ⚠️ **Không bao giờ dùng "CR7"** — dùng `O Capitão` | CR7 là **nhãn hiệu đã đăng ký** (quần áo, khách sạn, nước hoa) — bảo hộ mạnh hơn cả tên riêng | 2026-07-16 |
 | 9 | **Thêm `El Árbitro`** — tướng thứ 6, 0 sát thương, chậm vĩnh viễn bằng thẻ | Trọng tài **không phải cầu thủ** → không phá tiêu chí "5 cầu thủ". Nó nhân sức mạnh 10 ô còn lại thay vì cộng thêm DPS. | 2026-07-16 |
 | 10 | Trọng tài **thiên vị** (trò đùa "bị mua") | User chốt, có cân nhắc đánh đổi — xem `06` §5 | 2026-07-16 |
@@ -104,13 +104,13 @@ Cấu trúc source được **mô tả** trong `docs/05`, chưa tạo. Khi nào 
 
 | Chỉ số | Giá trị |
 |--------|---------|
-| Tiền khởi đầu | 550 Peso ⚽ |
+| Tiền khởi đầu | 700 Peso ⚽ |
 | Máu cầu môn | 20 bàn thua |
 | Số đơn vị | **6** — 5 cầu thủ + 1 trọng tài (`El Árbitro`) |
 | **Số kỹ năng** | **18** — mỗi cấp mở 1 cái mới, cộng dồn |
-| Số loại cổ động viên | 3 thường + **1 boss** (`O Capitão`, W10 & W20) |
+| Số loại cổ động viên | 3 thường + **1 loại boss**, tổng 6 boss tại W5/W10/W15/W20 |
 | Số ô đặt tower | 11 ô sân + 1 ô thủ môn |
-| Số wave (MVP) | 20, chia 3 act. Máu = `0.69 × 1.09^(wave-1)`, **20/20 wave trong dải headroom** |
-| Tổng quân 1 trận | 363 + 2 boss |
+| Số wave (MVP) | 20, chia 3 act. Máu = `0.67 × 1.09^(wave-1) × milestone`; milestone W5/W10/W15/W20 = `1.2/1.4/1.7/2.0` |
+| Tổng quân 1 trận | 465 quân thường + 6 boss |
 | Tổng tiền cả đời 1 trận | 11 276 Peso (trần chi 11 696 → biên khan hiếm **+3.6%**) |
 | Thời lượng 1 trận | ~11 phút (1×) · ~7 phút (2×) |

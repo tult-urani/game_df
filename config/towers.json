@@ -216,7 +216,7 @@
           "unlockLevel": 3,
           "trigger": "passive",
           "params": {},
-          "_summary": "**Đạp** → nổ lớn, dame rất mạnh. Vùng nổ rộng nhất."
+          "_summary": "**Húc cuồng nộ** → El Cinco bùng nộ, lao thẳng vào quái rồi biến mất trong vụ nổ lớn. Dame và vùng nổ rộng nhất."
         }
       ],
       "_redesign": "🔴 2026-07-22 — user chốt: đổi Batigol → 'El Cinco' (Leandro Paredes, id giữ nguyên). Bỏ sut_xuyen/ban_nang_sat_thu/cu_vo_le. Mỗi cấp một đòn NỔ (đấm/đá/đạp) = AttackShape.Splash tại mục tiêu, bán kính = levels[].splashRadius 0.8/1.1/1.4, dame 60/96/150. Nổ mỗi đòn đánh (nhịp 0.6). GIỮ dame (không giảm bù AoE) → mạnh hẳn lên, chấp nhận lệch balance_sim, đo lại ở M1. Aura = COSMETIC (đỏ/lửa) ở view, không cơ chế.",

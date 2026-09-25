@@ -9,6 +9,13 @@
     "costGrowth": 1.5,
     "healAmount": 1
   },
+  "rewardedRecovery": {
+    "_comment": "Quảng cáo có thưởng duy nhất: hồi máu chỉ trong giờ nghỉ; continue chỉ sau khi thua. Chỉ callback reward mới áp dụng.",
+    "healAmount": 5,
+    "healUsesPerMatch": 1,
+    "continueHealth": 5,
+    "continueUsesPerMatch": 1
+  },
   "slowCapPercent": 70,
   "_slowOrderOfOperations": "Lấy MAX các nguồn slow → cap 70% → RỒI mới nhân (1 - slowResistPercent/100). Làm ngược lại thì kháng chậm thành vô nghĩa. Xem docs/01 §8 **FM-14**.",
   "roundingMode": "half_up",

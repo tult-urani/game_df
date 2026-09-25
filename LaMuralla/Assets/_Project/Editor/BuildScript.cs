@@ -24,6 +24,17 @@ namespace LaMuralla.EditorTools
 
         public static void BuildIOS()
         {
+            BuildIOS(BuildOptions.Development);
+        }
+
+        /// <summary>Bản gửi App Store. Build guard sẽ chặn test ID/thiếu ID thật.</summary>
+        public static void BuildIOSRelease()
+        {
+            BuildIOS(BuildOptions.None);
+        }
+
+        private static void BuildIOS(BuildOptions buildOptions)
+        {
             string[] scenes = EditorBuildSettings.scenes
                 .Where(s => s.enabled)
                 .Select(s => s.path)
@@ -44,7 +55,7 @@ namespace LaMuralla.EditorTools
                 scenes = scenes,
                 locationPathName = OutputDir,
                 target = BuildTarget.iOS,
-                options = BuildOptions.None,
+                options = buildOptions,
             };
 
             BuildReport report = BuildPipeline.BuildPlayer(opts);

@@ -5,7 +5,7 @@
   "difficulty": 4,
   "_mapNote": "EL MIRADOR: hai đường riêng bao quanh trục giữa. Hai ô trung tâm là ô tầm xa — phải nâng La Pulga trước khi chúng canh tốt cả hai phía. W1-4 luân phiên để đọc địa hình; từ W5 hai cửa đánh đồng thời.",
   "_tierMixNote": "Thuộc nhóm map cuối: tổng quân Lv2/Lv3 cao hơn rõ rệt so với m06; độ khó tăng bằng chất lượng quân, không chỉ nhồi thêm Adepto Lv1.",
-  "coveragePerSlot": 2.44,
+  "coveragePerSlot": 2.86,
   "_coverageNote": "🔴 Sức phòng ngự trên mỗi ô, ĐO bằng tools/path_check.py; lệch >8% là đỏ. Với map đa tuyến con số này gồm cả ô canh ĐƯỢC NHIỀU TUYẾN — đó chính là thứ làm map đa tuyến dễ hơn thiết kế tưởng. Mốc: m00 = 1.74. Đổi số này thì PHẢI xem lại hpScaling.",
   "units": {
     "_definition": "1 đơn vị sân = 1 Unity world unit. Xem docs/05 §4.1.",
@@ -202,14 +202,14 @@
     {
       "id": "f11",
       "type": "field",
-      "x": 0.0,
-      "y": 5.2
+      "x": -2.3,
+      "y": 2.95
     },
     {
       "id": "f12",
       "type": "field",
-      "x": 0.0,
-      "y": -3.2
+      "x": -2.2,
+      "y": -1.25
     },
     {
       "id": "f13",
@@ -226,13 +226,20 @@
     {
       "id": "gk01",
       "type": "goalkeeper",
-      "x": 0.0,
-      "y": -8.55
+      "x": -2.088,
+      "y": -8.027
+    },
+    {
+      "id": "gk02",
+      "type": "goalkeeper",
+      "x": 2.088,
+      "y": -8.027
     }
   ],
   "economy": {
-    "startingCash": 800,
-    "fieldSlots": 14
+    "startingCash": 1000,
+    "fieldSlots": 14,
+    "goalkeeperSlots": 2
   },
   "_economyNote": "3 400 cho phép dựng hai cụm phòng thủ độc lập; test engine 20 wave chốt mức còn 3/20 máu với GreedyPlayer.",
   "waves": [
@@ -288,6 +295,9 @@
     },
     {
       "wave": 5,
+      "bosses": [
+        { "id": "o_capitao", "lane": "E" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -564,6 +574,10 @@
     },
     {
       "wave": 15,
+      "bosses": [
+        { "id": "o_capitao", "lane": "E" },
+        { "id": "o_capitao", "lane": "W" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -730,6 +744,10 @@
         {
           "id": "o_capitao",
           "lane": "E"
+        },
+        {
+          "id": "o_capitao",
+          "lane": "W"
         }
       ]
     }
@@ -744,28 +762,39 @@
       "slowResistPercent": 85,
       "appearances": [
         {
+          "wave": 5,
+          "hp": 800,
+          "bounty": 40
+        },
+        {
           "wave": 10,
           "hp": 2000,
-          "bounty": 200
+          "bounty": 80
+        },
+        {
+          "wave": 15,
+          "hp": 2300,
+          "bounty": 110
         },
         {
           "wave": 20,
-          "hp": 8000,
-          "bounty": 500
+          "hp": 4100,
+          "bounty": 180
         }
       ]
     }
   },
-  "_bossNote": "Máu boss suy từ tỉ lệ độ dài tuyến so với m00 (42.28u → 2500/9800). ĐÍCH CẦN ĐO.",
-  "farSlots": [
-    "f11",
-    "f12"
-  ],
+  "_bossNote": "HP mỗi boss tăng qua W5/W10/W15/W20; W15/W20 có hai boss nên phải chấm theo tổng HP encounter.",
+  "farSlots": [],
   "_farSlotsNote": "Ô CỐ Ý nằm ngoài tầm Lv1 — cơ chế 'ép nâng cấp trước khi trải rộng'. Phải khai ở đây thì path_check mới cho qua; không khai thì nó báo ô chết, và đúng là nên báo: ô ngoài tầm mà không ai biết là tiền người chơi ném đi.",
   "_balanceNote": "Hai tuyến đối xứng buộc chia tiền; bốn wave đầu luân phiên để người chơi kịp đọc tuyến, từ wave 5 đánh đồng thời. Wave 20 tăng Tambor phía Đông để khóa mức khó mục tiêu.",
   "_laneShapeNote": "Hai tuyến ziczac tách biệt quanh trục giữa, chỉ hội tụ sát cầu môn. Ô biên chuyên canh một tuyến; hai ô trung tâm cần nâng tầm mới hỗ trợ hiệu quả cả hai.",
   "maxGapFraction": 0.25,
   "_gapNote": "Khai 0.170 thay vì lấy sàn 0.150. Số ĐO ĐƯỢC: khe hở lớn nhất là 4.90 units trên tuyến `W`, còn m00 — map đã cân xong — được chấp nhận ở 6.16 units. Luật gốc tính theo TỈ LỆ chiều dài nên nó phạt map tuyến ngắn; tính bằng quãng đường thật thì map này kín hơn m00.",
   "_slotAddNote": "14 ô sân: 10 ô chuyên tuyến, 2 ô trung tâm tầm xa và 2 ô biên bổ sung để tránh điểm mù ở nửa sau đường chạy.",
-  "_waveNote": "W1–4 luân phiên Tây/Đông; W5–20 mở đồng thời. Các wave cuối tăng Tifoso/Tambor, boss W20 đi tuyến Đông."
+  "_waveNote": "W1–4 luân phiên Tây/Đông; W5–20 mở đồng thời. Các wave cuối tăng Tifoso/Tambor, boss W20 đi tuyến Đông.",
+  "_goalkeeperSplitNote": "m08 có HAI ô thủ môn chứ không phải một. Đo bằng tools/reposition_slots.py: hai tuyến W/E cách nhau 2.10u ở 2u trước lối ra và 5.02u ở 5u trước lối ra — không tồn tại điểm nào tầm Dibu 1.4 phủ được cả hai. Một ô thủ môn ở đây nghĩa là một trong hai cửa KHÔNG BAO GIỜ được cản. m04/m09/m10 cùng hình học tuyến tách rời và đều đã dùng hai ô từ trước.",
+  "goalkeeperMinLeadUnits": 1.0,
+  "goalkeeperMinCoverageUnits": 2.0,
+  "_goalkeeperPlacementNote": "Ô Dibu phải canh một đoạn đường dài ít nhất goalkeeperMinCoverageUnits và toàn bộ đoạn đó phải nằm trước lối ra ít nhất goalkeeperMinLeadUnits. Hai ngưỡng được tools/path_check.py --check thi hành; không được kéo ô về sát cầu môn chỉ vì nhìn giống vị trí thủ môn."
 }

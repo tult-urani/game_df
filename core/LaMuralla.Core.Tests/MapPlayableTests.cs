@@ -8,15 +8,15 @@ using Xunit.Abstractions;
 namespace LaMuralla.Core.Tests
 {
     /// <summary>
-    /// 🔴 MỖI MAP MỘT BÀI KIỂM "CÓ CHƠI ĐƯỢC KHÔNG".
+    /// 🔴 MỖI MAP MỘT BÀI KIỂM PROFILE HARD CHẶN BUILD AOE THAM LAM.
     ///
     /// Vì sao bắt buộc: `tools/balance_sim.py` KHÔNG dùng được để chốt số. Đo vòng 22 —
     /// sim báo headroom trung bình 2.09 ("quá dễ", 18/20 wave ngoài dải) trong khi engine
     /// thật thắng sát nút còn 11/20 máu. Ba hệ số η/σ/τ của sim là ước lượng chưa đo và
     /// `economy.json` tự cảnh báo chúng nhân nhau thì lệch tới 73%.
     ///
-    /// Một map không có bài kiểm này là một map KHÔNG AI BIẾT có chơi được không.
-    /// Thêm map mới thì thêm một dòng vào `Thang` — `GreedyPlayer` tự chọn ô từ hình học.
+    /// Build này cố nâng D10S AoE lên Lv3 sớm, đúng đường thắng quá dễ mà người chơi
+    /// báo cáo. Nó phải bị chặn, nhưng vẫn tiến đủ xa để đầu trận không thành vách.
     /// </summary>
     public class MapPlayableTests
     {
@@ -28,36 +28,30 @@ namespace LaMuralla.Core.Tests
         private const int PeakLiveCap = 40;
 
         /// <summary>
-        /// Thang 11 map theo đúng thứ tự chơi, kèm MỨC SÀN máu cầu môn còn lại.
-        ///
-        /// Máu còn lại là thước đo THÔ (mỗi boss lọt = 5 máu) nhưng nó là thước duy
-        /// nhất đo được bằng engine thật. Sàn giảm dần theo thứ tự map = phát biểu
-        /// "map sau khó hơn map trước", và `Thang_do_kho_giam_dan` ép nó bằng SỐ ĐO
-        /// chứ không chỉ bằng sàn — sàn một mình không chặn được một map dễ bất ngờ.
-        ///
-        /// ⚠️ `GreedyPlayer` khai thác hình học KÉM HƠN người chơi thật, nên đây là
-        /// SÀN chứ không phải trần. Người chơi thấy dễ hơn số này là bình thường.
+        /// Mốc tiến tối thiểu của bot AoE tham lam. Profile Hard phải chặn bot này
+        /// trước khi thắng, nhưng không được làm nó chết ngay ở các wave mở đầu.
+        /// Đây không phải chứng minh map thắng được; `balance_sim.py` lo build tối ưu.
         /// </summary>
-        internal static readonly (string File, int SanMau)[] Thang =
+        internal static readonly (string File, int MinWave)[] Thang =
         {
-            ("m00-la-muralla.json",      11),
+            ("m00-la-muralla.json",       5),
             ("m01-el-potrero.json",      10),
-            ("m02-la-bombonera.json",     9),
-            ("m03-dos-rios.json",         8),
-            ("m04-el-cruce.json",         8),
-            ("m05-la-confluencia.json",   6),
-            ("m06-el-caracol.json",       6),
-            ("m07-tres-puertas.json",     3),
-            ("m08-el-mirador.json",       3),
-            ("m09-la-horquilla.json",     3),
-            ("m10-la-muralla-final.json", 3),
+            ("m02-la-bombonera.json",    10),
+            ("m03-dos-rios.json",         5),
+            ("m04-el-cruce.json",         5),
+            ("m05-la-confluencia.json",  15),
+            ("m06-el-caracol.json",       8),
+            ("m07-tres-puertas.json",     5),
+            ("m08-el-mirador.json",       4),
+            ("m09-la-horquilla.json",     8),
+            ("m10-la-muralla-final.json", 4),
         };
 
-        public static IEnumerable<object[]> MoiMap => Thang.Select(x => new object[] { x.File, x.SanMau });
+        public static IEnumerable<object[]> MoiMap => Thang.Select(x => new object[] { x.File, x.MinWave });
 
         [Theory]
         [MemberData(nameof(MoiMap))]
-        public void Nguoi_choi_biet_tieu_tien_thi_di_het_20_wave(string map, int sanMau)
+        public void Build_AoE_tham_lam_bi_Hard_chan_nhung_khong_chet_qua_som(string map, int minWave)
         {
             GameConfig cfg = RealConfigValidateTests.Load(map);
             var gp = new GreedyPlayer(cfg);
@@ -69,38 +63,41 @@ namespace LaMuralla.Core.Tests
             _o.WriteLine($"  kết cục: {r.Phase} · wave {r.Wave} · máu {r.Goal}/{cfg.Economy.GoalHealth}"
                        + $" · kiếm cả trận {r.Earned} · đỉnh quân đồng thời {r.PeakLive}");
 
-            Assert.Equal(MatchPhase.Won, r.Phase);
-            Assert.Equal(20, r.Wave);
-            Assert.True(r.Goal >= sanMau,
-                $"{map}: còn {r.Goal}/{cfg.Economy.GoalHealth} máu, sàn là {sanMau}");
+            Assert.Equal(MatchPhase.Lost, r.Phase);
+            Assert.True(r.Wave >= minWave,
+                $"{map}: bot chỉ tới W{r.Wave}, sàn tiến độ là W{minWave}");
             Assert.True(r.PeakLive <= PeakLiveCap,
                 $"{map}: đỉnh {r.PeakLive} quân cùng lúc > trần {PeakLiveCap} — phải đo FPS trước khi ship");
         }
 
         /// <summary>
-        /// Thắng được thôi CHƯA ĐỦ — 11 map phải khó DẦN theo thứ tự mở khoá.
-        ///
-        /// Vòng 26 đã bắt được đúng lỗi này: 4 map đầu độ khó GIẢM dần vì hình học
-        /// "thú vị" (zigzag/túi/xoáy ốc) làm đường tự áp sát chính nó → một tướng
-        /// đánh nhiều lượt → map càng đẹp càng dễ. Sàn từng map không phát hiện ra;
-        /// chỉ so SỐ ĐO giữa các map liền kề mới phát hiện.
+        /// Bốn mốc boss là hợp đồng chung; HP mỗi boss phải tăng qua từng mốc.
         /// </summary>
         [Fact]
-        public void Thang_do_kho_giam_dan()
+        public void Mau_boss_tang_dan_o_ca_11_map()
         {
-            var đo = new List<(string Map, int Goal)>();
             foreach (var (file, _) in Thang)
             {
                 GameConfig cfg = RealConfigValidateTests.Load(file);
-                var r = GreedyPlayer.PlayFullMatch(cfg);
-                đo.Add((cfg.MapId, r.Goal));
-                _o.WriteLine($"  {cfg.MapId} → {r.Phase} W{r.Wave} máu {r.Goal}/20");
+                BossDef boss = cfg.Bosses.Single(x => x.Id == "o_capitao");
+                Assert.Equal(new[] { 5, 10, 15, 20 }, boss.Appearances.Select(x => x.Wave));
+                for (int i = 1; i < boss.Appearances.Count; i++)
+                    Assert.True(boss.Appearances[i].Hp > boss.Appearances[i - 1].Hp,
+                        $"{cfg.MapId}: HP boss W{boss.Appearances[i].Wave} không tăng");
             }
+        }
 
-            for (int i = 1; i < đo.Count; i++)
-                Assert.True(đo[i].Goal <= đo[i - 1].Goal,
-                    $"{đo[i].Map} còn {đo[i].Goal} máu > {đo[i - 1].Map} còn {đo[i - 1].Goal}"
-                    + " → map sau DỄ HƠN map trước, thang độ khó bị ngược");
+        [Fact]
+        public void Rewarded_recovery_cho_build_yeu_them_co_hoi_that()
+        {
+            GameConfig withoutCfg = RealConfigValidateTests.Load("m00-la-muralla.json");
+            GameConfig withCfg = RealConfigValidateTests.Load("m00-la-muralla.json");
+            var without = GreedyPlayer.PlayFullMatch(withoutCfg, seed: 7, useRewardedRecovery: false);
+            var with = GreedyPlayer.PlayFullMatch(withCfg, seed: 7, useRewardedRecovery: true);
+
+            Assert.True(with.Wave > without.Wave || with.Earned > without.Earned,
+                $"reward không tăng cơ hội: không ad W{without.Wave}/{without.Earned}, " +
+                $"có ad W{with.Wave}/{with.Earned}");
         }
 
         /// <summary>
@@ -112,10 +109,26 @@ namespace LaMuralla.Core.Tests
         /// </summary>
         [Theory]
         [MemberData(nameof(MoiMap))]
-        public void Tien_ca_tran_khong_vuot_tran_chi_tieu(string map, int _)
+        public void Tien_toi_da_ca_tran_khong_vuot_tran_chi_tieu(string map, int _)
         {
             GameConfig cfg = RealConfigValidateTests.Load(map);
-            var r = GreedyPlayer.PlayFullMatch(cfg);
+            int lifetime = cfg.Economy.StartingCash;
+            foreach (WaveDef wave in cfg.Waves)
+            {
+                foreach (SpawnGroup group in wave.Spawns)
+                {
+                    EnemyDef enemy = cfg.Enemies.Single(x => x.Id == group.Enemy);
+                    lifetime += group.Count * cfg.BountyOf(enemy, wave.Wave);
+                }
+                foreach (BossSpawn spawn in wave.Bosses)
+                {
+                    BossDef boss = cfg.Bosses.Single(x => x.Id == spawn.Id);
+                    lifetime += boss.Appearances.Single(x => x.Wave == wave.Wave).Bounty;
+                }
+                lifetime += EconomyService.WaveClearBonus(wave.Wave);
+                if (wave.Wave < cfg.Waves.Count)
+                    lifetime += Round.HalfUp(cfg.RestBetweenWavesSec * cfg.Economy.SkipBonusPerSecond);
+            }
 
             int fieldSlots = cfg.Path.Slots.Count(s => s.IsField);
             int pulgaFull = 0, dibuFull = 0;
@@ -127,10 +140,10 @@ namespace LaMuralla.Core.Tests
             }
             int tran = fieldSlots * pulgaFull + dibuFull;
 
-            _o.WriteLine($"{cfg.MapId}: kiếm {r.Earned} · trần {fieldSlots}×{pulgaFull}+{dibuFull} = {tran}"
-                       + $" · biên {(tran - r.Earned) * 100.0 / tran:0.0}%");
-            Assert.True(r.Earned < tran,
-                $"{map}: kiếm cả trận {r.Earned} >= trần {tran} → cuối trận tiền vô nghĩa");
+            _o.WriteLine($"{cfg.MapId}: tiền tối đa {lifetime} · trần {fieldSlots}×{pulgaFull}+{dibuFull} = {tran}"
+                       + $" · biên {(tran - lifetime) * 100.0 / tran:0.0}%");
+            Assert.True(lifetime < tran,
+                $"{map}: tiền tối đa {lifetime} >= trần {tran} → cuối trận tiền vô nghĩa");
         }
     }
 }

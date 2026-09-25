@@ -17,10 +17,10 @@
 | Build iOS | Xcode | 16+ |
 | Build Android | Gradle qua Unity | Android API 24+ |
 
-**Package sẽ dùng (chốt ở M0, chưa cài):**
-`com.unity.render-pipelines.universal` · `com.unity.inputsystem` · `com.unity.test-framework` · `com.unity.2d.sprite` · `com.unity.2d.animation`
+**Package đang dùng:**
+`com.unity.render-pipelines.universal` · `com.unity.inputsystem` · `com.unity.test-framework` · `com.unity.2d.sprite` · `com.unity.2d.animation` · `com.google.ads.mobile` 11.3.0
 
-**Package cố tình KHÔNG dùng ở MVP:** DOTS/ECS (thừa với 37 quân), Addressables (1 map, không cần), Cinemachine (camera tĩnh), bất kỳ SDK ads/IAP nào (ngoài phạm vi).
+**Package cố tình KHÔNG dùng:** DOTS/ECS, Addressables, Cinemachine và SDK IAP. AdMob chỉ phục vụ rewarded ad; không có banner/interstitial.
 
 💡 *Why không DOTS: người ta hay reach cho ECS vì "tower defense = nhiều entity". 37 quân trên màn là con số MonoBehaviour thường xử lý không đổ mồ hôi. ECS ở đây chỉ mua thêm độ phức tạp và thời gian compile.*
 
@@ -449,7 +449,7 @@ Lẫn hai giá trị này = biến tướng khắc chế tank thành cái đèn 
 
 **Máu và thưởng KHÔNG ghi trong `waves.json`** — chúng tính ra bằng `baseHp × hpMultiplier(wave)` và `baseBounty × bountyMultiplier` lúc chạy.
 
-⚠️ **`hpMultiplier` là HÀM của wave, không phải hằng số theo act.** Vòng 5b đo được: hệ số bậc thang theo act tạo **vách đứng** ngay sau ranh giới — W8 headroom 1.00 và W15 0.97 (thua) trong khi W14 cuối act 1.81 (quá dễ), biên độ **1.81× trong cùng một act**. Một hệ số cho 7 wave không thể vừa cứu đầu act vừa ghì cuối act. Công thức trơn `0.69 × 1.09^(w-1)` cho **20/20 wave trong dải**. Act giờ chỉ còn điều khiển **thưởng** và ý đồ kể chuyện.
+⚠️ **`hpMultiplier` là HÀM của wave, không phải hằng số theo act.** Engine tính `base × growth^(wave-1) × latestMilestoneMultiplier(wave)`. Map có thể override `base/growth` nhưng thừa kế milestone W5/W10/W15/W20 từ `waves.json`; milestone không cộng dồn.
 
 ⚠️ **`hpMultiplier` phải ĐƠN ĐIỆU TĂNG** — máu MỖI CON quái không bao giờ được giảm giữa hai wave. Kích thước wave thì ĐƯỢC reset ở đầu act (W8, W15): đó là nhịp xả hơi cố ý sau cao trào cuối act. Ghi cả hai chỗ là mời gọi hai chỗ lệch nhau. Boss là ngoại lệ: máu/thưởng nằm ở `enemies.json → bosses[].appearances[]`.
 

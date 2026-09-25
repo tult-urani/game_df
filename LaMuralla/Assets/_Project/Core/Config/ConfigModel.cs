@@ -184,17 +184,35 @@ namespace LaMuralla.Core.Config
         public bool Contains(int wave) => wave >= FirstWave && wave <= LastWave;
     }
 
+    public sealed class HpMilestone
+    {
+        public int Wave { get; set; }
+        public double Multiplier { get; set; }
+    }
+
     /// <summary>
-    /// Máu quái theo wave. Vòng 5b thay 3 hệ số bậc thang theo act bằng công thức
-    /// trơn: bậc thang tạo vách đứng ngay sau ranh giới act (W8 headroom 1.00,
-    /// W15 0.97 = thua; W14 1.81 = quá dễ). Xem docs/03 §3.
+    /// Máu quái theo wave = đường cong trơn × hệ số Hard của mốc gần nhất.
+    /// Mốc không cộng dồn: W10 dùng trực tiếp hệ số W10, không nhân thêm W5.
     /// </summary>
     public sealed class HpScaling
     {
         public double Base { get; set; }
         public double GrowthPerWave { get; set; }
+        public IReadOnlyList<HpMilestone> Milestones { get; set; } = Array.Empty<HpMilestone>();
 
-        public double MultiplierAt(int wave) => Base * Math.Pow(GrowthPerWave, wave - 1);
+        public double MilestoneMultiplierAt(int wave)
+        {
+            double multiplier = 1;
+            foreach (HpMilestone milestone in Milestones)
+            {
+                if (milestone.Wave > wave) break;
+                multiplier = milestone.Multiplier;
+            }
+            return multiplier;
+        }
+
+        public double MultiplierAt(int wave) =>
+            Base * Math.Pow(GrowthPerWave, wave - 1) * MilestoneMultiplierAt(wave);
     }
 
     public sealed class EconomyDef
@@ -207,6 +225,10 @@ namespace LaMuralla.Core.Config
         public int FieldSlots { get; set; }
         public int GoalkeeperSlots { get; set; }
         public string RoundingMode { get; set; } = "";
+        public int RewardedHealAmount { get; set; }
+        public int RewardedHealUsesPerMatch { get; set; }
+        public int RewardedContinueHealth { get; set; }
+        public int RewardedContinueUsesPerMatch { get; set; }
     }
 
     /// <summary>Một ô đặt tướng. `Type` là "field" hoặc "goalkeeper" — thủ môn có

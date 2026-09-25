@@ -231,12 +231,12 @@
     {
       "id": "gk01",
       "type": "goalkeeper",
-      "x": -1.6,
-      "y": -8.8
+      "x": -2.291,
+      "y": -8.352
     }
   ],
   "economy": {
-    "startingCash": 600,
+    "startingCash": 800,
     "fieldSlots": 11
   },
   "_economyNote": "`startingCash` là ĐIỂM KHỞI ĐẦU ĐỂ QUÉT — phải đo bằng test 20-wave engine thật.",
@@ -335,6 +335,9 @@
     },
     {
       "wave": 5,
+      "bosses": [
+        { "id": "o_capitao", "lane": "sur" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -727,6 +730,10 @@
     },
     {
       "wave": 15,
+      "bosses": [
+        { "id": "o_capitao", "lane": "norte" },
+        { "id": "o_capitao", "lane": "sur" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -974,6 +981,10 @@
         {
           "id": "o_capitao",
           "lane": "sur"
+        },
+        {
+          "id": "o_capitao",
+          "lane": "norte"
         }
       ]
     }
@@ -988,20 +999,33 @@
       "slowResistPercent": 80,
       "appearances": [
         {
+          "wave": 5,
+          "hp": 700,
+          "bounty": 40
+        },
+        {
           "wave": 10,
           "hp": 1700,
-          "bounty": 200
+          "bounty": 80
+        },
+        {
+          "wave": 15,
+          "hp": 2000,
+          "bounty": 110
         },
         {
           "wave": 20,
-          "hp": 6600,
-          "bounty": 500
+          "hp": 3500,
+          "bounty": 180
         }
       ]
     }
   },
-  "_bossNote": "Máu boss suy từ tỉ lệ độ dài tuyến so với m00 (42.28u → 2500/9800). ĐÍCH CẦN ĐO.",
+  "_bossNote": "HP mỗi boss tăng qua W5/W10/W15/W20; W15/W20 có hai boss nên phải chấm theo tổng HP encounter.",
   "maxGapFraction": 0.243,
   "_maxGapNote": "Sàn tự tính cho 2 tuyến/11 ô là 21.8%; dò TOÀN BỘ vị trí khả dĩ (có ràng buộc |x| ≤ 4.70 để vùng chạm không tràn mép màn) chỉ đạt 23.3%. 11 ô chia hai nhánh CỘNG thân chung là giới hạn hình học thật của bố cục này, không phải bố cục hỏng.",
-  "_balanceNote": "Vòng 27b."
+  "_balanceNote": "Vòng 27b.",
+  "goalkeeperMinLeadUnits": 1.0,
+  "goalkeeperMinCoverageUnits": 2.0,
+  "_goalkeeperPlacementNote": "Ô Dibu phải canh một đoạn đường dài ít nhất goalkeeperMinCoverageUnits và toàn bộ đoạn đó phải nằm trước lối ra ít nhất goalkeeperMinLeadUnits. Hai ngưỡng được tools/path_check.py --check thi hành; không được kéo ô về sát cầu môn chỉ vì nhìn giống vị trí thủ môn."
 }

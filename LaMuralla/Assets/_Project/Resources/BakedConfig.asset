@@ -175,55 +175,57 @@ MonoBehaviour:
     \"**\u0110\xE1** \u2192 n\u1ED5 v\u1EEBa, dame m\u1EA1nh h\u01A1n. V\xF9ng n\u1ED5
     r\u1ED9ng h\u01A1n c\u1EA5p 1.\"\n        },\n        {\n          \"id\": \"cu_dap\",\n         
     \"unlockLevel\": 3,\n          \"trigger\": \"passive\",\n          \"params\":
-    {},\n          \"_summary\": \"**\u0110\u1EA1p** \u2192 n\u1ED5 l\u1EDBn, dame
-    r\u1EA5t m\u1EA1nh. V\xF9ng n\u1ED5 r\u1ED9ng nh\u1EA5t.\"\n        }\n     
-    ],\n      \"_redesign\": \"\U0001F534 2026-07-22 \u2014 user ch\u1ED1t: \u0111\u1ED5i
-    Batigol \u2192 'El Cinco' (Leandro Paredes, id gi\u1EEF nguy\xEAn). B\u1ECF sut_xuyen/ban_nang_sat_thu/cu_vo_le.
-    M\u1ED7i c\u1EA5p m\u1ED9t \u0111\xF2n N\u1ED4 (\u0111\u1EA5m/\u0111\xE1/\u0111\u1EA1p)
-    = AttackShape.Splash t\u1EA1i m\u1EE5c ti\xEAu, b\xE1n k\xEDnh = levels[].splashRadius
-    0.8/1.1/1.4, dame 60/96/150. N\u1ED5 m\u1ED7i \u0111\xF2n \u0111\xE1nh (nh\u1ECBp
-    0.6). GI\u1EEE dame (kh\xF4ng gi\u1EA3m b\xF9 AoE) \u2192 m\u1EA1nh h\u1EB3n
-    l\xEAn, ch\u1EA5p nh\u1EADn l\u1EC7ch balance_sim, \u0111o l\u1EA1i \u1EDF M1.
-    Aura = COSMETIC (\u0111\u1ECF/l\u1EEDa) \u1EDF view, kh\xF4ng c\u01A1 ch\u1EBF.\",\n     
-    \"_rateNote\": \"\U0001F534 V\xD2NG 17: nh\u1ECBp 0.4 \u2192 0.6. Gi\u1EEF nh\u1ECBp
-    0.6 sau khi th\xE0nh AoE.\"\n    },\n    {\n      \"id\": \"dibu\",\n      \"displayName\":
-    \"Dibu\",\n      \"tier\": \"B\",\n      \"role\": \"goalkeeper\",\n      \"slotType\":
-    \"goalkeeper\",\n      \"maxInstances\": 1,\n      \"isPlayer\": true,\n     
-    \"projectile\": null,\n      \"levels\": [\n        {\n          \"level\": 1,\n         
-    \"cost\": 140,\n          \"damage\": 0,\n          \"attackRate\": 0.5,\n         
-    \"range\": 1.4\n        },\n        {\n          \"level\": 2,\n          \"cost\":
-    112,\n          \"damage\": 0,\n          \"attackRate\": 0.5,\n          \"range\":
-    1.6\n        },\n        {\n          \"level\": 3,\n          \"cost\": 224,\n         
-    \"damage\": 0,\n          \"attackRate\": 0.5,\n          \"range\": 1.8\n       
-    }\n      ],\n      \"abilities\": [\n        {\n          \"id\": \"can_pha\",\n         
-    \"unlockLevel\": 1,\n          \"trigger\": \"on_attack\",\n          \"params\":
-    {\n            \"killChancePercent\": 20,\n            \"worksOnBoss\": true,\n           
-    \"dropsBounty\": true\n          },\n          \"_summary\": \"**20%** m\u1ED7i
-    l\u1EA7n th\u1EED: xo\xE1 s\u1ED5 qu\xE2n b\u1EA5t k\u1EF3, k\u1EC3 c\u1EA3 boss.
-    C\xF3 r\u01A1i ti\u1EC1n nh\u01B0 c\xFA gi\u1EBFt th\u01B0\u1EDDng.\"\n       
-    },\n        {\n          \"id\": \"ap_dao\",\n          \"unlockLevel\": 2,\n         
+    {},\n          \"_summary\": \"**H\xFAc cu\u1ED3ng n\u1ED9** \u2192 El Cinco
+    b\xF9ng n\u1ED9, lao th\u1EB3ng v\xE0o qu\xE1i r\u1ED3i bi\u1EBFn m\u1EA5t trong
+    v\u1EE5 n\u1ED5 l\u1EDBn. Dame v\xE0 v\xF9ng n\u1ED5 r\u1ED9ng nh\u1EA5t.\"\n       
+    }\n      ],\n      \"_redesign\": \"\U0001F534 2026-07-22 \u2014 user ch\u1ED1t:
+    \u0111\u1ED5i Batigol \u2192 'El Cinco' (Leandro Paredes, id gi\u1EEF nguy\xEAn).
+    B\u1ECF sut_xuyen/ban_nang_sat_thu/cu_vo_le. M\u1ED7i c\u1EA5p m\u1ED9t \u0111\xF2n
+    N\u1ED4 (\u0111\u1EA5m/\u0111\xE1/\u0111\u1EA1p) = AttackShape.Splash t\u1EA1i
+    m\u1EE5c ti\xEAu, b\xE1n k\xEDnh = levels[].splashRadius 0.8/1.1/1.4, dame 60/96/150.
+    N\u1ED5 m\u1ED7i \u0111\xF2n \u0111\xE1nh (nh\u1ECBp 0.6). GI\u1EEE dame (kh\xF4ng
+    gi\u1EA3m b\xF9 AoE) \u2192 m\u1EA1nh h\u1EB3n l\xEAn, ch\u1EA5p nh\u1EADn l\u1EC7ch
+    balance_sim, \u0111o l\u1EA1i \u1EDF M1. Aura = COSMETIC (\u0111\u1ECF/l\u1EEDa)
+    \u1EDF view, kh\xF4ng c\u01A1 ch\u1EBF.\",\n      \"_rateNote\": \"\U0001F534
+    V\xD2NG 17: nh\u1ECBp 0.4 \u2192 0.6. Gi\u1EEF nh\u1ECBp 0.6 sau khi th\xE0nh
+    AoE.\"\n    },\n    {\n      \"id\": \"dibu\",\n      \"displayName\": \"Dibu\",\n     
+    \"tier\": \"B\",\n      \"role\": \"goalkeeper\",\n      \"slotType\": \"goalkeeper\",\n     
+    \"maxInstances\": 1,\n      \"isPlayer\": true,\n      \"projectile\": null,\n     
+    \"levels\": [\n        {\n          \"level\": 1,\n          \"cost\": 140,\n         
+    \"damage\": 0,\n          \"attackRate\": 0.5,\n          \"range\": 1.4\n       
+    },\n        {\n          \"level\": 2,\n          \"cost\": 112,\n          \"damage\":
+    0,\n          \"attackRate\": 0.5,\n          \"range\": 1.6\n        },\n       
+    {\n          \"level\": 3,\n          \"cost\": 224,\n          \"damage\": 0,\n         
+    \"attackRate\": 0.5,\n          \"range\": 1.8\n        }\n      ],\n      \"abilities\":
+    [\n        {\n          \"id\": \"can_pha\",\n          \"unlockLevel\": 1,\n         
     \"trigger\": \"on_attack\",\n          \"params\": {\n            \"killChancePercent\":
-    30,\n            \"worksOnBoss\": true,\n            \"dropsBounty\": true\n         
-    },\n          \"_summary\": \"**30%** m\u1ED7i l\u1EA7n th\u1EED: xo\xE1 s\u1ED5
+    20,\n            \"worksOnBoss\": true,\n            \"dropsBounty\": true\n         
+    },\n          \"_summary\": \"**20%** m\u1ED7i l\u1EA7n th\u1EED: xo\xE1 s\u1ED5
     qu\xE2n b\u1EA5t k\u1EF3, k\u1EC3 c\u1EA3 boss. C\xF3 r\u01A1i ti\u1EC1n nh\u01B0
     c\xFA gi\u1EBFt th\u01B0\u1EDDng.\"\n        },\n        {\n          \"id\":
-    \"nguoi_hung_luan_luu\",\n          \"unlockLevel\": 3,\n          \"trigger\":
-    \"on_attack\",\n          \"params\": {\n            \"killChancePercent\": 40,\n           
-    \"worksOnBoss\": true,\n            \"dropsBounty\": true\n          },\n         
-    \"_summary\": \"**40%** m\u1ED7i l\u1EA7n th\u1EED: xo\xE1 s\u1ED5 qu\xE2n b\u1EA5t
-    k\u1EF3, k\u1EC3 c\u1EA3 boss. C\xF3 r\u01A1i ti\u1EC1n nh\u01B0 c\xFA gi\u1EBFt
-    th\u01B0\u1EDDng.\"\n        }\n      ],\n      \"_redesign\": \"\U0001F534 V\xD2NG
-    18 \u2014 user ch\u1ED1t: 'dibu ch\u1EC9 \u0111\u01B0\u1EE3c mua \u1EDF tr\u01B0\u1EDBc
-    c\u1EA7u m\xF4n v\xE0 ch\u1EC9 c\xF3 t\u1EC9 l\u1EC7 \u0111\xE1nh ch\u1EBFt qu\xE1i
-    b\u1EA5t k\u1EF3 l\xE0 20/30/40. kh\xF4ng c\xF3 k\u1EF9 n\u0103ng kh\xE1c'. \u0110\xC3
-    G\u1EE0: cooldown 20s c\u1EE7a `can_pha`, aura ch\u1EADm 30% c\u1EE7a `ap_dao`,
-    h\u1ED3i m\xE1u 1/3-c\u1EA3n c\u1EE7a `nguoi_hung_luan_luu`. GI\u1EDC: nh\u1ECBp
-    0.5 (1 l\u1EA7n th\u1EED m\u1ED7i 2s), m\u1ED7i l\u1EA7n c\xF3 killChancePercent
-    xo\xE1 s\u1ED5 qu\xE2n b\u1EA5t k\u1EF3 K\u1EC2 C\u1EA2 BOSS. H\u1EC6 QU\u1EA2
-    T\u1ED0T: ngo\u1EA1i l\u1EC7 B-01 c\u1EE7a Dibu KH\xD4NG C\xD2N C\u1EA6N. Tr\u01B0\u1EDBc
-    \u0111\xE2y c\u1EA3 3 c\u1EA5p ph\u1EA3i l\u1EB7p `blocksAtGoalLine` v\xEC c\u1EA3n
-    b\xF3ng l\xE0 \u0111\u1ECBnh ngh\u0129a c\u1EE7a v\u1ECB tr\xED th\u1EE7 m\xF4n
-    \u2014 gi\u1EDD m\u1ED7i c\u1EA5p \u0111\xFAng M\u1ED8T k\u1EF9 n\u0103ng, ch\u1EC9
+    \"ap_dao\",\n          \"unlockLevel\": 2,\n          \"trigger\": \"on_attack\",\n         
+    \"params\": {\n            \"killChancePercent\": 30,\n            \"worksOnBoss\":
+    true,\n            \"dropsBounty\": true\n          },\n          \"_summary\":
+    \"**30%** m\u1ED7i l\u1EA7n th\u1EED: xo\xE1 s\u1ED5 qu\xE2n b\u1EA5t k\u1EF3,
+    k\u1EC3 c\u1EA3 boss. C\xF3 r\u01A1i ti\u1EC1n nh\u01B0 c\xFA gi\u1EBFt th\u01B0\u1EDDng.\"\n       
+    },\n        {\n          \"id\": \"nguoi_hung_luan_luu\",\n          \"unlockLevel\":
+    3,\n          \"trigger\": \"on_attack\",\n          \"params\": {\n           
+    \"killChancePercent\": 40,\n            \"worksOnBoss\": true,\n            \"dropsBounty\":
+    true\n          },\n          \"_summary\": \"**40%** m\u1ED7i l\u1EA7n th\u1EED:
+    xo\xE1 s\u1ED5 qu\xE2n b\u1EA5t k\u1EF3, k\u1EC3 c\u1EA3 boss. C\xF3 r\u01A1i
+    ti\u1EC1n nh\u01B0 c\xFA gi\u1EBFt th\u01B0\u1EDDng.\"\n        }\n      ],\n     
+    \"_redesign\": \"\U0001F534 V\xD2NG 18 \u2014 user ch\u1ED1t: 'dibu ch\u1EC9
+    \u0111\u01B0\u1EE3c mua \u1EDF tr\u01B0\u1EDBc c\u1EA7u m\xF4n v\xE0 ch\u1EC9
+    c\xF3 t\u1EC9 l\u1EC7 \u0111\xE1nh ch\u1EBFt qu\xE1i b\u1EA5t k\u1EF3 l\xE0 20/30/40.
+    kh\xF4ng c\xF3 k\u1EF9 n\u0103ng kh\xE1c'. \u0110\xC3 G\u1EE0: cooldown 20s c\u1EE7a
+    `can_pha`, aura ch\u1EADm 30% c\u1EE7a `ap_dao`, h\u1ED3i m\xE1u 1/3-c\u1EA3n
+    c\u1EE7a `nguoi_hung_luan_luu`. GI\u1EDC: nh\u1ECBp 0.5 (1 l\u1EA7n th\u1EED
+    m\u1ED7i 2s), m\u1ED7i l\u1EA7n c\xF3 killChancePercent xo\xE1 s\u1ED5 qu\xE2n
+    b\u1EA5t k\u1EF3 K\u1EC2 C\u1EA2 BOSS. H\u1EC6 QU\u1EA2 T\u1ED0T: ngo\u1EA1i
+    l\u1EC7 B-01 c\u1EE7a Dibu KH\xD4NG C\xD2N C\u1EA6N. Tr\u01B0\u1EDBc \u0111\xE2y
+    c\u1EA3 3 c\u1EA5p ph\u1EA3i l\u1EB7p `blocksAtGoalLine` v\xEC c\u1EA3n b\xF3ng
+    l\xE0 \u0111\u1ECBnh ngh\u0129a c\u1EE7a v\u1ECB tr\xED th\u1EE7 m\xF4n \u2014
+    gi\u1EDD m\u1ED7i c\u1EA5p \u0111\xFAng M\u1ED8T k\u1EF9 n\u0103ng, ch\u1EC9
     kh\xE1c %. \u0110\xE2y l\xE0 B-01 s\u1EA1ch, kh\xF4ng ngo\u1EA1i l\u1EC7. Lu\u1EADt
     18 gi\u1EDD \xE1p cho C\u1EA2 6 t\u01B0\u1EDBng. H\u1EC6 QU\u1EA2 C\u1EA6N THEO
     D\xD5I: 0.5 \xD7 20% = 0.10 con/gi\xE2y \u1EDF Lv1, so v\u1EDBi can_pha c\u0169
@@ -288,7 +290,7 @@ MonoBehaviour:
     s\xFAt m\u1EA1nh \u2014 Batigol. Ch\u1EADm h\u01A1n: n\u1EB7ng.\"\n    },\n   
     {\n      \"id\": \"shockwave\",\n      \"speedUnitsPerSec\": -1,\n      \"_note\":
     \"D10S \u2014 hitscan, tr\xFAng t\u1EE9c th\xEC. -1 = kh\xF4ng c\xF3 \u0111\u1EA1n
-    bay.\"\n    }\n  ]\n}"
+    bay.\"\n    }\n  ]\n}\n"
   enemiesJson: "{\n  \"_comment\": \"NGU\u1ED2N CH\xC2N L\xDD S\u1ED0 LI\u1EC6U C\u1ED4
     \u0110\u1ED8NG VI\xCAN. Docs 03/04 sinh b\u1EA3ng t\u1EEB \u0111\xE2y.\",\n 
     \"_scaling\": \"M\xE1u = baseHp \xD7 act.hpMultiplier. Th\u01B0\u1EDFng = baseBounty
@@ -314,24 +316,17 @@ MonoBehaviour:
     \"abilities\": [],\n      \"_slowResistNote\": \"75%, KH\xD4NG ph\u1EA3i 50%.
     \u1EDE 50% th\xEC El \xC1rbitro m\u1ED9t m\xECnh \u0111\u01B0a headroom boss
     W20 t\u1EEB 1.18\xD7 l\xEAn 1.68\xD7. Xem docs/03 \xA72.\",\n      \"appearances\":
-    [\n        {\n          \"wave\": 10,\n          \"hp\": 2500,\n          \"bounty\":
-    200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 9800,\n         
-    \"bounty\": 500\n        }\n      ],\n      \"_hpDerivedBy\": \"tools/balance_sim.py
-    \u2014 m\xF4 h\xECnh ho\u1EA3 l\u1EF1c t\u1EADp trung (docs/04 \xA73.3). M\xE1u
-    ch\u1ECDn \u0111\u1EC3 T\xC1CH \u0110\xD4I hai ki\u1EC3u build: W20 \u1EDF 9800
-    \u2192 build t\u1ED1i-\u01B0u-\u0111\xE1m-\u0111\xF4ng (D10S nhi\u1EC1u) headroom
-    0.74 = THUA, build c\xF3-t\xEDnh-boss (La Pulga/El Fideo \u0111\u01A1n m\u1EE5c
-    ti\xEAu) 1.55 = th\u1EAFng. \u0110\xF3 ch\xEDnh l\xE0 c\u01A1 ch\u1EBF: boss
-    tr\u1EEBng ph\u1EA1t \u0111\xFAng c\xE1i build t\u1ED1i \u01B0u cu\u1ED1i game.
-    W10 \u1EDF 2100 d\u1EC5 h\u01A1n c\xF3 ch\u1EE7 \xFD \u2014 \u0111\u1EA7u game
-    thi\u1EBFu ti\u1EC1n n\xEAn build to\xE0n Batigol \u0111\u01A1n m\u1EE5c ti\xEAu,
-    v\u1ED1n \u0111\xE3 h\u1EE3p boss (1.22). Boss W10 d\u1EA1y, boss W20 ki\u1EC3m
-    tra. \U0001F535 V\xD2NG 22: 2100\u21922500 v\xE0 6700\u21929800, l\u1EA5y t\u1EEB
-    `balance_sim.py --solve` sau khi La Pulga Lv3 \u0111\u01B0\u1EE3c s\u1EEDa ngh\u1ECBch
-    l\xFD gi\xE1 tr\u1ECB (141\u2192170). Kh\xF4ng n\xE2ng m\xE1u boss th\xEC headroom
-    build-c\xF3-t\xEDnh-boss \u1EDF W20 v\u1ECDt 1.58 \u2192 1.91, v\u01B0\u1EE3t
-    tr\u1EA7n d\u1EA3i c\u1EE9ng 1.65 \u2014 t\u1EE9c boss h\u1EBFt l\xE0 b\xE0i
-    ki\u1EC3m.\"\n    }\n  ]\n}\n"
+    [\n        {\n          \"wave\": 5,\n          \"hp\": 1000,\n          \"bounty\":
+    40\n        },\n        {\n          \"wave\": 10,\n          \"hp\": 2500,\n         
+    \"bounty\": 80\n        },\n        {\n          \"wave\": 15,\n          \"hp\":
+    2800,\n          \"bounty\": 110\n        },\n        {\n          \"wave\":
+    20,\n          \"hp\": 5000,\n          \"bounty\": 180\n        }\n      ],\n     
+    \"_hpDerivedBy\": \"M\u1ED1c boss Hard 2026-08-26: W5/W10/W15/W20 c\xF3 1/1/2/2
+    boss; HP m\u1ED7i boss t\u0103ng 1000/2500/2800/5000, n\xEAn t\u1ED5ng HP encounter
+    t\u0103ng 1000/2500/5600/10000. balance_sim t\xEDnh \u0111\u1EE7 s\u1ED1 boss
+    cho headroom 1.65/1.43/1.31/1.31; build \u0111\xE1m \u0111\xF4ng ch\u1EC9 0.49/0.41/0.45/0.59
+    n\xEAn ph\u1EA3i b\u1ED5 sung s\xE1t th\u01B0\u01A1ng \u0111\u01A1n m\u1EE5c
+    ti\xEAu.\"\n    }\n  ]\n}\n"
   wavesJson: "{\n  \"_comment\": \"NGU\u1ED2N CH\xC2N L\xDD WAVE. Docs 03 \xA74 sinh
     b\u1EA3ng t\u1EEB \u0111\xE2y. M\xE1u/th\u01B0\u1EDFng KH\xD4NG ghi \u1EDF \u0111\xE2y
     \u2014 t\xEDnh t\u1EEB enemies.json \xD7 act multiplier.\",\n  \"spawnIntervalSec\":
@@ -367,7 +362,8 @@ MonoBehaviour:
     \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
     10,\n          \"lane\": \"L1\"\n        },\n        {\n          \"enemy\":
     \"tifoso\",\n          \"count\": 8,\n          \"lane\": \"L1\"\n        }\n     
-    ]\n    },\n    {\n      \"wave\": 5,\n      \"spawns\": [\n        {\n         
+    ]\n    },\n    {\n      \"wave\": 5,\n      \"bosses\": [\n        { \"id\":
+    \"o_capitao\", \"lane\": \"L1\" }\n      ],\n      \"spawns\": [\n        {\n         
     \"enemy\": \"adepto\",\n          \"count\": 8,\n          \"lane\": \"L1\"\n       
     },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n         
     \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
@@ -416,83 +412,95 @@ MonoBehaviour:
     },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 13,\n         
     \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
     \"count\": 5,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n    {\n     
-    \"wave\": 15,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
-    \"count\": 10,\n          \"lane\": \"L1\"\n        },\n        {\n         
-    \"enemy\": \"tifoso\",\n          \"count\": 10,\n          \"lane\": \"L1\"\n       
-    },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-    \"lane\": \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 16,\n     
+    \"wave\": 15,\n      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\":
+    \"L1\" },\n        { \"id\": \"o_capitao\", \"lane\": \"L1\" }\n      ],\n     
     \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
     10,\n          \"lane\": \"L1\"\n        },\n        {\n          \"enemy\":
-    \"tifoso\",\n          \"count\": 13,\n          \"lane\": \"L1\"\n        },\n       
+    \"tifoso\",\n          \"count\": 10,\n          \"lane\": \"L1\"\n        },\n       
     {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\":
-    \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 17,\n      \"spawns\":
-    [\n        {\n          \"enemy\": \"adepto\",\n          \"count\": 13,\n         
+    \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 16,\n      \"spawns\":
+    [\n        {\n          \"enemy\": \"adepto\",\n          \"count\": 10,\n         
     \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
     \"count\": 13,\n          \"lane\": \"L1\"\n        },\n        {\n         
-    \"enemy\": \"tambor\",\n          \"count\": 5,\n          \"lane\": \"L1\"\n       
-    }\n      ]\n    },\n    {\n      \"wave\": 18,\n      \"spawns\": [\n       
+    \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
+    }\n      ]\n    },\n    {\n      \"wave\": 17,\n      \"spawns\": [\n       
     {\n          \"enemy\": \"adepto\",\n          \"count\": 13,\n          \"lane\":
     \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-    15,\n          \"lane\": \"L1\"\n        },\n        {\n          \"enemy\":
-    \"tambor\",\n          \"count\": 6,\n          \"lane\": \"L1\"\n        }\n     
-    ]\n    },\n    {\n      \"wave\": 19,\n      \"spawns\": [\n        {\n         
-    \"enemy\": \"adepto\",\n          \"count\": 15,\n          \"lane\": \"L1\"\n       
-    },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 16,\n         
+    13,\n          \"lane\": \"L1\"\n        },\n        {\n          \"enemy\":
+    \"tambor\",\n          \"count\": 5,\n          \"lane\": \"L1\"\n        }\n     
+    ]\n    },\n    {\n      \"wave\": 18,\n      \"spawns\": [\n        {\n         
+    \"enemy\": \"adepto\",\n          \"count\": 13,\n          \"lane\": \"L1\"\n       
+    },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 15,\n         
     \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-    \"count\": 8,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n    {\n     
-    \"wave\": 20,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
-    \"count\": 18,\n          \"lane\": \"L1\"\n        },\n        {\n         
-    \"enemy\": \"tifoso\",\n          \"count\": 20,\n          \"lane\": \"L1\"\n       
-    },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 9,\n         
-    \"lane\": \"L1\"\n        }\n      ],\n      \"bosses\": [\n        {\n         
+    \"count\": 6,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n    {\n     
+    \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
+    \"count\": 15,\n          \"lane\": \"L1\"\n        },\n        {\n         
+    \"enemy\": \"tifoso\",\n          \"count\": 16,\n          \"lane\": \"L1\"\n       
+    },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 8,\n         
+    \"lane\": \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 20,\n     
+    \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+    18,\n          \"lane\": \"L1\"\n        },\n        {\n          \"enemy\":
+    \"tifoso\",\n          \"count\": 20,\n          \"lane\": \"L1\"\n        },\n       
+    {\n          \"enemy\": \"tambor\",\n          \"count\": 9,\n          \"lane\":
+    \"L1\"\n        }\n      ],\n      \"bosses\": [\n        {\n          \"id\":
+    \"o_capitao\",\n          \"lane\": \"L1\"\n        },\n        {\n         
     \"id\": \"o_capitao\",\n          \"lane\": \"L1\"\n        }\n      ]\n    }\n 
-    ],\n  \"hpScaling\": {\n    \"_comment\": \"M\xC1U qu\xE1i = baseHp \xD7 hpMultiplier(wave),
-    l\xE0m tr\xF2n half_up. Thay 3 h\u1EC7 s\u1ED1 b\u1EADc thang theo act (1.0/1.8/3.8)
-    b\u1EB1ng M\u1ED8T c\xF4ng th\u1EE9c tr\u01A1n.\",\n    \"formula\": \"hpMultiplier(wave)
-    = base \xD7 pow(growthPerWave, wave - 1)\",\n    \"base\": 0.67,\n    \"growthPerWave\":
-    1.09,\n    \"_derivedBy\": \"tools/balance_sim.py --solve \u2014 qu\xE9t (base,
-    growth), ch\u1ECDn b\u1ED9 \u0111\u01B0a nhi\u1EC1u wave v\xE0o d\u1EA3i headroom
-    nh\u1EA5t. KH\xD4NG ch\u1EC9nh tay: \u0111\u1ED5i s\u1ED1 \u1EDF \u0111\xE2y
-    th\xEC ch\u1EA1y l\u1EA1i sim \u0111\u1EC3 bi\u1EBFt wave n\xE0o v\u1EE1.\",\n   
-    \"_whyNotPerAct\": \"H\u1EC7 s\u1ED1 b\u1EADc thang theo act t\u1EA1o V\xC1CH
-    \u0110\u1EE8NG ngay sau ranh gi\u1EDBi act: \u0111o \u0111\u01B0\u1EE3c W8 headroom
-    1.00 v\xE0 W15 0.97 (thua) trong khi W14 cu\u1ED1i act 1.81 (qu\xE1 d\u1EC5)
-    \u2014 bi\xEAn \u0111\u1ED9 1.81\xD7 trong c\xF9ng act. M\u1ED9t h\u1EC7 s\u1ED1
-    cho 7 wave kh\xF4ng th\u1EC3 v\u1EEBa c\u1EE9u \u0111\u1EA7u act v\u1EEBa gh\xEC
-    cu\u1ED1i act. C\xF4ng th\u1EE9c tr\u01A1n: 20/20 wave trong d\u1EA3i.\",\n   
-    \"_monotone\": \"B\u1EAET BU\u1ED8C \u0111\u01A1n \u0111i\u1EC7u t\u0103ng \u2014
-    m\xE1u M\u1ED6I CON qu\xE1i kh\xF4ng bao gi\u1EDD \u0111\u01B0\u1EE3c gi\u1EA3m
-    gi\u1EEFa hai wave. K\xEDch th\u01B0\u1EDBc wave th\xEC \u0110\u01AF\u1EE2C reset
-    \u1EDF \u0111\u1EA7u act (W8, W15): \u0111\xF3 l\xE0 nh\u1ECBp x\u1EA3 h\u01A1i
-    c\u1ED1 \xFD sau cao tr\xE0o cu\u1ED1i act, kh\xF4ng ph\u1EA3i l\u1ED7i.\"\n 
-    },\n  \"_actsNote\": \"Act gi\u1EDD CH\u1EC8 \u0111i\u1EC1u khi\u1EC3n th\u01B0\u1EDFng
-    (bountyMultiplier) v\xE0 \xFD \u0111\u1ED3 k\u1EC3 chuy\u1EC7n. M\xE1u do hpScaling
-    lo \u2014 xem _whyNotPerAct.\",\n  \"_spawnsNote\": \"\U0001F535 2026-08-21 \u2014
-    `spawns` \u0111\u1ED5i t\u1EEB OBJECT `{adepto: 8}` sang M\u1EA2NG `[{enemy,
-    count, lane}]`. Object kh\xF4ng nh\xE9t \u0111\u01B0\u1EE3c `lane` v\xE0 kh\xF4ng
-    di\u1EC5n t\u1EA3 n\u1ED5i '8 adepto tuy\u1EBFn tr\xE1i + 6 adepto tuy\u1EBFn
-    ph\u1EA3i' v\xEC kho\xE1 tr\xF9ng. D\u1EA1ng object KH\xD4NG c\xF2n \u0111\u01B0\u1EE3c
-    ConfigMapper ch\u1EA5p nh\u1EADn \u2014 c\u1ED1 \xFD, nh\u1EADn c\u1EA3 hai th\xEC
-    m\u1ECDi ch\u1ED7 \u0111\u1ECDc ph\u1EA3i r\u1EBD nh\xE1nh v\xE0 nh\xE1nh \u0111\xF3
-    l\xE0 n\u01A1i bug im l\u1EB7ng sinh ra. Xem docs/08 \xA72.2(b).\"\n}"
+    ],\n  \"hpScaling\": {\n    \"_comment\": \"M\xC1U qu\xE1i = baseHp \xD7 \u0111\u01B0\u1EDDng
+    cong tr\u01A1n \xD7 h\u1EC7 s\u1ED1 Hard c\u1EE7a m\u1ED1c g\u1EA7n nh\u1EA5t,
+    l\xE0m tr\xF2n half_up. C\xE1c m\u1ED1c KH\xD4NG c\u1ED9ng d\u1ED3n.\",\n   
+    \"formula\": \"hpMultiplier(wave) = base \xD7 pow(growthPerWave, wave - 1) \xD7
+    latestMilestoneMultiplier(wave)\",\n    \"base\": 0.67,\n    \"growthPerWave\":
+    1.09,\n    \"milestones\": [\n      { \"wave\": 5, \"multiplier\": 1.2 },\n     
+    { \"wave\": 10, \"multiplier\": 1.4 },\n      { \"wave\": 15, \"multiplier\":
+    1.7 },\n      { \"wave\": 20, \"multiplier\": 2.0 }\n    ],\n    \"_derivedBy\":
+    \"tools/balance_sim.py --solve \u2014 qu\xE9t (base, growth), ch\u1ECDn b\u1ED9
+    \u0111\u01B0a nhi\u1EC1u wave v\xE0o d\u1EA3i headroom nh\u1EA5t. KH\xD4NG ch\u1EC9nh
+    tay: \u0111\u1ED5i s\u1ED1 \u1EDF \u0111\xE2y th\xEC ch\u1EA1y l\u1EA1i sim \u0111\u1EC3
+    bi\u1EBFt wave n\xE0o v\u1EE1.\",\n    \"_whyNotPerAct\": \"H\u1EC7 s\u1ED1 b\u1EADc
+    thang theo act t\u1EA1o V\xC1CH \u0110\u1EE8NG ngay sau ranh gi\u1EDBi act: \u0111o
+    \u0111\u01B0\u1EE3c W8 headroom 1.00 v\xE0 W15 0.97 (thua) trong khi W14 cu\u1ED1i
+    act 1.81 (qu\xE1 d\u1EC5) \u2014 bi\xEAn \u0111\u1ED9 1.81\xD7 trong c\xF9ng
+    act. M\u1ED9t h\u1EC7 s\u1ED1 cho 7 wave kh\xF4ng th\u1EC3 v\u1EEBa c\u1EE9u
+    \u0111\u1EA7u act v\u1EEBa gh\xEC cu\u1ED1i act. C\xF4ng th\u1EE9c tr\u01A1n:
+    20/20 wave trong d\u1EA3i.\",\n    \"_monotone\": \"B\u1EAET BU\u1ED8C \u0111\u01A1n
+    \u0111i\u1EC7u t\u0103ng \u2014 m\xE1u M\u1ED6I CON qu\xE1i kh\xF4ng bao gi\u1EDD
+    \u0111\u01B0\u1EE3c gi\u1EA3m gi\u1EEFa hai wave. K\xEDch th\u01B0\u1EDBc wave
+    th\xEC \u0110\u01AF\u1EE2C reset \u1EDF \u0111\u1EA7u act (W8, W15): \u0111\xF3
+    l\xE0 nh\u1ECBp x\u1EA3 h\u01A1i c\u1ED1 \xFD sau cao tr\xE0o cu\u1ED1i act,
+    kh\xF4ng ph\u1EA3i l\u1ED7i.\"\n  },\n  \"_actsNote\": \"Act gi\u1EDD CH\u1EC8
+    \u0111i\u1EC1u khi\u1EC3n th\u01B0\u1EDFng (bountyMultiplier) v\xE0 \xFD \u0111\u1ED3
+    k\u1EC3 chuy\u1EC7n. M\xE1u do hpScaling lo \u2014 xem _whyNotPerAct.\",\n  \"_spawnsNote\":
+    \"\U0001F535 2026-08-21 \u2014 `spawns` \u0111\u1ED5i t\u1EEB OBJECT `{adepto:
+    8}` sang M\u1EA2NG `[{enemy, count, lane}]`. Object kh\xF4ng nh\xE9t \u0111\u01B0\u1EE3c
+    `lane` v\xE0 kh\xF4ng di\u1EC5n t\u1EA3 n\u1ED5i '8 adepto tuy\u1EBFn tr\xE1i
+    + 6 adepto tuy\u1EBFn ph\u1EA3i' v\xEC kho\xE1 tr\xF9ng. D\u1EA1ng object KH\xD4NG
+    c\xF2n \u0111\u01B0\u1EE3c ConfigMapper ch\u1EA5p nh\u1EADn \u2014 c\u1ED1 \xFD,
+    nh\u1EADn c\u1EA3 hai th\xEC m\u1ECDi ch\u1ED7 \u0111\u1ECDc ph\u1EA3i r\u1EBD
+    nh\xE1nh v\xE0 nh\xE1nh \u0111\xF3 l\xE0 n\u01A1i bug im l\u1EB7ng sinh ra. Xem
+    docs/08 \xA72.2(b).\"\n}\n"
   economyJson: "{\n  \"_comment\": \"NGU\u1ED2N CH\xC2N L\xDD KINH T\u1EBE + THAM
     S\u1ED0 M\xD4 H\xCCNH C\xC2N B\u1EB0NG. Docs 04 sinh b\u1EA3ng t\u1EEB \u0111\xE2y.\",\n 
     \"startingCash\": 700,\n  \"goalHealth\": 20,\n  \"skipBonusPerSecond\": 3,\n 
     \"sellRefundRatio\": 0.6,\n  \"goalRepair\": {\n    \"baseCost\": 200,\n    \"costGrowth\":
-    1.5,\n    \"healAmount\": 1\n  },\n  \"slowCapPercent\": 70,\n  \"_slowOrderOfOperations\":
-    \"L\u1EA5y MAX c\xE1c ngu\u1ED3n slow \u2192 cap 70% \u2192 R\u1ED2I m\u1EDBi
-    nh\xE2n (1 - slowResistPercent/100). L\xE0m ng\u01B0\u1EE3c l\u1EA1i th\xEC kh\xE1ng
-    ch\u1EADm th\xE0nh v\xF4 ngh\u0129a. Xem docs/01 \xA78 **FM-14**.\",\n  \"roundingMode\":
-    \"half_up\",\n  \"_roundingNote\": \"B\u1EAET BU\u1ED8C. \xC1p cho M\u1ECCI ph\xE9p
-    round(gi\xE1_tr\u1ECB_g\u1ED1c \xD7 h\u1EC7_s\u1ED1) \u2014 m\xE1u v\xE0 th\u01B0\u1EDFng.
-    'half_up' = 62.5 \u2192 63 (l\xE0m tr\xF2n ra xa s\u1ED1 0).\",\n  \"_roundingWarning\":
-    \"\u26A0\uFE0F Python round() V\xC0 C# Math.Round() m\u1EB7c \u0111\u1ECBnh d\xF9ng
-    BANKER'S ROUNDING (l\xE0m tr\xF2n v\u1EC1 s\u1ED1 ch\u1EB5n): round(62.5) = 62,
-    KH\xD4NG ph\u1EA3i 63. N\u1EBFu kh\xF4ng \xE9p half_up, tools/gen_docs.py v\xE0
-    Unity s\u1EBD ra hai k\u1EBFt qu\u1EA3 KH\xC1C NHAU tr\xEAn c\xF9ng m\u1ED9t
-    config. \u0110\xE3 th\u1EF1c x\u1EA3y ra: Tambor th\u01B0\u1EDFng 25 \xD7 2.5
-    = 62.5 \u2192 l\u1EC7ch 28 Peso tr\xEAn c\u1EA3 Act 3.\",\n  \"_roundingImpl\":
-    {\n    \"python\": \"from decimal import Decimal, ROUND_HALF_UP; int(Decimal(x).quantize(0,
+    1.5,\n    \"healAmount\": 1\n  },\n  \"rewardedRecovery\": {\n    \"_comment\":
+    \"Qu\u1EA3ng c\xE1o c\xF3 th\u01B0\u1EDFng duy nh\u1EA5t: h\u1ED3i m\xE1u ch\u1EC9
+    trong gi\u1EDD ngh\u1EC9; continue ch\u1EC9 sau khi thua. Ch\u1EC9 callback reward
+    m\u1EDBi \xE1p d\u1EE5ng.\",\n    \"healAmount\": 5,\n    \"healUsesPerMatch\":
+    1,\n    \"continueHealth\": 5,\n    \"continueUsesPerMatch\": 1\n  },\n  \"slowCapPercent\":
+    70,\n  \"_slowOrderOfOperations\": \"L\u1EA5y MAX c\xE1c ngu\u1ED3n slow \u2192
+    cap 70% \u2192 R\u1ED2I m\u1EDBi nh\xE2n (1 - slowResistPercent/100). L\xE0m
+    ng\u01B0\u1EE3c l\u1EA1i th\xEC kh\xE1ng ch\u1EADm th\xE0nh v\xF4 ngh\u0129a.
+    Xem docs/01 \xA78 **FM-14**.\",\n  \"roundingMode\": \"half_up\",\n  \"_roundingNote\":
+    \"B\u1EAET BU\u1ED8C. \xC1p cho M\u1ECCI ph\xE9p round(gi\xE1_tr\u1ECB_g\u1ED1c
+    \xD7 h\u1EC7_s\u1ED1) \u2014 m\xE1u v\xE0 th\u01B0\u1EDFng. 'half_up' = 62.5
+    \u2192 63 (l\xE0m tr\xF2n ra xa s\u1ED1 0).\",\n  \"_roundingWarning\": \"\u26A0\uFE0F
+    Python round() V\xC0 C# Math.Round() m\u1EB7c \u0111\u1ECBnh d\xF9ng BANKER'S
+    ROUNDING (l\xE0m tr\xF2n v\u1EC1 s\u1ED1 ch\u1EB5n): round(62.5) = 62, KH\xD4NG
+    ph\u1EA3i 63. N\u1EBFu kh\xF4ng \xE9p half_up, tools/gen_docs.py v\xE0 Unity
+    s\u1EBD ra hai k\u1EBFt qu\u1EA3 KH\xC1C NHAU tr\xEAn c\xF9ng m\u1ED9t config.
+    \u0110\xE3 th\u1EF1c x\u1EA3y ra: Tambor th\u01B0\u1EDFng 25 \xD7 2.5 = 62.5
+    \u2192 l\u1EC7ch 28 Peso tr\xEAn c\u1EA3 Act 3.\",\n  \"_roundingImpl\": {\n   
+    \"python\": \"from decimal import Decimal, ROUND_HALF_UP; int(Decimal(x).quantize(0,
     ROUND_HALF_UP))\",\n    \"csharp\": \"Math.Round(x, MidpointRounding.AwayFromZero)\"\n 
     },\n  \"starThresholds\": {\n    \"one\": 1,\n    \"two\": 10,\n    \"three\":
     20\n  },\n  \"fieldSlots\": 11,\n  \"goalkeeperSlots\": 1,\n  \"balanceModel\":
@@ -620,7 +628,7 @@ MonoBehaviour:
     nh\u01B0ng ki\u1EBFm QU\xC1 MU\u1ED8N \u2014 W6 m\u1EDBi c\xF3 2 t\u01B0\u1EDBng
     trong khi wave \u0111\xE3 19 con. N\xE2ng bounty th\xEC ti\u1EC1n d\u1ED3n v\u1EC1
     cu\u1ED1i tr\u1EADn, ch\u1ED7 v\u1ED1n \u0111\xE3 d\u01B0; n\xE2ng startingCash
-    \u0111\u1ED5 \u0111\xFAng v\xE0o ch\u1ED7 thi\u1EBFu.\"\n}"
+    \u0111\u1ED5 \u0111\xFAng v\xE0o ch\u1ED7 thi\u1EBFu.\"\n}\n"
   pathJson: "{\n  \"id\": \"m00\",\n  \"displayName\": \"La Muralla\",\n  \"order\":
     0,\n  \"difficulty\": 1,\n  \"_mapNote\": \"\U0001F535 2026-08-21 \u2014 file
     n\xE0y TR\u01AF\u1EDAC \u0110\xC2Y l\xE0 `config/path.json`. \u0110\u1ED5i ch\u1ED7
@@ -779,8 +787,8 @@ MonoBehaviour:
     -3.03\n    },\n    {\n      \"id\": \"f10\",\n      \"type\": \"field\",\n     
     \"x\": 4.13,\n      \"y\": -4.75\n    },\n    {\n      \"id\": \"f11\",\n     
     \"type\": \"field\",\n      \"x\": -1.49,\n      \"y\": -4.9\n    },\n    {\n     
-    \"id\": \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": 2.15,\n     
-    \"y\": -6.44\n    }\n  ],\n  \"_openIssues\": {\n    \"Q1\": \"\u2705 \u0110\xD3NG
+    \"id\": \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": 2.145,\n     
+    \"y\": -8.239\n    }\n  ],\n  \"_openIssues\": {\n    \"Q1\": \"\u2705 \u0110\xD3NG
     \u1EDF v\xF2ng 5. To\u1EA1 \u0111\u1ED9 l\xE0 th\u1EADt, \u0111o b\u1EB1ng tools/path_check.py.\",\n   
     \"chordGeometry\": \"\u2705 GI\u1EA2I XONG \u1EDF v\xF2ng 5 b\u1EB1ng c\xE1ch
     thu t\u1EA7m. chord/2R \u0111o tr\xEAn 11 \xF4 \u1EDF t\u1EA7m l\u1EDBn nh\u1EA5t
@@ -828,11 +836,18 @@ MonoBehaviour:
     s\u1ED1 n\xE0y th\xEC PH\u1EA2I xem l\u1EA1i `hpScaling.growthPerWave` \u2014
     hai th\u1EE9 b\xF9 nhau. M\u1ED1c so s\xE1nh: m00 = 1.74 (\u0111\u01B0\u1EDDng
     kh\xF4ng t\u1EF1 \xE1p s\xE1t, m\u1ED7i v\xF2ng t\u1EA7m c\u1EAFt \u0111\xFAng
-    1 kh\xFAc).\",\n  \"_difficultyNote\": \"\u26051 ch\u1EE9 kh\xF4ng ph\u1EA3i
-    \u26052: \u0111o tr\xEAn engine th\u1EADt, m00 l\xE0 map D\u1EC4 NH\u1EA4T (c\xF2n
-    11/20 m\xE1u, cao nh\u1EA5t trong 11 map). Nh\xE3n \u26052 c\u0169 m\xE2u thu\u1EABn
-    v\u1EDBi m01 mang \u26051 m\xE0 l\u1EA1i kh\xF3 h\u01A1n \u2014 xem thang \u1EDF
-    docs/08 \xA70.\"\n}\n"
+    1 kh\xFAc).\",\n  \"goalkeeperMinLeadUnits\": 1.0,\n  \"goalkeeperMinCoverageUnits\":
+    2.0,\n  \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+    \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+    to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+    l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+    tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+    \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+    tr\xED th\u1EE7 m\xF4n.\",\n  \"_difficultyNote\": \"\u26051 ch\u1EE9 kh\xF4ng
+    ph\u1EA3i \u26052: \u0111o tr\xEAn engine th\u1EADt, m00 l\xE0 map D\u1EC4 NH\u1EA4T
+    (c\xF2n 11/20 m\xE1u, cao nh\u1EA5t trong 11 map). Nh\xE3n \u26052 c\u0169 m\xE2u
+    thu\u1EABn v\u1EDBi m01 mang \u26051 m\xE0 l\u1EA1i kh\xF3 h\u01A1n \u2014 xem
+    thang \u1EDF docs/08 \xA70.\"\n}\n"
   maps:
   - id: m00
     displayName: La Muralla
@@ -999,7 +1014,7 @@ MonoBehaviour:
       \"id\": \"f10\",\n      \"type\": \"field\",\n      \"x\": 4.13,\n      \"y\":
       -4.75\n    },\n    {\n      \"id\": \"f11\",\n      \"type\": \"field\",\n     
       \"x\": -1.49,\n      \"y\": -4.9\n    },\n    {\n      \"id\": \"gk01\",\n     
-      \"type\": \"goalkeeper\",\n      \"x\": 2.15,\n      \"y\": -6.44\n    }\n 
+      \"type\": \"goalkeeper\",\n      \"x\": 2.145,\n      \"y\": -8.239\n    }\n 
       ],\n  \"_openIssues\": {\n    \"Q1\": \"\u2705 \u0110\xD3NG \u1EDF v\xF2ng
       5. To\u1EA1 \u0111\u1ED9 l\xE0 th\u1EADt, \u0111o b\u1EB1ng tools/path_check.py.\",\n   
       \"chordGeometry\": \"\u2705 GI\u1EA2I XONG \u1EDF v\xF2ng 5 b\u1EB1ng c\xE1ch
@@ -1048,7 +1063,14 @@ MonoBehaviour:
       bi\u1EBFt NGAY. \u26A0\uFE0F \u0110\u1ED5i s\u1ED1 n\xE0y th\xEC PH\u1EA2I
       xem l\u1EA1i `hpScaling.growthPerWave` \u2014 hai th\u1EE9 b\xF9 nhau. M\u1ED1c
       so s\xE1nh: m00 = 1.74 (\u0111\u01B0\u1EDDng kh\xF4ng t\u1EF1 \xE1p s\xE1t,
-      m\u1ED7i v\xF2ng t\u1EA7m c\u1EAFt \u0111\xFAng 1 kh\xFAc).\",\n  \"_difficultyNote\":
+      m\u1ED7i v\xF2ng t\u1EA7m c\u1EAFt \u0111\xFAng 1 kh\xFAc).\",\n  \"goalkeeperMinLeadUnits\":
+      1.0,\n  \"goalkeeperMinCoverageUnits\": 2.0,\n  \"_goalkeeperPlacementNote\":
+      \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n \u0111\u01B0\u1EDDng d\xE0i
+      \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0 to\xE0n b\u1ED9 \u0111o\u1EA1n
+      \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits.
+      Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c tools/path_check.py --check thi h\xE0nh;
+      kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9
+      v\xEC nh\xECn gi\u1ED1ng v\u1ECB tr\xED th\u1EE7 m\xF4n.\",\n  \"_difficultyNote\":
       \"\u26051 ch\u1EE9 kh\xF4ng ph\u1EA3i \u26052: \u0111o tr\xEAn engine th\u1EADt,
       m00 l\xE0 map D\u1EC4 NH\u1EA4T (c\xF2n 11/20 m\xE1u, cao nh\u1EA5t trong 11
       map). Nh\xE3n \u26052 c\u0169 m\xE2u thu\u1EABn v\u1EDBi m01 mang \u26051 m\xE0
@@ -1104,9 +1126,9 @@ MonoBehaviour:
       \"id\": \"f10\",\n      \"type\": \"field\",\n      \"x\": 1.2,\n      \"y\":
       -7.4\n    },\n    {\n      \"id\": \"f11\",\n      \"type\": \"field\",\n     
       \"x\": -2.0,\n      \"y\": -6.6\n    },\n    {\n      \"id\": \"gk01\",\n     
-      \"type\": \"goalkeeper\",\n      \"x\": 1.0,\n      \"y\": -8.8\n    }\n  ],\n 
-      \"economy\": {\n    \"startingCash\": 700,\n    \"fieldSlots\": 11\n  },\n 
-      \"_economyNote\": \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI \u0110\u1EA6U
+      \"type\": \"goalkeeper\",\n      \"x\": -0.376,\n      \"y\": -7.112\n    }\n 
+      ],\n  \"economy\": {\n    \"startingCash\": 700,\n    \"fieldSlots\": 11\n 
+      },\n  \"_economyNote\": \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI \u0110\u1EA6U
       \u0110\u1EC2 QU\xC9T, ch\u01B0a ph\u1EA3i s\u1ED1 ch\u1ED1t \u2014 ph\u1EA3i
       \u0111o b\u1EB1ng test 20-wave engine th\u1EADt nh\u01B0 m00 \u0111\xE3 l\xE0m
       (650 thua W10 \xB7 670 ch\u1EBFt 0/20 \xB7 700 th\u1EAFng 11/20).\",\n  \"waves\":
@@ -1122,6 +1144,7 @@ MonoBehaviour:
       \"adepto\",\n          \"count\": 10,\n          \"lane\": \"L1\"\n       
       },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n         
       \"lane\": \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 5,\n     
+      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\": \"L1\" }\n      ],\n     
       \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
       8,\n          \"lane\": \"L1\"\n        },\n        {\n          \"enemy\":
       \"tifoso\",\n          \"count\": 6,\n          \"lane\": \"L1\"\n        },\n       
@@ -1172,82 +1195,92 @@ MonoBehaviour:
       \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 12,\n          \"lane\": \"L1\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 15,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 9,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 9,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 16,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 9,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 12,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 17,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 12,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 12,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 18,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 12,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 14,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 5,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 19,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 14,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 15,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 7,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 20,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 16,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 18,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 8,\n          \"lane\": \"L1\"\n       
-      }\n      ],\n      \"bosses\": [\n        {\n          \"id\": \"o_capitao\",\n         
-      \"lane\": \"L1\"\n        }\n      ]\n    }\n  ],\n  \"bossOverrides\": {\n   
-      \"o_capitao\": {\n      \"slowResistPercent\": 75,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 2600,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 10200,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O \u2014 ho\u1EA3
-      l\u1EF1c d\u1ED3n l\xEAn boss t\u1EC9 l\u1EC7 v\u1EDBi th\u1EDDi gian qu\xE2n
-      n\u1EB1m trong t\u1EA7m, m\xE0 c\xE1i \u0111\xF3 ph\u1EE5 thu\u1ED9c \u0111\u1ED9
-      d\xE0i tuy\u1EBFn.\",\n  \"hpScaling\": {\n    \"base\": 0.67,\n    \"growthPerWave\":
-      1.12\n  },\n  \"_hpScalingNote\": \"\U0001F534 growth RI\xCANG cho map n\xE0y,
-      cao h\u01A1n 1.09 d\xF9ng chung. L\xFD do \u0110O \u0110\u01AF\u1EE2C: h\xECnh
-      h\u1ECDc c\u1EE7a map l\xE0m \u0110\u01AF\u1EDCNG T\u1EF0 \xC1P S\xC1T CH\xCDNH
-      N\xD3, n\xEAn m\u1ED9t v\xF2ng t\u1EA7m c\u1EAFt \u0111\u01B0\u1EE3c nhi\u1EC1u
-      kh\xFAc \u0111\u01B0\u1EDDng r\u1EDDi nhau \u2014 'm\u1ED9t t\u01B0\u1EDBng
-      \u0111\xE1nh hai l\u01B0\u1EE3t'. \u0110o \u1EDF t\u1EA7m 1.4: s\u1EE9c ph\xF2ng
-      ng\u1EF1 tr\xEAn m\u1ED7i \xF4 l\xE0 1.79 so v\u1EDBi 1.74 c\u1EE7a m00 (\xD71.03).
-      Kh\xF4ng b\xF9 th\xEC map c\xE0ng 'h\xECnh h\u1ECDc th\xFA v\u1ECB' l\u1EA1i
-      c\xE0ng D\u1EC4, v\xE0 ng\u01B0\u1EDDi ch\u01A1i th\u1EADt \u0111\xE3 b\xE1o
-      \u0111\xFAng hi\u1EC7n t\u01B0\u1EE3ng \u0111\xF3: b\u1ED1n map \u0111\u1EA7u
-      \u0111\u1ED9 kh\xF3 GI\u1EA2M d\u1EA7n. Gi\xE1 tr\u1ECB ch\u1ECDn b\u1EB1ng
-      qu\xE9t engine \u2014 \u0111\xE2y l\xE0 m\u1EE9c cao nh\u1EA5t m\xE0 b\xE0i
-      ki\u1EC3m 20 wave v\u1EABn TH\u1EAENG (xem MapPlayableTests). \u26A0\uFE0F
-      Bot trong b\xE0i ki\u1EC3m khai th\xE1c h\xECnh h\u1ECDc K\xC9M H\u01A0N ng\u01B0\u1EDDi
-      ch\u01A1i th\u1EADt, n\xEAn n\xF3 l\xE0 S\xC0N ch\u1EE9 kh\xF4ng ph\u1EA3i
-      tr\u1EA7n: n\u1EBFu ng\u01B0\u1EDDi ch\u01A1i v\u1EABn th\u1EA5y d\u1EC5 th\xEC
-      n\xFAm ti\u1EBFp theo l\xE0 S\u1EECA \u0110\u01AF\u1EDCNG \u0110I cho b\u1EDBt
-      t\u1EF1 \xE1p s\xE1t, kh\xF4ng ph\u1EA3i t\u0103ng m\xE1u n\u1EEFa.\",\n  \"coveragePerSlot\":
-      1.79,\n  \"_coverageNote\": \"\U0001F534 S\u1EE8C PH\xD2NG NG\u1EF0 TR\xCAN
-      M\u1ED6I \xD4 \u2014 t\u1ED5ng \u0111o\u1EA1n \u0111\u01B0\u1EDDng n\u1EB1m
-      trong t\u1EA7m tham chi\u1EBFu, chia s\u1ED1 \xF4 s\xE2n. \u0110o b\u1EB1ng
-      `tools/path_check.py --map m01`; l\u1EC7ch qu\xE1 8% so v\u1EDBi s\u1ED1 n\xE0y
-      l\xE0 \u0110\u1ECE. V\xEC sao ph\u1EA3i KHAI thay v\xEC \u0111\u1EC3 ph\xE1t
-      hi\u1EC7n sau: h\xECnh h\u1ECDc 'th\xFA v\u1ECB' (zigzag, t\xFAi combo, xo\xE1y
-      \u1ED1c) l\xE0m \u0111\u01B0\u1EDDng T\u1EF0 \xC1P S\xC1T CH\xCDNH N\xD3 \u2192
-      m\u1ED9t v\xF2ng t\u1EA7m c\u1EAFt nhi\u1EC1u kh\xFAc r\u1EDDi nhau \u2192
-      m\u1ED9t t\u01B0\u1EDBng \u0111\xE1nh nhi\u1EC1u l\u01B0\u1EE3t \u2192 map
-      c\xE0ng th\xFA v\u1ECB c\xE0ng D\u1EC4. Ng\u01B0\u1EDDi ch\u01A1i \u0111\xE3
-      b\xE1o \u0111\xFAng hi\u1EC7n t\u01B0\u1EE3ng \u0111\xF3: b\u1ED1n map \u0111\u1EA7u
-      \u0111\u1ED9 kh\xF3 GI\u1EA2M d\u1EA7n. C\xF3 khai b\xE1o th\xEC s\u1EEDa waypoint
-      m\xE0 v\xF4 t\xECnh l\xE0m map d\u1EC5 \u0111i s\u1EBD bi\u1EBFt NGAY. \u26A0\uFE0F
-      \u0110\u1ED5i s\u1ED1 n\xE0y th\xEC PH\u1EA2I xem l\u1EA1i `hpScaling.growthPerWave`
-      \u2014 hai th\u1EE9 b\xF9 nhau. M\u1ED1c so s\xE1nh: m00 = 1.74 (\u0111\u01B0\u1EDDng
-      kh\xF4ng t\u1EF1 \xE1p s\xE1t, m\u1ED7i v\xF2ng t\u1EA7m c\u1EAFt \u0111\xFAng
-      1 kh\xFAc).\"\n}"
+      }\n      ]\n    },\n    {\n      \"wave\": 15,\n      \"bosses\": [\n       
+      { \"id\": \"o_capitao\", \"lane\": \"L1\" },\n        { \"id\": \"o_capitao\",
+      \"lane\": \"L1\" }\n      ],\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 9,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 16,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 9,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 12,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 12,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 12,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 12,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 14,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 5,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 14,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 15,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 7,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 20,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 16,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 18,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 8,\n          \"lane\": \"L1\"\n        }\n      ],\n      \"bosses\":
+      [\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"L1\"\n       
+      }\n      ]\n    }\n  ],\n  \"bossOverrides\": {\n    \"o_capitao\": {\n     
+      \"slowResistPercent\": 75,\n      \"appearances\": [\n        {\n         
+      \"wave\": 5,\n          \"hp\": 1050,\n          \"bounty\": 40\n        },\n       
+      {\n          \"wave\": 10,\n          \"hp\": 2600,\n          \"bounty\":
+      80\n        },\n        {\n          \"wave\": 15,\n          \"hp\": 2900,\n         
+      \"bounty\": 110\n        },\n        {\n          \"wave\": 20,\n         
+      \"hp\": 5300,\n          \"bounty\": 180\n        }\n      ]\n    }\n  },\n 
+      \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20; W15/W20 c\xF3
+      hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n  \"hpScaling\":
+      {\n    \"base\": 0.67,\n    \"growthPerWave\": 1.12\n  },\n  \"_hpScalingNote\":
+      \"\U0001F534 growth RI\xCANG cho map n\xE0y, cao h\u01A1n 1.09 d\xF9ng chung.
+      L\xFD do \u0110O \u0110\u01AF\u1EE2C: h\xECnh h\u1ECDc c\u1EE7a map l\xE0m
+      \u0110\u01AF\u1EDCNG T\u1EF0 \xC1P S\xC1T CH\xCDNH N\xD3, n\xEAn m\u1ED9t v\xF2ng
+      t\u1EA7m c\u1EAFt \u0111\u01B0\u1EE3c nhi\u1EC1u kh\xFAc \u0111\u01B0\u1EDDng
+      r\u1EDDi nhau \u2014 'm\u1ED9t t\u01B0\u1EDBng \u0111\xE1nh hai l\u01B0\u1EE3t'.
+      \u0110o \u1EDF t\u1EA7m 1.4: s\u1EE9c ph\xF2ng ng\u1EF1 tr\xEAn m\u1ED7i \xF4
+      l\xE0 1.79 so v\u1EDBi 1.74 c\u1EE7a m00 (\xD71.03). Kh\xF4ng b\xF9 th\xEC
+      map c\xE0ng 'h\xECnh h\u1ECDc th\xFA v\u1ECB' l\u1EA1i c\xE0ng D\u1EC4, v\xE0
+      ng\u01B0\u1EDDi ch\u01A1i th\u1EADt \u0111\xE3 b\xE1o \u0111\xFAng hi\u1EC7n
+      t\u01B0\u1EE3ng \u0111\xF3: b\u1ED1n map \u0111\u1EA7u \u0111\u1ED9 kh\xF3
+      GI\u1EA2M d\u1EA7n. Gi\xE1 tr\u1ECB ch\u1ECDn b\u1EB1ng qu\xE9t engine \u2014
+      \u0111\xE2y l\xE0 m\u1EE9c cao nh\u1EA5t m\xE0 b\xE0i ki\u1EC3m 20 wave v\u1EABn
+      TH\u1EAENG (xem MapPlayableTests). \u26A0\uFE0F Bot trong b\xE0i ki\u1EC3m
+      khai th\xE1c h\xECnh h\u1ECDc K\xC9M H\u01A0N ng\u01B0\u1EDDi ch\u01A1i th\u1EADt,
+      n\xEAn n\xF3 l\xE0 S\xC0N ch\u1EE9 kh\xF4ng ph\u1EA3i tr\u1EA7n: n\u1EBFu ng\u01B0\u1EDDi
+      ch\u01A1i v\u1EABn th\u1EA5y d\u1EC5 th\xEC n\xFAm ti\u1EBFp theo l\xE0 S\u1EECA
+      \u0110\u01AF\u1EDCNG \u0110I cho b\u1EDBt t\u1EF1 \xE1p s\xE1t, kh\xF4ng ph\u1EA3i
+      t\u0103ng m\xE1u n\u1EEFa.\",\n  \"coveragePerSlot\": 1.79,\n  \"_coverageNote\":
+      \"\U0001F534 S\u1EE8C PH\xD2NG NG\u1EF0 TR\xCAN M\u1ED6I \xD4 \u2014 t\u1ED5ng
+      \u0111o\u1EA1n \u0111\u01B0\u1EDDng n\u1EB1m trong t\u1EA7m tham chi\u1EBFu,
+      chia s\u1ED1 \xF4 s\xE2n. \u0110o b\u1EB1ng `tools/path_check.py --map m01`;
+      l\u1EC7ch qu\xE1 8% so v\u1EDBi s\u1ED1 n\xE0y l\xE0 \u0110\u1ECE. V\xEC sao
+      ph\u1EA3i KHAI thay v\xEC \u0111\u1EC3 ph\xE1t hi\u1EC7n sau: h\xECnh h\u1ECDc
+      'th\xFA v\u1ECB' (zigzag, t\xFAi combo, xo\xE1y \u1ED1c) l\xE0m \u0111\u01B0\u1EDDng
+      T\u1EF0 \xC1P S\xC1T CH\xCDNH N\xD3 \u2192 m\u1ED9t v\xF2ng t\u1EA7m c\u1EAFt
+      nhi\u1EC1u kh\xFAc r\u1EDDi nhau \u2192 m\u1ED9t t\u01B0\u1EDBng \u0111\xE1nh
+      nhi\u1EC1u l\u01B0\u1EE3t \u2192 map c\xE0ng th\xFA v\u1ECB c\xE0ng D\u1EC4.
+      Ng\u01B0\u1EDDi ch\u01A1i \u0111\xE3 b\xE1o \u0111\xFAng hi\u1EC7n t\u01B0\u1EE3ng
+      \u0111\xF3: b\u1ED1n map \u0111\u1EA7u \u0111\u1ED9 kh\xF3 GI\u1EA2M d\u1EA7n.
+      C\xF3 khai b\xE1o th\xEC s\u1EEDa waypoint m\xE0 v\xF4 t\xECnh l\xE0m map d\u1EC5
+      \u0111i s\u1EBD bi\u1EBFt NGAY. \u26A0\uFE0F \u0110\u1ED5i s\u1ED1 n\xE0y th\xEC
+      PH\u1EA2I xem l\u1EA1i `hpScaling.growthPerWave` \u2014 hai th\u1EE9 b\xF9
+      nhau. M\u1ED1c so s\xE1nh: m00 = 1.74 (\u0111\u01B0\u1EDDng kh\xF4ng t\u1EF1
+      \xE1p s\xE1t, m\u1ED7i v\xF2ng t\u1EA7m c\u1EAFt \u0111\xFAng 1 kh\xFAc).\",\n 
+      \"goalkeeperMinLeadUnits\": 1.0,\n  \"goalkeeperMinCoverageUnits\": 2.0,\n 
+      \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+      \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+      to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+      l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+      tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+      \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+      tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m02
     displayName: La Bombonera
     order: 2
@@ -1302,9 +1335,9 @@ MonoBehaviour:
       \"id\": \"f09\",\n      \"type\": \"field\",\n      \"x\": -4.2,\n      \"y\":
       -5.6\n    },\n    {\n      \"id\": \"f10\",\n      \"type\": \"field\",\n     
       \"x\": -0.9,\n      \"y\": -7.5\n    },\n    {\n      \"id\": \"gk01\",\n     
-      \"type\": \"goalkeeper\",\n      \"x\": 0.7,\n      \"y\": -8.3\n    }\n  ],\n 
-      \"economy\": {\n    \"startingCash\": 700,\n    \"fieldSlots\": 10\n  },\n 
-      \"_economyNote\": \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI \u0110\u1EA6U
+      \"type\": \"goalkeeper\",\n      \"x\": -2.318,\n      \"y\": -8.878\n    }\n 
+      ],\n  \"economy\": {\n    \"startingCash\": 700,\n    \"fieldSlots\": 10\n 
+      },\n  \"_economyNote\": \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI \u0110\u1EA6U
       \u0110\u1EC2 QU\xC9T, ch\u01B0a ph\u1EA3i s\u1ED1 ch\u1ED1t \u2014 ph\u1EA3i
       \u0111o b\u1EB1ng test 20-wave engine th\u1EADt nh\u01B0 m00 \u0111\xE3 l\xE0m
       (650 thua W10 \xB7 670 ch\u1EBFt 0/20 \xB7 700 th\u1EAFng 11/20).\",\n  \"waves\":
@@ -1319,7 +1352,8 @@ MonoBehaviour:
       {\n      \"wave\": 4,\n      \"spawns\": [\n        {\n          \"enemy\":
       \"adepto\",\n          \"count\": 9,\n          \"lane\": \"L1\"\n        },\n       
       {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
-      \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 5,\n      \"spawns\":
+      \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 5,\n      \"bosses\":
+      [\n        { \"id\": \"o_capitao\", \"lane\": \"L1\" }\n      ],\n      \"spawns\":
       [\n        {\n          \"enemy\": \"adepto\",\n          \"count\": 7,\n         
       \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 5,\n          \"lane\": \"L1\"\n        },\n        {\n         
@@ -1370,82 +1404,92 @@ MonoBehaviour:
       \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 11,\n          \"lane\": \"L1\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 15,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 9,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 9,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 16,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 9,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 10,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 17,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 11,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 10,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 18,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 11,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 12,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 5,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 19,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 13,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 13,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 6,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 20,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 15,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 17,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 7,\n          \"lane\": \"L1\"\n       
-      }\n      ],\n      \"bosses\": [\n        {\n          \"id\": \"o_capitao\",\n         
-      \"lane\": \"L1\"\n        }\n      ]\n    }\n  ],\n  \"bossOverrides\": {\n   
-      \"o_capitao\": {\n      \"slowResistPercent\": 75,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 2600,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 10300,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O \u2014 ho\u1EA3
-      l\u1EF1c d\u1ED3n l\xEAn boss t\u1EC9 l\u1EC7 v\u1EDBi th\u1EDDi gian qu\xE2n
-      n\u1EB1m trong t\u1EA7m, m\xE0 c\xE1i \u0111\xF3 ph\u1EE5 thu\u1ED9c \u0111\u1ED9
-      d\xE0i tuy\u1EBFn.\",\n  \"hpScaling\": {\n    \"base\": 0.67,\n    \"growthPerWave\":
-      1.12\n  },\n  \"_hpScalingNote\": \"\U0001F534 growth RI\xCANG cho map n\xE0y,
-      cao h\u01A1n 1.09 d\xF9ng chung. L\xFD do \u0110O \u0110\u01AF\u1EE2C: h\xECnh
-      h\u1ECDc c\u1EE7a map l\xE0m \u0110\u01AF\u1EDCNG T\u1EF0 \xC1P S\xC1T CH\xCDNH
-      N\xD3, n\xEAn m\u1ED9t v\xF2ng t\u1EA7m c\u1EAFt \u0111\u01B0\u1EE3c nhi\u1EC1u
-      kh\xFAc \u0111\u01B0\u1EDDng r\u1EDDi nhau \u2014 'm\u1ED9t t\u01B0\u1EDBng
-      \u0111\xE1nh hai l\u01B0\u1EE3t'. \u0110o \u1EDF t\u1EA7m 1.4: s\u1EE9c ph\xF2ng
-      ng\u1EF1 tr\xEAn m\u1ED7i \xF4 l\xE0 2.90 so v\u1EDBi 1.74 c\u1EE7a m00 (\xD71.67).
-      Kh\xF4ng b\xF9 th\xEC map c\xE0ng 'h\xECnh h\u1ECDc th\xFA v\u1ECB' l\u1EA1i
-      c\xE0ng D\u1EC4, v\xE0 ng\u01B0\u1EDDi ch\u01A1i th\u1EADt \u0111\xE3 b\xE1o
-      \u0111\xFAng hi\u1EC7n t\u01B0\u1EE3ng \u0111\xF3: b\u1ED1n map \u0111\u1EA7u
-      \u0111\u1ED9 kh\xF3 GI\u1EA2M d\u1EA7n. Gi\xE1 tr\u1ECB ch\u1ECDn b\u1EB1ng
-      qu\xE9t engine \u2014 \u0111\xE2y l\xE0 m\u1EE9c cao nh\u1EA5t m\xE0 b\xE0i
-      ki\u1EC3m 20 wave v\u1EABn TH\u1EAENG (xem MapPlayableTests). \u26A0\uFE0F
-      Bot trong b\xE0i ki\u1EC3m khai th\xE1c h\xECnh h\u1ECDc K\xC9M H\u01A0N ng\u01B0\u1EDDi
-      ch\u01A1i th\u1EADt, n\xEAn n\xF3 l\xE0 S\xC0N ch\u1EE9 kh\xF4ng ph\u1EA3i
-      tr\u1EA7n: n\u1EBFu ng\u01B0\u1EDDi ch\u01A1i v\u1EABn th\u1EA5y d\u1EC5 th\xEC
-      n\xFAm ti\u1EBFp theo l\xE0 S\u1EECA \u0110\u01AF\u1EDCNG \u0110I cho b\u1EDBt
-      t\u1EF1 \xE1p s\xE1t, kh\xF4ng ph\u1EA3i t\u0103ng m\xE1u n\u1EEFa.\",\n  \"coveragePerSlot\":
-      2.9,\n  \"_coverageNote\": \"\U0001F534 S\u1EE8C PH\xD2NG NG\u1EF0 TR\xCAN
-      M\u1ED6I \xD4 \u2014 t\u1ED5ng \u0111o\u1EA1n \u0111\u01B0\u1EDDng n\u1EB1m
-      trong t\u1EA7m tham chi\u1EBFu, chia s\u1ED1 \xF4 s\xE2n. \u0110o b\u1EB1ng
-      `tools/path_check.py --map m02`; l\u1EC7ch qu\xE1 8% so v\u1EDBi s\u1ED1 n\xE0y
-      l\xE0 \u0110\u1ECE. V\xEC sao ph\u1EA3i KHAI thay v\xEC \u0111\u1EC3 ph\xE1t
-      hi\u1EC7n sau: h\xECnh h\u1ECDc 'th\xFA v\u1ECB' (zigzag, t\xFAi combo, xo\xE1y
-      \u1ED1c) l\xE0m \u0111\u01B0\u1EDDng T\u1EF0 \xC1P S\xC1T CH\xCDNH N\xD3 \u2192
-      m\u1ED9t v\xF2ng t\u1EA7m c\u1EAFt nhi\u1EC1u kh\xFAc r\u1EDDi nhau \u2192
-      m\u1ED9t t\u01B0\u1EDBng \u0111\xE1nh nhi\u1EC1u l\u01B0\u1EE3t \u2192 map
-      c\xE0ng th\xFA v\u1ECB c\xE0ng D\u1EC4. Ng\u01B0\u1EDDi ch\u01A1i \u0111\xE3
-      b\xE1o \u0111\xFAng hi\u1EC7n t\u01B0\u1EE3ng \u0111\xF3: b\u1ED1n map \u0111\u1EA7u
-      \u0111\u1ED9 kh\xF3 GI\u1EA2M d\u1EA7n. C\xF3 khai b\xE1o th\xEC s\u1EEDa waypoint
-      m\xE0 v\xF4 t\xECnh l\xE0m map d\u1EC5 \u0111i s\u1EBD bi\u1EBFt NGAY. \u26A0\uFE0F
-      \u0110\u1ED5i s\u1ED1 n\xE0y th\xEC PH\u1EA2I xem l\u1EA1i `hpScaling.growthPerWave`
-      \u2014 hai th\u1EE9 b\xF9 nhau. M\u1ED1c so s\xE1nh: m00 = 1.74 (\u0111\u01B0\u1EDDng
-      kh\xF4ng t\u1EF1 \xE1p s\xE1t, m\u1ED7i v\xF2ng t\u1EA7m c\u1EAFt \u0111\xFAng
-      1 kh\xFAc).\"\n}"
+      }\n      ]\n    },\n    {\n      \"wave\": 15,\n      \"bosses\": [\n       
+      { \"id\": \"o_capitao\", \"lane\": \"L1\" },\n        { \"id\": \"o_capitao\",
+      \"lane\": \"L1\" }\n      ],\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 9,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 16,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 9,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 10,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 11,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 10,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 11,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 12,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 5,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 13,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 13,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 6,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 20,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 15,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 17,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 7,\n          \"lane\": \"L1\"\n        }\n      ],\n      \"bosses\":
+      [\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"L1\"\n       
+      }\n      ]\n    }\n  ],\n  \"bossOverrides\": {\n    \"o_capitao\": {\n     
+      \"slowResistPercent\": 75,\n      \"appearances\": [\n        {\n         
+      \"wave\": 5,\n          \"hp\": 1050,\n          \"bounty\": 40\n        },\n       
+      {\n          \"wave\": 10,\n          \"hp\": 2600,\n          \"bounty\":
+      80\n        },\n        {\n          \"wave\": 15,\n          \"hp\": 2900,\n         
+      \"bounty\": 110\n        },\n        {\n          \"wave\": 20,\n         
+      \"hp\": 5400,\n          \"bounty\": 180\n        }\n      ]\n    }\n  },\n 
+      \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20; W15/W20 c\xF3
+      hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n  \"hpScaling\":
+      {\n    \"base\": 0.67,\n    \"growthPerWave\": 1.12\n  },\n  \"_hpScalingNote\":
+      \"\U0001F534 growth RI\xCANG cho map n\xE0y, cao h\u01A1n 1.09 d\xF9ng chung.
+      L\xFD do \u0110O \u0110\u01AF\u1EE2C: h\xECnh h\u1ECDc c\u1EE7a map l\xE0m
+      \u0110\u01AF\u1EDCNG T\u1EF0 \xC1P S\xC1T CH\xCDNH N\xD3, n\xEAn m\u1ED9t v\xF2ng
+      t\u1EA7m c\u1EAFt \u0111\u01B0\u1EE3c nhi\u1EC1u kh\xFAc \u0111\u01B0\u1EDDng
+      r\u1EDDi nhau \u2014 'm\u1ED9t t\u01B0\u1EDBng \u0111\xE1nh hai l\u01B0\u1EE3t'.
+      \u0110o \u1EDF t\u1EA7m 1.4: s\u1EE9c ph\xF2ng ng\u1EF1 tr\xEAn m\u1ED7i \xF4
+      l\xE0 2.90 so v\u1EDBi 1.74 c\u1EE7a m00 (\xD71.67). Kh\xF4ng b\xF9 th\xEC
+      map c\xE0ng 'h\xECnh h\u1ECDc th\xFA v\u1ECB' l\u1EA1i c\xE0ng D\u1EC4, v\xE0
+      ng\u01B0\u1EDDi ch\u01A1i th\u1EADt \u0111\xE3 b\xE1o \u0111\xFAng hi\u1EC7n
+      t\u01B0\u1EE3ng \u0111\xF3: b\u1ED1n map \u0111\u1EA7u \u0111\u1ED9 kh\xF3
+      GI\u1EA2M d\u1EA7n. Gi\xE1 tr\u1ECB ch\u1ECDn b\u1EB1ng qu\xE9t engine \u2014
+      \u0111\xE2y l\xE0 m\u1EE9c cao nh\u1EA5t m\xE0 b\xE0i ki\u1EC3m 20 wave v\u1EABn
+      TH\u1EAENG (xem MapPlayableTests). \u26A0\uFE0F Bot trong b\xE0i ki\u1EC3m
+      khai th\xE1c h\xECnh h\u1ECDc K\xC9M H\u01A0N ng\u01B0\u1EDDi ch\u01A1i th\u1EADt,
+      n\xEAn n\xF3 l\xE0 S\xC0N ch\u1EE9 kh\xF4ng ph\u1EA3i tr\u1EA7n: n\u1EBFu ng\u01B0\u1EDDi
+      ch\u01A1i v\u1EABn th\u1EA5y d\u1EC5 th\xEC n\xFAm ti\u1EBFp theo l\xE0 S\u1EECA
+      \u0110\u01AF\u1EDCNG \u0110I cho b\u1EDBt t\u1EF1 \xE1p s\xE1t, kh\xF4ng ph\u1EA3i
+      t\u0103ng m\xE1u n\u1EEFa.\",\n  \"coveragePerSlot\": 2.9,\n  \"_coverageNote\":
+      \"\U0001F534 S\u1EE8C PH\xD2NG NG\u1EF0 TR\xCAN M\u1ED6I \xD4 \u2014 t\u1ED5ng
+      \u0111o\u1EA1n \u0111\u01B0\u1EDDng n\u1EB1m trong t\u1EA7m tham chi\u1EBFu,
+      chia s\u1ED1 \xF4 s\xE2n. \u0110o b\u1EB1ng `tools/path_check.py --map m02`;
+      l\u1EC7ch qu\xE1 8% so v\u1EDBi s\u1ED1 n\xE0y l\xE0 \u0110\u1ECE. V\xEC sao
+      ph\u1EA3i KHAI thay v\xEC \u0111\u1EC3 ph\xE1t hi\u1EC7n sau: h\xECnh h\u1ECDc
+      'th\xFA v\u1ECB' (zigzag, t\xFAi combo, xo\xE1y \u1ED1c) l\xE0m \u0111\u01B0\u1EDDng
+      T\u1EF0 \xC1P S\xC1T CH\xCDNH N\xD3 \u2192 m\u1ED9t v\xF2ng t\u1EA7m c\u1EAFt
+      nhi\u1EC1u kh\xFAc r\u1EDDi nhau \u2192 m\u1ED9t t\u01B0\u1EDBng \u0111\xE1nh
+      nhi\u1EC1u l\u01B0\u1EE3t \u2192 map c\xE0ng th\xFA v\u1ECB c\xE0ng D\u1EC4.
+      Ng\u01B0\u1EDDi ch\u01A1i \u0111\xE3 b\xE1o \u0111\xFAng hi\u1EC7n t\u01B0\u1EE3ng
+      \u0111\xF3: b\u1ED1n map \u0111\u1EA7u \u0111\u1ED9 kh\xF3 GI\u1EA2M d\u1EA7n.
+      C\xF3 khai b\xE1o th\xEC s\u1EEDa waypoint m\xE0 v\xF4 t\xECnh l\xE0m map d\u1EC5
+      \u0111i s\u1EBD bi\u1EBFt NGAY. \u26A0\uFE0F \u0110\u1ED5i s\u1ED1 n\xE0y th\xEC
+      PH\u1EA2I xem l\u1EA1i `hpScaling.growthPerWave` \u2014 hai th\u1EE9 b\xF9
+      nhau. M\u1ED1c so s\xE1nh: m00 = 1.74 (\u0111\u01B0\u1EDDng kh\xF4ng t\u1EF1
+      \xE1p s\xE1t, m\u1ED7i v\xF2ng t\u1EA7m c\u1EAFt \u0111\xFAng 1 kh\xFAc).\",\n 
+      \"goalkeeperMinLeadUnits\": 1.0,\n  \"goalkeeperMinCoverageUnits\": 2.0,\n 
+      \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+      \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+      to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+      l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+      tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+      \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+      tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m03
     displayName: Dos Rios
     order: 3
@@ -1517,7 +1561,7 @@ MonoBehaviour:
       \"f11\",\n      \"type\": \"field\",\n      \"x\": 0.9,\n      \"y\": -7.2\n   
       },\n    {\n      \"id\": \"f12\",\n      \"type\": \"field\",\n      \"x\":
       -2.3,\n      \"y\": -0.5\n    },\n    {\n      \"id\": \"gk01\",\n      \"type\":
-      \"goalkeeper\",\n      \"x\": 0.0,\n      \"y\": -8.55\n    }\n  ],\n  \"economy\":
+      \"goalkeeper\",\n      \"x\": 2.25,\n      \"y\": -8.085\n    }\n  ],\n  \"economy\":
       {\n    \"startingCash\": 800,\n    \"fieldSlots\": 12\n  },\n  \"_economyNote\":
       \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI \u0110\u1EA6U \u0110\u1EC2
       QU\xC9T \u2014 ph\u1EA3i \u0111o b\u1EB1ng test 20-wave engine th\u1EADt.\",\n 
@@ -1532,7 +1576,8 @@ MonoBehaviour:
       {\n      \"wave\": 4,\n      \"spawns\": [\n        {\n          \"enemy\":
       \"adepto\",\n          \"count\": 8,\n          \"lane\": \"L2\"\n        },\n       
       {\n          \"enemy\": \"tifoso\",\n          \"count\": 8,\n          \"lane\":
-      \"L2\"\n        }\n      ]\n    },\n    {\n      \"wave\": 5,\n      \"spawns\":
+      \"L2\"\n        }\n      ]\n    },\n    {\n      \"wave\": 5,\n      \"bosses\":
+      [\n        { \"id\": \"o_capitao\", \"lane\": \"L1\" }\n      ],\n      \"spawns\":
       [\n        {\n          \"enemy\": \"adepto\",\n          \"count\": 8,\n         
       \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 5,\n          \"lane\": \"L1\"\n        },\n        {\n         
@@ -1584,58 +1629,63 @@ MonoBehaviour:
       \"L2\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 11,\n          \"lane\": \"L2\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L2\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 15,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 8,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 8,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 16,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 8,\n          \"lane\":
-      \"L2\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 10,\n          \"lane\": \"L2\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 5,\n          \"lane\": \"L2\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 17,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 12,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 11,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 18,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 12,\n          \"lane\":
-      \"L2\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 12,\n          \"lane\": \"L2\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 6,\n          \"lane\": \"L2\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 19,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 14,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 14,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 7,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 20,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 8,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"adepto\",\n         
-      \"count\": 7,\n          \"lane\": \"L2\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\": \"L1\"\n       
-      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n         
+      }\n      ]\n    },\n    {\n      \"wave\": 15,\n      \"bosses\": [\n       
+      { \"id\": \"o_capitao\", \"lane\": \"L1\" },\n        { \"id\": \"o_capitao\",
+      \"lane\": \"L2\" }\n      ],\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 8,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 8,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 16,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 8,\n          \"lane\": \"L2\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 10,\n          \"lane\":
+      \"L2\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 5,\n          \"lane\": \"L2\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 12,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 11,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 12,\n          \"lane\": \"L2\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 12,\n         
       \"lane\": \"L2\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 4,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L2\"\n       
-      }\n      ],\n      \"bosses\": [\n        {\n          \"id\": \"o_capitao\",\n         
-      \"lane\": \"L2\"\n        }\n      ]\n    }\n  ],\n  \"hpScaling\": {\n   
-      \"base\": 0.67,\n    \"growthPerWave\": 1.08\n  },\n  \"_hpScalingNote\": \"B\xF9
-      cho \u0111\u1ED9 ph\u1EE7: map c\xF3 \xF4 canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng
-      t\u1EF1 \xE1p s\xE1t th\xEC t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9
-      th\xEC map c\xE0ng 'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y
-      l\xE0 \u0110\xCDCH C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\":
-      {\n    \"o_capitao\": {\n      \"slowResistPercent\": 78,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 2300,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 8800,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O.\",\n  \"_balanceNote\":
-      \"V\xF2ng 27b: \u0111\u01B0\u1EDDng d\u1EF1ng l\u1EA1i ki\u1EC3u m\u1ED9t th\xE2n
-      chung hai l\u1ED1i ra \u2192 ti\u1EC1n 2300\u21921500.\",\n  \"_laneShapeNote\":
-      \"V\xF2ng 27: d\u1EF1ng l\u1EA1i theo ki\u1EC3u M\u1ED8T TH\xC2N CHUNG, HAI
-      L\u1ED0I RA. \u0110o\u1EA1n chung d\xE0i 20.1u (58% chi\u1EC1u d\xE0i m\u1ED9t
-      tuy\u1EBFn) \u2014 m\u1ECDi \xF4 c\u1EA1nh th\xE2n canh \u0111\u01B0\u1EE3c
+      \"count\": 6,\n          \"lane\": \"L2\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 14,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 14,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 7,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 20,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 8,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"adepto\",\n          \"count\": 7,\n          \"lane\":
+      \"L2\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 9,\n          \"lane\": \"L1\"\n        },\n        {\n         
+      \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\": \"L2\"\n       
+      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L2\"\n        }\n      ],\n      \"bosses\":
+      [\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"L2\"\n       
+      },\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"L1\"\n       
+      }\n      ]\n    }\n  ],\n  \"hpScaling\": {\n    \"base\": 0.67,\n    \"growthPerWave\":
+      1.08\n  },\n  \"_hpScalingNote\": \"B\xF9 cho \u0111\u1ED9 ph\u1EE7: map c\xF3
+      \xF4 canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng t\u1EF1 \xE1p s\xE1t
+      th\xEC t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9 th\xEC map c\xE0ng
+      'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y l\xE0 \u0110\xCDCH
+      C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\": {\n   
+      \"o_capitao\": {\n      \"slowResistPercent\": 78,\n      \"appearances\":
+      [\n        {\n          \"wave\": 5,\n          \"hp\": 900,\n          \"bounty\":
+      40\n        },\n        {\n          \"wave\": 10,\n          \"hp\": 2300,\n         
+      \"bounty\": 80\n        },\n        {\n          \"wave\": 15,\n          \"hp\":
+      2600,\n          \"bounty\": 110\n        },\n        {\n          \"wave\":
+      20,\n          \"hp\": 4500,\n          \"bounty\": 180\n        }\n      ]\n   
+      }\n  },\n  \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20;
+      W15/W20 c\xF3 hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n 
+      \"_balanceNote\": \"V\xF2ng 27b: \u0111\u01B0\u1EDDng d\u1EF1ng l\u1EA1i ki\u1EC3u
+      m\u1ED9t th\xE2n chung hai l\u1ED1i ra \u2192 ti\u1EC1n 2300\u21921500.\",\n 
+      \"_laneShapeNote\": \"V\xF2ng 27: d\u1EF1ng l\u1EA1i theo ki\u1EC3u M\u1ED8T
+      TH\xC2N CHUNG, HAI L\u1ED0I RA. \u0110o\u1EA1n chung d\xE0i 20.1u (58% chi\u1EC1u
+      d\xE0i m\u1ED9t tuy\u1EBFn) \u2014 m\u1ECDi \xF4 c\u1EA1nh th\xE2n canh \u0111\u01B0\u1EE3c
       C\u1EA2 HAI tuy\u1EBFn, n\xEAn ti\u1EC1n kh\u1EDFi \u0111\u1EA7u v\u1EC1 m\u1EE9c
       map m\u1ED9t tuy\u1EBFn. \u0110o\u1EA1n ch\u1EBB cu\u1ED1i v\u1EABn b\u1EAFt
       chia l\u1EF1c. L\xFD do: docs/09 \xA78 \u2014 gi\xE1 c\u1EE7a map \u0111a tuy\u1EBFn
@@ -1659,7 +1709,14 @@ MonoBehaviour:
       theo d\xE1ng wave c\u1EE7a m00 (map \u0111\xE3 c\xE2n xong), chia \u0111\xF4i
       hai tuy\u1EBFn. B\u1EA3ng c\u0169 vi\u1EBFt cho ba tuy\u1EBFn / lu\xE2n phi\xEAn
       n\xEAn kh\xF4ng c\xF2n d\xF9ng \u0111\u01B0\u1EE3c sau khi \u0111\u1ED5i sang
-      ki\u1EC3u m\u1ED9t th\xE2n chung hai l\u1ED1i ra.\"\n}\n"
+      ki\u1EC3u m\u1ED9t th\xE2n chung hai l\u1ED1i ra.\",\n  \"goalkeeperMinLeadUnits\":
+      1.0,\n  \"goalkeeperMinCoverageUnits\": 2.0,\n  \"_goalkeeperPlacementNote\":
+      \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n \u0111\u01B0\u1EDDng d\xE0i
+      \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0 to\xE0n b\u1ED9 \u0111o\u1EA1n
+      \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits.
+      Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c tools/path_check.py --check thi h\xE0nh;
+      kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9
+      v\xEC nh\xECn gi\u1ED1ng v\u1ECB tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m04
     displayName: El Cruce
     order: 4
@@ -1669,7 +1726,7 @@ MonoBehaviour:
       \u0111i t\u1EDBi HAI L\u1ED0I RA t\xE1ch bi\u1EC7t. M\xE1u c\u1EA7u m\xF4n
       d\xF9ng chung; Dibu ch\u1EC9 c\xF3 m\u1ED9t n\xEAn ng\u01B0\u1EDDi ch\u01A1i
       ph\u1EA3i ch\u1ECDn l\u1ED1i c\u1EA7n b\u1EA3o hi\u1EC3m theo HUD C\u1EECA.\",\n 
-      \"coveragePerSlot\": 2.86,\n  \"_coverageNote\": \"\U0001F534 S\u1EE9c ph\xF2ng
+      \"coveragePerSlot\": 3.07,\n  \"_coverageNote\": \"\U0001F534 S\u1EE9c ph\xF2ng
       ng\u1EF1 tr\xEAn m\u1ED7i \xF4, \u0110O b\u1EB1ng tools/path_check.py; l\u1EC7ch
       >8% l\xE0 \u0111\u1ECF. V\u1EDBi map \u0111a tuy\u1EBFn con s\u1ED1 n\xE0y
       g\u1ED3m c\u1EA3 \xF4 canh \u0110\u01AF\u1EE2C NHI\u1EC0U TUY\u1EBEN \u2014
@@ -1729,10 +1786,10 @@ MonoBehaviour:
       \"id\": \"f11\",\n      \"type\": \"field\",\n      \"x\": -2.1,\n      \"y\":
       -5.0\n    },\n    {\n      \"id\": \"f12\",\n      \"type\": \"field\",\n     
       \"x\": 2.1,\n      \"y\": -5.0\n    },\n    {\n      \"id\": \"f13\",\n     
-      \"type\": \"field\",\n      \"x\": 0.0,\n      \"y\": -6.7\n    },\n    {\n     
-      \"id\": \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": -2.8,\n     
-      \"y\": -8.45\n    },\n    {\n      \"id\": \"gk02\",\n      \"type\": \"goalkeeper\",\n     
-      \"x\": 2.8,\n      \"y\": -8.45\n    }\n  ],\n  \"economy\": {\n    \"startingCash\":
+      \"type\": \"field\",\n      \"x\": -2.8,\n      \"y\": -6.15\n    },\n    {\n     
+      \"id\": \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": -1.117,\n     
+      \"y\": -7.575\n    },\n    {\n      \"id\": \"gk02\",\n      \"type\": \"goalkeeper\",\n     
+      \"x\": 2.275,\n      \"y\": -6.802\n    }\n  ],\n  \"economy\": {\n    \"startingCash\":
       800,\n    \"fieldSlots\": 13,\n    \"goalkeeperSlots\": 2\n  },\n  \"_economyNote\":
       \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI \u0110\u1EA6U \u0110\u1EC2
       QU\xC9T \u2014 ph\u1EA3i \u0111o b\u1EB1ng test 20-wave engine th\u1EADt.\",\n 
@@ -1760,8 +1817,9 @@ MonoBehaviour:
       \"count\": 5,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
       },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n         
       \"lane\": \"larga\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 5,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 4,\n          \"lane\": \"corta\",\n         
+      {\n      \"wave\": 5,\n      \"bosses\": [\n        { \"id\": \"o_capitao\",
+      \"lane\": \"corta\" }\n      ],\n      \"spawns\": [\n        {\n         
+      \"enemy\": \"adepto\",\n          \"count\": 4,\n          \"lane\": \"corta\",\n         
       \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 3,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n       
       },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 1,\n         
@@ -1868,114 +1926,126 @@ MonoBehaviour:
       \"count\": 6,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
       },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
       \"lane\": \"larga\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 15,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 5,\n          \"lane\": \"corta\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      {\n      \"wave\": 15,\n      \"bosses\": [\n        { \"id\": \"o_capitao\",
+      \"lane\": \"corta\" },\n        { \"id\": \"o_capitao\", \"lane\": \"larga\"
+      }\n      ],\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 5,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
       \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 5,\n          \"lane\": \"larga\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"corta\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 5,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"larga\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 16,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 5,\n          \"lane\": \"corta\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 5,\n          \"lane\": \"larga\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
+      \"lane\": \"larga\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"larga\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 16,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      5,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
+      \"corta\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 2,\n          \"lane\": \"corta\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
+      \"count\": 5,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n         
+      \"lane\": \"larga\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"larga\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 17,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      7,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
+      \"corta\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 2,\n          \"lane\": \"corta\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 6,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"larga\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 7,\n          \"lane\": \"corta\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 6,\n          \"lane\": \"larga\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n         
+      \"lane\": \"larga\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"larga\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 18,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      6,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
+      \"corta\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 4,\n          \"lane\": \"corta\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 6,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
-      \"lane\": \"larga\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 6,\n          \"lane\": \"corta\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-      \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 6,\n          \"lane\": \"larga\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n         
+      \"lane\": \"larga\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"larga\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 19,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      7,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 8,\n          \"lane\":
+      \"corta\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 5,\n          \"lane\": \"corta\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 7,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-      \"lane\": \"larga\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 7,\n          \"lane\": \"corta\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 8,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 5,\n         
-      \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 7,\n          \"lane\": \"larga\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 8,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-      \"lane\": \"larga\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 20,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 9,\n          \"lane\": \"corta\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 10,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 5,\n         
-      \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 9,\n          \"lane\": \"larga\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 10,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-      \"lane\": \"larga\",\n          \"delaySec\": 0\n        }\n      ],\n     
-      \"bosses\": [\n        {\n          \"id\": \"o_capitao\",\n          \"lane\":
-      \"corta\"\n        }\n      ]\n    }\n  ],\n  \"hpScaling\": {\n    \"base\":
-      0.67,\n    \"growthPerWave\": 1.075\n  },\n  \"_hpScalingNote\": \"B\xF9 cho
-      \u0111\u1ED9 ph\u1EE7: map c\xF3 \xF4 canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng
-      t\u1EF1 \xE1p s\xE1t th\xEC t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9
-      th\xEC map c\xE0ng 'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y
-      l\xE0 \u0110\xCDCH C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\":
-      {\n    \"o_capitao\": {\n      \"slowResistPercent\": 80,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 1900,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 5400,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O.\",\n  \"_f06Note\":
-      \"\U0001F535 f06 d\u1EDDi (-1.92,-4.91) \u2192 (-2.10,-5.30): khe h\u1EDF tuy\u1EBFn
-      `corta` 20.1% \u2192 17.9%. S\xE0n to\xE1n h\u1ECDc c\u1EE7a b\u1ED1 c\u1EE5c
-      2 tuy\u1EBFn 12 \xF4 l\xE0 20%, n\xEAn 20.1% l\xE0 V\u1EEAA TR\xC0N ch\u1EE9
-      kh\xF4ng ph\u1EA3i b\u1ED1 c\u1EE5c h\u1ECFng \u2014 nh\u01B0ng d\u1EDDi m\u1ED9t
-      \xF4 r\u1EBB h\u01A1n n\u1EDBi lu\u1EADt, v\xE0 n\u1EDBi lu\u1EADt th\xEC l\u1EA7n
-      sau kh\xF4ng ai bi\u1EBFt v\xEC sao n\xF3 \u0111\u01B0\u1EE3c n\u1EDBi.\",\n 
-      \"_balanceNote\": \"V\xF2ng 27b: ti\u1EC1n 2100\u2192800, gi\u1EEF nguy\xEAn
-      s\u1ED1 qu\xE2n.\",\n  \"_laneShapeNote\": \"V\xF2ng 27: d\u1EF1ng l\u1EA1i
-      theo ki\u1EC3u M\u1ED8T TH\xC2N CHUNG, HAI L\u1ED0I RA. \u0110o\u1EA1n chung
-      d\xE0i 23.7u (65% chi\u1EC1u d\xE0i m\u1ED9t tuy\u1EBFn) \u2014 m\u1ECDi \xF4
-      c\u1EA1nh th\xE2n canh \u0111\u01B0\u1EE3c C\u1EA2 HAI tuy\u1EBFn, n\xEAn ti\u1EC1n
-      kh\u1EDFi \u0111\u1EA7u v\u1EC1 m\u1EE9c map m\u1ED9t tuy\u1EBFn. \u0110o\u1EA1n
-      ch\u1EBB cu\u1ED1i v\u1EABn b\u1EAFt chia l\u1EF1c. L\xFD do: docs/09 \xA78
-      \u2014 gi\xE1 c\u1EE7a map \u0111a tuy\u1EBFn n\u1EB1m \u1EDF \xF4 b\u1ECB
-      kho\xE1 c\u1EE9ng v\xE0o m\u1ED9t tuy\u1EBFn, kh\xF4ng n\u1EB1m \u1EDF s\u1ED1
-      tuy\u1EBFn.\",\n  \"farSlots\": [\n    \"f13\"\n  ],\n  \"_slotAddNote\": \"V\xF2ng
-      27: th\xEAm 13 \xF4. \u0110o \u0111\u01B0\u1EE3c c\xE1c tuy\u1EBFn bi\xEAn
-      ch\u1EC9 \u0111\u1EA1t 126% m\u1EE9c \u03A3chord c\u1EE7a m00 \u2014 m\u1ED9t
-      con qu\xE1i \u0111i tuy\u1EBFn \u0111\xF3 \u0103n ch\u01B0a t\u1EDBi n\u1EEDa
-      l\u01B0\u1EE3ng s\xE1t th\u01B0\u01A1ng so v\u1EDBi map g\u1ED1c. B\xF9 b\u1EB1ng
-      ti\u1EC1n kh\u1EDFi \u0111\u1EA7u th\xEC ph\u1EA3i t\u1EDBi 4 300 (g\u1EA5p
-      6 l\u1EA7n thi\u1EBFt k\u1EBF) v\xE0 v\u1EABn ph\u1EA3i c\u1EAFt g\u1EA7n n\u1EEDa
-      s\u1ED1 qu\xE2n. Thi\u1EBFu l\xE0 thi\u1EBFu \xD4, kh\xF4ng ph\u1EA3i thi\u1EBFu
-      ti\u1EC1n. Xem docs/09 \xA78.7.\",\n  \"_waveNote\": \"V\xF2ng 27: d\u1EF1ng
-      l\u1EA1i theo d\xE1ng wave c\u1EE7a m00 (map \u0111\xE3 c\xE2n xong), chia
-      \u0111\xF4i hai tuy\u1EBFn. B\u1EA3ng c\u0169 vi\u1EBFt cho ba tuy\u1EBFn /
-      lu\xE2n phi\xEAn n\xEAn kh\xF4ng c\xF2n d\xF9ng \u0111\u01B0\u1EE3c sau khi
-      \u0111\u1ED5i sang ki\u1EC3u m\u1ED9t th\xE2n chung hai l\u1ED1i ra.\",\n 
-      \"maxGapFraction\": 0.2\n}\n"
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 8,\n         
+      \"lane\": \"larga\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"larga\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 20,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      9,\n          \"lane\": \"corta\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 10,\n          \"lane\":
+      \"corta\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 5,\n          \"lane\": \"corta\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
+      \"count\": 9,\n          \"lane\": \"larga\",\n          \"delaySec\": 0\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 10,\n         
+      \"lane\": \"larga\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"larga\",\n         
+      \"delaySec\": 0\n        }\n      ],\n      \"bosses\": [\n        {\n         
+      \"id\": \"o_capitao\",\n          \"lane\": \"corta\"\n        },\n       
+      {\n          \"id\": \"o_capitao\",\n          \"lane\": \"larga\"\n       
+      }\n      ]\n    }\n  ],\n  \"hpScaling\": {\n    \"base\": 0.67,\n    \"growthPerWave\":
+      1.075\n  },\n  \"_hpScalingNote\": \"B\xF9 cho \u0111\u1ED9 ph\u1EE7: map c\xF3
+      \xF4 canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng t\u1EF1 \xE1p s\xE1t
+      th\xEC t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9 th\xEC map c\xE0ng
+      'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y l\xE0 \u0110\xCDCH
+      C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\": {\n   
+      \"o_capitao\": {\n      \"slowResistPercent\": 80,\n      \"appearances\":
+      [\n        {\n          \"wave\": 5,\n          \"hp\": 750,\n          \"bounty\":
+      40\n        },\n        {\n          \"wave\": 10,\n          \"hp\": 1900,\n         
+      \"bounty\": 80\n        },\n        {\n          \"wave\": 15,\n          \"hp\":
+      2200,\n          \"bounty\": 110\n        },\n        {\n          \"wave\":
+      20,\n          \"hp\": 3000,\n          \"bounty\": 180\n        }\n      ]\n   
+      }\n  },\n  \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20;
+      W15/W20 c\xF3 hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n 
+      \"_f06Note\": \"\U0001F535 f06 d\u1EDDi (-1.92,-4.91) \u2192 (-2.10,-5.30):
+      khe h\u1EDF tuy\u1EBFn `corta` 20.1% \u2192 17.9%. S\xE0n to\xE1n h\u1ECDc
+      c\u1EE7a b\u1ED1 c\u1EE5c 2 tuy\u1EBFn 12 \xF4 l\xE0 20%, n\xEAn 20.1% l\xE0
+      V\u1EEAA TR\xC0N ch\u1EE9 kh\xF4ng ph\u1EA3i b\u1ED1 c\u1EE5c h\u1ECFng \u2014
+      nh\u01B0ng d\u1EDDi m\u1ED9t \xF4 r\u1EBB h\u01A1n n\u1EDBi lu\u1EADt, v\xE0
+      n\u1EDBi lu\u1EADt th\xEC l\u1EA7n sau kh\xF4ng ai bi\u1EBFt v\xEC sao n\xF3
+      \u0111\u01B0\u1EE3c n\u1EDBi.\",\n  \"_balanceNote\": \"V\xF2ng 27b: ti\u1EC1n
+      2100\u2192800, gi\u1EEF nguy\xEAn s\u1ED1 qu\xE2n.\",\n  \"_laneShapeNote\":
+      \"V\xF2ng 27: d\u1EF1ng l\u1EA1i theo ki\u1EC3u M\u1ED8T TH\xC2N CHUNG, HAI
+      L\u1ED0I RA. \u0110o\u1EA1n chung d\xE0i 23.7u (65% chi\u1EC1u d\xE0i m\u1ED9t
+      tuy\u1EBFn) \u2014 m\u1ECDi \xF4 c\u1EA1nh th\xE2n canh \u0111\u01B0\u1EE3c
+      C\u1EA2 HAI tuy\u1EBFn, n\xEAn ti\u1EC1n kh\u1EDFi \u0111\u1EA7u v\u1EC1 m\u1EE9c
+      map m\u1ED9t tuy\u1EBFn. \u0110o\u1EA1n ch\u1EBB cu\u1ED1i v\u1EABn b\u1EAFt
+      chia l\u1EF1c. L\xFD do: docs/09 \xA78 \u2014 gi\xE1 c\u1EE7a map \u0111a tuy\u1EBFn
+      n\u1EB1m \u1EDF \xF4 b\u1ECB kho\xE1 c\u1EE9ng v\xE0o m\u1ED9t tuy\u1EBFn,
+      kh\xF4ng n\u1EB1m \u1EDF s\u1ED1 tuy\u1EBFn.\",\n  \"farSlots\": [],\n  \"_slotAddNote\":
+      \"V\xF2ng 27: th\xEAm 13 \xF4. \u0110o \u0111\u01B0\u1EE3c c\xE1c tuy\u1EBFn
+      bi\xEAn ch\u1EC9 \u0111\u1EA1t 126% m\u1EE9c \u03A3chord c\u1EE7a m00 \u2014
+      m\u1ED9t con qu\xE1i \u0111i tuy\u1EBFn \u0111\xF3 \u0103n ch\u01B0a t\u1EDBi
+      n\u1EEDa l\u01B0\u1EE3ng s\xE1t th\u01B0\u01A1ng so v\u1EDBi map g\u1ED1c.
+      B\xF9 b\u1EB1ng ti\u1EC1n kh\u1EDFi \u0111\u1EA7u th\xEC ph\u1EA3i t\u1EDBi
+      4 300 (g\u1EA5p 6 l\u1EA7n thi\u1EBFt k\u1EBF) v\xE0 v\u1EABn ph\u1EA3i c\u1EAFt
+      g\u1EA7n n\u1EEDa s\u1ED1 qu\xE2n. Thi\u1EBFu l\xE0 thi\u1EBFu \xD4, kh\xF4ng
+      ph\u1EA3i thi\u1EBFu ti\u1EC1n. Xem docs/09 \xA78.7.\",\n  \"_waveNote\": \"V\xF2ng
+      27: d\u1EF1ng l\u1EA1i theo d\xE1ng wave c\u1EE7a m00 (map \u0111\xE3 c\xE2n
+      xong), chia \u0111\xF4i hai tuy\u1EBFn. B\u1EA3ng c\u0169 vi\u1EBFt cho ba
+      tuy\u1EBFn / lu\xE2n phi\xEAn n\xEAn kh\xF4ng c\xF2n d\xF9ng \u0111\u01B0\u1EE3c
+      sau khi \u0111\u1ED5i sang ki\u1EC3u m\u1ED9t th\xE2n chung hai l\u1ED1i ra.\",\n 
+      \"maxGapFraction\": 0.2,\n  \"goalkeeperMinLeadUnits\": 1.0,\n  \"goalkeeperMinCoverageUnits\":
+      2.0,\n  \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+      \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+      to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+      l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+      tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+      \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+      tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m05
     displayName: La Confluencia
     order: 5
@@ -2054,8 +2124,8 @@ MonoBehaviour:
       -3.1\n    },\n    {\n      \"id\": \"t03\",\n      \"type\": \"field\",\n     
       \"x\": 0.63,\n      \"y\": -6.8\n    },\n    {\n      \"id\": \"t04\",\n     
       \"type\": \"field\",\n      \"x\": -1.0,\n      \"y\": -7.37\n    },\n    {\n     
-      \"id\": \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": -1.6,\n     
-      \"y\": -8.8\n    }\n  ],\n  \"economy\": {\n    \"startingCash\": 600,\n   
+      \"id\": \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": -2.291,\n     
+      \"y\": -8.352\n    }\n  ],\n  \"economy\": {\n    \"startingCash\": 800,\n   
       \"fieldSlots\": 11\n  },\n  \"_economyNote\": \"`startingCash` l\xE0 \u0110I\u1EC2M
       KH\u1EDEI \u0110\u1EA6U \u0110\u1EC2 QU\xC9T \u2014 ph\u1EA3i \u0111o b\u1EB1ng
       test 20-wave engine th\u1EADt.\",\n  \"waves\": [\n    {\n      \"wave\": 1,\n     
@@ -2082,7 +2152,8 @@ MonoBehaviour:
       \"adepto\",\n          \"count\": 4,\n          \"lane\": \"sur\",\n         
       \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 4,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 5,\n      \"spawns\": [\n       
+      }\n      ]\n    },\n    {\n      \"wave\": 5,\n      \"bosses\": [\n       
+      { \"id\": \"o_capitao\", \"lane\": \"sur\" }\n      ],\n      \"spawns\": [\n       
       {\n          \"enemy\": \"adepto\",\n          \"count\": 4,\n          \"lane\":
       \"norte\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
       \"tifoso\",\n          \"count\": 3,\n          \"lane\": \"norte\",\n         
@@ -2187,92 +2258,104 @@ MonoBehaviour:
       \"count\": 4,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
       },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
       \"lane\": \"sur\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 15,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 4,\n          \"lane\": \"norte\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 5,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
+      {\n      \"wave\": 15,\n      \"bosses\": [\n        { \"id\": \"o_capitao\",
+      \"lane\": \"norte\" },\n        { \"id\": \"o_capitao\", \"lane\": \"sur\"
+      }\n      ],\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
+      \"count\": 4,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
       \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 4,\n          \"lane\": \"sur\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"norte\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 4,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"sur\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 16,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 4,\n          \"lane\": \"norte\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 6,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 4,\n          \"lane\": \"sur\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n         
+      \"lane\": \"sur\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"sur\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 16,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      4,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n          \"lane\":
+      \"norte\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 2,\n          \"lane\": \"norte\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 4,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"sur\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 5,\n          \"lane\": \"norte\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 6,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 5,\n          \"lane\": \"sur\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 4,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
-      \"lane\": \"sur\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 5,\n          \"lane\": \"norte\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 5,\n          \"lane\": \"sur\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n         
+      \"lane\": \"sur\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"sur\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 17,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      5,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n          \"lane\":
+      \"norte\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 2,\n          \"lane\": \"norte\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 5,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-      \"lane\": \"sur\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 6,\n          \"lane\": \"norte\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
-      \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 6,\n          \"lane\": \"sur\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n         
+      \"lane\": \"sur\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"sur\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 18,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      5,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
+      \"norte\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 2,\n          \"lane\": \"norte\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
+      \"count\": 5,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
+      \"lane\": \"sur\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"sur\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 19,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      6,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
+      \"norte\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 3,\n          \"lane\": \"norte\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 6,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-      \"lane\": \"sur\",\n          \"delaySec\": 0\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 20,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 7,\n          \"lane\": \"norte\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 9,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-      \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n        {\n         
-      \"enemy\": \"adepto\",\n          \"count\": 8,\n          \"lane\": \"sur\",\n         
-      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n         
+      \"lane\": \"sur\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"sur\",\n         
+      \"delaySec\": 0\n        }\n      ]\n    },\n    {\n      \"wave\": 20,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      7,\n          \"lane\": \"norte\",\n          \"delaySec\": 0\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\":
+      \"norte\",\n          \"delaySec\": 0\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 4,\n          \"lane\": \"norte\",\n         
+      \"delaySec\": 0\n        },\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 8,\n          \"lane\": \"sur\",\n          \"delaySec\": 0\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 4,\n         
-      \"lane\": \"sur\",\n          \"delaySec\": 0\n        }\n      ],\n      \"bosses\":
-      [\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"sur\"\n       
-      }\n      ]\n    }\n  ],\n  \"hpScaling\": {\n    \"base\": 0.67,\n    \"growthPerWave\":
-      1.07\n  },\n  \"_hpScalingNote\": \"B\xF9 cho \u0111\u1ED9 ph\u1EE7: map c\xF3
-      \xF4 canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng t\u1EF1 \xE1p s\xE1t
-      th\xEC t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9 th\xEC map c\xE0ng
-      'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y l\xE0 \u0110\xCDCH
-      C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\": {\n   
-      \"o_capitao\": {\n      \"slowResistPercent\": 80,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 1700,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 6600,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O.\",\n  \"maxGapFraction\":
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 8,\n         
+      \"lane\": \"sur\",\n          \"delaySec\": 0\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"sur\",\n         
+      \"delaySec\": 0\n        }\n      ],\n      \"bosses\": [\n        {\n         
+      \"id\": \"o_capitao\",\n          \"lane\": \"sur\"\n        },\n        {\n         
+      \"id\": \"o_capitao\",\n          \"lane\": \"norte\"\n        }\n      ]\n   
+      }\n  ],\n  \"hpScaling\": {\n    \"base\": 0.67,\n    \"growthPerWave\": 1.07\n 
+      },\n  \"_hpScalingNote\": \"B\xF9 cho \u0111\u1ED9 ph\u1EE7: map c\xF3 \xF4
+      canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng t\u1EF1 \xE1p s\xE1t th\xEC
+      t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9 th\xEC map c\xE0ng 'th\xFA
+      v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y l\xE0 \u0110\xCDCH C\u1EA6N
+      \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\": {\n    \"o_capitao\":
+      {\n      \"slowResistPercent\": 80,\n      \"appearances\": [\n        {\n         
+      \"wave\": 5,\n          \"hp\": 700,\n          \"bounty\": 40\n        },\n       
+      {\n          \"wave\": 10,\n          \"hp\": 1700,\n          \"bounty\":
+      80\n        },\n        {\n          \"wave\": 15,\n          \"hp\": 2000,\n         
+      \"bounty\": 110\n        },\n        {\n          \"wave\": 20,\n         
+      \"hp\": 3500,\n          \"bounty\": 180\n        }\n      ]\n    }\n  },\n 
+      \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20; W15/W20 c\xF3
+      hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n  \"maxGapFraction\":
       0.243,\n  \"_maxGapNote\": \"S\xE0n t\u1EF1 t\xEDnh cho 2 tuy\u1EBFn/11 \xF4
       l\xE0 21.8%; d\xF2 TO\xC0N B\u1ED8 v\u1ECB tr\xED kh\u1EA3 d\u0129 (c\xF3 r\xE0ng
       bu\u1ED9c |x| \u2264 4.70 \u0111\u1EC3 v\xF9ng ch\u1EA1m kh\xF4ng tr\xE0n m\xE9p
       m\xE0n) ch\u1EC9 \u0111\u1EA1t 23.3%. 11 \xF4 chia hai nh\xE1nh C\u1ED8NG th\xE2n
       chung l\xE0 gi\u1EDBi h\u1EA1n h\xECnh h\u1ECDc th\u1EADt c\u1EE7a b\u1ED1
       c\u1EE5c n\xE0y, kh\xF4ng ph\u1EA3i b\u1ED1 c\u1EE5c h\u1ECFng.\",\n  \"_balanceNote\":
-      \"V\xF2ng 27b.\"\n}\n"
+      \"V\xF2ng 27b.\",\n  \"goalkeeperMinLeadUnits\": 1.0,\n  \"goalkeeperMinCoverageUnits\":
+      2.0,\n  \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+      \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+      to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+      l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+      tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+      \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+      tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m06
     displayName: El Caracol
     order: 6
@@ -2331,8 +2414,8 @@ MonoBehaviour:
       },\n    {\n      \"id\": \"f08\",\n      \"type\": \"field\",\n      \"x\":
       -2.7,\n      \"y\": 4.3\n    },\n    {\n      \"id\": \"f09\",\n      \"type\":
       \"field\",\n      \"x\": -1.1,\n      \"y\": 0.0\n    },\n    {\n      \"id\":
-      \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": 0.0,\n      \"y\":
-      1.5\n    }\n  ],\n  \"economy\": {\n    \"startingCash\": 700,\n    \"fieldSlots\":
+      \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": -2.31,\n      \"y\":
+      1.57\n    }\n  ],\n  \"economy\": {\n    \"startingCash\": 800,\n    \"fieldSlots\":
       9\n  },\n  \"_economyNote\": \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI
       \u0110\u1EA6U \u0110\u1EC2 QU\xC9T, ch\u01B0a ph\u1EA3i s\u1ED1 ch\u1ED1t \u2014
       ph\u1EA3i \u0111o b\u1EB1ng test 20-wave engine th\u1EADt nh\u01B0 m00 \u0111\xE3
@@ -2348,7 +2431,8 @@ MonoBehaviour:
       {\n      \"wave\": 4,\n      \"spawns\": [\n        {\n          \"enemy\":
       \"adepto\",\n          \"count\": 5,\n          \"lane\": \"L1\"\n        },\n       
       {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n          \"lane\":
-      \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 5,\n      \"spawns\":
+      \"L1\"\n        }\n      ]\n    },\n    {\n      \"wave\": 5,\n      \"bosses\":
+      [\n        { \"id\": \"o_capitao\", \"lane\": \"L1\" }\n      ],\n      \"spawns\":
       [\n        {\n          \"enemy\": \"adepto\",\n          \"count\": 4,\n         
       \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 3,\n          \"lane\": \"L1\"\n        },\n        {\n         
@@ -2399,64 +2483,66 @@ MonoBehaviour:
       \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 7,\n          \"lane\": \"L1\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 15,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 5,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 5,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 16,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 5,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 17,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 7,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 18,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 7,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 8,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 19,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 8,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 9,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 4,\n          \"lane\": \"L1\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 20,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 10,\n          \"lane\":
-      \"L1\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 11,\n          \"lane\": \"L1\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 5,\n          \"lane\": \"L1\"\n       
-      }\n      ],\n      \"bosses\": [\n        {\n          \"id\": \"o_capitao\",\n         
-      \"lane\": \"L1\"\n        }\n      ]\n    }\n  ],\n  \"bossOverrides\": {\n   
-      \"o_capitao\": {\n      \"slowResistPercent\": 82,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 3100,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 12100,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O \u2014 ho\u1EA3
-      l\u1EF1c d\u1ED3n l\xEAn boss t\u1EC9 l\u1EC7 v\u1EDBi th\u1EDDi gian qu\xE2n
-      n\u1EB1m trong t\u1EA7m, m\xE0 c\xE1i \u0111\xF3 ph\u1EE5 thu\u1ED9c \u0111\u1ED9
-      d\xE0i tuy\u1EBFn.\",\n  \"_maxGapNote\": \"\U0001F534 N\u1EDAI 0.15 \u2192
-      0.165, C\xD3 \u0110O ch\u1EE9 kh\xF4ng n\u1EDBi cho qua. D\xF2 TO\xC0N B\u1ED8
-      v\u1ECB tr\xED kh\u1EA3 d\u0129 cho \xF4 y\u1EBFu nh\u1EA5t cho th\u1EA5y 9
-      \xF4 tr\xEAn \u0111\u01B0\u1EDDng 52.18u KH\xD4NG TH\u1EC2 \u0111\u1EA1t 15%
-      \u2014 t\u1ED1i \u01B0u tuy\u1EC7t \u0111\u1ED1i l\xE0 16.3%. Nguy\xEAn nh\xE2n
-      l\xE0 ph\xE9p \u0111o, kh\xF4ng ph\u1EA3i map: path_check g\xE1n m\u1ED7i \xF4
-      v\xE0o M\u1ED8T \u0111i\u1EC3m g\u1EA7n nh\u1EA5t, m\xE0 xo\xE1y \u1ED1c th\xEC
-      m\u1ED9t \xF4 canh hai \u0111o\u1EA1n f r\u1EA5t xa nhau, n\xEAn 'kho\u1EA3ng
-      c\xE1ch gi\u1EEFa c\xE1c \xF4 d\u1ECDc \u0111\u01B0\u1EDDng' b\u1ECB th\u1ED5i
-      ph\u1ED3ng. \U0001F535 f07 \u0111\xE3 D\u1EDCI (-3.70,-4.40) \u2192 (-0.60,-8.70)
-      \u0111\u1EC3 ch\u1EA1m \u0111\xFAng t\u1ED1i \u01B0u \u0111\xF3. \u0110\xE2y
-      l\xE0 \u0111\xE1nh \u0111\u1ED5i \u0110O \u0110\u01AF\u1EE2C, kh\xF4ng ph\u1EA3i
-      l\xE0m \u0111\u1EB9p s\u1ED1: ph\u1EE7 \u1EDF R=1.0 t\u0103ng 11.1% \u2192
-      16.5% (\u0111\xFAng ch\u1ED7 th\u1EE7ng \u2014 \u0111\u1EA7u tr\u1EADn, t\u01B0\u1EDBng
-      Lv1), \u0111\u1ED5i l\u1EA1i ph\u1EE7 \u1EDF R=1.8 gi\u1EA3m 73.0% \u2192 69.8%.
-      Ch\u1ECDn v\xEC l\u1ED7 h\u1ED5ng n\u1EB1m \u1EDF \u0111\u1EA7u tr\u1EADn,
-      cu\u1ED1i tr\u1EADn v\u1ED1n \u0111\xE3 \u1ED5n. \u26A0\uFE0F N\u1EBFu test
-      20-wave cho th\u1EA5y kh\xF4ng qua n\u1ED5i \u0111\u1EA7u tr\u1EADn th\xEC
+      }\n      ]\n    },\n    {\n      \"wave\": 15,\n      \"bosses\": [\n       
+      { \"id\": \"o_capitao\", \"lane\": \"L1\" },\n        { \"id\": \"o_capitao\",
+      \"lane\": \"L1\" }\n      ],\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 5,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 2,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 16,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 5,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 2,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 7,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 3,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 7,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 8,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 3,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 8,\n          \"lane\": \"L1\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\":
+      \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 4,\n          \"lane\": \"L1\"\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 20,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"adepto\",\n          \"count\": 10,\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 11,\n         
+      \"lane\": \"L1\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 5,\n          \"lane\": \"L1\"\n        }\n      ],\n      \"bosses\":
+      [\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"L1\"\n       
+      },\n        {\n          \"id\": \"o_capitao\",\n          \"lane\": \"L1\"\n       
+      }\n      ]\n    }\n  ],\n  \"bossOverrides\": {\n    \"o_capitao\": {\n     
+      \"slowResistPercent\": 82,\n      \"appearances\": [\n        {\n         
+      \"wave\": 5,\n          \"hp\": 1250,\n          \"bounty\": 40\n        },\n       
+      {\n          \"wave\": 10,\n          \"hp\": 3100,\n          \"bounty\":
+      80\n        },\n        {\n          \"wave\": 15,\n          \"hp\": 3500,\n         
+      \"bounty\": 110\n        },\n        {\n          \"wave\": 20,\n         
+      \"hp\": 6200,\n          \"bounty\": 180\n        }\n      ]\n    }\n  },\n 
+      \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20; W15/W20 c\xF3
+      hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n  \"_maxGapNote\":
+      \"\U0001F534 N\u1EDAI 0.15 \u2192 0.165, C\xD3 \u0110O ch\u1EE9 kh\xF4ng n\u1EDBi
+      cho qua. D\xF2 TO\xC0N B\u1ED8 v\u1ECB tr\xED kh\u1EA3 d\u0129 cho \xF4 y\u1EBFu
+      nh\u1EA5t cho th\u1EA5y 9 \xF4 tr\xEAn \u0111\u01B0\u1EDDng 52.18u KH\xD4NG
+      TH\u1EC2 \u0111\u1EA1t 15% \u2014 t\u1ED1i \u01B0u tuy\u1EC7t \u0111\u1ED1i
+      l\xE0 16.3%. Nguy\xEAn nh\xE2n l\xE0 ph\xE9p \u0111o, kh\xF4ng ph\u1EA3i map:
+      path_check g\xE1n m\u1ED7i \xF4 v\xE0o M\u1ED8T \u0111i\u1EC3m g\u1EA7n nh\u1EA5t,
+      m\xE0 xo\xE1y \u1ED1c th\xEC m\u1ED9t \xF4 canh hai \u0111o\u1EA1n f r\u1EA5t
+      xa nhau, n\xEAn 'kho\u1EA3ng c\xE1ch gi\u1EEFa c\xE1c \xF4 d\u1ECDc \u0111\u01B0\u1EDDng'
+      b\u1ECB th\u1ED5i ph\u1ED3ng. \U0001F535 f07 \u0111\xE3 D\u1EDCI (-3.70,-4.40)
+      \u2192 (-0.60,-8.70) \u0111\u1EC3 ch\u1EA1m \u0111\xFAng t\u1ED1i \u01B0u \u0111\xF3.
+      \u0110\xE2y l\xE0 \u0111\xE1nh \u0111\u1ED5i \u0110O \u0110\u01AF\u1EE2C, kh\xF4ng
+      ph\u1EA3i l\xE0m \u0111\u1EB9p s\u1ED1: ph\u1EE7 \u1EDF R=1.0 t\u0103ng 11.1%
+      \u2192 16.5% (\u0111\xFAng ch\u1ED7 th\u1EE7ng \u2014 \u0111\u1EA7u tr\u1EADn,
+      t\u01B0\u1EDBng Lv1), \u0111\u1ED5i l\u1EA1i ph\u1EE7 \u1EDF R=1.8 gi\u1EA3m
+      73.0% \u2192 69.8%. Ch\u1ECDn v\xEC l\u1ED7 h\u1ED5ng n\u1EB1m \u1EDF \u0111\u1EA7u
+      tr\u1EADn, cu\u1ED1i tr\u1EADn v\u1ED1n \u0111\xE3 \u1ED5n. \u26A0\uFE0F N\u1EBFu
+      test 20-wave cho th\u1EA5y kh\xF4ng qua n\u1ED5i \u0111\u1EA7u tr\u1EADn th\xEC
       ph\u1EA3i R\xDAT NG\u1EAEN xo\xE1y \u1ED1c, KH\xD4NG n\u1EDBi th\xEAm. \U0001F535
       y ban \u0111\u1EA7u \u0111\u1EB7t -9.00 th\xEC v\xF9ng ch\u1EA1m 48pt TR\xC0N
       m\xE9p d\u01B0\u1EDBi 0.06u \u2014 path_check b\u1EAFt \u0111\u01B0\u1EE3c.
@@ -2497,7 +2583,14 @@ MonoBehaviour:
       xem l\u1EA1i `hpScaling.growthPerWave` \u2014 hai th\u1EE9 b\xF9 nhau. M\u1ED1c
       so s\xE1nh: m00 = 1.74 (\u0111\u01B0\u1EDDng kh\xF4ng t\u1EF1 \xE1p s\xE1t,
       m\u1ED7i v\xF2ng t\u1EA7m c\u1EAFt \u0111\xFAng 1 kh\xFAc).\",\n  \"_balanceNote\":
-      \"V\xF2ng 27b.\"\n}\n"
+      \"V\xF2ng 27b.\",\n  \"goalkeeperMinLeadUnits\": 1.0,\n  \"goalkeeperMinCoverageUnits\":
+      2.0,\n  \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+      \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+      to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+      l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+      tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+      \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+      tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m07
     displayName: Tres Puertas
     order: 7
@@ -2510,7 +2603,7 @@ MonoBehaviour:
       \u0111\u1ED5i theo t\u1EF7 l\u1EC7 g\u1EA7n t\u01B0\u01A1ng \u0111\u01B0\u01A1ng
       m\xE1u/th\u01B0\u1EDFng th\xE0nh Tifoso Lv2 v\xE0 Tambor Lv3; c\xE1c act sau
       v\xEC v\u1EADy \xEDt qu\xE2n r\xE1c v\xE0 nhi\u1EC1u m\u1EE5c ti\xEAu nguy
-      hi\u1EC3m h\u01A1n.\",\n  \"coveragePerSlot\": 3.79,\n  \"_coverageNote\":
+      hi\u1EC3m h\u01A1n.\",\n  \"coveragePerSlot\": 4.19,\n  \"_coverageNote\":
       \"\U0001F534 S\u1EE9c ph\xF2ng ng\u1EF1 tr\xEAn m\u1ED7i \xF4, \u0110O b\u1EB1ng
       tools/path_check.py; l\u1EC7ch >8% l\xE0 \u0111\u1ECF. V\u1EDBi map \u0111a
       tuy\u1EBFn con s\u1ED1 n\xE0y g\u1ED3m c\u1EA3 \xF4 canh \u0110\u01AF\u1EE2C
@@ -2584,9 +2677,9 @@ MonoBehaviour:
       \"field\",\n      \"x\": 1.1,\n      \"y\": -2.5\n    },\n    {\n      \"id\":
       \"f12\",\n      \"type\": \"field\",\n      \"x\": 2.3,\n      \"y\": -5.7\n   
       },\n    {\n      \"id\": \"f13\",\n      \"type\": \"field\",\n      \"x\":
-      0.6,\n      \"y\": -6.0\n    },\n    {\n      \"id\": \"gk01\",\n      \"type\":
-      \"goalkeeper\",\n      \"x\": 0.0,\n      \"y\": -8.55\n    }\n  ],\n  \"economy\":
-      {\n    \"startingCash\": 700,\n    \"fieldSlots\": 13\n  },\n  \"_economyNote\":
+      0.1,\n      \"y\": -7.55\n    },\n    {\n      \"id\": \"gk01\",\n      \"type\":
+      \"goalkeeper\",\n      \"x\": 2.209,\n      \"y\": -7.986\n    }\n  ],\n  \"economy\":
+      {\n    \"startingCash\": 900,\n    \"fieldSlots\": 13\n  },\n  \"_economyNote\":
       \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI \u0110\u1EA6U \u0110\u1EC2
       QU\xC9T \u2014 ph\u1EA3i \u0111o b\u1EB1ng test 20-wave engine th\u1EADt.\",\n 
       \"waves\": [\n    {\n      \"wave\": 1,\n      \"spawns\": [\n        {\n         
@@ -2621,8 +2714,9 @@ MonoBehaviour:
       \"count\": 2,\n          \"lane\": \"central\",\n          \"delaySec\": 5.6\n       
       },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 2,\n         
       \"lane\": \"este\",\n          \"delaySec\": 11.2\n        }\n      ]\n   
-      },\n    {\n      \"wave\": 5,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 1,\n          \"lane\": \"este\",\n         
+      },\n    {\n      \"wave\": 5,\n      \"bosses\": [\n        { \"id\": \"o_capitao\",
+      \"lane\": \"oeste\" }\n      ],\n      \"spawns\": [\n        {\n         
+      \"enemy\": \"adepto\",\n          \"count\": 1,\n          \"lane\": \"este\",\n         
       \"delaySec\": 11.2\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 3,\n          \"lane\": \"oeste\"\n        },\n        {\n         
       \"enemy\": \"tifoso\",\n          \"count\": 2,\n          \"lane\": \"central\",\n         
@@ -2716,84 +2810,89 @@ MonoBehaviour:
       \"lane\": \"central\",\n          \"delaySec\": 4.2\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"este\",\n         
       \"delaySec\": 8.4\n        }\n      ]\n    },\n    {\n      \"wave\": 15,\n     
+      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\": \"este\" },\n       
+      { \"id\": \"o_capitao\", \"lane\": \"oeste\" }\n      ],\n      \"spawns\":
+      [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n         
+      \"lane\": \"oeste\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 4,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n         
+      \"lane\": \"este\",\n          \"delaySec\": 5.6\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 1,\n          \"lane\": \"oeste\"\n       
+      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 1,\n         
+      \"lane\": \"central\",\n          \"delaySec\": 2.8\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"este\",\n         
+      \"delaySec\": 5.6\n        }\n      ]\n    },\n    {\n      \"wave\": 16,\n     
       \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
       4,\n          \"lane\": \"oeste\"\n        },\n        {\n          \"enemy\":
       \"tifoso\",\n          \"count\": 4,\n          \"lane\": \"central\",\n         
       \"delaySec\": 2.8\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 4,\n          \"lane\": \"este\",\n          \"delaySec\": 5.6\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 1,\n         
-      \"lane\": \"oeste\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 1,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"este\",\n          \"delaySec\": 5.6\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 16,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"tifoso\",\n          \"count\": 4,\n          \"lane\": \"oeste\"\n       
-      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n         
-      \"lane\": \"central\",\n          \"delaySec\": 2.8\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 4,\n          \"lane\": \"este\",\n         
-      \"delaySec\": 5.6\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 2,\n          \"lane\": \"oeste\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"central\",\n         
-      \"delaySec\": 2.8\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 1,\n          \"lane\": \"este\",\n          \"delaySec\": 5.6\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 17,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\":
-      \"oeste\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 5,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
-      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n         
-      \"lane\": \"este\",\n          \"delaySec\": 5.6\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 1,\n          \"lane\": \"oeste\"\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"central\",\n          \"delaySec\": 2.8\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"este\",\n         
-      \"delaySec\": 5.6\n        }\n      ]\n    },\n    {\n      \"wave\": 18,\n     
-      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-      5,\n          \"lane\": \"oeste\"\n        },\n        {\n          \"enemy\":
-      \"tifoso\",\n          \"count\": 6,\n          \"lane\": \"central\",\n         
-      \"delaySec\": 2.8\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 6,\n          \"lane\": \"este\",\n          \"delaySec\": 5.6\n       
       },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
       \"lane\": \"oeste\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
       \"count\": 2,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
+      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 1,\n         
       \"lane\": \"este\",\n          \"delaySec\": 5.6\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 1,\n          \"lane\": \"central\",\n         
-      \"delaySec\": 2.8\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 5,\n          \"lane\": \"oeste\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"central\",\n         
-      \"delaySec\": 2.8\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 5,\n          \"lane\": \"este\",\n          \"delaySec\": 5.6\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
-      \"lane\": \"oeste\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 3,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
+      {\n      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"oeste\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
+      \"lane\": \"central\",\n          \"delaySec\": 2.8\n        },\n        {\n         
+      \"enemy\": \"tifoso\",\n          \"count\": 4,\n          \"lane\": \"este\",\n         
+      \"delaySec\": 5.6\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 1,\n          \"lane\": \"oeste\"\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"central\",\n         
+      \"delaySec\": 2.8\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 2,\n          \"lane\": \"este\",\n          \"delaySec\": 5.6\n       
+      }\n      ]\n    },\n    {\n      \"wave\": 18,\n      \"spawns\": [\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\":
+      \"oeste\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 6,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n         
+      \"lane\": \"este\",\n          \"delaySec\": 5.6\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"oeste\"\n       
       },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"este\",\n          \"delaySec\": 5.6\n        }\n      ]\n    },\n   
-      {\n      \"wave\": 20,\n      \"spawns\": [\n        {\n          \"enemy\":
-      \"adepto\",\n          \"count\": 1,\n          \"lane\": \"este\",\n         
-      \"delaySec\": 5.6\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 8,\n          \"lane\": \"oeste\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 8,\n          \"lane\": \"central\",\n         
-      \"delaySec\": 2.8\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"este\",\n          \"delaySec\": 5.6\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"oeste\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 3,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
+      \"lane\": \"central\",\n          \"delaySec\": 2.8\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"este\",\n         
+      \"delaySec\": 5.6\n        }\n      ]\n    },\n    {\n      \"wave\": 19,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      1,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
+      \"lane\": \"oeste\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 5,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
+      \"lane\": \"este\",\n          \"delaySec\": 5.6\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"oeste\"\n       
       },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
-      \"lane\": \"este\",\n          \"delaySec\": 5.6\n        }\n      ],\n     
-      \"bosses\": [\n        {\n          \"id\": \"o_capitao\",\n          \"lane\":
-      \"este\"\n        }\n      ]\n    }\n  ],\n  \"hpScaling\": {\n    \"base\":
-      0.67,\n    \"growthPerWave\": 1.07\n  },\n  \"_hpScalingNote\": \"B\xF9 cho
-      \u0111\u1ED9 ph\u1EE7: map c\xF3 \xF4 canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng
-      t\u1EF1 \xE1p s\xE1t th\xEC t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9
-      th\xEC map c\xE0ng 'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y
-      l\xE0 \u0110\xCDCH C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\":
-      {\n    \"o_capitao\": {\n      \"slowResistPercent\": 85,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 1400,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 5500,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O.\",\n  \"_balanceNote\":
+      \"lane\": \"central\",\n          \"delaySec\": 2.8\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"este\",\n         
+      \"delaySec\": 5.6\n        }\n      ]\n    },\n    {\n      \"wave\": 20,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      1,\n          \"lane\": \"este\",\n          \"delaySec\": 5.6\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 8,\n          \"lane\":
+      \"oeste\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 8,\n          \"lane\": \"central\",\n          \"delaySec\": 2.8\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n         
+      \"lane\": \"este\",\n          \"delaySec\": 5.6\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"oeste\"\n       
+      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
+      \"lane\": \"central\",\n          \"delaySec\": 2.8\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"este\",\n         
+      \"delaySec\": 5.6\n        }\n      ],\n      \"bosses\": [\n        {\n         
+      \"id\": \"o_capitao\",\n          \"lane\": \"este\"\n        },\n        {\n         
+      \"id\": \"o_capitao\",\n          \"lane\": \"central\"\n        }\n      ]\n   
+      }\n  ],\n  \"hpScaling\": {\n    \"base\": 0.67,\n    \"growthPerWave\": 1.07\n 
+      },\n  \"_hpScalingNote\": \"B\xF9 cho \u0111\u1ED9 ph\u1EE7: map c\xF3 \xF4
+      canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng t\u1EF1 \xE1p s\xE1t th\xEC
+      t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9 th\xEC map c\xE0ng 'th\xFA
+      v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y l\xE0 \u0110\xCDCH C\u1EA6N
+      \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\": {\n    \"o_capitao\":
+      {\n      \"slowResistPercent\": 85,\n      \"appearances\": [\n        {\n         
+      \"wave\": 5,\n          \"hp\": 600,\n          \"bounty\": 40\n        },\n       
+      {\n          \"wave\": 10,\n          \"hp\": 1400,\n          \"bounty\":
+      80\n        },\n        {\n          \"wave\": 15,\n          \"hp\": 1600,\n         
+      \"bounty\": 110\n        },\n        {\n          \"wave\": 20,\n         
+      \"hp\": 2800,\n          \"bounty\": 180\n        }\n      ]\n    }\n  },\n 
+      \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20; W15/W20 c\xF3
+      hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n  \"_balanceNote\":
       \"V\xF2ng 27b: b\u1ECF tuy\u1EBFn th\u1EE9 ba, ti\u1EC1n 2100\u2192900.\",\n 
       \"_slotAddNote\": \"V\xF2ng 27: th\xEAm 13 \xF4. \u0110o \u0111\u01B0\u1EE3c
       c\xE1c tuy\u1EBFn bi\xEAn ch\u1EC9 \u0111\u1EA1t 113% m\u1EE9c \u03A3chord
@@ -2820,11 +2919,19 @@ MonoBehaviour:
       \u0110o\u1EA1n ch\u1EBB cu\u1ED1i v\u1EABn b\u1EAFt chia l\u1EF1c. L\xFD do:
       docs/09 \xA78 \u2014 gi\xE1 c\u1EE7a map \u0111a tuy\u1EBFn n\u1EB1m \u1EDF
       \xF4 b\u1ECB kho\xE1 c\u1EE9ng v\xE0o m\u1ED9t tuy\u1EBFn, kh\xF4ng n\u1EB1m
-      \u1EDF s\u1ED1 tuy\u1EBFn.\",\n  \"farSlots\": [\n    \"f13\"\n  ],\n  \"_waveNote\":
-      \"V\xF2ng 27: d\u1EF1ng l\u1EA1i theo d\xE1ng wave c\u1EE7a m00 (map \u0111\xE3
-      c\xE2n xong), chia \u0111\xF4i hai tuy\u1EBFn. B\u1EA3ng c\u0169 vi\u1EBFt
-      cho ba tuy\u1EBFn / lu\xE2n phi\xEAn n\xEAn kh\xF4ng c\xF2n d\xF9ng \u0111\u01B0\u1EE3c
-      sau khi \u0111\u1ED5i sang ki\u1EC3u m\u1ED9t th\xE2n chung hai l\u1ED1i ra.\"\n}\n"
+      \u1EDF s\u1ED1 tuy\u1EBFn.\",\n  \"farSlots\": [],\n  \"_waveNote\": \"V\xF2ng
+      27: d\u1EF1ng l\u1EA1i theo d\xE1ng wave c\u1EE7a m00 (map \u0111\xE3 c\xE2n
+      xong), chia \u0111\xF4i hai tuy\u1EBFn. B\u1EA3ng c\u0169 vi\u1EBFt cho ba
+      tuy\u1EBFn / lu\xE2n phi\xEAn n\xEAn kh\xF4ng c\xF2n d\xF9ng \u0111\u01B0\u1EE3c
+      sau khi \u0111\u1ED5i sang ki\u1EC3u m\u1ED9t th\xE2n chung hai l\u1ED1i ra.\",\n 
+      \"goalkeeperMinLeadUnits\": 1.0,\n  \"goalkeeperMinCoverageUnits\": 2.0,\n 
+      \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+      \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+      to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+      l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+      tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+      \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+      tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m08
     displayName: El Mirador
     order: 8
@@ -2837,7 +2944,7 @@ MonoBehaviour:
       \"_tierMixNote\": \"Thu\u1ED9c nh\xF3m map cu\u1ED1i: t\u1ED5ng qu\xE2n Lv2/Lv3
       cao h\u01A1n r\xF5 r\u1EC7t so v\u1EDBi m06; \u0111\u1ED9 kh\xF3 t\u0103ng
       b\u1EB1ng ch\u1EA5t l\u01B0\u1EE3ng qu\xE2n, kh\xF4ng ch\u1EC9 nh\u1ED3i th\xEAm
-      Adepto Lv1.\",\n  \"coveragePerSlot\": 2.44,\n  \"_coverageNote\": \"\U0001F534
+      Adepto Lv1.\",\n  \"coveragePerSlot\": 2.86,\n  \"_coverageNote\": \"\U0001F534
       S\u1EE9c ph\xF2ng ng\u1EF1 tr\xEAn m\u1ED7i \xF4, \u0110O b\u1EB1ng tools/path_check.py;
       l\u1EC7ch >8% l\xE0 \u0111\u1ECF. V\u1EDBi map \u0111a tuy\u1EBFn con s\u1ED1
       n\xE0y g\u1ED3m c\u1EA3 \xF4 canh \u0110\u01AF\u1EE2C NHI\u1EC0U TUY\u1EBEN
@@ -2897,13 +3004,15 @@ MonoBehaviour:
       \"field\",\n      \"x\": -1.2,\n      \"y\": -7.0\n    },\n    {\n      \"id\":
       \"f10\",\n      \"type\": \"field\",\n      \"x\": 1.2,\n      \"y\": -7.0\n   
       },\n    {\n      \"id\": \"f11\",\n      \"type\": \"field\",\n      \"x\":
-      0.0,\n      \"y\": 5.2\n    },\n    {\n      \"id\": \"f12\",\n      \"type\":
-      \"field\",\n      \"x\": 0.0,\n      \"y\": -3.2\n    },\n    {\n      \"id\":
+      -2.3,\n      \"y\": 2.95\n    },\n    {\n      \"id\": \"f12\",\n      \"type\":
+      \"field\",\n      \"x\": -2.2,\n      \"y\": -1.25\n    },\n    {\n      \"id\":
       \"f13\",\n      \"type\": \"field\",\n      \"x\": -4.0,\n      \"y\": -2.0\n   
       },\n    {\n      \"id\": \"f14\",\n      \"type\": \"field\",\n      \"x\":
       4.0,\n      \"y\": -2.0\n    },\n    {\n      \"id\": \"gk01\",\n      \"type\":
-      \"goalkeeper\",\n      \"x\": 0.0,\n      \"y\": -8.55\n    }\n  ],\n  \"economy\":
-      {\n    \"startingCash\": 800,\n    \"fieldSlots\": 14\n  },\n  \"_economyNote\":
+      \"goalkeeper\",\n      \"x\": -2.088,\n      \"y\": -8.027\n    },\n    {\n     
+      \"id\": \"gk02\",\n      \"type\": \"goalkeeper\",\n      \"x\": 2.088,\n     
+      \"y\": -8.027\n    }\n  ],\n  \"economy\": {\n    \"startingCash\": 1000,\n   
+      \"fieldSlots\": 14,\n    \"goalkeeperSlots\": 2\n  },\n  \"_economyNote\":
       \"3 400 cho ph\xE9p d\u1EF1ng hai c\u1EE5m ph\xF2ng th\u1EE7 \u0111\u1ED9c
       l\u1EADp; test engine 20 wave ch\u1ED1t m\u1EE9c c\xF2n 3/20 m\xE1u v\u1EDBi
       GreedyPlayer.\",\n  \"waves\": [\n    {\n      \"wave\": 1,\n      \"spawns\":
@@ -2918,7 +3027,8 @@ MonoBehaviour:
       {\n          \"enemy\": \"adepto\",\n          \"count\": 8,\n          \"lane\":
       \"E\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
       8,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n      \"wave\":
-      5,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
+      5,\n      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\": \"E\" }\n     
+      ],\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 1,\n          \"lane\": \"E\"\n        },\n        {\n         
       \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"W\"\n       
       },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
@@ -2986,86 +3096,107 @@ MonoBehaviour:
       {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\":
       \"W\"\n        },\n        {\n          \"enemy\": \"tambor\",\n          \"count\":
       3,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n      \"wave\":
-      15,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
-      \"count\": 1,\n          \"lane\": \"E\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"W\"\n       
-      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
+      15,\n      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\": \"E\"
+      },\n        { \"id\": \"o_capitao\", \"lane\": \"W\" }\n      ],\n      \"spawns\":
+      [\n        {\n          \"enemy\": \"adepto\",\n          \"count\": 1,\n         
+      \"lane\": \"E\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 5,\n          \"lane\": \"W\"\n        },\n        {\n         
+      \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"E\"\n       
+      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
+      \"lane\": \"W\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 3,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n     
+      \"wave\": 16,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
+      \"count\": 1,\n          \"lane\": \"W\"\n        },\n        {\n         
+      \"enemy\": \"tifoso\",\n          \"count\": 6,\n          \"lane\": \"W\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n         
       \"lane\": \"E\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
       \"count\": 2,\n          \"lane\": \"W\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"E\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 16,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"adepto\",\n          \"count\": 1,\n          \"lane\":
+      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"E\"\n       
+      }\n      ]\n    },\n    {\n      \"wave\": 17,\n      \"spawns\": [\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\":
       \"W\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-      6,\n          \"lane\": \"W\"\n        },\n        {\n          \"enemy\":
-      \"tifoso\",\n          \"count\": 6,\n          \"lane\": \"E\"\n        },\n       
-      {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\":
-      \"W\"\n        },\n        {\n          \"enemy\": \"tambor\",\n          \"count\":
-      2,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n      \"wave\":
-      17,\n      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 7,\n          \"lane\": \"W\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\": \"E\"\n       
+      7,\n          \"lane\": \"E\"\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 3,\n          \"lane\": \"W\"\n        },\n       
+      {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\":
+      \"E\"\n        }\n      ]\n    },\n    {\n      \"wave\": 18,\n      \"spawns\":
+      [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n         
+      \"lane\": \"W\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 10,\n          \"lane\": \"E\"\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"W\"\n       
       },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
-      \"lane\": \"W\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 3,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n     
-      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 9,\n          \"lane\": \"W\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 10,\n          \"lane\": \"E\"\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n         
-      \"lane\": \"W\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 3,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n     
-      \"wave\": 19,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
-      \"count\": 1,\n          \"lane\": \"E\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\": \"W\"\n       
-      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n         
+      \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n      \"wave\": 19,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      1,\n          \"lane\": \"E\"\n        },\n        {\n          \"enemy\":
+      \"tifoso\",\n          \"count\": 9,\n          \"lane\": \"W\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\":
+      \"E\"\n        },\n        {\n          \"enemy\": \"tambor\",\n          \"count\":
+      4,\n          \"lane\": \"W\"\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 5,\n          \"lane\": \"E\"\n        }\n     
+      ]\n    },\n    {\n      \"wave\": 20,\n      \"spawns\": [\n        {\n         
+      \"enemy\": \"tifoso\",\n          \"count\": 11,\n          \"lane\": \"W\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 13,\n         
       \"lane\": \"E\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 4,\n          \"lane\": \"W\"\n        },\n        {\n         
+      \"count\": 5,\n          \"lane\": \"W\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 5,\n          \"lane\": \"E\"\n       
-      }\n      ]\n    },\n    {\n      \"wave\": 20,\n      \"spawns\": [\n       
-      {\n          \"enemy\": \"tifoso\",\n          \"count\": 11,\n          \"lane\":
-      \"W\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-      13,\n          \"lane\": \"E\"\n        },\n        {\n          \"enemy\":
-      \"tambor\",\n          \"count\": 5,\n          \"lane\": \"W\"\n        },\n       
-      {\n          \"enemy\": \"tambor\",\n          \"count\": 5,\n          \"lane\":
-      \"E\"\n        }\n      ],\n      \"bosses\": [\n        {\n          \"id\":
-      \"o_capitao\",\n          \"lane\": \"E\"\n        }\n      ]\n    }\n  ],\n 
-      \"hpScaling\": {\n    \"base\": 0.67,\n    \"growthPerWave\": 1.07\n  },\n 
-      \"_hpScalingNote\": \"B\xF9 cho \u0111\u1ED9 ph\u1EE7: map c\xF3 \xF4 canh
-      nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng t\u1EF1 \xE1p s\xE1t th\xEC t\u01B0\u1EDBng
-      m\u1EA1nh l\xEAn, kh\xF4ng b\xF9 th\xEC map c\xE0ng 'th\xFA v\u1ECB' c\xE0ng
-      D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y l\xE0 \u0110\xCDCH C\u1EA6N \u0110O b\u1EB1ng
-      qu\xE9t engine.\",\n  \"bossOverrides\": {\n    \"o_capitao\": {\n      \"slowResistPercent\":
-      85,\n      \"appearances\": [\n        {\n          \"wave\": 10,\n         
-      \"hp\": 2000,\n          \"bounty\": 200\n        },\n        {\n         
-      \"wave\": 20,\n          \"hp\": 8000,\n          \"bounty\": 500\n       
-      }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u boss suy t\u1EEB t\u1EC9
-      l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi m00 (42.28u \u2192 2500/9800).
-      \u0110\xCDCH C\u1EA6N \u0110O.\",\n  \"farSlots\": [\n    \"f11\",\n    \"f12\"\n 
-      ],\n  \"_farSlotsNote\": \"\xD4 C\u1ED0 \xDD n\u1EB1m ngo\xE0i t\u1EA7m Lv1
-      \u2014 c\u01A1 ch\u1EBF '\xE9p n\xE2ng c\u1EA5p tr\u01B0\u1EDBc khi tr\u1EA3i
-      r\u1ED9ng'. Ph\u1EA3i khai \u1EDF \u0111\xE2y th\xEC path_check m\u1EDBi cho
-      qua; kh\xF4ng khai th\xEC n\xF3 b\xE1o \xF4 ch\u1EBFt, v\xE0 \u0111\xFAng l\xE0
-      n\xEAn b\xE1o: \xF4 ngo\xE0i t\u1EA7m m\xE0 kh\xF4ng ai bi\u1EBFt l\xE0 ti\u1EC1n
-      ng\u01B0\u1EDDi ch\u01A1i n\xE9m \u0111i.\",\n  \"_balanceNote\": \"Hai tuy\u1EBFn
-      \u0111\u1ED1i x\u1EE9ng bu\u1ED9c chia ti\u1EC1n; b\u1ED1n wave \u0111\u1EA7u
-      lu\xE2n phi\xEAn \u0111\u1EC3 ng\u01B0\u1EDDi ch\u01A1i k\u1ECBp \u0111\u1ECDc
-      tuy\u1EBFn, t\u1EEB wave 5 \u0111\xE1nh \u0111\u1ED3ng th\u1EDDi. Wave 20 t\u0103ng
-      Tambor ph\xEDa \u0110\xF4ng \u0111\u1EC3 kh\xF3a m\u1EE9c kh\xF3 m\u1EE5c ti\xEAu.\",\n 
-      \"_laneShapeNote\": \"Hai tuy\u1EBFn ziczac t\xE1ch bi\u1EC7t quanh tr\u1EE5c
-      gi\u1EEFa, ch\u1EC9 h\u1ED9i t\u1EE5 s\xE1t c\u1EA7u m\xF4n. \xD4 bi\xEAn chuy\xEAn
-      canh m\u1ED9t tuy\u1EBFn; hai \xF4 trung t\xE2m c\u1EA7n n\xE2ng t\u1EA7m m\u1EDBi
-      h\u1ED7 tr\u1EE3 hi\u1EC7u qu\u1EA3 c\u1EA3 hai.\",\n  \"maxGapFraction\":
-      0.25,\n  \"_gapNote\": \"Khai 0.170 thay v\xEC l\u1EA5y s\xE0n 0.150. S\u1ED1
-      \u0110O \u0110\u01AF\u1EE2C: khe h\u1EDF l\u1EDBn nh\u1EA5t l\xE0 4.90 units
-      tr\xEAn tuy\u1EBFn `W`, c\xF2n m00 \u2014 map \u0111\xE3 c\xE2n xong \u2014
-      \u0111\u01B0\u1EE3c ch\u1EA5p nh\u1EADn \u1EDF 6.16 units. Lu\u1EADt g\u1ED1c
-      t\xEDnh theo T\u1EC8 L\u1EC6 chi\u1EC1u d\xE0i n\xEAn n\xF3 ph\u1EA1t map tuy\u1EBFn
-      ng\u1EAFn; t\xEDnh b\u1EB1ng qu\xE3ng \u0111\u01B0\u1EDDng th\u1EADt th\xEC
-      map n\xE0y k\xEDn h\u01A1n m00.\",\n  \"_slotAddNote\": \"14 \xF4 s\xE2n: 10
-      \xF4 chuy\xEAn tuy\u1EBFn, 2 \xF4 trung t\xE2m t\u1EA7m xa v\xE0 2 \xF4 bi\xEAn
-      b\u1ED5 sung \u0111\u1EC3 tr\xE1nh \u0111i\u1EC3m m\xF9 \u1EDF n\u1EEDa sau
-      \u0111\u01B0\u1EDDng ch\u1EA1y.\",\n  \"_waveNote\": \"W1\u20134 lu\xE2n phi\xEAn
-      T\xE2y/\u0110\xF4ng; W5\u201320 m\u1EDF \u0111\u1ED3ng th\u1EDDi. C\xE1c wave
-      cu\u1ED1i t\u0103ng Tifoso/Tambor, boss W20 \u0111i tuy\u1EBFn \u0110\xF4ng.\"\n}\n"
+      }\n      ],\n      \"bosses\": [\n        {\n          \"id\": \"o_capitao\",\n         
+      \"lane\": \"E\"\n        },\n        {\n          \"id\": \"o_capitao\",\n         
+      \"lane\": \"W\"\n        }\n      ]\n    }\n  ],\n  \"hpScaling\": {\n    \"base\":
+      0.67,\n    \"growthPerWave\": 1.07\n  },\n  \"_hpScalingNote\": \"B\xF9 cho
+      \u0111\u1ED9 ph\u1EE7: map c\xF3 \xF4 canh nhi\u1EC1u tuy\u1EBFn / \u0111\u01B0\u1EDDng
+      t\u1EF1 \xE1p s\xE1t th\xEC t\u01B0\u1EDBng m\u1EA1nh l\xEAn, kh\xF4ng b\xF9
+      th\xEC map c\xE0ng 'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y
+      l\xE0 \u0110\xCDCH C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\":
+      {\n    \"o_capitao\": {\n      \"slowResistPercent\": 85,\n      \"appearances\":
+      [\n        {\n          \"wave\": 5,\n          \"hp\": 800,\n          \"bounty\":
+      40\n        },\n        {\n          \"wave\": 10,\n          \"hp\": 2000,\n         
+      \"bounty\": 80\n        },\n        {\n          \"wave\": 15,\n          \"hp\":
+      2300,\n          \"bounty\": 110\n        },\n        {\n          \"wave\":
+      20,\n          \"hp\": 4100,\n          \"bounty\": 180\n        }\n      ]\n   
+      }\n  },\n  \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20;
+      W15/W20 c\xF3 hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n 
+      \"farSlots\": [],\n  \"_farSlotsNote\": \"\xD4 C\u1ED0 \xDD n\u1EB1m ngo\xE0i
+      t\u1EA7m Lv1 \u2014 c\u01A1 ch\u1EBF '\xE9p n\xE2ng c\u1EA5p tr\u01B0\u1EDBc
+      khi tr\u1EA3i r\u1ED9ng'. Ph\u1EA3i khai \u1EDF \u0111\xE2y th\xEC path_check
+      m\u1EDBi cho qua; kh\xF4ng khai th\xEC n\xF3 b\xE1o \xF4 ch\u1EBFt, v\xE0 \u0111\xFAng
+      l\xE0 n\xEAn b\xE1o: \xF4 ngo\xE0i t\u1EA7m m\xE0 kh\xF4ng ai bi\u1EBFt l\xE0
+      ti\u1EC1n ng\u01B0\u1EDDi ch\u01A1i n\xE9m \u0111i.\",\n  \"_balanceNote\":
+      \"Hai tuy\u1EBFn \u0111\u1ED1i x\u1EE9ng bu\u1ED9c chia ti\u1EC1n; b\u1ED1n
+      wave \u0111\u1EA7u lu\xE2n phi\xEAn \u0111\u1EC3 ng\u01B0\u1EDDi ch\u01A1i
+      k\u1ECBp \u0111\u1ECDc tuy\u1EBFn, t\u1EEB wave 5 \u0111\xE1nh \u0111\u1ED3ng
+      th\u1EDDi. Wave 20 t\u0103ng Tambor ph\xEDa \u0110\xF4ng \u0111\u1EC3 kh\xF3a
+      m\u1EE9c kh\xF3 m\u1EE5c ti\xEAu.\",\n  \"_laneShapeNote\": \"Hai tuy\u1EBFn
+      ziczac t\xE1ch bi\u1EC7t quanh tr\u1EE5c gi\u1EEFa, ch\u1EC9 h\u1ED9i t\u1EE5
+      s\xE1t c\u1EA7u m\xF4n. \xD4 bi\xEAn chuy\xEAn canh m\u1ED9t tuy\u1EBFn; hai
+      \xF4 trung t\xE2m c\u1EA7n n\xE2ng t\u1EA7m m\u1EDBi h\u1ED7 tr\u1EE3 hi\u1EC7u
+      qu\u1EA3 c\u1EA3 hai.\",\n  \"maxGapFraction\": 0.25,\n  \"_gapNote\": \"Khai
+      0.170 thay v\xEC l\u1EA5y s\xE0n 0.150. S\u1ED1 \u0110O \u0110\u01AF\u1EE2C:
+      khe h\u1EDF l\u1EDBn nh\u1EA5t l\xE0 4.90 units tr\xEAn tuy\u1EBFn `W`, c\xF2n
+      m00 \u2014 map \u0111\xE3 c\xE2n xong \u2014 \u0111\u01B0\u1EE3c ch\u1EA5p
+      nh\u1EADn \u1EDF 6.16 units. Lu\u1EADt g\u1ED1c t\xEDnh theo T\u1EC8 L\u1EC6
+      chi\u1EC1u d\xE0i n\xEAn n\xF3 ph\u1EA1t map tuy\u1EBFn ng\u1EAFn; t\xEDnh
+      b\u1EB1ng qu\xE3ng \u0111\u01B0\u1EDDng th\u1EADt th\xEC map n\xE0y k\xEDn
+      h\u01A1n m00.\",\n  \"_slotAddNote\": \"14 \xF4 s\xE2n: 10 \xF4 chuy\xEAn tuy\u1EBFn,
+      2 \xF4 trung t\xE2m t\u1EA7m xa v\xE0 2 \xF4 bi\xEAn b\u1ED5 sung \u0111\u1EC3
+      tr\xE1nh \u0111i\u1EC3m m\xF9 \u1EDF n\u1EEDa sau \u0111\u01B0\u1EDDng ch\u1EA1y.\",\n 
+      \"_waveNote\": \"W1\u20134 lu\xE2n phi\xEAn T\xE2y/\u0110\xF4ng; W5\u201320
+      m\u1EDF \u0111\u1ED3ng th\u1EDDi. C\xE1c wave cu\u1ED1i t\u0103ng Tifoso/Tambor,
+      boss W20 \u0111i tuy\u1EBFn \u0110\xF4ng.\",\n  \"_goalkeeperSplitNote\": \"m08
+      c\xF3 HAI \xF4 th\u1EE7 m\xF4n ch\u1EE9 kh\xF4ng ph\u1EA3i m\u1ED9t. \u0110o
+      b\u1EB1ng tools/reposition_slots.py: hai tuy\u1EBFn W/E c\xE1ch nhau 2.10u
+      \u1EDF 2u tr\u01B0\u1EDBc l\u1ED1i ra v\xE0 5.02u \u1EDF 5u tr\u01B0\u1EDBc
+      l\u1ED1i ra \u2014 kh\xF4ng t\u1ED3n t\u1EA1i \u0111i\u1EC3m n\xE0o t\u1EA7m
+      Dibu 1.4 ph\u1EE7 \u0111\u01B0\u1EE3c c\u1EA3 hai. M\u1ED9t \xF4 th\u1EE7 m\xF4n
+      \u1EDF \u0111\xE2y ngh\u0129a l\xE0 m\u1ED9t trong hai c\u1EEDa KH\xD4NG BAO
+      GI\u1EDC \u0111\u01B0\u1EE3c c\u1EA3n. m04/m09/m10 c\xF9ng h\xECnh h\u1ECDc
+      tuy\u1EBFn t\xE1ch r\u1EDDi v\xE0 \u0111\u1EC1u \u0111\xE3 d\xF9ng hai \xF4
+      t\u1EEB tr\u01B0\u1EDBc.\",\n  \"goalkeeperMinLeadUnits\": 1.0,\n  \"goalkeeperMinCoverageUnits\":
+      2.0,\n  \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+      \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+      to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+      l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+      tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+      \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+      tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m09
     displayName: La Horquilla
     order: 9
@@ -3138,10 +3269,10 @@ MonoBehaviour:
       },\n    {\n      \"id\": \"f10\",\n      \"type\": \"field\",\n      \"x\":
       3.0,\n      \"y\": -5.2\n    },\n    {\n      \"id\": \"f11\",\n      \"type\":
       \"field\",\n      \"x\": -0.4,\n      \"y\": 2.7\n    },\n    {\n      \"id\":
-      \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": -3.0,\n      \"y\":
-      -8.45\n    },\n    {\n      \"id\": \"gk02\",\n      \"type\": \"goalkeeper\",\n     
-      \"x\": 3.0,\n      \"y\": -8.45\n    }\n  ],\n  \"economy\": {\n    \"startingCash\":
-      700,\n    \"fieldSlots\": 11,\n    \"goalkeeperSlots\": 2\n  },\n  \"_economyNote\":
+      \"gk01\",\n      \"type\": \"goalkeeper\",\n      \"x\": -3.562,\n      \"y\":
+      -6.925\n    },\n    {\n      \"id\": \"gk02\",\n      \"type\": \"goalkeeper\",\n     
+      \"x\": 3.562,\n      \"y\": -6.925\n    }\n  ],\n  \"economy\": {\n    \"startingCash\":
+      1000,\n    \"fieldSlots\": 11,\n    \"goalkeeperSlots\": 2\n  },\n  \"_economyNote\":
       \"`startingCash` l\xE0 \u0110I\u1EC2M KH\u1EDEI \u0110\u1EA6U \u0110\u1EC2
       QU\xC9T \u2014 ph\u1EA3i \u0111o b\u1EB1ng test 20-wave engine th\u1EADt.\",\n 
       \"waves\": [\n    {\n      \"wave\": 1,\n      \"spawns\": [\n        {\n         
@@ -3166,6 +3297,7 @@ MonoBehaviour:
       \"count\": 3,\n          \"lane\": \"B\"\n        },\n        {\n         
       \"enemy\": \"tifoso\",\n          \"count\": 3,\n          \"lane\": \"A\",\n         
       \"delaySec\": 3.5\n        }\n      ]\n    },\n    {\n      \"wave\": 5,\n     
+      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\": \"B\" }\n      ],\n     
       \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
       5,\n          \"lane\": \"A\"\n        },\n        {\n          \"enemy\":
       \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"B\",\n         
@@ -3233,30 +3365,31 @@ MonoBehaviour:
       \"count\": 3,\n          \"lane\": \"B\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"A\",\n         
       \"delaySec\": 2.8\n        }\n      ]\n    },\n    {\n      \"wave\": 15,\n     
-      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-      8,\n          \"lane\": \"A\"\n        },\n        {\n          \"enemy\":
-      \"tifoso\",\n          \"count\": 7,\n          \"lane\": \"B\",\n         
-      \"delaySec\": 1.4\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 2,\n          \"lane\": \"A\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"B\",\n         
-      \"delaySec\": 1.4\n        }\n      ]\n    },\n    {\n      \"wave\": 16,\n     
-      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-      9,\n          \"lane\": \"B\"\n        },\n        {\n          \"enemy\":
-      \"tifoso\",\n          \"count\": 9,\n          \"lane\": \"A\",\n         
-      \"delaySec\": 1.4\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 3,\n          \"lane\": \"B\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"A\",\n         
-      \"delaySec\": 1.4\n        }\n      ]\n    },\n    {\n      \"wave\": 17,\n     
-      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-      10,\n          \"lane\": \"A\"\n        },\n        {\n          \"enemy\":
-      \"tifoso\",\n          \"count\": 9,\n          \"lane\": \"B\",\n         
-      \"delaySec\": 1.4\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 2,\n          \"lane\": \"A\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"B\",\n         
-      \"delaySec\": 1.4\n        }\n      ]\n    },\n    {\n      \"wave\": 18,\n     
-      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-      10,\n          \"lane\": \"B\"\n        },\n        {\n          \"enemy\":
-      \"tifoso\",\n          \"count\": 10,\n          \"lane\": \"A\",\n         
+      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\": \"A\" },\n       
+      { \"id\": \"o_capitao\", \"lane\": \"B\" }\n      ],\n      \"spawns\": [\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 8,\n          \"lane\":
+      \"A\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
+      7,\n          \"lane\": \"B\",\n          \"delaySec\": 1.4\n        },\n       
+      {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\":
+      \"A\"\n        },\n        {\n          \"enemy\": \"tambor\",\n          \"count\":
+      2,\n          \"lane\": \"B\",\n          \"delaySec\": 1.4\n        }\n     
+      ]\n    },\n    {\n      \"wave\": 16,\n      \"spawns\": [\n        {\n         
+      \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\": \"B\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n         
+      \"lane\": \"A\",\n          \"delaySec\": 1.4\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"B\"\n       
+      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
+      \"lane\": \"A\",\n          \"delaySec\": 1.4\n        }\n      ]\n    },\n   
+      {\n      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\":
+      \"tifoso\",\n          \"count\": 10,\n          \"lane\": \"A\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 9,\n          \"lane\":
+      \"B\",\n          \"delaySec\": 1.4\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 2,\n          \"lane\": \"A\"\n        },\n       
+      {\n          \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\":
+      \"B\",\n          \"delaySec\": 1.4\n        }\n      ]\n    },\n    {\n     
+      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 10,\n          \"lane\": \"B\"\n        },\n        {\n         
+      \"enemy\": \"tifoso\",\n          \"count\": 10,\n          \"lane\": \"A\",\n         
       \"delaySec\": 1.4\n        },\n        {\n          \"enemy\": \"tambor\",\n         
       \"count\": 3,\n          \"lane\": \"B\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 3,\n          \"lane\": \"A\",\n         
@@ -3286,18 +3419,27 @@ MonoBehaviour:
       th\xEC map c\xE0ng 'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y
       l\xE0 \u0110\xCDCH C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\":
       {\n    \"o_capitao\": {\n      \"slowResistPercent\": 88,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 2200,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 8500,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O.\",\n  \"farSlots\":
-      [],\n  \"_farSlotsNote\": \"\xD4 C\u1ED0 \xDD n\u1EB1m ngo\xE0i t\u1EA7m Lv1
-      \u2014 c\u01A1 ch\u1EBF '\xE9p n\xE2ng c\u1EA5p tr\u01B0\u1EDBc khi tr\u1EA3i
-      r\u1ED9ng'. Ph\u1EA3i khai \u1EDF \u0111\xE2y th\xEC path_check m\u1EDBi cho
-      qua; kh\xF4ng khai th\xEC n\xF3 b\xE1o \xF4 ch\u1EBFt, v\xE0 \u0111\xFAng l\xE0
-      n\xEAn b\xE1o: \xF4 ngo\xE0i t\u1EA7m m\xE0 kh\xF4ng ai bi\u1EBFt l\xE0 ti\u1EC1n
-      ng\u01B0\u1EDDi ch\u01A1i n\xE9m \u0111i.\",\n  \"_balanceNote\": \"V\xF2ng
-      27b.\",\n  \"maxGapFraction\": 0.23\n}\n"
+      [\n        {\n          \"wave\": 5,\n          \"hp\": 900,\n          \"bounty\":
+      40\n        },\n        {\n          \"wave\": 10,\n          \"hp\": 2200,\n         
+      \"bounty\": 80\n        },\n        {\n          \"wave\": 15,\n          \"hp\":
+      2500,\n          \"bounty\": 110\n        },\n        {\n          \"wave\":
+      20,\n          \"hp\": 4400,\n          \"bounty\": 180\n        }\n      ]\n   
+      }\n  },\n  \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20;
+      W15/W20 c\xF3 hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n 
+      \"farSlots\": [],\n  \"_farSlotsNote\": \"\xD4 C\u1ED0 \xDD n\u1EB1m ngo\xE0i
+      t\u1EA7m Lv1 \u2014 c\u01A1 ch\u1EBF '\xE9p n\xE2ng c\u1EA5p tr\u01B0\u1EDBc
+      khi tr\u1EA3i r\u1ED9ng'. Ph\u1EA3i khai \u1EDF \u0111\xE2y th\xEC path_check
+      m\u1EDBi cho qua; kh\xF4ng khai th\xEC n\xF3 b\xE1o \xF4 ch\u1EBFt, v\xE0 \u0111\xFAng
+      l\xE0 n\xEAn b\xE1o: \xF4 ngo\xE0i t\u1EA7m m\xE0 kh\xF4ng ai bi\u1EBFt l\xE0
+      ti\u1EC1n ng\u01B0\u1EDDi ch\u01A1i n\xE9m \u0111i.\",\n  \"_balanceNote\":
+      \"V\xF2ng 27b.\",\n  \"maxGapFraction\": 0.23,\n  \"goalkeeperMinLeadUnits\":
+      1.0,\n  \"goalkeeperMinCoverageUnits\": 2.0,\n  \"_goalkeeperPlacementNote\":
+      \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n \u0111\u01B0\u1EDDng d\xE0i
+      \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0 to\xE0n b\u1ED9 \u0111o\u1EA1n
+      \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits.
+      Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c tools/path_check.py --check thi h\xE0nh;
+      kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9
+      v\xEC nh\xECn gi\u1ED1ng v\u1ECB tr\xED th\u1EE7 m\xF4n.\"\n}\n"
   - id: m10
     displayName: La Muralla Final
     order: 10
@@ -3310,7 +3452,7 @@ MonoBehaviour:
       qu\xE2n Lv2/Lv3 cao h\u01A1n m06 trong to\xE0n tr\u1EADn. W20 b\u1ECF qu\xE2n
       th\u01B0\u1EDDng \u0111\u1EC3 hai boss Lv4 xu\u1EA5t hi\u1EC7n r\xF5, kh\xF4ng
       b\u1ECB \u0111\xE1m \u0111\xF4ng che m\u1EA5t cao tr\xE0o.\",\n  \"coveragePerSlot\":
-      2.88,\n  \"_coverageNote\": \"\U0001F534 S\u1EE9c ph\xF2ng ng\u1EF1 tr\xEAn
+      2.77,\n  \"_coverageNote\": \"\U0001F534 S\u1EE9c ph\xF2ng ng\u1EF1 tr\xEAn
       m\u1ED7i \xF4, \u0110O b\u1EB1ng tools/path_check.py; l\u1EC7ch >8% l\xE0 \u0111\u1ECF.
       V\u1EDBi map \u0111a tuy\u1EBFn con s\u1ED1 n\xE0y g\u1ED3m c\u1EA3 \xF4 canh
       \u0110\u01AF\u1EE2C NHI\u1EC0U TUY\u1EBEN \u2014 \u0111\xF3 ch\xEDnh l\xE0
@@ -3381,16 +3523,16 @@ MonoBehaviour:
       \"id\": \"f11\",\n      \"type\": \"field\",\n      \"x\": 0.0,\n      \"y\":
       -3.8\n    },\n    {\n      \"id\": \"f12\",\n      \"type\": \"field\",\n     
       \"x\": 2.8,\n      \"y\": -3.9\n    },\n    {\n      \"id\": \"f13\",\n     
-      \"type\": \"field\",\n      \"x\": 0.0,\n      \"y\": -6.3\n    },\n    {\n     
-      \"id\": \"f14\",\n      \"type\": \"field\",\n      \"x\": -3.0,\n      \"y\":
-      -6.2\n    },\n    {\n      \"id\": \"f15\",\n      \"type\": \"field\",\n     
+      \"type\": \"field\",\n      \"x\": -1.24,\n      \"y\": -5.91\n    },\n   
+      {\n      \"id\": \"f14\",\n      \"type\": \"field\",\n      \"x\": -3.79,\n     
+      \"y\": -5.9\n    },\n    {\n      \"id\": \"f15\",\n      \"type\": \"field\",\n     
       \"x\": 3.0,\n      \"y\": -6.2\n    },\n    {\n      \"id\": \"f16\",\n     
       \"type\": \"field\",\n      \"x\": -1.5,\n      \"y\": 2.0\n    },\n    {\n     
       \"id\": \"f17\",\n      \"type\": \"field\",\n      \"x\": 1.5,\n      \"y\":
       2.0\n    },\n    {\n      \"id\": \"gk01\",\n      \"type\": \"goalkeeper\",\n     
-      \"x\": -2.9,\n      \"y\": -8.45\n    },\n    {\n      \"id\": \"gk02\",\n     
-      \"type\": \"goalkeeper\",\n      \"x\": 2.9,\n      \"y\": -8.45\n    }\n 
-      ],\n  \"economy\": {\n    \"startingCash\": 800,\n    \"fieldSlots\": 17,\n   
+      \"x\": -2.7,\n      \"y\": -7.11\n    },\n    {\n      \"id\": \"gk02\",\n     
+      \"type\": \"goalkeeper\",\n      \"x\": 3.975,\n      \"y\": -7.105\n    }\n 
+      ],\n  \"economy\": {\n    \"startingCash\": 1100,\n    \"fieldSlots\": 17,\n   
       \"goalkeeperSlots\": 2\n  },\n  \"_economyNote\": \"`startingCash` l\xE0 \u0110I\u1EC2M
       KH\u1EDEI \u0110\u1EA6U \u0110\u1EC2 QU\xC9T \u2014 ph\u1EA3i \u0111o b\u1EB1ng
       test 20-wave engine th\u1EADt.\",\n  \"waves\": [\n    {\n      \"wave\": 1,\n     
@@ -3405,7 +3547,8 @@ MonoBehaviour:
       [\n        {\n          \"enemy\": \"adepto\",\n          \"count\": 12,\n         
       \"lane\": \"O\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 6,\n          \"lane\": \"O\"\n        }\n      ]\n    },\n    {\n     
-      \"wave\": 5,\n      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"wave\": 5,\n      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\":
+      \"C\" }\n      ],\n      \"spawns\": [\n        {\n          \"enemy\": \"tifoso\",\n         
       \"count\": 10,\n          \"lane\": \"C\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 1,\n          \"lane\": \"C\"\n       
       }\n      ]\n    },\n    {\n      \"wave\": 6,\n      \"spawns\": [\n       
@@ -3476,37 +3619,39 @@ MonoBehaviour:
       \"count\": 2,\n          \"lane\": \"C\"\n        },\n        {\n         
       \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\": \"E\",\n         
       \"delaySec\": 2.8\n        }\n      ]\n    },\n    {\n      \"wave\": 15,\n     
-      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      \"bosses\": [\n        { \"id\": \"o_capitao\", \"lane\": \"O\" },\n       
+      { \"id\": \"o_capitao\", \"lane\": \"E\" }\n      ],\n      \"spawns\": [\n       
+      {\n          \"enemy\": \"adepto\",\n          \"count\": 1,\n          \"lane\":
+      \"O\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
+      4,\n          \"lane\": \"O\"\n        },\n        {\n          \"enemy\":
+      \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"C\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 4,\n          \"lane\":
+      \"E\"\n        },\n        {\n          \"enemy\": \"tambor\",\n          \"count\":
       1,\n          \"lane\": \"O\"\n        },\n        {\n          \"enemy\":
-      \"tifoso\",\n          \"count\": 4,\n          \"lane\": \"O\"\n        },\n       
-      {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\":
-      \"C\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
-      4,\n          \"lane\": \"E\"\n        },\n        {\n          \"enemy\":
-      \"tambor\",\n          \"count\": 1,\n          \"lane\": \"O\"\n        },\n       
+      \"tambor\",\n          \"count\": 1,\n          \"lane\": \"C\"\n        },\n       
       {\n          \"enemy\": \"tambor\",\n          \"count\": 1,\n          \"lane\":
+      \"E\"\n        }\n      ]\n    },\n    {\n      \"wave\": 16,\n      \"spawns\":
+      [\n        {\n          \"enemy\": \"adepto\",\n          \"count\": 1,\n         
+      \"lane\": \"C\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
+      \"count\": 5,\n          \"lane\": \"O\"\n        },\n        {\n         
+      \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"C\"\n       
+      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n         
+      \"lane\": \"E\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
+      \"count\": 1,\n          \"lane\": \"O\"\n        },\n        {\n         
+      \"enemy\": \"tambor\",\n          \"count\": 1,\n          \"lane\": \"C\"\n       
+      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 1,\n         
+      \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n      \"wave\": 17,\n     
+      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n          \"count\":
+      1,\n          \"lane\": \"E\"\n        },\n        {\n          \"enemy\":
+      \"tifoso\",\n          \"count\": 6,\n          \"lane\": \"O\"\n        },\n       
+      {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n          \"lane\":
+      \"C\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\":
+      6,\n          \"lane\": \"E\"\n        },\n        {\n          \"enemy\":
+      \"tambor\",\n          \"count\": 1,\n          \"lane\": \"O\"\n        },\n       
+      {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n          \"lane\":
       \"C\"\n        },\n        {\n          \"enemy\": \"tambor\",\n          \"count\":
       1,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n      \"wave\":
-      16,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
-      \"count\": 1,\n          \"lane\": \"C\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 5,\n          \"lane\": \"O\"\n       
-      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 5,\n         
-      \"lane\": \"C\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 6,\n          \"lane\": \"E\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 1,\n          \"lane\": \"O\"\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 1,\n         
-      \"lane\": \"C\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 1,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n     
-      \"wave\": 17,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
-      \"count\": 1,\n          \"lane\": \"E\"\n        },\n        {\n         
-      \"enemy\": \"tifoso\",\n          \"count\": 6,\n          \"lane\": \"O\"\n       
-      },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 6,\n         
-      \"lane\": \"C\"\n        },\n        {\n          \"enemy\": \"tifoso\",\n         
-      \"count\": 6,\n          \"lane\": \"E\"\n        },\n        {\n         
-      \"enemy\": \"tambor\",\n          \"count\": 1,\n          \"lane\": \"O\"\n       
-      },\n        {\n          \"enemy\": \"tambor\",\n          \"count\": 2,\n         
-      \"lane\": \"C\"\n        },\n        {\n          \"enemy\": \"tambor\",\n         
-      \"count\": 1,\n          \"lane\": \"E\"\n        }\n      ]\n    },\n    {\n     
-      \"wave\": 18,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
+      18,\n      \"spawns\": [\n        {\n          \"enemy\": \"adepto\",\n         
       \"count\": 1,\n          \"lane\": \"O\"\n        },\n        {\n         
       \"enemy\": \"tifoso\",\n          \"count\": 7,\n          \"lane\": \"O\"\n       
       },\n        {\n          \"enemy\": \"tifoso\",\n          \"count\": 7,\n         
@@ -3536,12 +3681,14 @@ MonoBehaviour:
       'th\xFA v\u1ECB' c\xE0ng D\u1EC4. Gi\xE1 tr\u1ECB n\xE0y l\xE0 \u0110\xCDCH
       C\u1EA6N \u0110O b\u1EB1ng qu\xE9t engine.\",\n  \"bossOverrides\": {\n   
       \"o_capitao\": {\n      \"slowResistPercent\": 90,\n      \"appearances\":
-      [\n        {\n          \"wave\": 10,\n          \"hp\": 3400,\n          \"bounty\":
-      200\n        },\n        {\n          \"wave\": 20,\n          \"hp\": 3000,\n         
-      \"bounty\": 500\n        }\n      ]\n    }\n  },\n  \"_bossNote\": \"M\xE1u
-      boss suy t\u1EEB t\u1EC9 l\u1EC7 \u0111\u1ED9 d\xE0i tuy\u1EBFn so v\u1EDBi
-      m00 (42.28u \u2192 2500/9800). \u0110\xCDCH C\u1EA6N \u0110O.\",\n  \"farSlots\":
-      [\n    \"f13\"\n  ],\n  \"_farSlotsNote\": \"\xD4 C\u1ED0 \xDD n\u1EB1m ngo\xE0i
+      [\n        {\n          \"wave\": 5,\n          \"hp\": 1200,\n          \"bounty\":
+      40\n        },\n        {\n          \"wave\": 10,\n          \"hp\": 3400,\n         
+      \"bounty\": 80\n        },\n        {\n          \"wave\": 15,\n          \"hp\":
+      3800,\n          \"bounty\": 110\n        },\n        {\n          \"wave\":
+      20,\n          \"hp\": 4600,\n          \"bounty\": 180\n        }\n      ]\n   
+      }\n  },\n  \"_bossNote\": \"HP m\u1ED7i boss t\u0103ng qua W5/W10/W15/W20;
+      W15/W20 c\xF3 hai boss n\xEAn ph\u1EA3i ch\u1EA5m theo t\u1ED5ng HP encounter.\",\n 
+      \"farSlots\": [],\n  \"_farSlotsNote\": \"\xD4 C\u1ED0 \xDD n\u1EB1m ngo\xE0i
       t\u1EA7m Lv1 \u2014 c\u01A1 ch\u1EBF '\xE9p n\xE2ng c\u1EA5p tr\u01B0\u1EDBc
       khi tr\u1EA3i r\u1ED9ng'. Ph\u1EA3i khai \u1EDF \u0111\xE2y th\xEC path_check
       m\u1EDBi cho qua; kh\xF4ng khai th\xEC n\xF3 b\xE1o \xF4 ch\u1EBFt, v\xE0 \u0111\xFAng
@@ -3568,5 +3715,22 @@ MonoBehaviour:
       xong), chia \u0111\xF4i hai tuy\u1EBFn. B\u1EA3ng c\u0169 vi\u1EBFt cho ba
       tuy\u1EBFn / lu\xE2n phi\xEAn n\xEAn kh\xF4ng c\xF2n d\xF9ng \u0111\u01B0\u1EE3c
       sau khi \u0111\u1ED5i sang ki\u1EC3u m\u1ED9t th\xE2n chung hai l\u1ED1i ra.\",\n 
-      \"maxGapFraction\": 0.28\n}\n"
-  bakedAtUtc: 2026-08-22T09:49:32.0240230Z
+      \"maxGapFraction\": 0.28,\n  \"goalkeeperMinLeadUnits\": 0.6,\n  \"goalkeeperMinCoverageUnits\":
+      2.0,\n  \"_goalkeeperPlacementNote\": \"\xD4 Dibu ph\u1EA3i canh m\u1ED9t \u0111o\u1EA1n
+      \u0111\u01B0\u1EDDng d\xE0i \xEDt nh\u1EA5t goalkeeperMinCoverageUnits v\xE0
+      to\xE0n b\u1ED9 \u0111o\u1EA1n \u0111\xF3 ph\u1EA3i n\u1EB1m tr\u01B0\u1EDBc
+      l\u1ED1i ra \xEDt nh\u1EA5t goalkeeperMinLeadUnits. Hai ng\u01B0\u1EE1ng \u0111\u01B0\u1EE3c
+      tools/path_check.py --check thi h\xE0nh; kh\xF4ng \u0111\u01B0\u1EE3c k\xE9o
+      \xF4 v\u1EC1 s\xE1t c\u1EA7u m\xF4n ch\u1EC9 v\xEC nh\xECn gi\u1ED1ng v\u1ECB
+      tr\xED th\u1EE7 m\xF4n.\",\n  \"_goalkeeperLeadNote\": \"m10 khai 0.6 thay
+      v\xEC 1.0 nh\u01B0 c\xE1c map kh\xE1c. L\xFD do \u0111o \u0111\u01B0\u1EE3c:
+      nh\xE1nh tr\xE1i c\xF3 HAI tuy\u1EBFn (O, C) ch\u1EE5m s\xE1t nhau n\xEAn v\xF9ng
+      t\u1EA7m Dibu ch\u1EA1m c\u1EA3 hai r\u1EA5t s\u1EDBm, v\xE0 ng\u01B0\u1EE1ng
+      1.0 kho\xE1 \xF4 th\u1EE7 m\xF4n \u1EDF y=-6.75 \u2014 CAO h\u01A1n hai \xF4
+      s\xE2n f13/f14, t\u1EE9c th\u1EE7 m\xF4n kh\xF4ng c\xF2n l\xE0 ch\u1ED1t cu\u1ED1i.
+      H\u1EA1 xu\u1ED1ng 0.6 cho Dibu v\u1EC1 y=-7.11 m\xE0 KH\xD4NG m\u1EA5t \u0111\u1ED9
+      ph\u1EE7 (O 2.74\u21922.70, C 2.44\u21922.57): v\xF2ng t\u1EA7m v\u1EABn n\u1EB1m
+      tr\u1ECDn tr\xEAn \u0111\u01B0\u1EDDng, kh\xF4ng tr\xF9m ra sau khung th\xE0nh
+      \u2014 \u0111\xF3 m\u1EDBi l\xE0 th\u1EE9 ng\u01B0\u1EE1ng n\xE0y sinh ra \u0111\u1EC3
+      ch\u1EB7n.\"\n}\n"
+  bakedAtUtc: 2026-09-24T07:23:07.9571960Z

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Action = System.Action;
 using LaMuralla.Core.Config;
 using LaMuralla.Core.Match;
 using UnityEngine;
@@ -24,6 +25,9 @@ namespace LaMuralla.Unity
         private MatchController _match = null!;
         private PathDef _def = null!;
         private Hud _hud = null!;
+        private AdMobRewardedAds? _adGateway;
+        private RewardedAdCoordinator? _rewardedAds;
+        private bool _resumeAfterRewardedAd;
 
         private readonly Dictionary<int, GameObject> _enemyGo = new();
         private readonly Dictionary<int, Transform> _hpBar = new();
@@ -44,6 +48,9 @@ namespace LaMuralla.Unity
         // Tướng có art hoạt ảnh (sprite sheet đã bake) — trigger cú xút khi bắn.
         // Tướng chưa có art vẫn dùng hình khối `Draw`; hai kiểu sống chung.
         private readonly Dictionary<string, Animator> _towerAnim = new();
+        // Chỉ El Cinco có idle khác nhau theo cấp. Cache cấp đã đẩy sang Animator
+        // để không SetInteger lặp lại mỗi frame.
+        private readonly Dictionary<string, int> _towerVisualLevel = new();
         // Mỗi tướng chỉ có những param của riêng nó; `FireTrigger` lọc theo bộ param
         // CÓ THẬT nên kích nhầm tên không làm gì cả (xem `_animTriggers`).
         private static readonly int KickHash = Animator.StringToHash("Kick");
@@ -55,7 +62,8 @@ namespace LaMuralla.Unity
         private static readonly int BallHash = Animator.StringToHash("Ball");
         private static readonly int GloveHash = Animator.StringToHash("Glove");
         private static readonly int CupHash = Animator.StringToHash("Cup");
-        // El Cinco (batigol): đấm (Lv1) / đá (Lv2 = Kick, dùng lại KickHash) / đạp (Lv3).
+        // El Cinco (batigol): đấm (Lv1) / đá (Lv2 = Kick, dùng lại KickHash) /
+        // húc cuồng nộ (Lv3; trigger Stomp giữ nguyên để tương thích controller).
         private static readonly int PunchHash = Animator.StringToHash("Punch");
         private static readonly int StompHash = Animator.StringToHash("Stomp");
         // D10S (Maradona): mỗi cấp một đòn ném — Lv1 bóng (dùng lại BallHash),
@@ -71,8 +79,14 @@ namespace LaMuralla.Unity
         // đứng hình — đúng thứ xảy ra trong khoảng giữa "đổi code" và "bake lại".
         private readonly Dictionary<string, HashSet<int>> _animTriggers = new();
         private const float SpriteArtScale = 1.8f;   // nhân vật to hơn hình khối placeholder
+        // Frame lao Lv3 của El Cinco có canvas cao 724px và silhouette thấp hơn
+        // sprite Lv2 (426/724 so với 213/232 đơn vị). Bù riêng art, không scale
+        // parent để pip/vòng ô vẫn cùng cỡ các tướng khác.
+        private const float BatigolBerserkArtScale = 2.8f;
         private const float ArtStandOffset = 0.5f;    // nâng nhân vật lên (chân ~ tâm ô), đẹp hơn
         private static Sprite? _ballSprite;           // cầu lửa (nạp 1 lần, dùng lại)
+        private static Sprite? _pulgaNormalBallSprite; // Pulga Lv1: bóng thường
+        private static Sprite? _pulgaGoldBallSprite;   // Pulga Lv2: bóng vàng
         private static Sprite? _gloveSprite;          // găng Dibu Lv2 (nạp 1 lần)
         private static Sprite? _cupSprite;            // cúp Dibu Lv3 (nạp 1 lần)
         private static Sprite? _bottleSprite;         // chai rượu D10S Lv2 (nạp 1 lần)
@@ -132,8 +146,13 @@ namespace LaMuralla.Unity
         /// Bật để TRẢ LỜI câu "giật kiểu gì" bằng số thay vì bằng cảm giác:
         /// worst vọt so với avg + GC nhảy = khựng do rác; avg cao mà worst phẳng =
         /// quá tải vẽ. ĐẶT VỀ false TRƯỚC KHI PHÁT HÀNH.
+        ///
+        /// 🔵 ĐÃ TẮT: bảng này đã làm xong việc của nó. Nó là thứ chứng minh "giật"
+        /// là trần 30 FPS của iOS chứ không phải rác (`avg 33.4 · worst 33.6`), và
+        /// sau khi gỡ trần thì nó chỉ còn là một khối chữ vàng che mất sân. Bật lại
+        /// khi có câu hỏi hiệu năng CẦN số để trả lời, đừng để bật thường trực.
         /// </summary>
-        public bool ShowPerfHud = true;
+        public bool ShowPerfHud = false;
 
         /// <summary>
         /// LỐI TẮT CHO NGƯỜI PHÁT TRIỂN: vào thẳng một map, BỎ QUA màn chọn map.
@@ -144,8 +163,8 @@ namespace LaMuralla.Unity
         /// <summary>
         /// Mở sẵn MỌI map ở màn chọn, bỏ qua luật "thắng map trước mới mở map sau".
         ///
-        /// ⚠️ ĐANG BẬT để thử nghiệm — đặt về `false` trước khi phát hành, nếu không
-        /// toàn bộ tiến trình mở khoá thành vô nghĩa.
+        /// ⚠️ TẮT trong bản phát hành. Chỉ bật tạm thời khi cần kiểm tra nhanh các
+        /// map bằng tay trong Unity Editor.
         /// </summary>
         public bool UnlockAllMaps = false;
 
@@ -270,6 +289,18 @@ namespace LaMuralla.Unity
             for (int i = 0; i < ordered.Count - 1; i++)
                 if (ordered[i].id == _mapId) { _nextMapId = ordered[i + 1].id; break; }
 
+            // Nhãn map cho HUD. SỐ lấy từ ĐÚNG chỗ màn chọn map lấy — vị trí trong
+            // danh sách đã xếp theo `order`, không phải cắt chữ số từ `_mapId`. Hai
+            // nguồn khác nhau là hai nguồn sẽ lệch nhau: `ConfigBaker.cs:66` gán
+            // `order = entries.Count` (thứ tự TÊN FILE) và hôm nay nó trùng với số
+            // trong tên file chỉ vì may mắn đặt tên m00…m10.
+            for (int i = 0; i < ordered.Count; i++)
+                if (ordered[i].id == _mapId)
+                {
+                    _mapLabel = $"MAP {i + 1:00}  ·  {cfg.MapDisplayName.ToUpperInvariant()}";
+                    break;
+                }
+
             _match = new MatchController(cfg);
 
             // DEBUG xem hoạt ảnh: mọi tướng đánh nhanh hơn ×AttackRateDebug. Đặt về
@@ -292,6 +323,13 @@ namespace LaMuralla.Unity
             _match.WaveStarted += _ => AudioService.Play("wave_start", 0.7f);
             _match.WaveCleared += _ => AudioService.Play("wave_clear", 0.8f);
             _match.Goal.GoalDamaged += _ => AudioService.Play("goal_hit", 0.9f);
+
+            _adGateway = AdMobRewardedAds.Instance;
+            if (_adGateway != null)
+            {
+                _rewardedAds = new RewardedAdCoordinator(_adGateway);
+                _adGateway.PresentationClosed += OnRewardedAdClosed;
+            }
 
             _hud = gameObject.AddComponent<Hud>();
             _hud.Bind(_match, _def, this);
@@ -466,6 +504,7 @@ namespace LaMuralla.Unity
             // `from` = vị trí tướng bắn (MatchController.cs:422). Khớp vị trí để
             // trigger cú xút đúng tướng — không cần Core gửi kèm SlotId.
             TowerInstance? firedTower = null;
+            Animator? firedAnim = null;
             foreach (KeyValuePair<string, Animator> kv in _towerAnim)
             {
                 // CHA (go) = điểm ô; art con bị nâng ArtStandOffset nên KHÔNG khớp
@@ -473,9 +512,10 @@ namespace LaMuralla.Unity
                 Vector3 tp = kv.Value.transform.parent.position;
                 if (Mathf.Abs(tp.x - (float)from.X) > 0.05f ||
                     Mathf.Abs(tp.y - (float)from.Y) > 0.05f) continue;
-                // El Cinco đấm/đá/đạp theo cấp; D10S bóng/chai/cối theo cấp;
+                // El Cinco đấm/đá/húc cuồng nộ theo cấp; D10S bóng/chai/cối theo cấp;
                 // tướng khác dùng cú xút (Kick).
                 firedTower = _match.Slots.At(kv.Key);
+                firedAnim = kv.Value;
                 int trig = KickHash;
                 if (firedTower != null && firedTower.TowerId == "batigol")
                     trig = firedTower.Level >= 3 ? StompHash : firedTower.Level == 2 ? KickHash : PunchHash;
@@ -490,6 +530,14 @@ namespace LaMuralla.Unity
                 break;
             }
 
+            // Projectile của Pulga là nhận diện cấp, không phụ thuộc AttackShape:
+            // Lv3 vẫn dùng cầu lửa cả ở đòn xuyên, thay vì đổi thành vệt Line.
+            if (firedTower != null && firedTower.TowerId == "la_pulga")
+            {
+                SpawnPulgaProjectile(from, to, firedTower.Level);
+                return;
+            }
+
             // El Cinco (Splash) — NỔ tại vị trí quái, bán kính = plan.SplashRadius.
             // D10S cũng Splash nhưng NÉM trước (bóng/chai/cối bay from→to), nổ chỉ
             // xảy ra khi đạn TỚI (xem SpawnD10Thrown/TickShots). Đòn xuyên hàng
@@ -498,6 +546,9 @@ namespace LaMuralla.Unity
             {
                 if (firedTower != null && firedTower.TowerId == "d10s")
                     SpawnD10Thrown(from, to, firedTower.Level, (float)plan.SplashRadius);
+                else if (firedTower != null && firedTower.TowerId == "batigol" &&
+                         firedTower.Level >= 3 && firedAnim != null)
+                    StartBerserkCharge(firedAnim.transform, to, (float)plan.SplashRadius);
                 else
                 {
                     SpawnExplosion(to, (float)plan.SplashRadius);
@@ -578,6 +629,56 @@ namespace LaMuralla.Unity
             }
         }
 
+        // ── El Cinco Lv3: art rời ô, húc mục tiêu rồi trở về ô gốc ───────────
+        // Logic tower VẪN đứng yên ở slot; chỉ transform `art` (con của slot) được
+        // di chuyển. Không được đưa parent đi, nếu không lần bắn kế tiếp sẽ không
+        // còn khớp được `from` với tower đã bắn trong OnShotFired.
+        private const float BerserkChargeTravel = 3f / 12f; // frame 4 chạm mục tiêu, @12fps
+        private const float BerserkChargeLife = 4f / 12f;   // hết frame húc → về ô
+        private readonly List<(Transform Art, Vector3 Home, Vector3 Target, float Age,
+                               float SplashRadius, bool Exploded)> _berserkCharges = new();
+
+        private void StartBerserkCharge(Transform art, Vec2 target, float splashRadius)
+        {
+            Vector3 home = art.position;
+            // Giữ cùng offset đứng của sprite tại slot, để chân ở mục tiêu thay vì
+            // tâm sprite chui xuống mặt sân.
+            Vector3 at = new((float)target.X, (float)target.Y + ArtStandOffset, home.z);
+            _berserkCharges.Add((art, home, at, 0f, splashRadius, false));
+        }
+
+        private void TickBerserkCharges()
+        {
+            float dt = Time.deltaTime * SpeedMultiplier;
+            for (int i = _berserkCharges.Count - 1; i >= 0; i--)
+            {
+                (Transform art, Vector3 home, Vector3 target, float age, float splashRadius, bool exploded)
+                    = _berserkCharges[i];
+                if (art == null) { _berserkCharges.RemoveAt(i); continue; }
+
+                age += dt;
+                float progress = Mathf.Clamp01(age / BerserkChargeTravel);
+                art.position = Vector3.LerpUnclamped(home, target, progress * progress * (3f - 2f * progress));
+
+                // Frame húc cuối cùng chạm mục tiêu; FX/sound runtime xuất hiện
+                // cùng khoảnh khắc để không cần một frame sprite vụ nổ riêng.
+                if (!exploded && age >= BerserkChargeTravel)
+                {
+                    SpawnExplosion(new Vec2(target.x, target.y - ArtStandOffset), splashRadius);
+                    AudioService.Play("explode", 0.8f);
+                    exploded = true;
+                }
+
+                if (age >= BerserkChargeLife)
+                {
+                    art.position = home;
+                    _berserkCharges.RemoveAt(i);
+                    continue;
+                }
+                _berserkCharges[i] = (art, home, target, age, splashRadius, exploded);
+            }
+        }
+
         // ── Cầu lửa bay ─────────────────────────────────────────────────────
         // Viên đạn có CHUYỂN ĐỘNG, khác `_fx` (chỉ fade tại chỗ) → cần danh sách
         // riêng để nội suy vị trí mỗi frame. Tốc độ cố định (không phải thời gian
@@ -632,6 +733,51 @@ namespace LaMuralla.Unity
             public float SplashRadius; // >0: D10S — nổ (SpawnExplosion) khi tới thay vì chớp thường
         }
         private readonly List<Shot> _shots = new();
+
+        private const float PulgaBallScale = 1f;
+
+        /// <summary>Đạn riêng của Pulga: Lv1 bóng thường, Lv2 bóng vàng, Lv3 cầu lửa.</summary>
+        private void SpawnPulgaProjectile(Vec2 from, Vec2 to, int level)
+        {
+            if (level >= 3)
+            {
+                SpawnFireball(from, to);
+                return;
+            }
+
+            Sprite? sprite;
+            if (level == 2)
+            {
+                if (_pulgaGoldBallSprite == null)
+                    _pulgaGoldBallSprite = Resources.Load<Sprite>("Art/pulga_ball_gold");
+                sprite = _pulgaGoldBallSprite;
+            }
+            else
+            {
+                if (_pulgaNormalBallSprite == null)
+                    _pulgaNormalBallSprite = Resources.Load<Sprite>("Art/pulga_ball_normal");
+                sprite = _pulgaNormalBallSprite;
+            }
+
+            if (sprite == null)
+            {
+                SpawnFireball(from, to);
+                return;
+            }
+
+            Vector3 a = new((float)from.X, (float)from.Y, -2f);
+            Vector3 b = new((float)to.X, (float)to.Y, -2f);
+            GameObject ball = Draw.Make(level == 2 ? "goldBall" : "football",
+                                        sprite, Color.white, PulgaBallScale, 8);
+            ball.transform.position = a;
+            if (level == 2)
+            {
+                float angle = Mathf.Atan2(b.y - a.y, b.x - a.x) * Mathf.Rad2Deg;
+                ball.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            }
+            float dur = Mathf.Max(0.08f, Vector3.Distance(a, b) / FireballSpeed);
+            _shots.Add(new Shot { Go = ball, From = a, To = b, T = 0f, Dur = dur });
+        }
 
         private void SpawnFireball(Vec2 from, Vec2 to)
         {
@@ -1109,11 +1255,12 @@ namespace LaMuralla.Unity
 
             // Trận vừa kết thúc → ghi sao MỘT LẦN. Đặt ở đây chứ không ở lớp vẽ:
             // màn kết thúc được vẽ lại mỗi frame, ghi trong đó là ghi hàng trăm lần.
-            if (!_resultSaved && _match.Phase is MatchPhase.Won or MatchPhase.Lost)
+            // Không khoá cờ ở Lost: quảng cáo continue có thể đưa trận về Fighting,
+            // và chiến thắng sau đó vẫn phải được ghi sao/mở map.
+            if (!_resultSaved && _match.Phase == MatchPhase.Won)
             {
                 _resultSaved = true;
-                if (_match.Phase == MatchPhase.Won)
-                    MapProgress.Record(_mapId, (int)_match.Rating);
+                MapProgress.Record(_mapId, (int)_match.Rating);
             }
 
             TickFx();
@@ -1121,6 +1268,7 @@ namespace LaMuralla.Unity
             TickWaves();
             TickCoins();
             TickExplosions();
+            TickBerserkCharges();
 
             _match.Tick(Time.deltaTime * SpeedMultiplier);
             SyncEnemies();
@@ -1310,7 +1458,20 @@ namespace LaMuralla.Unity
                 }
                 // Cấp đọc bằng KÍCH THƯỚC + số chấm. Kích thước một mình thì phải có
                 // hai tướng cạnh nhau mới so được; chấm thì đếm được ngay.
-                go.transform.localScale = Vector3.one * (0.6f + 0.1f * t.Level);
+                // El Cinco Lv3 giữ đúng cỡ Lv2: khác biệt của cấp này nằm ở cú húc
+                // cuồng nộ, không phải một silhouette phình to che mất animation.
+                float scale = t.TowerId == "batigol" && t.Level >= 3 ? 0.8f : 0.6f + 0.1f * t.Level;
+                go.transform.localScale = Vector3.one * scale;
+                bool hasLevelIdle = t.TowerId == "batigol" || t.TowerId == "la_pulga";
+                if (hasLevelIdle && _towerAnim.TryGetValue(t.SlotId, out Animator? anim) &&
+                    (!_towerVisualLevel.TryGetValue(t.SlotId, out int shown) || shown != t.Level))
+                {
+                    anim.SetInteger("Level", t.Level);
+                    _towerVisualLevel[t.SlotId] = t.Level;
+                }
+                if (t.TowerId == "batigol" && _towerAnim.TryGetValue(t.SlotId, out Animator? batigolArt))
+                    batigolArt.transform.localScale = Vector3.one *
+                        (t.Level >= 3 ? BatigolBerserkArtScale : SpriteArtScale);
                 SyncLevelPips(t, go.transform);
                 // CHỈ trọng tài có aura vùng THẬT (làm chậm) → giữ. Các hero khác
                 // không có kỹ năng tác động cả vùng nên KHÔNG vẽ hào quang quanh thân;
@@ -1326,6 +1487,7 @@ namespace LaMuralla.Unity
                 Destroy(_towerGo[id]);
                 _towerGo.Remove(id);
                 _towerAnim.Remove(id);
+                _towerVisualLevel.Remove(id);
                 _animTriggers.Remove(id);
                 // Bán tướng → ô trống lại → hiện lại vòng dẫn đặt.
                 if (_slotRing.TryGetValue(id, out LineRenderer? ring)) ring.enabled = true;
@@ -1483,8 +1645,13 @@ namespace LaMuralla.Unity
             Vector2? tap = TapPosition();
             if (tap == null) return;
 
-            // Chạm vào thanh chọn tướng ở đáy → để Hud xử lý, đừng bỏ chọn ô.
-            if (tap.Value.y < _hud.BarTopPixels) return;
+            // Chạm trúng bất kỳ nút nào của HUD → để Hud xử lý, đừng đụng tới ô.
+            //
+            // Trước đây chỗ này chỉ né dải thanh chọn tướng, nên một cú bấm START
+            // vừa bấm nút VỪA chọn ô nằm dưới nút — và chính việc chọn ô đó làm nút
+            // không bấm được. Xem `Hud.BlocksTouch` để biết vì sao hai việc lại
+            // triệt tiêu nhau.
+            if (_hud != null && _hud.BlocksTouch(tap.Value)) return;
 
             Vector3 w = _cam.ScreenToWorldPoint(new Vector3(tap.Value.x, tap.Value.y, 10));
             SlotDef? hit = NearestSlotWithinTouch(new Vec2(w.x, w.y));
@@ -1579,6 +1746,32 @@ namespace LaMuralla.Unity
         /// mua tướng — một trận đã dừng không được phép tiêu tiền.</summary>
         internal bool Paused { get; private set; }
 
+        internal bool RewardedAdReady => _adGateway?.IsReady == true;
+        internal bool PrivacyOptionsRequired => _adGateway?.PrivacyOptionsRequired == true;
+
+        internal bool TryShowRewarded(Action reward)
+        {
+            if (_rewardedAds == null) return false;
+
+            bool shouldResume = (_match.Phase is MatchPhase.Preparing or MatchPhase.Fighting) && !Paused;
+            _resumeAfterRewardedAd = shouldResume;
+            if (shouldResume) SetPaused(true);
+
+            if (_rewardedAds.TryShow(reward)) return true;
+
+            if (shouldResume) SetPaused(false);
+            _resumeAfterRewardedAd = false;
+            return false;
+        }
+
+        internal bool ShowPrivacyOptions() => _adGateway?.ShowPrivacyOptions() == true;
+
+        private void OnRewardedAdClosed()
+        {
+            if (_resumeAfterRewardedAd) SetPaused(false);
+            _resumeAfterRewardedAd = false;
+        }
+
         /// <summary>
         /// Bật/tắt tạm dừng. Chỉ có nghĩa khi trận còn đang chạy: đã Won/Lost thì
         /// không còn gì để dừng, và cho dừng ở đó chỉ tạo ra một overlay che mất
@@ -1611,9 +1804,20 @@ namespace LaMuralla.Unity
         private bool _resultSaved;
         private string _mapId = "";
         private string _nextMapId = "";
+        private string _mapLabel = "";
 
         /// <summary>Map kế tiếp theo thứ tự. Rỗng = đang ở map cuối.</summary>
         internal string NextMapId => _nextMapId;
+
+        /// <summary>
+        /// "MAP 08 · TRES PUERTAS" — Hud vẽ ở đỉnh màn.
+        ///
+        /// Người chơi vào trận qua màn chọn map rồi scene NẠP LẠI, nên cái tên vừa
+        /// bấm biến mất khỏi màn hình. Chơi lại hoặc đi tiếp map sau thì lại càng
+        /// không biết mình đang ở đâu trong 11 map. Số này là số HIỂN THỊ ở màn chọn,
+        /// không phải chỉ số mảng — hai thứ lệch nhau một đơn vị.
+        /// </summary>
+        internal string MapLabel => _mapLabel;
 
         /// <summary>Vào thẳng một map. Nạp lại scene để dọn sạch trận cũ.</summary>
         internal void GoToMap(string id)
@@ -1664,6 +1868,12 @@ namespace LaMuralla.Unity
         private void OnApplicationPause(bool paused)
         {
             if (paused) SetPaused(true);
+        }
+
+        private void OnDestroy()
+        {
+            if (_adGateway != null)
+                _adGateway.PresentationClosed -= OnRewardedAdClosed;
         }
 
         internal void CloseMenu() => Select(null);

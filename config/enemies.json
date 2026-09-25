@@ -50,17 +50,27 @@
       "_slowResistNote": "75%, KHÔNG phải 50%. Ở 50% thì El Árbitro một mình đưa headroom boss W20 từ 1.18× lên 1.68×. Xem docs/03 §2.",
       "appearances": [
         {
+          "wave": 5,
+          "hp": 1000,
+          "bounty": 40
+        },
+        {
           "wave": 10,
           "hp": 2500,
-          "bounty": 200
+          "bounty": 80
+        },
+        {
+          "wave": 15,
+          "hp": 2800,
+          "bounty": 110
         },
         {
           "wave": 20,
-          "hp": 9800,
-          "bounty": 500
+          "hp": 5000,
+          "bounty": 180
         }
       ],
-      "_hpDerivedBy": "tools/balance_sim.py — mô hình hoả lực tập trung (docs/04 §3.3). Máu chọn để TÁCH ĐÔI hai kiểu build: W20 ở 9800 → build tối-ưu-đám-đông (D10S nhiều) headroom 0.74 = THUA, build có-tính-boss (La Pulga/El Fideo đơn mục tiêu) 1.55 = thắng. Đó chính là cơ chế: boss trừng phạt đúng cái build tối ưu cuối game. W10 ở 2100 dễ hơn có chủ ý — đầu game thiếu tiền nên build toàn Batigol đơn mục tiêu, vốn đã hợp boss (1.22). Boss W10 dạy, boss W20 kiểm tra. 🔵 VÒNG 22: 2100→2500 và 6700→9800, lấy từ `balance_sim.py --solve` sau khi La Pulga Lv3 được sửa nghịch lý giá trị (141→170). Không nâng máu boss thì headroom build-có-tính-boss ở W20 vọt 1.58 → 1.91, vượt trần dải cứng 1.65 — tức boss hết là bài kiểm."
+      "_hpDerivedBy": "Mốc boss Hard 2026-08-26: W5/W10/W15/W20 có 1/1/2/2 boss; HP mỗi boss tăng 1000/2500/2800/5000, nên tổng HP encounter tăng 1000/2500/5600/10000. balance_sim tính đủ số boss cho headroom 1.65/1.43/1.31/1.31; build đám đông chỉ 0.49/0.41/0.45/0.59 nên phải bổ sung sát thương đơn mục tiêu."
     }
   ]
 }

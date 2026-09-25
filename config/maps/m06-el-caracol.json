@@ -187,12 +187,12 @@
     {
       "id": "gk01",
       "type": "goalkeeper",
-      "x": 0.0,
-      "y": 1.5
+      "x": -2.31,
+      "y": 1.57
     }
   ],
   "economy": {
-    "startingCash": 700,
+    "startingCash": 800,
     "fieldSlots": 9
   },
   "_economyNote": "`startingCash` là ĐIỂM KHỞI ĐẦU ĐỂ QUÉT, chưa phải số chốt — phải đo bằng test 20-wave engine thật như m00 đã làm (650 thua W10 · 670 chết 0/20 · 700 thắng 11/20).",
@@ -249,6 +249,9 @@
     },
     {
       "wave": 5,
+      "bosses": [
+        { "id": "o_capitao", "lane": "L1" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -455,6 +458,10 @@
     },
     {
       "wave": 15,
+      "bosses": [
+        { "id": "o_capitao", "lane": "L1" },
+        { "id": "o_capitao", "lane": "L1" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -576,6 +583,10 @@
         {
           "id": "o_capitao",
           "lane": "L1"
+        },
+        {
+          "id": "o_capitao",
+          "lane": "L1"
         }
       ]
     }
@@ -585,19 +596,29 @@
       "slowResistPercent": 82,
       "appearances": [
         {
+          "wave": 5,
+          "hp": 1250,
+          "bounty": 40
+        },
+        {
           "wave": 10,
           "hp": 3100,
-          "bounty": 200
+          "bounty": 80
+        },
+        {
+          "wave": 15,
+          "hp": 3500,
+          "bounty": 110
         },
         {
           "wave": 20,
-          "hp": 12100,
-          "bounty": 500
+          "hp": 6200,
+          "bounty": 180
         }
       ]
     }
   },
-  "_bossNote": "Máu boss suy từ tỉ lệ độ dài tuyến so với m00 (42.28u → 2500/9800). ĐÍCH CẦN ĐO — hoả lực dồn lên boss tỉ lệ với thời gian quân nằm trong tầm, mà cái đó phụ thuộc độ dài tuyến.",
+  "_bossNote": "HP mỗi boss tăng qua W5/W10/W15/W20; W15/W20 có hai boss nên phải chấm theo tổng HP encounter.",
   "_maxGapNote": "🔴 NỚI 0.15 → 0.165, CÓ ĐO chứ không nới cho qua. Dò TOÀN BỘ vị trí khả dĩ cho ô yếu nhất cho thấy 9 ô trên đường 52.18u KHÔNG THỂ đạt 15% — tối ưu tuyệt đối là 16.3%. Nguyên nhân là phép đo, không phải map: path_check gán mỗi ô vào MỘT điểm gần nhất, mà xoáy ốc thì một ô canh hai đoạn f rất xa nhau, nên 'khoảng cách giữa các ô dọc đường' bị thổi phồng. 🔵 f07 đã DỜI (-3.70,-4.40) → (-0.60,-8.70) để chạm đúng tối ưu đó. Đây là đánh đổi ĐO ĐƯỢC, không phải làm đẹp số: phủ ở R=1.0 tăng 11.1% → 16.5% (đúng chỗ thủng — đầu trận, tướng Lv1), đổi lại phủ ở R=1.8 giảm 73.0% → 69.8%. Chọn vì lỗ hổng nằm ở đầu trận, cuối trận vốn đã ổn. ⚠️ Nếu test 20-wave cho thấy không qua nổi đầu trận thì phải RÚT NGẮN xoáy ốc, KHÔNG nới thêm. 🔵 y ban đầu đặt -9.00 thì vùng chạm 48pt TRÀN mép dưới 0.06u — path_check bắt được. Nâng lên -8.70: vẫn giữ nguyên khe 16.3% mà phủ R=1.0 còn tốt hơn (16.5%).",
   "hpScaling": {
     "base": 0.67,
@@ -606,5 +627,8 @@
   "_hpScalingNote": "🔴 growth RIÊNG cho map này, cao hơn 1.09 dùng chung. Lý do ĐO ĐƯỢC: hình học của map làm ĐƯỜNG TỰ ÁP SÁT CHÍNH NÓ, nên một vòng tầm cắt được nhiều khúc đường rời nhau — 'một tướng đánh hai lượt'. Đo ở tầm 1.4: sức phòng ngự trên mỗi ô là 3.03 so với 1.74 của m00 (×1.74). Không bù thì map càng 'hình học thú vị' lại càng DỄ, và người chơi thật đã báo đúng hiện tượng đó: bốn map đầu độ khó GIẢM dần. Giá trị chọn bằng quét engine — đây là mức cao nhất mà bài kiểm 20 wave vẫn THẮNG (xem MapPlayableTests). ⚠️ Bot trong bài kiểm khai thác hình học KÉM HƠN người chơi thật, nên nó là SÀN chứ không phải trần: nếu người chơi vẫn thấy dễ thì núm tiếp theo là SỬA ĐƯỜNG ĐI cho bớt tự áp sát, không phải tăng máu nữa.",
   "coveragePerSlot": 2.63,
   "_coverageNote": "🔴 SỨC PHÒNG NGỰ TRÊN MỖI Ô — tổng đoạn đường nằm trong tầm tham chiếu, chia số ô sân. Đo bằng `tools/path_check.py --map m06`; lệch quá 8% so với số này là ĐỎ. Vì sao phải KHAI thay vì để phát hiện sau: hình học 'thú vị' (zigzag, túi combo, xoáy ốc) làm đường TỰ ÁP SÁT CHÍNH NÓ → một vòng tầm cắt nhiều khúc rời nhau → một tướng đánh nhiều lượt → map càng thú vị càng DỄ. Người chơi đã báo đúng hiện tượng đó: bốn map đầu độ khó GIẢM dần. Có khai báo thì sửa waypoint mà vô tình làm map dễ đi sẽ biết NGAY. ⚠️ Đổi số này thì PHẢI xem lại `hpScaling.growthPerWave` — hai thứ bù nhau. Mốc so sánh: m00 = 1.74 (đường không tự áp sát, mỗi vòng tầm cắt đúng 1 khúc).",
-  "_balanceNote": "Vòng 27b."
+  "_balanceNote": "Vòng 27b.",
+  "goalkeeperMinLeadUnits": 1.0,
+  "goalkeeperMinCoverageUnits": 2.0,
+  "_goalkeeperPlacementNote": "Ô Dibu phải canh một đoạn đường dài ít nhất goalkeeperMinCoverageUnits và toàn bộ đoạn đó phải nằm trước lối ra ít nhất goalkeeperMinLeadUnits. Hai ngưỡng được tools/path_check.py --check thi hành; không được kéo ô về sát cầu môn chỉ vì nhìn giống vị trí thủ môn."
 }

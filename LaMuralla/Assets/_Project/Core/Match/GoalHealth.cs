@@ -95,6 +95,17 @@ namespace LaMuralla.Core.Match
             Current = Math.Min(_max, Current + amount);
         }
 
+        /// <summary>Hồi sinh sau khi thua. Đây là thao tác riêng với hồi máu để
+        /// không có đường nào vô tình dùng quảng cáo hồi máu như một lượt continue.</summary>
+        public void Revive(int health)
+        {
+            if (health <= 0)
+                throw new ArgumentOutOfRangeException(nameof(health), health, "máu hồi sinh phải > 0");
+            if (!IsLost)
+                throw new InvalidOperationException("chỉ được hồi sinh sau khi cầu môn đã vỡ");
+            Current = Math.Min(_max, health);
+        }
+
         /// <summary>Xếp hạng khi THẮNG. Gọi khi đã clear đủ 20 wave.</summary>
         public StarRating RatingOnWin()
         {

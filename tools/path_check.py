@@ -280,6 +280,55 @@ def main():
                     f"{t['displayName']} ({r}) — lệch {abs(d-r):.2f} < {EDGE} → "
                     f"RANH GIỚI DAO CẠO, dời ô ra xa ranh giới")
 
+    # Ô thủ môn không chỉ cần CHẠM đường; vùng hoạt động phải nằm đủ xa trước
+    # lối ra và đủ dài để Dibu thực sự có thời gian tung đòn. Hai ngưỡng là dữ
+    # liệu của từng map vì chiều dài/hình học mỗi map khác nhau. Không khai thì
+    # giữ tương thích với các map cũ; đã khai thì `--check` biến yêu cầu thiết kế
+    # thành cổng build, tránh lỗi "tọa độ nhìn đã dời nhưng tầm vẫn sát cửa".
+    gk_min_lead = path_cfg.get("goalkeeperMinLeadUnits")
+    gk_min_coverage = path_cfg.get("goalkeeperMinCoverageUnits")
+    if gk and (gk_min_lead is not None or gk_min_coverage is not None):
+        if not gkt:
+            errs.append("map có ô thủ môn nhưng towers.json không có tướng goalkeeper")
+        else:
+            gk_lv1_range = max(t["levels"][0]["range"] for t in gkt)
+            print()
+            print("=" * 78)
+            print("VÙNG HOẠT ĐỘNG THỦ MÔN — phải nằm trước lối ra")
+            print("=" * 78)
+            for s in sorted(gk, key=lambda x: x["id"]):
+                pt = (s["x"], s["y"])
+                windows = []
+                for ln in lanes:
+                    inside = [i for i, q in enumerate(ln["curve"])
+                              if math.dist(q, pt) <= gk_lv1_range]
+                    if not inside:
+                        continue
+                    coverage, _ = chord_for(ln["curve"], ln["cum"], pt, gk_lv1_range)
+                    closest = ln["length"] - ln["cum"][max(inside)]
+                    farthest = ln["length"] - ln["cum"][min(inside)]
+                    windows.append((ln["id"], coverage, closest, farthest))
+
+                if not windows:
+                    errs.append(f"ô {s['id']}: Dibu Lv1 không với tới tuyến nào")
+                    continue
+
+                for lane_id, coverage, closest, farthest in windows:
+                    lead_ok = gk_min_lead is None or closest >= gk_min_lead
+                    coverage_ok = (gk_min_coverage is None or
+                                   coverage >= gk_min_coverage)
+                    print(f"  {s['id']} → {lane_id}: phủ {coverage:.2f} units · "
+                          f"cách lối ra {closest:.2f}–{farthest:.2f} units  "
+                          f"{'✅' if lead_ok and coverage_ok else '❌'}")
+                    if not lead_ok:
+                        errs.append(
+                            f"ô {s['id']} tuyến {lane_id}: vùng Dibu chỉ cách lối ra "
+                            f"{closest:.2f} < ngưỡng {gk_min_lead:.2f} units")
+                    if not coverage_ok:
+                        errs.append(
+                            f"ô {s['id']} tuyến {lane_id}: vùng Dibu dài {coverage:.2f} "
+                            f"< ngưỡng {gk_min_coverage:.2f} units")
+
     # Nếu tướng ngắn tầm nhất với tới MỌI ô thì tầm không còn là đánh đổi —
     # thang tầm 3.0→6.0 chỉ là số trang trí, mọi ô tương đương nhau.
     shortest = fld[0]

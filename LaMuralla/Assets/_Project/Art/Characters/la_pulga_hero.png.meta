@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 232
+  spritePixelsToUnits: 324
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,9 +117,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 696
-        width: 230
-        height: 232
+        y: 647
+        width: 324
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,7 +128,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbded5606ebbc4d02a6c64aee535be3f
+      spriteID: 97424969ac5194e93972f526f4b01d5b
       internalID: -1126569776
       vertices: []
       indices: 
@@ -138,10 +138,10 @@ TextureImporter:
       name: la_pulga_1
       rect:
         serializedVersion: 2
-        x: 230
-        y: 696
-        width: 231
-        height: 232
+        x: 324
+        y: 647
+        width: 324
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,7 +150,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a221ceeb36e984741b34de6c5f57499d
+      spriteID: 8c6c780e6c4434418ac8cb8e7a33f97b
       internalID: 2133201152
       vertices: []
       indices: 
@@ -160,10 +160,10 @@ TextureImporter:
       name: la_pulga_2
       rect:
         serializedVersion: 2
-        x: 461
-        y: 696
-        width: 230
-        height: 232
+        x: 648
+        y: 647
+        width: 323
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,7 +172,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5494dddd4fa1941a4ae9ee21e1e76c7c
+      spriteID: 601eba6533cbe4599acd980511916ba3
       internalID: 2112934377
       vertices: []
       indices: 
@@ -182,10 +182,10 @@ TextureImporter:
       name: la_pulga_3
       rect:
         serializedVersion: 2
-        x: 691
-        y: 696
-        width: 231
-        height: 232
+        x: 971
+        y: 647
+        width: 324
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,7 +194,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e70a1e39aecd4f9cb7988bfc15f8914
+      spriteID: 50116b2841b4f41e8bf1654df92d9f32
       internalID: 926006289
       vertices: []
       indices: 
@@ -204,10 +204,10 @@ TextureImporter:
       name: la_pulga_4
       rect:
         serializedVersion: 2
-        x: 922
-        y: 696
-        width: 230
-        height: 232
+        x: 1295
+        y: 647
+        width: 324
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,7 +216,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb638833fbd64ff7aa13a1091363b3a
+      spriteID: 167990a88570146d2b83c951686944b5
       internalID: -919270992
       vertices: []
       indices: 
@@ -227,9 +227,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 464
-        width: 230
-        height: 232
+        y: 324
+        width: 324
+        height: 323
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,7 +238,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed7c314b8685f4f41bba342b406d0f07
+      spriteID: 7ca19a3d2cec84d1e86c881abb944f3a
       internalID: 795243108
       vertices: []
       indices: 
@@ -248,10 +248,10 @@ TextureImporter:
       name: la_pulga_6
       rect:
         serializedVersion: 2
-        x: 230
-        y: 464
-        width: 231
-        height: 232
+        x: 324
+        y: 324
+        width: 324
+        height: 323
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,7 +260,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 736cfab2034a74e1a89825148a45c42d
+      spriteID: 426c36f4706834828a7076d35dac3502
       internalID: 1210131376
       vertices: []
       indices: 
@@ -270,10 +270,10 @@ TextureImporter:
       name: la_pulga_7
       rect:
         serializedVersion: 2
-        x: 461
-        y: 464
-        width: 230
-        height: 232
+        x: 648
+        y: 324
+        width: 323
+        height: 323
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,7 +282,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deaaa04c3cf694287a9493801a174ff3
+      spriteID: 51221657ec82245f8900b07439727aa4
       internalID: -2023222389
       vertices: []
       indices: 
@@ -292,10 +292,10 @@ TextureImporter:
       name: la_pulga_8
       rect:
         serializedVersion: 2
-        x: 691
-        y: 464
-        width: 231
-        height: 232
+        x: 971
+        y: 324
+        width: 324
+        height: 323
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,7 +304,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68c64aece2440484196a5b58ca13d16e
+      spriteID: 12064219aa7ce481097f3d52924d16d8
       internalID: 305609852
       vertices: []
       indices: 
@@ -314,10 +314,10 @@ TextureImporter:
       name: la_pulga_9
       rect:
         serializedVersion: 2
-        x: 922
-        y: 464
-        width: 230
-        height: 232
+        x: 1295
+        y: 324
+        width: 324
+        height: 323
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,7 +326,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35906fca6b88c4b87adeb3095a8be0e4
+      spriteID: 0e942f892ccf34e30973b3be94579444
       internalID: -328139301
       vertices: []
       indices: 
@@ -337,9 +337,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 232
-        width: 230
-        height: 232
+        y: 0
+        width: 324
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,7 +348,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d003f33665aaf426083d878769c02a6d
+      spriteID: 69ac3453aac2945e681f9ae20f145007
       internalID: 1514276496
       vertices: []
       indices: 
@@ -358,10 +358,10 @@ TextureImporter:
       name: la_pulga_11
       rect:
         serializedVersion: 2
-        x: 230
-        y: 232
-        width: 231
-        height: 232
+        x: 324
+        y: 0
+        width: 324
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,7 +370,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edcf67b6f04344470b1dff7fd342ad21
+      spriteID: af84440c5dd544468a8dad4b1d71b359
       internalID: 1271701814
       vertices: []
       indices: 
@@ -380,19 +380,19 @@ TextureImporter:
       name: la_pulga_12
       rect:
         serializedVersion: 2
-        x: 461
-        y: 232
-        width: 230
-        height: 232
+        x: 648
+        y: 0
+        width: 299
+        height: 324
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5401338, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e9267852ed9c43669dfff6a7bcfbe90
+      spriteID: 9725cb3fc44314f5486b4a2ebae1fd06
       internalID: -1434540916
       vertices: []
       indices: 
@@ -402,10 +402,10 @@ TextureImporter:
       name: la_pulga_13
       rect:
         serializedVersion: 2
-        x: 691
-        y: 232
-        width: 231
-        height: 232
+        x: 971
+        y: 0
+        width: 324
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,7 +414,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ab7f99b2998b47a8836ba1248746384
+      spriteID: c5ab8e720a9794e7eabed908fa2b1afc
       internalID: 1873889981
       vertices: []
       indices: 
@@ -424,10 +424,10 @@ TextureImporter:
       name: la_pulga_14
       rect:
         serializedVersion: 2
-        x: 922
-        y: 232
-        width: 230
-        height: 232
+        x: 1295
+        y: 0
+        width: 324
+        height: 324
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,118 +436,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7f8e0a4e37e04db2b072c9bd1d2dfc7
+      spriteID: d82840d81103e49b9b7bf9c6cdfd661b
       internalID: -937950360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: la_pulga_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 230
-        height: 232
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c7c6baea15ae4612ab912abc0af8b36
-      internalID: 1728153667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: la_pulga_16
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 0
-        width: 231
-        height: 232
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19b1ba6291fec4c439e06a723a42658d
-      internalID: -152027563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: la_pulga_17
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 0
-        width: 230
-        height: 232
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abbfe263010c0430d8ceb908c4897263
-      internalID: 1427685680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: la_pulga_18
-      rect:
-        serializedVersion: 2
-        x: 691
-        y: 0
-        width: 231
-        height: 232
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36633b8afbaff4aa8a99e690968f43bc
-      internalID: 2113511227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: la_pulga_19
-      rect:
-        serializedVersion: 2
-        x: 922
-        y: 0
-        width: 230
-        height: 232
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 065d3489a818040da801de00956f5ed5
-      internalID: 48758752
       vertices: []
       indices: 
       edges: []
@@ -573,11 +463,6 @@ TextureImporter:
       la_pulga_12: -1434540916
       la_pulga_13: 1873889981
       la_pulga_14: -937950360
-      la_pulga_15: 1728153667
-      la_pulga_16: -152027563
-      la_pulga_17: 1427685680
-      la_pulga_18: 2113511227
-      la_pulga_19: 48758752
       la_pulga_2: 2112934377
       la_pulga_3: 926006289
       la_pulga_4: -919270992

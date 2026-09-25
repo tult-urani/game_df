@@ -5,7 +5,7 @@
   "difficulty": 4,
   "_mapNote": "BA CỬA VÀO THẬT, hợp lưu ở 1/3 cuối sân. Nhịp cửa là 0/5.6/11.2s ở Act 1, 0/4.2/8.4s ở Act 2 và 0/2.8/5.6s ở Act 3; càng về cuối ba mặt trận càng siết gần nhau.",
   "_tierMixNote": "Từ W5, một phần Adepto được đổi theo tỷ lệ gần tương đương máu/thưởng thành Tifoso Lv2 và Tambor Lv3; các act sau vì vậy ít quân rác và nhiều mục tiêu nguy hiểm hơn.",
-  "coveragePerSlot": 3.79,
+  "coveragePerSlot": 4.19,
   "_coverageNote": "🔴 Sức phòng ngự trên mỗi ô, ĐO bằng tools/path_check.py; lệch >8% là đỏ. Với map đa tuyến con số này gồm cả ô canh ĐƯỢC NHIỀU TUYẾN — đó chính là thứ làm map đa tuyến dễ hơn thiết kế tưởng. Mốc: m00 = 1.74. Đổi số này thì PHẢI xem lại hpScaling.",
   "units": {
     "_definition": "1 đơn vị sân = 1 Unity world unit. Xem docs/05 §4.1.",
@@ -265,18 +265,18 @@
     {
       "id": "f13",
       "type": "field",
-      "x": 0.6,
-      "y": -6.0
+      "x": 0.1,
+      "y": -7.55
     },
     {
       "id": "gk01",
       "type": "goalkeeper",
-      "x": 0.0,
-      "y": -8.55
+      "x": 2.209,
+      "y": -7.986
     }
   ],
   "economy": {
-    "startingCash": 700,
+    "startingCash": 900,
     "fieldSlots": 13
   },
   "_economyNote": "`startingCash` là ĐIỂM KHỞI ĐẦU ĐỂ QUÉT — phải đo bằng test 20-wave engine thật.",
@@ -405,6 +405,9 @@
     },
     {
       "wave": 5,
+      "bosses": [
+        { "id": "o_capitao", "lane": "oeste" }
+      ],
       "spawns": [
         {
           "enemy": "adepto",
@@ -763,6 +766,10 @@
     },
     {
       "wave": 15,
+      "bosses": [
+        { "id": "o_capitao", "lane": "este" },
+        { "id": "o_capitao", "lane": "oeste" }
+      ],
       "spawns": [
         {
           "enemy": "tifoso",
@@ -1010,6 +1017,10 @@
         {
           "id": "o_capitao",
           "lane": "este"
+        },
+        {
+          "id": "o_capitao",
+          "lane": "central"
         }
       ]
     }
@@ -1024,26 +1035,37 @@
       "slowResistPercent": 85,
       "appearances": [
         {
+          "wave": 5,
+          "hp": 600,
+          "bounty": 40
+        },
+        {
           "wave": 10,
           "hp": 1400,
-          "bounty": 200
+          "bounty": 80
+        },
+        {
+          "wave": 15,
+          "hp": 1600,
+          "bounty": 110
         },
         {
           "wave": 20,
-          "hp": 5500,
-          "bounty": 500
+          "hp": 2800,
+          "bounty": 180
         }
       ]
     }
   },
-  "_bossNote": "Máu boss suy từ tỉ lệ độ dài tuyến so với m00 (42.28u → 2500/9800). ĐÍCH CẦN ĐO.",
+  "_bossNote": "HP mỗi boss tăng qua W5/W10/W15/W20; W15/W20 có hai boss nên phải chấm theo tổng HP encounter.",
   "_balanceNote": "Vòng 27b: bỏ tuyến thứ ba, tiền 2100→900.",
   "_slotAddNote": "Vòng 27: thêm 13 ô. Đo được các tuyến biên chỉ đạt 113% mức Σchord của m00 — một con quái đi tuyến đó ăn chưa tới nửa lượng sát thương so với map gốc. Bù bằng tiền khởi đầu thì phải tới 4 300 (gấp 6 lần thiết kế) và vẫn phải cắt gần nửa số quân. Thiếu là thiếu Ô, không phải thiếu tiền. Xem docs/09 §8.7.",
   "maxGapFraction": 0.28,
   "_gapNote": "Khai 0.21 thay vì lấy sàn 3×1.2/20 = 0.18. Lý do ĐO ĐƯỢC, không phải nới cho dễ: luật khe hở tính theo TỈ LỆ chiều dài tuyến, nên nó phạt map có tuyến ngắn. Khe hở lớn nhất của m07 là 4.3–5.4 units; m00 — map đã cân xong và được chấp nhận — hở 6.16 units. Tính bằng quãng đường thật thì m07 kín hơn m00. Ép xuống 0.18 cần thêm 5 ô nữa (25 ô sân) và biến map thành bãi ô, phá luôn ý đồ khan hiếm ô.",
   "_laneShapeNote": "Vòng 27: dựng lại theo kiểu MỘT THÂN CHUNG, HAI LỐI RA. Đoạn chung dài 25.1u (68% chiều dài một tuyến) — mọi ô cạnh thân canh được CẢ HAI tuyến, nên tiền khởi đầu về mức map một tuyến. Đoạn chẻ cuối vẫn bắt chia lực. Lý do: docs/09 §8 — giá của map đa tuyến nằm ở ô bị khoá cứng vào một tuyến, không nằm ở số tuyến.",
-  "farSlots": [
-    "f13"
-  ],
-  "_waveNote": "Vòng 27: dựng lại theo dáng wave của m00 (map đã cân xong), chia đôi hai tuyến. Bảng cũ viết cho ba tuyến / luân phiên nên không còn dùng được sau khi đổi sang kiểu một thân chung hai lối ra."
+  "farSlots": [],
+  "_waveNote": "Vòng 27: dựng lại theo dáng wave của m00 (map đã cân xong), chia đôi hai tuyến. Bảng cũ viết cho ba tuyến / luân phiên nên không còn dùng được sau khi đổi sang kiểu một thân chung hai lối ra.",
+  "goalkeeperMinLeadUnits": 1.0,
+  "goalkeeperMinCoverageUnits": 2.0,
+  "_goalkeeperPlacementNote": "Ô Dibu phải canh một đoạn đường dài ít nhất goalkeeperMinCoverageUnits và toàn bộ đoạn đó phải nằm trước lối ra ít nhất goalkeeperMinLeadUnits. Hai ngưỡng được tools/path_check.py --check thi hành; không được kéo ô về sát cầu môn chỉ vì nhìn giống vị trí thủ môn."
 }

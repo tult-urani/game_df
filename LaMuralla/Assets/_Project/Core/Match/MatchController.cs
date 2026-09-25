@@ -101,6 +101,7 @@ namespace LaMuralla.Core.Match
         public GoalHealth Goal { get; }
         public SlotManager Slots { get; }
         public UpgradeService Upgrades { get; }
+        public RewardedRecovery RewardedRecovery { get; }
 
         public MatchPhase Phase { get; private set; } = MatchPhase.Preparing;
         public int Wave { get; private set; }
@@ -163,6 +164,7 @@ namespace LaMuralla.Core.Match
             Goal = new GoalHealth(cfg.Economy.GoalHealth);
             Slots = new SlotManager(cfg);
             Upgrades = new UpgradeService(cfg, Slots, Economy);
+            RewardedRecovery = new RewardedRecovery(this, cfg.Economy);
 
             // 🔴 Sợi dây nối luật #2 → luật #1. DamageSystem quyết ai giết;
             // EconomyService là cổng duy nhất của ví. Đây là chỗ DUY NHẤT hai luật
@@ -356,6 +358,13 @@ namespace LaMuralla.Core.Match
             if (Phase == p) return;
             Phase = p;
             PhaseChanged?.Invoke(p);
+        }
+
+        internal void ResumeAfterRewardedContinue()
+        {
+            if (Phase != MatchPhase.Lost)
+                throw new InvalidOperationException("chỉ được tiếp tục sau khi thua");
+            SetPhase(MatchPhase.Fighting);
         }
 
         public StarRating Rating => Phase == MatchPhase.Won ? Goal.RatingOnWin() : StarRating.None;

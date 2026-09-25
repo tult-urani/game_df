@@ -6,7 +6,7 @@ using LaMuralla.Core.Json;
 namespace LaMuralla.Core.Config
 {
     /// <summary>
-    /// 16 luật validate của docs/05 §5.
+    /// Các luật validate config của docs/05 §5.
     ///
     /// Chạy lúc BAKE trong Editor → config hỏng làm vỡ BUILD, không vỡ app người
     /// chơi. Đây là chỗ docs/05 nói "Throw, không vào được Menu" — bake mạnh hơn:
@@ -42,6 +42,8 @@ namespace LaMuralla.Core.Config
             Rule19_NoAbilityShadowsLevelStat(c, errs);
             Rule20_KillChanceSane(c, errs);
             Rule22_LaneDelayConsistent(c, errs);
+            Rule23_HpMilestonesSane(c, errs);
+            Rule24_RewardedRecoverySane(c, errs);
 
             if (errs.Count > 0)
                 throw new ConfigException(
@@ -220,19 +222,51 @@ namespace LaMuralla.Core.Config
             var byId = c.Bosses.ToDictionary(b => b.Id);
             foreach (WaveDef w in c.Waves)
             {
-                if (w.Boss == null) continue;
-                if (!byId.TryGetValue(w.Boss, out BossDef? b))
+                foreach (BossSpawn spawn in w.Bosses)
                 {
-                    e.Add($"[11] wave {w.Wave} gọi boss `{w.Boss}` không có trong bosses[]");
-                    continue;
+                    if (!byId.TryGetValue(spawn.Id, out BossDef? b))
+                    {
+                        e.Add($"[11] wave {w.Wave} gọi boss `{spawn.Id}` không có trong bosses[]");
+                        continue;
+                    }
+                    if (b.Appearances.All(x => x.Wave != w.Wave))
+                        e.Add($"[11] boss `{b.Id}` không có appearance cho wave {w.Wave}");
                 }
-                if (b.Appearances.All(x => x.Wave != w.Wave))
-                    e.Add($"[11] boss `{b.Id}` không có appearance cho wave {w.Wave}");
             }
             foreach (BossDef b in c.Bosses)
                 foreach (BossAppearance ap in b.Appearances)
-                    if (c.Waves.All(w => w.Wave != ap.Wave || w.Boss != b.Id))
+                    if (c.Waves.All(w => w.Wave != ap.Wave || w.Bosses.All(x => x.Id != b.Id)))
                         e.Add($"[11] boss `{b.Id}` khai appearance ở wave {ap.Wave} nhưng wave đó không gọi nó");
+        }
+
+        private static void Rule23_HpMilestonesSane(GameConfig c, List<string> e)
+        {
+            if (c.HpScaling.Base <= 0 || c.HpScaling.GrowthPerWave <= 0)
+                e.Add("[23] hpScaling base và growthPerWave phải > 0");
+            if (c.HpScaling.Milestones.Count == 0)
+                e.Add("[23] hpScaling.milestones không được rỗng");
+
+            int previousWave = 0;
+            double previousMultiplier = 1;
+            foreach (HpMilestone milestone in c.HpScaling.Milestones)
+            {
+                if (milestone.Wave <= previousWave || milestone.Wave > c.Waves.Count)
+                    e.Add($"[23] mốc HP wave {milestone.Wave} phải tăng dần và nằm trong trận");
+                if (milestone.Multiplier < previousMultiplier)
+                    e.Add($"[23] hệ số HP W{milestone.Wave} = {milestone.Multiplier} làm độ khó giảm");
+                previousWave = milestone.Wave;
+                previousMultiplier = milestone.Multiplier;
+            }
+        }
+
+        private static void Rule24_RewardedRecoverySane(GameConfig c, List<string> e)
+        {
+            EconomyDef x = c.Economy;
+            if (x.RewardedHealAmount <= 0 || x.RewardedHealUsesPerMatch <= 0)
+                e.Add("[24] rewarded heal amount/uses phải > 0");
+            if (x.RewardedContinueHealth <= 0 || x.RewardedContinueHealth > x.GoalHealth ||
+                x.RewardedContinueUsesPerMatch <= 0)
+                e.Add("[24] rewarded continue health/uses không hợp lệ");
         }
 
         // 12

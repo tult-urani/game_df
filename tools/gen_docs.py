@@ -39,8 +39,17 @@ def hp_mult(wave, h=None):
     `h` = hpScaling riêng của một map; bỏ trống thì lấy của config gốc (m00).
     Mỗi map có growth riêng vì hình học khác nhau làm tướng mạnh/yếu khác nhau —
     xem docs/09 §"độ khó ngược"."""
-    h = h or load("waves")["hpScaling"]
-    return h["base"] * h["growthPerWave"] ** (wave - 1)
+    shared = load("waves")["hpScaling"]
+    h = h or shared
+    milestone = 1.0
+    # Map chỉ override base/growth vẫn phải thừa kế milestone toàn game, giống
+    # ConfigMapper. Nếu không, docs map và engine nói về hai độ khó khác nhau.
+    for item in h.get("milestones", shared.get("milestones", [])):
+        if wave >= item["wave"]:
+            milestone = item["multiplier"]
+        else:
+            break
+    return h["base"] * h["growthPerWave"] ** (wave - 1) * milestone
 
 
 def rnd(x):
@@ -139,14 +148,14 @@ def gen_scaled_stats(enemies, waves):
         bts = [fmt(rnd(e["baseBounty"] * a["bountyMultiplier"])) for a in acts]
         rows.append(f"| {e['displayName']} | " + " | ".join(hps) + " | " + " | ".join(bts) + " |")
     for b in enemies["bosses"]:
-        hp_by_wave, bt_by_wave = {}, {}
+        hp_by_act, bt_by_act = {}, {}
         for ap in b["appearances"]:
             for a in acts:
                 if a["waves"][0] <= ap["wave"] <= a["waves"][1]:
-                    hp_by_wave[a["id"]] = f"**{fmt(ap['hp'])}**"
-                    bt_by_wave[a["id"]] = f"**{fmt(ap['bounty'])}**"
-        hps = [hp_by_wave.get(a["id"], "—") for a in acts]
-        bts = [bt_by_wave.get(a["id"], "—") for a in acts]
+                    hp_by_act.setdefault(a["id"], []).append(f"W{ap['wave']} **{fmt(ap['hp'])}**")
+                    bt_by_act.setdefault(a["id"], []).append(f"W{ap['wave']} **{fmt(ap['bounty'])}**")
+        hps = [" / ".join(hp_by_act.get(a["id"], [])) or "—" for a in acts]
+        bts = [" / ".join(bt_by_act.get(a["id"], [])) or "—" for a in acts]
         rows.append(f"| `{b['displayName']}` | " + " | ".join(hps) + " | " + " | ".join(bts) + " |")
     return "\n".join(rows)
 
@@ -162,13 +171,6 @@ def counts_of(w, order):
     for g in w["spawns"]:
         n[g["enemy"]] = n.get(g["enemy"], 0) + g["count"]
     return [n[k] for k in order]
-
-
-def boss_id_of(w):
-    """Id boss đầu tiên của wave, hoặc None. `bosses` là mảng vì map cuối cho HAI
-    con ra cùng lúc ở hai tuyến."""
-    bs = w.get("bosses") or []
-    return bs[0]["id"] if bs else None
 
 
 def act_of(wave, acts):
@@ -201,26 +203,28 @@ def gen_wave_tables(enemies, waves, economy):
                          for k, c in zip(order, counts))
             qty = sum(counts)
 
-            boss_s, bounty_s = "—", fmt(bounty)
-            bid = boss_id_of(w)
-            if bid:
-                b = bmap[bid]
-                ap = next(a for a in b["appearances"] if a["wave"] == n)
-                hp += ap["hp"]
-                bounty += ap["bounty"]
-                qty += 1
-                boss_s = "**1**"
-                bounty_s = f"{fmt(bounty - ap['bounty'])} + **{fmt(ap['bounty'])}**"
+            bosses = w.get("bosses") or []
+            boss_hp = boss_bounty = 0
+            for spawn in bosses:
+                ap = next(a for a in bmap[spawn["id"]]["appearances"] if a["wave"] == n)
+                boss_hp += ap["hp"]
+                boss_bounty += ap["bounty"]
+            hp += boss_hp
+            bounty += boss_bounty
+            qty += len(bosses)
+            boss_s = f"**{len(bosses)}**" if bosses else "—"
+            bounty_s = (f"{fmt(bounty - boss_bounty)} + **{fmt(boss_bounty)}**"
+                        if bosses else fmt(bounty))
 
             ov = waves["waveClearBonus"]["overrides"].get(str(n))
             clear = ov if ov is not None else 20 + 5 * (n - 1)
             total = bounty + clear
             wallet += total
 
-            cells = [f"**{n}**" if bid else str(n)]
+            cells = [f"**{n}**" if bosses else str(n)]
             cells += [str(c) if c else "—" for c in counts]
             cells += [boss_s, str(qty),
-                      f"**{fmt(hp)}**" if bid else fmt(hp),
+                      f"**{fmt(hp)}**" if bosses else fmt(hp),
                       bounty_s,
                       f"**{clear}**" if ov is not None else str(clear),
                       fmt(total),
@@ -247,9 +251,8 @@ def gen_wave_summary(enemies, waves, economy):
                       for k, c in zip(order, counts))
             b_ = sum(c * rnd(emap[k]["baseBounty"] * act["bountyMultiplier"])
                      for k, c in zip(order, counts))
-            bid = boss_id_of(w)
-            if bid:
-                ap = next(a for a in bmap[bid]["appearances"] if a["wave"] == n)
+            for spawn in w.get("bosses") or []:
+                ap = next(a for a in bmap[spawn["id"]]["appearances"] if a["wave"] == n)
                 hp += ap["hp"]
                 b_ += ap["bounty"]
                 qty += 1
@@ -347,7 +350,7 @@ def gen_map_block(mp, enemies, waves, economy):
         f"| Ô sân / thủ môn | {len(fields)} / {len(mp['slots']) - len(fields)} |",
         f"| Σchord@1.4 mỗi ô | {mp['coveragePerSlot']:.2f} |",
         f"| Tiền khởi đầu | {fmt(cash)} |",
-        f"| Máu quái | ×{hs['base']:g} × {hs['growthPerWave']:g}^(W−1) → W20 ×{hp_mult(20, hs):.2f} |",
+        f"| Máu quái | ×{hs['base']:g} × {hs['growthPerWave']:g}^(W−1) × milestone → W20 ×{hp_mult(20, hs):.2f} |",
         f"| Tổng quân 20 wave | {fmt(tot_q)} |",
         "",
         "| W | ×máu | " + " | ".join(f"`{i}`" for i, _ in lanes) + " | boss | quân | tổng máu |",

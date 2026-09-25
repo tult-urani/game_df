@@ -86,7 +86,8 @@ Nhiều đường / nhiều map = **ngoài phạm vi MVP** (xem `07-ROADMAP.md` 
 ### Có
 - 1 map, 1 đường chạy, 20 wave
 - **6 đơn vị**: 5 cầu thủ + **1 trọng tài** (`El Árbitro`), mỗi cái 3 cấp — **mỗi cấp mở 1 kỹ năng mới, cộng dồn → 18 kỹ năng**
-- 3 loại cổ động viên thường + **1 boss `O Capitão`** ở W10 và W20
+- 3 loại cổ động viên thường + **boss `O Capitão`** ở W5/W10/W15/W20, số lượng 1/1/2/2
+- Quảng cáo có thưởng tự nguyện: hồi 5 máu một lần/trận trong giờ nghỉ; continue với 5 máu một lần/trận sau khi thua
 - Kinh tế: mua / nâng cấp / bán / thưởng skip / sink sửa cầu môn
 - Thắng / thua / 3 sao
 - Lưu tiến độ cục bộ (sao cao nhất đạt được)
@@ -96,7 +97,7 @@ Nhiều đường / nhiều map = **ngoài phạm vi MVP** (xem `07-ROADMAP.md` 
 - ❌ Loại cổ động viên thường thứ 4 (boss là set-piece, không phải quân thường — xem `03` §2)
 - ❌ Boss có kỹ năng — `O Capitão` chỉ là khối máu đi chậm
 - ❌ Meta-progression giữa các trận (cây kỹ năng vĩnh viễn, thẻ tướng)
-- ❌ IAP / quảng cáo
+- ❌ IAP / banner / interstitial (chỉ có rewarded ad do người chơi chủ động chọn)
 - ❌ Multiplayer / leaderboard online
 - ❌ Âm thanh ngoài SFX cơ bản + 1 track nhạc nền
 - ❌ Cutscene / cốt truyện
@@ -143,7 +144,7 @@ Nhiều đường / nhiều map = **ngoài phạm vi MVP** (xem `07-ROADMAP.md` 
 | **`El Árbitro`** | Trọng tài. 0 sát thương, chậm vĩnh viễn bằng thẻ. Chiếm 1 ô sân. Xem `02` §4.6. |
 | **Thẻ vàng / thẻ đỏ** | Chậm **50% / 70% VĨNH VIỄN** cho 1 con — theo nó tới hết đường. Khác aura (cục bộ). |
 | **Cổ động viên** | Enemy thường. 3 loại, xem `03` §1. |
-| **`O Capitão`** | Boss. Thủ lĩnh hội cổ động viên Bồ. Xuất hiện W10 và W20. Xem `03` §2. |
+| **`O Capitão`** | Boss. Thủ lĩnh hội cổ động viên Bồ. Xuất hiện W5/W10/W15/W20. Xem `03` §2. |
 | **Lọt lưới (leak)** | Cổ động viên đi hết đường vào cầu môn → trừ máu. |
 | **Clean sheet** | Thắng mà không thủng lưới lần nào → 3 sao. |
 | **Ô sân** | 11 vị trí đặt tướng thường. |

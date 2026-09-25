@@ -208,18 +208,18 @@
     {
       "id": "gk01",
       "type": "goalkeeper",
-      "x": -3.0,
-      "y": -8.45
+      "x": -3.562,
+      "y": -6.925
     },
     {
       "id": "gk02",
       "type": "goalkeeper",
-      "x": 3.0,
-      "y": -8.45
+      "x": 3.562,
+      "y": -6.925
     }
   ],
   "economy": {
-    "startingCash": 700,
+    "startingCash": 1000,
     "fieldSlots": 11,
     "goalkeeperSlots": 2
   },
@@ -313,6 +313,9 @@
     },
     {
       "wave": 5,
+      "bosses": [
+        { "id": "o_capitao", "lane": "B" }
+      ],
       "spawns": [
         {
           "enemy": "tifoso",
@@ -578,6 +581,10 @@
     },
     {
       "wave": 15,
+      "bosses": [
+        { "id": "o_capitao", "lane": "A" },
+        { "id": "o_capitao", "lane": "B" }
+      ],
       "spawns": [
         {
           "enemy": "tifoso",
@@ -770,21 +777,34 @@
       "slowResistPercent": 88,
       "appearances": [
         {
+          "wave": 5,
+          "hp": 900,
+          "bounty": 40
+        },
+        {
           "wave": 10,
           "hp": 2200,
-          "bounty": 200
+          "bounty": 80
+        },
+        {
+          "wave": 15,
+          "hp": 2500,
+          "bounty": 110
         },
         {
           "wave": 20,
-          "hp": 8500,
-          "bounty": 500
+          "hp": 4400,
+          "bounty": 180
         }
       ]
     }
   },
-  "_bossNote": "Máu boss suy từ tỉ lệ độ dài tuyến so với m00 (42.28u → 2500/9800). ĐÍCH CẦN ĐO.",
+  "_bossNote": "HP mỗi boss tăng qua W5/W10/W15/W20; W15/W20 có hai boss nên phải chấm theo tổng HP encounter.",
   "farSlots": [],
   "_farSlotsNote": "Ô CỐ Ý nằm ngoài tầm Lv1 — cơ chế 'ép nâng cấp trước khi trải rộng'. Phải khai ở đây thì path_check mới cho qua; không khai thì nó báo ô chết, và đúng là nên báo: ô ngoài tầm mà không ai biết là tiền người chơi ném đi.",
   "_balanceNote": "Vòng 27b.",
-  "maxGapFraction": 0.23
+  "maxGapFraction": 0.23,
+  "goalkeeperMinLeadUnits": 1.0,
+  "goalkeeperMinCoverageUnits": 2.0,
+  "_goalkeeperPlacementNote": "Ô Dibu phải canh một đoạn đường dài ít nhất goalkeeperMinCoverageUnits và toàn bộ đoạn đó phải nằm trước lối ra ít nhất goalkeeperMinLeadUnits. Hai ngưỡng được tools/path_check.py --check thi hành; không được kéo ô về sát cầu môn chỉ vì nhìn giống vị trí thủ môn."
 }

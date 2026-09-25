@@ -1,0 +1,5 @@
+{"ts":"2026-08-28T00:00:00+07:00","event":"session_start","triage":"Standard","task":"Release build va cai len iPhone 12 Tult_ip"}
+{"ts":"2026-08-28T00:01:00+07:00","event":"baseline","build":"green","tests_passed":269,"tests_failed":0,"cmd":"dotnet test + gen_docs --check + path_check --check"}
+{"ts":"2026-08-28T00:02:00+07:00","event":"verdict","verdict":"blocked","truths_pass":1,"truths_total":4,"rubric":"Release guard fired: useTestAds enabled; production AdMob configuration missing"}
+{"ts":"2026-08-28T00:03:00+07:00","event":"deviation","planned":"Release build","found":"Production AdMob configuration missing","approved":"User switched to Development build"}
+{"ts":"2026-08-28T00:04:00+07:00","event":"verdict","verdict":"pass","truths_pass":4,"truths_total":4,"rubric":"Unity export, Xcode build/sign, device install, and runtime startup verified"}

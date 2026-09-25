@@ -204,16 +204,23 @@ namespace LaMuralla.Core.Tests
 
         /// <summary>Chạy trọn 20 wave. Trả về (kết cục, wave cuối, máu còn, đỉnh quân đồng thời).</summary>
         internal static (MatchPhase Phase, int Wave, int Goal, int PeakLive, int Earned)
-            PlayFullMatch(GameConfig cfg, int seed = 7)
+            PlayFullMatch(GameConfig cfg, int seed = 7, bool useRewardedRecovery = false)
         {
             var m = new MatchController(cfg, seed);
             var p = new GreedyPlayer(cfg);
             int peak = 0;
 
-            for (int guard = 0; guard < 400_000 && m.Phase is MatchPhase.Fighting or MatchPhase.Preparing; guard++)
+            for (int guard = 0; guard < 400_000; guard++)
             {
+                if (m.Phase == MatchPhase.Lost)
+                {
+                    if (useRewardedRecovery && m.RewardedRecovery.TryContinue()) continue;
+                    break;
+                }
+                if (m.Phase == MatchPhase.Won) break;
                 if (m.Phase == MatchPhase.Preparing)
                 {
+                    if (useRewardedRecovery) m.RewardedRecovery.TryHeal();
                     p.Spend(m);
                     if (m.Wave == 0) m.StartNextWave(); else m.SkipRest();
                     continue;

@@ -175,6 +175,19 @@ namespace LaMuralla.Core.Tests
         }
 
         [Fact]
+        public void R11_boss_thu_hai_khong_ton_tai_cung_bi_bat()
+        {
+            GameConfig c = Cfg();
+            WaveDef w = c.Waves.Single(x => x.Wave == 20);
+            w.Bosses = new[]
+            {
+                w.Bosses[0],
+                new BossSpawn { Id = "boss_khong_ton_tai", Lane = "L1" },
+            };
+            Expect(c, 11);
+        }
+
+        [Fact]
         public void R12_khang_cham_ngoai_khoang()
         {
             GameConfig c = Cfg();
@@ -276,6 +289,22 @@ namespace LaMuralla.Core.Tests
             GameConfig c = Cfg();
             Tower(c, "dibu").Levels[0].AttackRate = 0;
             Expect(c, 20);
+        }
+
+        [Fact]
+        public void R23_moc_HP_lui_do_kho_thi_bat()
+        {
+            GameConfig c = Cfg();
+            c.HpScaling.Milestones[2].Multiplier = 1.1;
+            Expect(c, 23);
+        }
+
+        [Fact]
+        public void R24_continue_vuot_mau_toi_da_thi_bat()
+        {
+            GameConfig c = Cfg();
+            c.Economy.RewardedContinueHealth = c.Economy.GoalHealth + 1;
+            Expect(c, 24);
         }
 
         [Fact]

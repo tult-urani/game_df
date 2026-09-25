@@ -3,6 +3,7 @@
 > **Doc này giữ MÔ HÌNH và LẬP LUẬN. Nó KHÔNG giữ số.**
 > Nguồn chân lý số liệu là **`config/*.json`**. Mọi bảng số dưới đây nằm giữa marker `<!-- GEN:x -->` và được **sinh tự động** bằng `tools/gen_docs.py`. Sửa tay vào đó sẽ bị ghi đè, và CI sẽ đỏ.
 > ⚠️ Mô hình ở đây chồng **ba giả định** (`η × σ × τ`) — đọc §8 trước khi tin bất kỳ con số nào.
+> ⚠️ Các ví dụ lịch sử dùng W10/W20 và số cũ chỉ giải thích quá trình thiết kế. Hợp đồng hiện hành: boss W5/W10/W15/W20 = 1/1/2/2; xem bảng sinh ở `03` và `config/`.
 
 ### Vì sao tách mô hình khỏi số
 
@@ -22,9 +23,9 @@ Giờ: **JSON giữ số, markdown giữ lý do.** Markdown giỏi giải thích
 
 | Nguồn | Công thức | Ghi chú |
 |-------|-----------|---------|
-| Khởi đầu | **550** | Cố định |
+| Khởi đầu | **700** | Cố định |
 | Hạ cổ động viên | `thưởng_gốc × bountyMultiplier` | Trả cho tướng gây **đòn kết liễu**, một lần duy nhất |
-| Hạ `O Capitão` | **200** (W10) · **500** (W20) | Ghi thẳng, không nhân hệ số |
+| Hạ `O Capitão` | **40/80/110/180 mỗi boss** tại W5/W10/W15/W20 | Ghi thẳng, không nhân hệ số; tổng 6 boss |
 | Clear wave | `20 + 5 × (wave − 1)`, riêng W20 = **150** | Trả khi con cuối cùng rời sân |
 | Skip thời gian nghỉ | `giây_còn_lại × 3` | Tối đa 8 × 3 = **24**/wave |
 | Bán tướng | `60% × tổng đã đầu tư` | Hoàn vốn, không phải nguồn mới |
@@ -409,7 +410,7 @@ Không còn là lo xa. Sau khi nén tầm + cân lại giá tướng, `tools/bal
 
 Đây là lý do người chơi **phải bán Batigol để xây La Pulga** ở khoảng W14–16 — và bán chỉ hoàn 60%, nên việc chuyển đổi có giá thật.
 
-**Hai con boss là chốt chặn chống đội hình lệch.** Spam D10S xoá sổ mọi wave thường rồi chết đứng ở W10. Đó là toàn bộ mục đích của việc boss tồn tại ở giữa trận thay vì chỉ ở cuối.
+**Bốn encounter, tổng sáu boss là chốt chặn chống đội hình lệch.** Spam D10S có thể xoá đám đông nhưng mất hệ số nhiều mục tiêu trước boss; W15/W20 tăng lên hai con để buộc bổ sung sát thương đơn mục tiêu.
 
 ### Trọng tài mở một trục thứ hai: nhân sức mạnh vs cộng sức mạnh
 

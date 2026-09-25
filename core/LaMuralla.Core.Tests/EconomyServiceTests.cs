@@ -117,17 +117,22 @@ namespace LaMuralla.Core.Tests
             GameConfig c = Cfg();
             EconomyService e = Eco(c);
             BossDef b = c.Bosses.Single(x => x.Id == "o_capitao");
+            e.EarnBossKill(b, 5);
             e.EarnBossKill(b, 10);
-            Assert.Equal(700 + 200, e.Balance);
+            e.EarnBossKill(b, 15);
+            e.EarnBossKill(b, 15);
             e.EarnBossKill(b, 20);
-            Assert.Equal(700 + 200 + 500, e.Balance);
+            e.EarnBossKill(b, 20);
+            // 40 + 80 + 2×110 + 2×180 = 700: tăng số boss nhưng không bơm
+            // thêm tiền cả trận, nếu không chính mốc Hard lại tài trợ sức mạnh.
+            Assert.Equal(700 + 700, e.Balance);
         }
 
         [Fact]
         public void Thuong_boss_o_wave_khong_co_boss_thi_nem()
         {
             GameConfig c = Cfg();
-            Assert.Throws<ArgumentException>(() => Eco(c).EarnBossKill(c.Bosses[0], 5));
+            Assert.Throws<ArgumentException>(() => Eco(c).EarnBossKill(c.Bosses[0], 6));
         }
 
         [Fact]
