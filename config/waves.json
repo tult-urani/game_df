@@ -1,0 +1,439 @@
+{
+  "_comment": "NGUỒN CHÂN LÝ WAVE. Docs 03 §4 sinh bảng từ đây. Máu/thưởng KHÔNG ghi ở đây — tính từ enemies.json × act multiplier.",
+  "spawnIntervalSec": 0.7,
+  "restBetweenWavesSec": 8.0,
+  "bossSpawnsLast": true,
+  "_bossSpawnNote": "Boss spawn SAU khi toàn bộ spawns của wave ra hết. Đây là giả định nền của mô hình hoả lực tập trung (docs/04 §3.3) — đổi cái này là đổi cả mô hình.",
+  "acts": [
+    {
+      "id": 1,
+      "waves": [
+        1,
+        7
+      ],
+      "bountyMultiplier": 1.0,
+      "intent": "Dạy chơi. Kết act là bài kiểm tra thật đầu tiên."
+    },
+    {
+      "id": 2,
+      "waves": [
+        8,
+        14
+      ],
+      "bountyMultiplier": 1.6,
+      "intent": "Đội hình Lv1 không còn đủ. Ép nâng cấp."
+    },
+    {
+      "id": 3,
+      "waves": [
+        15,
+        20
+      ],
+      "bountyMultiplier": 2.2,
+      "intent": "Ô đặt hết, phải bán và xây lại.",
+      "_provisionalNote": "hpMultiplier 3.8 là hiệu chỉnh BẬC NHẤT (nâng từ 3.2 vì sigma + tau làm phe phòng ngự mạnh lên). CHƯA dẫn xuất. Chờ tools/balance-sim (M0). Xem docs/04 §4b."
+    }
+  ],
+  "_hpMustOutpaceBounty": "hpMultiplier PHẢI >= bountyMultiplier ở mọi act. Bằng nhau = độ khó phẳng (quân khoẻ gấp đôi thì người chơi cũng giàu gấp đôi). Luật validate #10.",
+  "waveClearBonus": {
+    "formula": "20 + 5 * (wave - 1)",
+    "overrides": {
+      "20": 150
+    }
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 8,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 13,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 4,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 8,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 5,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 8,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 6,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 6,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 8,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 7,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 8,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 8,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 3,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 8,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 8,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 6,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 9,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 8,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 10,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 8,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 8,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 3,
+          "lane": "L1"
+        }
+      ],
+      "bosses": [
+        {
+          "id": "o_capitao",
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 11,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 9,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 3,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 12,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 4,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 13,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 13,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 4,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 14,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 13,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 13,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 5,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 15,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 4,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 16,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 10,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 13,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 4,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 17,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 13,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 13,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 5,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 18,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 13,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 15,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 6,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 19,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 15,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 16,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 8,
+          "lane": "L1"
+        }
+      ]
+    },
+    {
+      "wave": 20,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 18,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 20,
+          "lane": "L1"
+        },
+        {
+          "enemy": "tambor",
+          "count": 9,
+          "lane": "L1"
+        }
+      ],
+      "bosses": [
+        {
+          "id": "o_capitao",
+          "lane": "L1"
+        }
+      ]
+    }
+  ],
+  "hpScaling": {
+    "_comment": "MÁU quái = baseHp × hpMultiplier(wave), làm tròn half_up. Thay 3 hệ số bậc thang theo act (1.0/1.8/3.8) bằng MỘT công thức trơn.",
+    "formula": "hpMultiplier(wave) = base × pow(growthPerWave, wave - 1)",
+    "base": 0.67,
+    "growthPerWave": 1.09,
+    "_derivedBy": "tools/balance_sim.py --solve — quét (base, growth), chọn bộ đưa nhiều wave vào dải headroom nhất. KHÔNG chỉnh tay: đổi số ở đây thì chạy lại sim để biết wave nào vỡ.",
+    "_whyNotPerAct": "Hệ số bậc thang theo act tạo VÁCH ĐỨNG ngay sau ranh giới act: đo được W8 headroom 1.00 và W15 0.97 (thua) trong khi W14 cuối act 1.81 (quá dễ) — biên độ 1.81× trong cùng act. Một hệ số cho 7 wave không thể vừa cứu đầu act vừa ghì cuối act. Công thức trơn: 20/20 wave trong dải.",
+    "_monotone": "BẮT BUỘC đơn điệu tăng — máu MỖI CON quái không bao giờ được giảm giữa hai wave. Kích thước wave thì ĐƯỢC reset ở đầu act (W8, W15): đó là nhịp xả hơi cố ý sau cao trào cuối act, không phải lỗi."
+  },
+  "_actsNote": "Act giờ CHỈ điều khiển thưởng (bountyMultiplier) và ý đồ kể chuyện. Máu do hpScaling lo — xem _whyNotPerAct.",
+  "_spawnsNote": "🔵 2026-08-21 — `spawns` đổi từ OBJECT `{adepto: 8}` sang MẢNG `[{enemy, count, lane}]`. Object không nhét được `lane` và không diễn tả nổi '8 adepto tuyến trái + 6 adepto tuyến phải' vì khoá trùng. Dạng object KHÔNG còn được ConfigMapper chấp nhận — cố ý, nhận cả hai thì mọi chỗ đọc phải rẽ nhánh và nhánh đó là nơi bug im lặng sinh ra. Xem docs/08 §2.2(b)."
+}

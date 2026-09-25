@@ -1,0 +1,386 @@
+{
+  "_comment": "NGUỒN CHÂN LÝ SỐ LIỆU TƯỚNG. Docs 02/04 sinh bảng từ file này qua tools/gen-docs.py. Đừng gõ tay số vào docs.",
+  "_units": "range + chord tính bằng đơn vị sân = 1 Unity world unit. Xem docs/05 §4.1.",
+  "_upgradeRules": {
+    "damageMultiplierByLevel": [
+      1.0,
+      1.6,
+      2.5
+    ],
+    "costMultiplierByLevel": [
+      1.0,
+      0.8,
+      1.6
+    ],
+    "rangeIncrementPerLevel": 0.2,
+    "_rangeIncrementNote": "0.2, KHÔNG phải 0.5. Số 0.5 nằm đây từ trước lần thu tầm ×0.36 ở vòng 5 và không ai sửa — mọi tướng thật đều +0.2. Luật 17 giờ đối chiếu khối này với `levels`, nên nó không thể lệch âm thầm nữa.",
+    "attackRateNeverChanges": true,
+    "abilitiesAreCumulative": false,
+    "_abilitiesNote": "🔴 B-01 (user chốt 2026-07-17): tướng cấp N chạy ĐÚNG MỘT kỹ năng — cái có `unlockLevel == N`. Kỹ năng cấp thấp KHÔNG chạy nữa. Nâng cấp là ĐÁNH ĐỔI, không phải cộng dồn: Batigol Lv1 xuyên hàng (chống đám đông), Lv3 nuke đơn mục tiêu (chống boss) — Lv3 đánh đám đông TỆ HƠN Lv1, và đó là ý đồ. Người chơi có thể cố tình không nâng.",
+    "_dibuException": "Dibu là NGOẠI LỆ CÓ TÊN của B-01 — xem `_b01Exception` trong khối tướng đó."
+  },
+  "towers": [
+    {
+      "id": "la_pulga",
+      "displayName": "La Pulga",
+      "tier": "S",
+      "role": "single_target_dps",
+      "slotType": "field",
+      "isPlayer": true,
+      "projectile": "ball_normal",
+      "levels": [
+        {
+          "level": 1,
+          "cost": 300,
+          "damage": 45,
+          "attackRate": 1.2,
+          "range": 1.4
+        },
+        {
+          "level": 2,
+          "cost": 240,
+          "damage": 90,
+          "attackRate": 1.2,
+          "range": 1.6
+        },
+        {
+          "level": 3,
+          "cost": 480,
+          "damage": 170,
+          "attackRate": 1.2,
+          "range": 1.8
+        }
+      ],
+      "abilities": [
+        {
+          "id": "solo_run",
+          "unlockLevel": 1,
+          "trigger": "cooldown",
+          "cooldownSec": 12.0,
+          "params": {
+            "targetSelector": "highest_absolute_hp",
+            "damageMultiplier": 2.0,
+            "durationSec": 4.0
+          },
+          "_summary": "×2 dame lên mục tiêu máu cao nhất, 4s / mỗi 12s"
+        },
+        {
+          "id": "nhan_quan",
+          "unlockLevel": 2,
+          "trigger": "passive",
+          "params": {
+            "bonusDamagePercentVsSlowed": 25,
+            "neverMissSlowed": true,
+            "_neverMissSlowedIsDeadText": "`neverMissSlowed: true` KHÔNG LÀM GÌ, và không thể làm gì. Trong game này không có cơ chế TRƯỢT nào để mà 'không trượt': docs/03 §6 nói quân 'không né tướng', docs/05 §4.3 nói đạn BÁM mục tiêu (homing) — đạn homing không trượt kể cả mục tiêu không bị chậm. Cách duy nhất một phát bắn bị phí là mục tiêu CHẾT giữa lúc đạn bay (docs/05 §4.3 dòng 232), mà điều đó không liên quan gì tới bị chậm hay không. Đây là tàn dư của một thiết kế cũ nơi đạn có thể bắn hụt. GIỮ LẠI trường này để docs/02 và config còn khớp nhau, nhưng AbilityEngine cố tình KHÔNG đọc nó. Nếu sau này thêm cơ chế trượt thật thì đây là chỗ nối. Cân bằng không đổi: balance_sim chưa từng mô hình hoá việc trượt."
+          },
+          "_summary": "+25% dame lên mục tiêu **đang bị chậm**; không trượt"
+        },
+        {
+          "id": "so_10",
+          "unlockLevel": 3,
+          "trigger": "every_nth_attack",
+          "params": {
+            "n": 4,
+            "pierceCount": 2
+          },
+          "_summary": "Mỗi đòn thứ 4 xuyên qua 2 quân phía sau"
+        }
+      ],
+      "_lv3ValueNote": "🔵 VÒNG 22 — Lv3 dame 141 → 170. Lý do KHÔNG phải 'cho mạnh hơn' mà là sửa một NGHỊCH LÝ GIÁ TRỊ: Lv3 là khoản mua ĐẮT NHẤT game (480 Peso, luỹ kế 1020) nhưng là cấp DUY NHẤT tụt hạng ở CẢ hai bảng hiệu suất/Peso. Gốc nằm ở luật B-01 'cấp N chạy ĐÚNG MỘT kỹ năng': lên Lv3 là MẤT `solo_run` (×2 lên mục tiêu máu cao nhất = chính là boss, uptime 33% ⇒ ×1.33) và MẤT `nhan_quan` (+25%), đổi lấy `so_10` (xuyên 2 quân PHÍA SAU). Nhưng role của tướng này là single_target_dps và boss thì ĐI MỘT MÌNH — không có quân phía sau để xuyên, nên `so_10` nhân ×1.00. Đo được: DPS-vs-boso trên mỗi Peso 0.240 (Lv1) → 0.250 (Lv2) → 0.166 (Lv3) = SỤT 34% ở đúng vai trò nó sinh ra để làm. Ở 170 thì thành 0.200 — vẫn giảm dần (đúng chuẩn TD, và trần maxBuildCost dựa vào việc nó giảm dần) nhưng hết sụt vực. ⚠️ CHƯA giải gốc: `so_10` vẫn là kỹ năng đám-đông gắn trên tướng đơn-mục-tiêu. Sửa gốc cần kỹ năng Lv3 mới + code AbilityEngine, không phải một con số."
+    },
+    {
+      "id": "d10s",
+      "displayName": "D10S",
+      "tier": "S",
+      "role": "aoe_control",
+      "slotType": "field",
+      "isPlayer": true,
+      "projectile": "shockwave",
+      "levels": [
+        {
+          "level": 1,
+          "cost": 240,
+          "damage": 30,
+          "attackRate": 0.8,
+          "range": 1.2,
+          "splashRadius": 1.2
+        },
+        {
+          "level": 2,
+          "cost": 192,
+          "damage": 48,
+          "attackRate": 0.8,
+          "range": 1.4,
+          "splashRadius": 1.7
+        },
+        {
+          "level": 3,
+          "cost": 384,
+          "damage": 75,
+          "attackRate": 0.8,
+          "range": 1.6,
+          "splashRadius": 1.2,
+          "_b01": "1.7 → 1.2. Con số 1.7 = 1.2 cơ bản + 0.5 của `cu_cham_thien_tai` (Lv2) đã cộng sẵn vào level — tức nó mã hoá giả định tích luỹ. Theo B-01, Lv3 KHÔNG chạy `cu_cham_thien_tai` nữa → lan quay về 1.2 cơ bản. Lv2 lan RỘNG HƠN Lv3, và đó là đánh đổi có chủ ý."
+        }
+      ],
+      "_b01Tradeoff": "D10S theo B-01 là ba vai trò khác hẳn nhau, KHÔNG phải nấc thang: Lv1 = khống chế (chậm 50%, lan 1.2) · Lv2 = sát thương diện rộng thô (lan 1.7, KHÔNG chậm) · Lv3 = hỗ trợ đội (mọi tướng +20% lên mục tiêu bị chậm, nhưng tự nó KHÔNG chậm được ai và lan chỉ 1.2). Hệ quả: chỉ Lv1 còn khống chế. Lv3 vô dụng nếu không có Árbitro hoặc một D10S Lv1 khác làm chậm hộ.",
+      "abilities": [
+        {
+          "id": "ban_tay_cua_chua",
+          "unlockLevel": 1,
+          "trigger": "cooldown",
+          "cooldownSec": 15.0,
+          "params": {
+            "slowPercent": 50,
+            "scope": "timed",
+            "durationSec": 3.0,
+            "area": "in_range"
+          },
+          "_summary": "Chậm 50% trong tầm, 3s / mỗi 15s"
+        },
+        {
+          "id": "cu_cham_thien_tai",
+          "unlockLevel": 2,
+          "trigger": "passive",
+          "params": {
+            "_removed_splashRadiusBonus": "ĐÃ GỠ `splashRadiusBonus: 0.5`. Nó là MÌN HẸN GIỜ: `levels[1].splashRadius` đã là 1.7 = 1.2 + 0.5, tức bonus ĐÃ được cộng sẵn. Code nào đọc cả hai ra 2.2 — không crash, chỉ là D10S Lv2 mạnh hơn thiết kế 29% và bảng cân bằng sai. `levels[].splashRadius` là NGUỒN CHÂN LÝ DUY NHẤT của bán kính lan; kỹ năng này chỉ còn là cái TÊN giải thích vì sao Lv2 rộng hơn Lv1. Luật 19 của validator chặn mọi tham số kỹ năng trùng vai với trường ở levels."
+          },
+          "_summary": "Bán kính lan rộng hơn — 1.2 (Lv1) → 1.7. Con số nằm ở `levels[1].splashRadius`.",
+          "_tradeoff": "Đây là cấp lan RỘNG NHẤT của D10S. Lv3 tụt về 1.2 để đổi lấy buff đội (+20% lên mục tiêu bị chậm). Đông quân → Lv2. Có Árbitro làm chậm → Lv3."
+        },
+        {
+          "id": "ban_thang_the_ky",
+          "unlockLevel": 3,
+          "trigger": "passive",
+          "params": {
+            "allTowersBonusDamagePercentVsSlowed": 20,
+            "_b01": "BỎ `onlyWhileOwnSlowActive: true`. Nó trỏ tới slow của `ban_tay_cua_chua` (Lv1) — thứ KHÔNG còn chạy ở Lv3 theo B-01, nên điều kiện sẽ không bao giờ đúng và kỹ năng chết. Cho D10S Lv3 tự slow cũng không được: đó là lén tích luỹ Lv1 qua cửa sau. Nên nó cần NGƯỜI KHÁC làm chậm.",
+            "requiresExternalSlowSource": true
+          },
+          "_summary": "Mọi tướng +20% dame lên mục tiêu bị chậm — nhưng D10S Lv3 KHÔNG tự làm chậm được nữa",
+          "_tradeoff": "Lv1 tự làm chậm 50% và sống độc lập. Lv3 không làm chậm ai, chỉ khuếch đại việc người khác làm chậm → một mình thì vô dụng, đứng cạnh Árbitro thì mạnh. Đúng tinh thần 'Bàn thắng thế kỷ': bàn thắng cần cả đội."
+        }
+      ]
+    },
+    {
+      "id": "batigol",
+      "displayName": "El Cinco",
+      "tier": "A",
+      "role": "burst",
+      "slotType": "field",
+      "isPlayer": true,
+      "projectile": null,
+      "levels": [
+        {
+          "level": 1,
+          "cost": 120,
+          "damage": 20,
+          "attackRate": 0.6,
+          "range": 1.0,
+          "splashRadius": 0.8
+        },
+        {
+          "level": 2,
+          "cost": 96,
+          "damage": 30,
+          "attackRate": 0.6,
+          "range": 1.2,
+          "splashRadius": 1.1
+        },
+        {
+          "level": 3,
+          "cost": 192,
+          "damage": 45,
+          "attackRate": 0.6,
+          "range": 1.4,
+          "splashRadius": 1.4
+        }
+      ],
+      "abilities": [
+        {
+          "id": "cu_dam",
+          "unlockLevel": 1,
+          "trigger": "passive",
+          "params": {},
+          "_summary": "**Đấm** → nổ nhỏ tại vị trí quái. Mọi quân trong vùng nổ bị trừ máu."
+        },
+        {
+          "id": "cu_da",
+          "unlockLevel": 2,
+          "trigger": "passive",
+          "params": {},
+          "_summary": "**Đá** → nổ vừa, dame mạnh hơn. Vùng nổ rộng hơn cấp 1."
+        },
+        {
+          "id": "cu_dap",
+          "unlockLevel": 3,
+          "trigger": "passive",
+          "params": {},
+          "_summary": "**Đạp** → nổ lớn, dame rất mạnh. Vùng nổ rộng nhất."
+        }
+      ],
+      "_redesign": "🔴 2026-07-22 — user chốt: đổi Batigol → 'El Cinco' (Leandro Paredes, id giữ nguyên). Bỏ sut_xuyen/ban_nang_sat_thu/cu_vo_le. Mỗi cấp một đòn NỔ (đấm/đá/đạp) = AttackShape.Splash tại mục tiêu, bán kính = levels[].splashRadius 0.8/1.1/1.4, dame 60/96/150. Nổ mỗi đòn đánh (nhịp 0.6). GIỮ dame (không giảm bù AoE) → mạnh hẳn lên, chấp nhận lệch balance_sim, đo lại ở M1. Aura = COSMETIC (đỏ/lửa) ở view, không cơ chế.",
+      "_rateNote": "🔴 VÒNG 17: nhịp 0.4 → 0.6. Giữ nhịp 0.6 sau khi thành AoE."
+    },
+    {
+      "id": "dibu",
+      "displayName": "Dibu",
+      "tier": "B",
+      "role": "goalkeeper",
+      "slotType": "goalkeeper",
+      "maxInstances": 1,
+      "isPlayer": true,
+      "projectile": null,
+      "levels": [
+        {
+          "level": 1,
+          "cost": 140,
+          "damage": 0,
+          "attackRate": 0.5,
+          "range": 1.4
+        },
+        {
+          "level": 2,
+          "cost": 112,
+          "damage": 0,
+          "attackRate": 0.5,
+          "range": 1.6
+        },
+        {
+          "level": 3,
+          "cost": 224,
+          "damage": 0,
+          "attackRate": 0.5,
+          "range": 1.8
+        }
+      ],
+      "abilities": [
+        {
+          "id": "can_pha",
+          "unlockLevel": 1,
+          "trigger": "on_attack",
+          "params": {
+            "killChancePercent": 20,
+            "worksOnBoss": true,
+            "dropsBounty": true
+          },
+          "_summary": "**20%** mỗi lần thử: xoá sổ quân bất kỳ, kể cả boss. Có rơi tiền như cú giết thường."
+        },
+        {
+          "id": "ap_dao",
+          "unlockLevel": 2,
+          "trigger": "on_attack",
+          "params": {
+            "killChancePercent": 30,
+            "worksOnBoss": true,
+            "dropsBounty": true
+          },
+          "_summary": "**30%** mỗi lần thử: xoá sổ quân bất kỳ, kể cả boss. Có rơi tiền như cú giết thường."
+        },
+        {
+          "id": "nguoi_hung_luan_luu",
+          "unlockLevel": 3,
+          "trigger": "on_attack",
+          "params": {
+            "killChancePercent": 40,
+            "worksOnBoss": true,
+            "dropsBounty": true
+          },
+          "_summary": "**40%** mỗi lần thử: xoá sổ quân bất kỳ, kể cả boss. Có rơi tiền như cú giết thường."
+        }
+      ],
+      "_redesign": "🔴 VÒNG 18 — user chốt: 'dibu chỉ được mua ở trước cầu môn và chỉ có tỉ lệ đánh chết quái bất kỳ là 20/30/40. không có kỹ năng khác'. ĐÃ GỠ: cooldown 20s của `can_pha`, aura chậm 30% của `ap_dao`, hồi máu 1/3-cản của `nguoi_hung_luan_luu`. GIỜ: nhịp 0.5 (1 lần thử mỗi 2s), mỗi lần có killChancePercent xoá sổ quân bất kỳ KỂ CẢ BOSS. HỆ QUẢ TỐT: ngoại lệ B-01 của Dibu KHÔNG CÒN CẦN. Trước đây cả 3 cấp phải lặp `blocksAtGoalLine` vì cản bóng là định nghĩa của vị trí thủ môn — giờ mỗi cấp đúng MỘT kỹ năng, chỉ khác %. Đây là B-01 sạch, không ngoại lệ. Luật 18 giờ áp cho CẢ 6 tướng. HỆ QUẢ CẦN THEO DÕI: 0.5 × 20% = 0.10 con/giây ở Lv1, so với can_pha cũ 1 con/20s = 0.05 — mạnh gấp 2. Nhưng Dibu mất hẳn aura làm chậm (thứ `docs/02` gọi là 'kéo dài thời gian mọi tướng khác được bắn vào đoạn cuối đường') và mất nguồn hồi máu duy nhất không tốn tiền. balance_sim KHÔNG mô hình hoá Dibu (damage 0 → không nằm trong dps_towers), nên nó KHÔNG thấy thay đổi này. Phải đo ở M1. 🔴 NGẪU NHIÊN: đây là cơ chế RNG đầu tiên trong game. Cùng một wave giờ khó dễ khác nhau mỗi lần chơi.",
+      "_rangeFix": "🔴 VÒNG 18 — BUG THẬT: tầm Lv1 là 0.7 trong khi ô thủ môn gk01 cách đường 0.73. Dibu Lv1 KHÔNG VỚI TỚI ĐƯỜNG → chưa từng tung xúc xắc lần nào → tướng 140 Peso hoàn toàn vô dụng. Lệch 0.03 unit. Test `Dibu_cap_cao_hon_cuu_nhieu_hon` bắt được: 40 ván Lv1 (20%) cứu ĐÚNG 0, Lv3 (40%) cứu 48 — kỳ vọng của Lv1 là ~48, nên 0 là bất khả thi về mặt xác suất, tức KHÔNG phải xui mà là bug. Bug này sống sót vì luật RANH GIỚI DAO CẠO và luật Ô CHẾT ở path_check.py chỉ quét ô SÂN — ô thủ môn chưa bao giờ được kiểm. Đã sửa cả hai: tầm 0.9/1.1/1.3 (Lv1 cách 0.73 một biên 0.17) và path_check giờ quét cả gk01."
+    },
+    {
+      "id": "el_arbitro",
+      "displayName": "El Árbitro",
+      "tier": null,
+      "role": "control_multiplier",
+      "slotType": "field",
+      "isPlayer": false,
+      "projectile": null,
+      "levels": [
+        {
+          "level": 1,
+          "cost": 240,
+          "damage": 0,
+          "attackRate": 0,
+          "range": 1.2
+        },
+        {
+          "level": 2,
+          "cost": 192,
+          "damage": 0,
+          "attackRate": 0,
+          "range": 1.4
+        },
+        {
+          "level": 3,
+          "cost": 384,
+          "damage": 0,
+          "attackRate": 0,
+          "range": 1.6
+        }
+      ],
+      "abilities": [
+        {
+          "id": "coi_chi_tay",
+          "unlockLevel": 1,
+          "trigger": "aura",
+          "params": {
+            "slowPercent": 25,
+            "scope": "in_range"
+          },
+          "_summary": "**Aura** chậm 25% — chỉ trong tầm"
+        },
+        {
+          "id": "the_vang",
+          "unlockLevel": 2,
+          "trigger": "cooldown",
+          "cooldownSec": 4.0,
+          "params": {
+            "auraSlowPercent": 25,
+            "targetSelector": "first_in_range_without_card",
+            "slowPercent": 45,
+            "scope": "permanent",
+            "appliesCard": "yellow"
+          },
+          "_summary": "Aura nền chậm **25%** MỌI con trong tầm + ném **thẻ vàng** 1 con / 4s → con trúng chậm **45% VĨNH VIỄN**"
+        },
+        {
+          "id": "the_do",
+          "unlockLevel": 3,
+          "trigger": "cooldown",
+          "cooldownSec": 4.0,
+          "params": {
+            "auraSlowPercent": 25,
+            "targetSelector": "first_in_range_without_card",
+            "slowPercent": 65,
+            "scope": "permanent",
+            "appliesCard": "red"
+          },
+          "_summary": "Aura nền chậm **25%** MỌI con trong tầm + ném **thẻ đỏ** 1 con / 4s → con trúng chậm **65% VĨNH VIỄN**",
+          "_note": "Vòng 22 (user chốt): El Árbitro = aura nền 25% (vùng XANH, sóng lan từ trong ra, cả 3 cấp) + Lv2/Lv3 ném thẻ (vàng/đỏ) cho 1 con → chậm 45/65 VĨNH VIỄN. SlowStack lấy MAX → con trúng thẻ = 45/65, con chưa trúng = 25 (aura). `auraSlowPercent` áp qua TickAuras (kỹ năng trigger≠aura), thẻ áp qua FireCooldownAbility/DrawCard."
+        }
+      ]
+    }
+  ],
+  "projectiles": [
+    {
+      "id": "ball_normal",
+      "speedUnitsPerSec": 12.0,
+      "_note": "Bóng thường — La Pulga"
+    },
+    {
+      "id": "ball_heavy",
+      "speedUnitsPerSec": 8.0,
+      "_note": "Bóng sút mạnh — Batigol. Chậm hơn: nặng."
+    },
+    {
+      "id": "shockwave",
+      "speedUnitsPerSec": -1,
+      "_note": "D10S — hitscan, trúng tức thì. -1 = không có đạn bay."
+    }
+  ]
+}

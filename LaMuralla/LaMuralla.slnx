@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="LaMuralla.Core.csproj" />
+  <Project Path="LaMuralla.Unity.csproj" />
+  <Project Path="LaMuralla.Editor.csproj" />
+</Solution>

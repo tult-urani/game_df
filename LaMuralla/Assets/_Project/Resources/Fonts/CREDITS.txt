@@ -1,0 +1,22 @@
+Font trong thư mục này là **Inter**, bản ship kèm Unity Editor 6000.5.4f1
+(`Unity.app/Contents/Resources/Fonts/`). Chép vào project, KHÔNG tải từ mạng.
+
+  Inter — Copyright (c) 2016 The Inter Project Authors
+  https://github.com/rsms/inter
+  License: SIL Open Font License 1.1 — xem Inter-LICENSE.txt cạnh đây.
+
+OFL cho phép nhúng vào phần mềm thương mại và phát hành lại. Điều kiện: giữ
+nguyên bản quyền + license (file này + Inter-LICENSE.txt làm việc đó), và không
+bán riêng bản thân font.
+
+Vì sao KHÔNG dùng font mặc định của IMGUI: LiberationSans là thứ Unity đưa ra
+khi không ai chọn gì. Nó không xấu, nhưng nó cũng không được chọn — và chữ chiếm
+phần lớn diện tích HUD này.
+
+Vì sao KHÔNG chép font hệ thống của macOS (SF Pro, Helvetica Neue): Apple cấm
+phát hành lại. Chúng chỉ được dùng qua `Font.CreateDynamicFontFromOSFont`, và
+cách đó phụ thuộc font có sẵn trên máy người chơi — hỏng thì cả HUD mất chữ.
+
+🔴 GIỮ `includeFontData: 1` trong .meta. Tắt đi là font không đi vào bản build,
+và trên máy thật mọi chữ rơi về font hệ thống — hỏng đúng thứ file này sinh ra
+để sửa.

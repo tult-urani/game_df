@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: b1816cf8f027144ad85312ec471a36fc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7220269517054805112
+    second: el_arbitro_hero_0
+  - first:
+      213: -3484825954060973984
+    second: el_arbitro_hero_1
+  - first:
+      213: -639553830870011228
+    second: el_arbitro_hero_2
+  - first:
+      213: -1498561396788760155
+    second: el_arbitro_hero_3
+  - first:
+      213: -5339362234648466529
+    second: el_arbitro_hero_4
+  - first:
+      213: -2115575206744320431
+    second: el_arbitro_hero_5
+  - first:
+      213: 6546146506310847452
+    second: el_arbitro_hero_6
+  - first:
+      213: 3379760791505307069
+    second: el_arbitro_hero_7
+  - first:
+      213: -533414898494221902
+    second: el_arbitro_hero_8
+  - first:
+      213: 8058124703109377930
+    second: el_arbitro_hero_9
+  - first:
+      213: -5357607949607166655
+    second: el_arbitro_hero_10
+  - first:
+      213: -6706078653656925315
+    second: el_arbitro_hero_11
+  - first:
+      213: 5178548582038697355
+    second: el_arbitro_hero_12
+  - first:
+      213: 8418577814652976116
+    second: el_arbitro_hero_13
+  - first:
+      213: -4288935933307376046
+    second: el_arbitro_hero_14
+  - first:
+      213: -2469053396201977536
+    second: el_arbitro_hero_15
+  - first:
+      213: -8861130816338197938
+    second: el_arbitro_hero_16
+  - first:
+      213: 5841005509006451845
+    second: el_arbitro_hero_17
+  - first:
+      213: 8837233115579283884
+    second: el_arbitro_hero_18
+  - first:
+      213: 8232381225896677615
+    second: el_arbitro_hero_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 232
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: el_arbitro_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be375c4f86d404eeeb1caa28f04739b4
+      internalID: 1103416700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_1
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 696
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec0acaea870f4b469a6d91385802df5
+      internalID: -533442202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_2
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d44fd11b86f0426680b85d5f6d6de2d
+      internalID: -178681547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_3
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 696
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a3b0c4abdb146508ec40fb587b2837
+      internalID: 1023029239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_4
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76512b5bed814426baa3ef5e127809e
+      internalID: 1414797649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8564a0a59f340cc83b020a60664e99
+      internalID: -380155663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_6
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 464
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef5cadb5b0be426bb1e9205b530724d
+      internalID: -1723623350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_7
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d16ea990c5a4be0a1a8c2284b547d8
+      internalID: 142569395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_8
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 464
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa3a57f5ccdc415c9182ae1bc1a86c2
+      internalID: 1124553843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_9
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42f8b69a50e4423d8bb70d843c68880
+      internalID: 453755273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860b4cf602e62421ab12e8cfd7ba41d7
+      internalID: 1512196865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_11
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 232
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11cc9ab0efbae4643968de16d0a649af
+      internalID: -203754106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_12
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922e6466f56b64d3f904c1ad10a48050
+      internalID: 6527692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_13
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 232
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c611394f854428ba7413c49bb40f86
+      internalID: -1434999881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_14
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b29a48a8ee5c426fb53ac43f8d1137b
+      internalID: -1260741556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c04322e16ec4f2e937b2fea4509cbf
+      internalID: -322526250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_16
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c606a86a102f04142a44490ffabfbca9
+      internalID: -500657425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_17
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37eb1ab1d7de4f9e8195d5240fab774
+      internalID: -1704262181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_18
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 0
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7889adf438def4cde85d2bb242f34979
+      internalID: -1567450816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: el_arbitro_19
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86f43181a113415eae588fa6273f84a
+      internalID: 869071307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 93e78e52faec84096b5c6e9e62d460dc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      el_arbitro_0: 1103416700
+      el_arbitro_1: -533442202
+      el_arbitro_10: 1512196865
+      el_arbitro_11: -203754106
+      el_arbitro_12: 6527692
+      el_arbitro_13: -1434999881
+      el_arbitro_14: -1260741556
+      el_arbitro_15: -322526250
+      el_arbitro_16: -500657425
+      el_arbitro_17: -1704262181
+      el_arbitro_18: -1567450816
+      el_arbitro_19: 869071307
+      el_arbitro_2: -178681547
+      el_arbitro_3: 1023029239
+      el_arbitro_4: 1414797649
+      el_arbitro_5: -380155663
+      el_arbitro_6: -1723623350
+      el_arbitro_7: 142569395
+      el_arbitro_8: 1124553843
+      el_arbitro_9: 453755273
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

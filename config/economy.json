@@ -1,0 +1,73 @@
+{
+  "_comment": "NGUỒN CHÂN LÝ KINH TẾ + THAM SỐ MÔ HÌNH CÂN BẰNG. Docs 04 sinh bảng từ đây.",
+  "startingCash": 700,
+  "goalHealth": 20,
+  "skipBonusPerSecond": 3,
+  "sellRefundRatio": 0.6,
+  "goalRepair": {
+    "baseCost": 200,
+    "costGrowth": 1.5,
+    "healAmount": 1
+  },
+  "slowCapPercent": 70,
+  "_slowOrderOfOperations": "Lấy MAX các nguồn slow → cap 70% → RỒI mới nhân (1 - slowResistPercent/100). Làm ngược lại thì kháng chậm thành vô nghĩa. Xem docs/01 §8 **FM-14**.",
+  "roundingMode": "half_up",
+  "_roundingNote": "BẮT BUỘC. Áp cho MỌI phép round(giá_trị_gốc × hệ_số) — máu và thưởng. 'half_up' = 62.5 → 63 (làm tròn ra xa số 0).",
+  "_roundingWarning": "⚠️ Python round() VÀ C# Math.Round() mặc định dùng BANKER'S ROUNDING (làm tròn về số chẵn): round(62.5) = 62, KHÔNG phải 63. Nếu không ép half_up, tools/gen_docs.py và Unity sẽ ra hai kết quả KHÁC NHAU trên cùng một config. Đã thực xảy ra: Tambor thưởng 25 × 2.5 = 62.5 → lệch 28 Peso trên cả Act 3.",
+  "_roundingImpl": {
+    "python": "from decimal import Decimal, ROUND_HALF_UP; int(Decimal(x).quantize(0, ROUND_HALF_UP))",
+    "csharp": "Math.Round(x, MidpointRounding.AwayFromZero)"
+  },
+  "starThresholds": {
+    "one": 1,
+    "two": 10,
+    "three": 20
+  },
+  "fieldSlots": 11,
+  "goalkeeperSlots": 1,
+  "balanceModel": {
+    "_warning": "BA hệ số dưới đây đều là ƯỚC LƯỢNG CHƯA ĐO. Chúng nhân với nhau — mỗi cái lệch 20% thì tổng lệch 73%. Xem docs/04 §8.",
+    "etaWasteFactor": 0.75,
+    "_etaNote": "Hao phí do overkill + đổi mục tiêu. Đo ở M1 bằng telemetry sát thương thừa.",
+    "sigmaByTowerLevel": [
+      1.1,
+      1.15,
+      1.2
+    ],
+    "_sigmaNote": "Bù cho kỹ năng mà WDB không đếm. Đo ở M1: DPS có kỹ năng ÷ không kỹ năng.",
+    "_sigmaB01Warning": "🔴 σ ĐÃ ĐỔI vì B-01 (2026-07-17): [1.10, 1.20, 1.35] → [1.10, 1.15, 1.20]. Thang cũ dốc VÌ kỹ năng cộng dồn — Lv3 chạy 3 kỹ năng cùng lúc. B-01 bỏ cộng dồn: cấp N chạy ĐÚNG MỘT kỹ năng. Nên σ vẫn tăng theo cấp (kỹ năng cấp cao mạnh hơn cấp thấp) nhưng BỚT DỐC — 1.35 giờ là phóng đại. Đo được: thang mới cho 0/20 wave vỡ dải cứng (thang cũ: 1 vỡ ở W15 = 1.67), D10S được mua ở 14 wave thay vì 11, và boss W20 vẫn ÉP đổi đội hình (build đám-đông 0.58). Làm phẳng hơn nữa ([1.1,1.1,1.1]) thì thủng SÀN 1.05. Vẫn là số BỊA — chỉ telemetry M1 đo được. Đừng tưởng nó có căn cứ hơn trước.",
+    "tauByArbitroLevel": [
+      1.0,
+      1.07,
+      1.2,
+      1.26
+    ],
+    "_tauNote": "Index 0 = không có Árbitro. Phụ thuộc số quân trong wave (thẻ rút 1 con/8s bất kể wave to nhỏ). Đo ở M1.",
+    "tauBreakEven": 1.103,
+    "_tauBreakEvenNote": "Árbitro chiếm 1 ô. NHƯNG break-even 1.103 CHỈ đúng khi HẾT Ô — lúc còn ô trống nó cạnh tranh bằng TIỀN, không phải bằng ô. balance_sim.py cho người chơi tối ưu tự chọn: nó KHÔNG mua Árbitro ở W1-10 (thiếu tiền, còn ô), mua Lv2 từ W11, Lv3 từ W17. Vậy Árbitro không phải thuế — nó là khoản đầu tư giữa game. Con số 1.103 giữ lại vì vẫn đúng cho cuối game.",
+    "vBarAverageSpeed": 1.1,
+    "spawnIntervalSec": 0.7,
+    "pathLengthUnits": 42.28,
+    "headroomMin": 1.05,
+    "headroomMax": 1.65,
+    "headroomTargetMin": 1.1,
+    "headroomTargetMax": 1.5,
+    "d10sAverageTargetsHit": 3,
+    "d10sTargetsHitAtSplashRadius": 1.2,
+    "_d10sNote": "Giả định. Quân đi HÀNG DỌC trên đường, không đứng cụm tròn → số thật có thể gần 2. Đo ở M1.",
+    "_d10sAnchorNote": "`d10sAverageTargetsHit` KHÔNG phải hằng số phẳng — nó là 'chạm 3 mục tiêu KHI bán kính lan = 1.2'. balance_sim.py suy ra bán kính khác bằng tỉ lệ TUYẾN TÍNH (không phải r²): quân đi hàng dọc nên vòng tròn lan cắt một đoạn thẳng → số quân chạm tỉ lệ ĐƯỜNG KÍNH. Cụm tròn mới tỉ lệ diện tích. Neo phải tường minh vì trước đây số 3 áp cho MỌI cấp trong khi Lv1 lan 1.2 còn Lv2/Lv3 lan 1.7 — tự mâu thuẫn, và không ai ghi nó hiệu chuẩn cho bán kính nào. B-01 làm lộ ra (Lv2 lan 1.7 ≠ Lv3 lan 1.2). NEO Ở 1.2 = giữ nguyên hiệu chuẩn Lv1 cũ, và sửa việc mô hình cũ ĐẾM THIẾU Lv2. Đã thử neo ở 1.7: cho 20/20 wave đạt dải NHƯNG biến D10S thành NỘI DUNG CHẾT (0 wave mua nó) và giết cơ chế boss (build đám-đông W20 lên 1.17 → boss không ép gì). Dải số đẹp không đáng đổi bằng một tướng tier S chết — vòng 5 đã học bài này với El Fideo.",
+    "assumeChordEquals2R": false,
+    "_chordWarning": "✅ GIẢI XONG (vòng 5). Giả định này KHÔNG CÒN ĐƯỢC DÙNG: tools/balance_sim.py đo chord THẬT bằng cách lấy 4000 mẫu spline path.json và tính đoạn đường nằm trong vòng tròn tầm của TỪNG ô. Không còn xấp xỉ. Nén tầm về ≤2.0 cũng đưa chord/2R trung bình về 0.96, nên kể cả ai tính tay bằng 2R cũng chỉ lệch ~4%.",
+    "_chordRootCause": "Gốc là TẦM QUÁ LỚN so với bản đồ. Đã sửa 2 lần ở vòng 5: 3.0-7.0 → 1.1-2.6 (hành lang 118% → 41% màn), rồi → 1.0-2.0 (thoát vùng chord SIÊU TUYẾN TÍNH). Đo được: chord tăng 5.3× khi tầm tăng 2.4× → tướng tầm xa nhất luôn thắng bất kể DPS → El Fideo thống trị, La Pulga/Batigol thành nội dung chết. Ngưỡng nổ ở R≈2.0."
+  },
+  "maxBuildCost": {
+    "_comment": "Trần chi tiêu — kiểm chứng 'tiền luôn khan hiếm' ở docs/04 §6",
+    "formula": "fieldSlots × cost(la_pulga, maxed) + cost(dibu, maxed)",
+    "expected": 11696,
+    "lifetimeCashExpected": 11515,
+    "_marginNote": "Biên +1.5% — tiền cả trận 11515 < trần 11696 (11 ô × 1020 + Dibu 476). 🔵 VÒNG 22 (wave +28% quái): số quái mỗi wave ×1.25 half_up (363 → 465 con cả trận). Nếu GIỮ baseBounty cũ 8/14/25 thì tiền cả trận vọt lên 13562 = VƯỢT TRẦN 16% — người chơi kiếm nhiều hơn mức có thể tiêu, cuối trận tiền hết ý nghĩa. Chữa bằng cách hạ baseBounty xuống 5/11/24, chọn bởi dò lưới trong tools/balance_sim.py: đây là bộ giữ headroom sát đường cong cũ nhất (rmse 0.17) trong số các bộ còn biên dương. Tổng tiền cả trận VẪN TĂNG (11276 → 11515) vì số quái tăng bù thừa phần thưởng mỗi con giảm. 🔵 VÒNG 21: f11 được THÊM LẠI (đảo vòng 20) → 11 ô sân, biên dương trở lại. Vòng 20 từng xóa f11 còn 10 ô → biên ÂM 5.3%; giờ hết. Đã suýt VỠ ở vòng 5: sau nén tầm + cân giá tướng, tiền cả trận lên 11900 > trần (biên ÂM 1.7%) → người chơi mua HẾT, cuối game hết lựa chọn. Chữa: giảm bountyMultiplier Act 3 2.5→2.2. 🔵 Con số này là LÝ THUYẾT (giả định giết sạch 100% + skip hết nghỉ). Engine thật đo được 10945 ở bài MatchControllerTests.Nguoi_choi_biet_tieu_tien_thi_thang_duoc_20_wave — thấp hơn vì có quân lọt lưới, và quân lọt lưới thì không rơi tiền."
+  },
+  "_derivedBy": "tools/balance_sim.py — chạy lại sau MỌI thay đổi tầm/giá/thưởng/spawn. Số ở đây là kết quả dò, không phải số gõ tay.",
+  "_bountyRebalanceNote": "🔵 VÒNG 22 — thưởng/máu được PHẲNG HOÁ, không chỉ hạ. Trước: adepto 0.080 · tifoso 0.064 · tambor 0.045 → tank trả công tệ nhất đúng lúc nó khó giết nhất, nên giết tambor luôn là nước đi kinh tế TỆ. Sau: 0.050 · 0.050 · 0.044. Đây là phần 'cân bằng lại' của tiền-khi-quái-chết; phần 'hạ' là hệ quả của trần chi tiêu, xem maxBuildCost._marginNote.",
+  "_startingCashNote": "🔵 VÒNG 22: 550 → 700. KHÔNG phải số gõ tay — đo bằng MatchController thật chạy hết 20 wave với người chơi tham lam (MatchControllerTests.Nguoi_choi_biet_tieu_tien_thi_thang_duoc_20_wave). Vách chuyển rất sắc: 650 thua W10 · 670 đi tới W20 rồi chết 0/20 máu · 700 THẮNG còn 11/20 máu (2 sao). 730 và 760 cho kết quả y hệt 700 → đã bão hoà, thêm nữa là lãng phí. Vì sao khoản này quyết định chứ không phải bounty: ở cấu hình cũ người chơi kiếm ĐỦ tiền cả trận nhưng kiếm QUÁ MUỘN — W6 mới có 2 tướng trong khi wave đã 19 con. Nâng bounty thì tiền dồn về cuối trận, chỗ vốn đã dư; nâng startingCash đổ đúng vào chỗ thiếu."
+}

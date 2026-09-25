@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: 868966fa74ca84bcc804e048af338c4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3663696233029758937
+    second: dibu_hero_0
+  - first:
+      213: 1288668218997780566
+    second: dibu_hero_1
+  - first:
+      213: 6935496731806958703
+    second: dibu_hero_2
+  - first:
+      213: -4827182100213857832
+    second: dibu_hero_3
+  - first:
+      213: 8959811309650013919
+    second: dibu_hero_4
+  - first:
+      213: -8890822984302402706
+    second: dibu_hero_5
+  - first:
+      213: -3639656335536002481
+    second: dibu_hero_6
+  - first:
+      213: 3870546839195699807
+    second: dibu_hero_7
+  - first:
+      213: 9174943040271119654
+    second: dibu_hero_8
+  - first:
+      213: -8307945569818346186
+    second: dibu_hero_9
+  - first:
+      213: -8907850065143553871
+    second: dibu_hero_10
+  - first:
+      213: -8559351151033273862
+    second: dibu_hero_11
+  - first:
+      213: 4620392788852553224
+    second: dibu_hero_12
+  - first:
+      213: -3892742711799932020
+    second: dibu_hero_13
+  - first:
+      213: 4899642779174765642
+    second: dibu_hero_14
+  - first:
+      213: -4968905931829430258
+    second: dibu_hero_15
+  - first:
+      213: 2679560599553537152
+    second: dibu_hero_16
+  - first:
+      213: -4131868251027413370
+    second: dibu_hero_17
+  - first:
+      213: -6309479575889795640
+    second: dibu_hero_18
+  - first:
+      213: 8483188153223688681
+    second: dibu_hero_19
+  - first:
+      213: 5646896289159217674
+    second: dibu_hero_20
+  - first:
+      213: -8254866251507151579
+    second: dibu_hero_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 232
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dibu_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3aa0aad4a456432a911d9f500cfced2
+      internalID: -685307578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_1
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 696
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a610975ef5049409652e9b9ae6c562
+      internalID: 1677886004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_2
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5ab24d2b1b04e49826c8c32670f151
+      internalID: -640324106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_3
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 696
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ce5e97c946948b989ba73043e99269
+      internalID: -1433494666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_4
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da0df33b7fad46e58e37714186a0d81
+      internalID: 1499500705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b114520599743928b049fb63f0a72a
+      internalID: -1711179908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_6
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 464
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af60749eaa79d47bdb8cae2bcb337fd0
+      internalID: -1708019417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_7
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e16a237b05774846ab8992586d0fa24
+      internalID: 263560151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_8
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 464
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b3fe81d11bb4d50a1c5aec66d7989e
+      internalID: -719550372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_9
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7a127aefbb649fba8a0b2d27c58ae3
+      internalID: -119052819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a814f864b1371430abe186ffa3b0a956
+      internalID: -1608013914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_11
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 232
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08ccd4fc256341ada22eca275d71b65
+      internalID: 2113546433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_12
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae7b94d96e4b4dadaf2608c4f4df8fd
+      internalID: 738195230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_13
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 232
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717d473cf31154783be7a988d601caa8
+      internalID: 1555303957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_14
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7aa0d85766a4706b4a505bb54b2aad
+      internalID: 595857974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092724871d492488eba74547df5953f4
+      internalID: 1550702346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_16
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43af1169d5284aa4b4e1bb491729e29
+      internalID: -538633354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_17
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b412d1fc2b2049f796437cd2adc98a0
+      internalID: -637195295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_18
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 0
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863561f8189264d0fb19d45e769fb609
+      internalID: -1469422580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dibu_19
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38c17173541c4c3ea3d8b58e729c48a
+      internalID: -513163349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 10e6796a3ed0c416db269d16b9971c2a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dibu_0: -685307578
+      dibu_1: 1677886004
+      dibu_10: -1608013914
+      dibu_11: 2113546433
+      dibu_12: 738195230
+      dibu_13: 1555303957
+      dibu_14: 595857974
+      dibu_15: 1550702346
+      dibu_16: -538633354
+      dibu_17: -637195295
+      dibu_18: -1469422580
+      dibu_19: -513163349
+      dibu_2: -640324106
+      dibu_3: -1433494666
+      dibu_4: 1499500705
+      dibu_5: -1711179908
+      dibu_6: -1708019417
+      dibu_7: 263560151
+      dibu_8: -719550372
+      dibu_9: -119052819
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

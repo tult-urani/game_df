@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 242a7f4ace20e4904a156e711c57a001
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4153733971715511494
+    second: batigol_hero_0
+  - first:
+      213: 8239977878578081781
+    second: batigol_hero_1
+  - first:
+      213: -3226695779603960127
+    second: batigol_hero_2
+  - first:
+      213: 416453745485415757
+    second: batigol_hero_3
+  - first:
+      213: -2061418410971772172
+    second: batigol_hero_4
+  - first:
+      213: -2612327240161244265
+    second: batigol_hero_5
+  - first:
+      213: -8799078537580969512
+    second: batigol_hero_6
+  - first:
+      213: 575260124661592114
+    second: batigol_hero_7
+  - first:
+      213: -3239001529842312287
+    second: batigol_hero_8
+  - first:
+      213: -51238588190492963
+    second: batigol_hero_9
+  - first:
+      213: -1125612784136765374
+    second: batigol_hero_10
+  - first:
+      213: -2293282712156637048
+    second: batigol_hero_11
+  - first:
+      213: 3984915027317341123
+    second: batigol_hero_12
+  - first:
+      213: -4623373043382780780
+    second: batigol_hero_13
+  - first:
+      213: -5334200011925217419
+    second: batigol_hero_14
+  - first:
+      213: -9028945503284410884
+    second: batigol_hero_15
+  - first:
+      213: 7857033423491457892
+    second: batigol_hero_16
+  - first:
+      213: 3720020433172092416
+    second: batigol_hero_17
+  - first:
+      213: 2236180438641162320
+    second: batigol_hero_18
+  - first:
+      213: -8807713800205110636
+    second: batigol_hero_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 232
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: batigol_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92312e2a828774c19a0cbd4406e62532
+      internalID: -1715375721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_1
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 696
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b1aa48f424d41bcbeab8f8a94c08b5
+      internalID: -1976630986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_2
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954b59c8d5ab3458b90964205c9e754e
+      internalID: 610657309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_3
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 696
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788f50b74d6b64ac1870bf19ed0b2b11
+      internalID: -1926873759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_4
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 696
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2c431239df14e519c14d5e5cfd6b0f
+      internalID: -1421336941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2bbe0be68f147f8bf97e323d185768
+      internalID: -669064852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_6
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 464
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5700ba55a5f0140beb3d67035945843a
+      internalID: 754106201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_7
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1960a0d02ba7412f99702bc45e78612
+      internalID: 1472479671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_8
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 464
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8381185b8324649f6a8cfbdad6ea12ae
+      internalID: 1023679423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_9
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 464
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8992a2fe250554fa2b0ecc60aa492ab4
+      internalID: 755732175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f4a8f24447e469baeb6e2abf458368
+      internalID: 474023252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_11
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 232
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd06a748072a54b0196b1237e6b923dd
+      internalID: -1570234227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_12
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249e78378991a4b7f83b4ef9a5c7989b
+      internalID: -109453991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_13
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 232
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef86e505418374696b3af7ac29d36c3f
+      internalID: 719254360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_14
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 232
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 370e55fcae7e24799a5a6ca63530028f
+      internalID: 1099195439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4e854a9ca3348da940e2e58544c304
+      internalID: 1072663827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_16
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155a0aaa815254f75a9ffa26d50fa10c
+      internalID: 1699674175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_17
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00afa7b643814ad59012eb684449867
+      internalID: 1343553285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_18
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 0
+        width: 231
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fee45f290614568917a4808290abe0
+      internalID: 1649856479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: batigol_19
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 0
+        width: 230
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79056269e135e4716be1317ebfb7f5bc
+      internalID: 1426118428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b26747b0d89534ebfa6c0716fbf87b8f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      batigol_0: -1715375721
+      batigol_1: -1976630986
+      batigol_10: 474023252
+      batigol_11: -1570234227
+      batigol_12: -109453991
+      batigol_13: 719254360
+      batigol_14: 1099195439
+      batigol_15: 1072663827
+      batigol_16: 1699674175
+      batigol_17: 1343553285
+      batigol_18: 1649856479
+      batigol_19: 1426118428
+      batigol_2: 610657309
+      batigol_3: -1926873759
+      batigol_4: -1421336941
+      batigol_5: -669064852
+      batigol_6: 754106201
+      batigol_7: 1472479671
+      batigol_8: 1023679423
+      batigol_9: 755732175
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

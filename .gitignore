@@ -1,0 +1,23 @@
+# .NET (core/ — logic game C# thuần, test bằng dotnet)
+bin/
+obj/
+*.user
+
+# Unity (LaMuralla/ — project thật, tạo từ template 2d-cross-platform 6.1.5)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild*/
+[Ll]ogs/
+[Uu]serSettings/
+[Mm]emoryCaptures/
+# Xcode project do Unity sinh ra — luôn dựng lại được từ Editor, đừng commit
+ios-build/
+*.csproj
+*.sln
+# csproj của core là do người viết, KHÔNG phải do Unity sinh — phải giữ.
+# Nó là thứ nối Assets/_Project/Core/ với `dotnet test`.
+!core/**/*.csproj
+
+# macOS
+.DS_Store

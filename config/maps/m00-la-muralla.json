@@ -1,0 +1,187 @@
+{
+  "id": "m00",
+  "displayName": "La Muralla",
+  "order": 0,
+  "difficulty": 1,
+  "_mapNote": "🔵 2026-08-21 — file này TRƯỚC ĐÂY là `config/path.json`. Đổi chỗ vì game giờ có nhiều map. m00 KHÔNG khai `waves`/`economy`/`bossOverrides`, nên nó dùng nguyên `config/waves.json` và `config/economy.json` dùng chung — tức cân bằng của nó không đổi một chữ số nào so với trước. Map khác ghi đè bằng các khối đó. Xem docs/08-MAPS-ARCHITECTURE.md §2.",
+  "_comment": "ĐƯỜNG CHẠY + Ô ĐẶT TƯỚNG. File này TRƯỚC ĐÂY KHÔNG TỒN TẠI — PathFollower ở docs/05 §3 nói 'đi theo spline cố định' nhưng spline không có ở đâu cả.",
+  "_status": "✅ TOẠ ĐỘ THẬT, đã đo bằng tools/path_check.py (vòng 5). Mọi ràng buộc hình học ĐẠT: spline 40.65 vs khai 40 = lệch 1.6% · hộp bao trong viewport · 0 ô chết · thang tầm 4 bậc thật.",
+  "_slotDesign": "11 ô rải đều theo QUÃNG ĐƯỜNG (f=0.06→0.95). Mỗi ô ở một TẦNG khoảng cách cố ý, ăn khớp thang tầm Lv1: Batigol 7/11 · D10S 8/11 · Árbitro 8/11 · La Pulga 8/11 · El Fideo 11/11. 🔴 VÒNG 17 — NÂNG SÀN. Người chơi thử máy thật báo BA LẦN 'tướng không gây dame'; cả ba đều là ô ngoài tầm. Batigol chỉ dùng được 5/11 = 45%, quá ngặt. Kéo ĐÚNG HAI ô f02 (d 1.31→0.88) và f08 (1.30→0.88), GIỮ NGUYÊN vị trí theo quãng đường f nên phân bố dọc đường không đổi. Cân bằng vẫn 0/20 wave vỡ dải [1.05,1.65] (min 1.06 · tb 1.38 · max 1.56) và KHÔNG phải đụng hpScaling hay σ. ĐÃ THỬ VÀ BỎ: kéo thêm f06 (1.50→1.12) và f09 (1.50→1.32) cho Batigol 7 / D10S 9 / Árbitro 9 / Pulga 10 — nhưng chord tăng ở quá nhiều ô làm 3/20 wave vỡ dải (max 1.69), và KHÔNG cấu hình hpScaling nào cứu được (quét base 0.69-0.79 × growth 1.085-1.095: tốt nhất vẫn 1 wave thủng SÀN). σ cũng vô ích — nó dịch dải chứ không nén. Bài học: kéo ô là đòn bẩy MẠNH, dùng ít thôi. KHÔNG tăng tầm: vòng 5 đã thu tầm ×0.36 vì chord SIÊU TUYẾN TÍNH (tầm ×2.4 → chord ×5.3) làm El Fideo thống trị và 2/5 tướng thành nội dung chết. f03/f06/f09 (d≈1.5) GIỮ NGUYÊN làm ô ĐỘC QUYỀN El Fideo — thang phải còn đỉnh. Mọi d cách mép tầm ≥0.12: nhắm 0.95 sát tầm 1.0 bị luật RANH GIỚI DAO CẠO chặn (lệch 0.05 unit = 1.8pt, người chơi thấy tướng không bắn và tưởng game lỗi). ĐỔI TẦM Ở towers.json = PHẢI chạy lại path_check.py. 🔵 VÒNG 19 — f11 (1.6,-6.2)→(2.2,-5.9): người chơi báo f11 sát gk01 quá (1.75 units = 64pt, thấy chật dù luật RANH GIỚI cho qua). TRƯỢT DỌC đường lên-phải, KHÔNG kéo vuông góc — d giữ 0.50→0.57 (Batigol vẫn với tới, thang không đổi) nhưng gk01 tách 1.75→2.42 units. Sweep 7 điểm: (2.4,-5.8) trở đi bắt đầu vỡ dải (chord dài ra theo độ cong đoạn đường mới — trượt dọc KHÔNG miễn phí), (2.2,-5.9) là điểm xa nhất còn giữ headroom Y HỆT baseline (min 1.06 tb 1.38 max 1.56, 0/20). Bài học lặp lại: mọi lần động ô phải chạy balance_sim, kể cả khi d gần như không đổi. 🔴 VÒNG 20 — XÓA f11, DỜI gk (0,-6.9)→(2.1,-5.4). User chốt (qua AskUserQuestion) gộp cụm đáy còn một ô. Hệ quả DÂY CHUYỀN 4 tầng, tất cả đã xử: (1) HÌNH HỌC — gk mới cách đường d=1.07 > tầm Dibu Lv1 cũ 0.9 → Dibu tê liệt Lv1; NÂNG tầm Dibu [0.9,1.1,1.3]→[1.2,1.4,1.6] để với tới (1.2 cách 1.07 = 0.13 > ngưỡng dao cạo 0.05). (2) BẤT BIẾN TEST — Doc_du_14_waypoint_va_12_o chốt cứng 12 ô → đổi thành 11 (10 sân+1 gk); AutoSpend & Ha_quan bỏ f11. (3) KINH TẾ — 10 ô làm trần thô 11696→10676 < tiền cả trận 11276 = biên ÂM 5.3%; KHÔNG sửa bằng giảm thu (min headroom 1.07 sát sàn 1.05) — balance_sim chứng minh dư tiền thật tối đa 298, khan hiếm vẫn giữ (xem economy.json _marginNote). (4) CÂN BẰNG — 10 ô vẫn 0/20 vỡ dải (min 1.07 tb 1.40 max 1.62): người chơi kẹt TIỀN không kẹt ô, nên bớt ô không vỡ. TIỆN THỂ: f09 user sửa xuống -2.5 (d=1.20) trúng khít ranh giới D10S/Árbitro Lv1 (1.2) = dao cạo → dời -2.6 (d=1.10, giữ đúng bộ tướng với tới). ⚠️ gk (2.1,-5.4) cách CẦU MÔN 3.19 — Dibu Lv3 tầm 1.6 KHÔNG với tới miệng lưới (0,-7.8); nó canh đoạn tiếp cận phía trên, quái 1.5 unit cuối không bị Dibu chặn. Đây là hệ quả vị trí user chọn, đã báo. 🟢 VÒNG 21 — THÊM LẠI f11 (đảo vòng 20) + KÉO DÀI ĐƯỜNG. User: 'top và bottom dư nhiều khoảng trống'. Đo: iPhone 12 (19.5:9, camera khớp WIDTH) thấy y ±11.7 nhưng path chỉ tới ±8/-7.8. NHƯNG máy 16:9 (iPhone SE) khớp width chỉ thấy ±9.6 → biên AN TOÀN cho MỌI máy là ±9.6, không phải ±11.7. Kéo path ×1.17 quanh y=0: spawn 8→9.36, goal -7.8→-9.13 (trong ±9.6, chừa lề notch 1.3 + home 0.94). Cao 15.8→18.5 unit, dài 40.65→42.28. TÁI TẠO cả 12 ô: đặt mỗi ô ở target-d vuông góc đường (thềm an toàn giữa các ranh giới tầm Batigol1.0/D10S1.2/Pulga1.4/Fideo1.6), giữ đúng tầng thang cũ — f01 0.70, f02/f08/f10 0.88, f03/f06 1.50, f04/f09 1.30, f05 0.63, f07 0.85, f11 0.60, gk 1.10 (Dibu Lv1 1.2 với tới). Cặp gần nhất f08-f11 2.45 units (89pt) — hết chật. Rebalance: hpScaling base 0.69→0.67 nâng sàn 1.05→1.09 (đường dài làm khó hơn chút); 0/20 (min 1.09 tb 1.36 max 1.53). Boss cuối W20 vẫn ép (đám-đông 0.80) nhưng boss GIỮA W10 thành trung tính (đám-đông 1.03 ngay ở base gốc — đường dài làm D10S phủ khác, build đám-đông sống W10). GỠ luật RADIAL MENU trong path_check: UI đã bỏ radial (Hud dùng thanh bottom) nên ô sát mép trên không còn làm nút bị cắt. Dibu giữ tầm [1.2,1.4,1.6] và gk giữ kiểu xa cầu môn (user chốt). 🔴 VÒNG 22 — GỠ EL FIDEO (user chốt 2026-08-20, 'không sử dụng nữa'). Mọi câu phía trên nhắc El Fideo là hồ sơ lịch sử. Đo lại bằng path_check sau khi gỡ: El Cinco 7/11 · D10S 8/11 · Árbitro 8/11 · La Pulga 11/11 — 0 Ô CHẾT, vì La Pulga (tầm Lv1 1.4) phủ nốt f03/f04/f09 (d 1.29-1.30) mà trước đây chỉ El Fideo với tới. Câu 'f03/f06/f09 là ô ĐỘC QUYỀN El Fideo' không còn đúng. Cân bằng KHÔNG đụng theo yêu cầu user: balance_sim đo trước/sau = min 1.27->1.25, tb 1.80, max 2.17, 15/20 wave ngoài dải ở CẢ HAI — tức 15/20 là nợ có sẵn, không phải do gỡ tướng. El Fideo hầu như không được optimizer chọn nên gỡ nó gần như không đổi gì.",
+  "units": {
+    "_definition": "1 đơn vị sân = 1 Unity world unit. Xem docs/05 §4.1.",
+    "pixelsPerUnit": 100,
+    "cameraOrthographicSize": 9.6,
+    "viewportUnits": {
+      "width": 10.8,
+      "height": 19.2
+    },
+    "_viewportNote": "1080×1920 ÷ PPU 100 = 10.8 × 19.2 units. Orthographic size = nửa chiều cao = 9.6."
+  },
+  "_lanesNote": "🔵 2026-08-21 — `path` (một) đổi thành `lanes` (MẢNG), kể cả map một tuyến. Xem docs/08-MAPS-ARCHITECTURE.md §2.2(a): giữ hai dạng dữ liệu song song thì mọi chỗ đọc hình học phải rẽ nhánh, và nhánh đó sinh bug im lặng. Map một tuyến = mảng một phần tử.",
+  "lanes": [
+    {
+      "id": "L1",
+      "interpolation": "catmull-rom",
+      "lengthUnits": 42.28,
+      "spawnPoint": {
+        "x": 0.0,
+        "y": 9.36
+      },
+      "goalPoint": {
+        "x": 0.0,
+        "y": -9.13
+      },
+      "waypoints": [
+        {
+          "x": 0.0,
+          "y": 9.36
+        },
+        {
+          "x": -4.0,
+          "y": 8.42
+        },
+        {
+          "x": -4.3,
+          "y": 5.85
+        },
+        {
+          "x": -1.0,
+          "y": 4.68
+        },
+        {
+          "x": 3.0,
+          "y": 3.98
+        },
+        {
+          "x": 4.3,
+          "y": 1.87
+        },
+        {
+          "x": 2.0,
+          "y": 0.23
+        },
+        {
+          "x": -2.5,
+          "y": -0.47
+        },
+        {
+          "x": -4.3,
+          "y": -2.34
+        },
+        {
+          "x": -2.0,
+          "y": -3.98
+        },
+        {
+          "x": 2.5,
+          "y": -4.68
+        },
+        {
+          "x": 4.0,
+          "y": -6.55
+        },
+        {
+          "x": 1.5,
+          "y": -7.96
+        },
+        {
+          "x": 0.0,
+          "y": -9.13
+        }
+      ]
+    }
+  ],
+  "_lengthNote": "Mô hình cân bằng ở docs/04 dùng con số này. Đổi nó = tính lại toàn bộ.",
+  "slots": [
+    {
+      "id": "f01",
+      "type": "field",
+      "x": -2.2,
+      "y": 8.3
+    },
+    {
+      "id": "f02",
+      "type": "field",
+      "x": -4.37,
+      "y": 4.79
+    },
+    {
+      "id": "f03",
+      "type": "field",
+      "x": -2.04,
+      "y": 3.6
+    },
+    {
+      "id": "f04",
+      "type": "field",
+      "x": 2.41,
+      "y": 5.52
+    },
+    {
+      "id": "f05",
+      "type": "field",
+      "x": 4.73,
+      "y": 1
+    },
+    {
+      "id": "f06",
+      "type": "field",
+      "x": 0.73,
+      "y": 1.1
+    },
+    {
+      "id": "f07",
+      "type": "field",
+      "x": -2.87,
+      "y": 0.3
+    },
+    {
+      "id": "f08",
+      "type": "field",
+      "x": -3.86,
+      "y": -4.08
+    },
+    {
+      "id": "f09",
+      "type": "field",
+      "x": 0.5,
+      "y": -3.03
+    },
+    {
+      "id": "f10",
+      "type": "field",
+      "x": 4.13,
+      "y": -4.75
+    },
+    {
+      "id": "f11",
+      "type": "field",
+      "x": -1.49,
+      "y": -4.9
+    },
+    {
+      "id": "gk01",
+      "type": "goalkeeper",
+      "x": 2.15,
+      "y": -6.44
+    }
+  ],
+  "_openIssues": {
+    "Q1": "✅ ĐÓNG ở vòng 5. Toạ độ là thật, đo bằng tools/path_check.py.",
+    "chordGeometry": "✅ GIẢI XONG ở vòng 5 bằng cách thu tầm. chord/2R đo trên 11 ô ở tầm lớn nhất (El Fideo Lv3 = 2.6) = 0.96 → giả định `chord = 2R` của docs/04 giờ ĐÚNG. Trước khi thu tầm (El Fideo 7.0) con số là 1.56, tức mô hình đánh giá THẤP phòng ngự 56%.",
+    "rangeTooLarge": "✅ ĐÃ SỬA ở vòng 5 — user chốt thu tầm hệ số 0.36. Trước: hành lang 2 × 3.0 × 40.65 = 244 sq = 118% viewport (207 sq) → không tồn tại ô nào ngoài tầm bất kỳ tướng nào, thang tầm là trang trí. Sau: Batigol Lv1 1.1 → hành lang 41% viewport → chọn ô là quyết định thật (Batigol chỉ dùng được 5/11 ô). 🔴 NỢ CÒN LẠI: thu tầm giảm sát thương mô hình ~2.8× → bảng wave W1-W20 ở docs/04 §4 PHẢI dẫn xuất lại ở bảng tính M0 (Q0). Số wave hiện tại là của bộ tầm CŨ.",
+    "rangeToPathRatio": "✅ GIẢI XONG. Trước: tầm 4.5 / đường 40 → 2R/path = 22.5% vs Kingdom Rush ~7.5% (3× chuẩn thể loại). Sau khi thu 0.36: La Pulga 1.6 → 2R/path = 8.0%, khớp chuẩn thể loại. Hệ số 3× quan sát được và hệ số thu 0.36 đo được là cùng một hiện tượng."
+  },
+  "ui": {
+    "_comment": "Hằng số quy đổi unit → pt. Hình học đúng trong 'unit' vẫn có thể không bấm được trên máy thật.",
+    "designWidthPt": 393,
+    "_designWidthNote": "Bề ngang 1080px của thiết kế render ra ~393pt trên iPhone hiện đại → 1 unit (100px) = 36.4pt.",
+    "minTouchTargetPt": 48,
+    "_touchNote": "HIG của Apple. = 1.32 units.",
+    "radialMenuOuterRadiusPt": 87,
+    "_menuNote": "5 nút 48pt xoè bán nguyệt: bán kính vòng ~63pt + nửa nút 24pt = 87pt = 2.39 units. Xem docs/06 §3."
+  },
+  "coveragePerSlot": 1.74,
+  "_coverageNote": "🔴 SỨC PHÒNG NGỰ TRÊN MỖI Ô — tổng đoạn đường nằm trong tầm tham chiếu, chia số ô sân. Đo bằng `tools/path_check.py --map m00`; lệch quá 8% so với số này là ĐỎ. Vì sao phải KHAI thay vì để phát hiện sau: hình học 'thú vị' (zigzag, túi combo, xoáy ốc) làm đường TỰ ÁP SÁT CHÍNH NÓ → một vòng tầm cắt nhiều khúc rời nhau → một tướng đánh nhiều lượt → map càng thú vị càng DỄ. Người chơi đã báo đúng hiện tượng đó: bốn map đầu độ khó GIẢM dần. Có khai báo thì sửa waypoint mà vô tình làm map dễ đi sẽ biết NGAY. ⚠️ Đổi số này thì PHẢI xem lại `hpScaling.growthPerWave` — hai thứ bù nhau. Mốc so sánh: m00 = 1.74 (đường không tự áp sát, mỗi vòng tầm cắt đúng 1 khúc).",
+  "_difficultyNote": "★1 chứ không phải ★2: đo trên engine thật, m00 là map DỄ NHẤT (còn 11/20 máu, cao nhất trong 11 map). Nhãn ★2 cũ mâu thuẫn với m01 mang ★1 mà lại khó hơn — xem thang ở docs/08 §0."
+}

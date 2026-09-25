@@ -1,0 +1,20 @@
+Icon trong thư mục này lấy từ các pack CC0 của Kenney (kenney.nl).
+
+  game-icons        https://kenney.nl/assets/game-icons
+  board-game-icons  https://kenney.nl/assets/board-game-icons
+
+License: Creative Commons Zero (CC0) — public domain, dùng thương mại được,
+GHI CÔNG KHÔNG BẮT BUỘC. File này giữ để sau còn truy được nguồn.
+
+Đã đổi sang tên theo NGỮ NGHĨA trong game (không giữ tên gốc):
+  coin      <- board-game-icons/dollar        (Argentina dùng ký hiệu $ cho Peso)
+  goal      <- board-game-icons/suit_hearts   (máu cầu môn)
+  save      <- board-game-icons/hand          (số lần Dibu cản)
+  audio_on  <- game-icons/audioOn
+  audio_off <- game-icons/audioOff
+  speed     <- game-icons/fastForward
+  star      <- game-icons/star
+  plus      <- game-icons/plus
+
+TẤT CẢ đều là hình TRẮNG trên nền trong suốt — bắt buộc, vì `GUI.color` là phép
+NHÂN màu. Icon đen thì tô màu gì cũng ra đen. Thêm icon mới phải kiểm điều này.

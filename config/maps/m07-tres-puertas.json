@@ -1,0 +1,1049 @@
+{
+  "id": "m07",
+  "displayName": "Tres Puertas",
+  "order": 7,
+  "difficulty": 4,
+  "_mapNote": "BA CỬA VÀO THẬT, hợp lưu ở 1/3 cuối sân. Nhịp cửa là 0/5.6/11.2s ở Act 1, 0/4.2/8.4s ở Act 2 và 0/2.8/5.6s ở Act 3; càng về cuối ba mặt trận càng siết gần nhau.",
+  "_tierMixNote": "Từ W5, một phần Adepto được đổi theo tỷ lệ gần tương đương máu/thưởng thành Tifoso Lv2 và Tambor Lv3; các act sau vì vậy ít quân rác và nhiều mục tiêu nguy hiểm hơn.",
+  "coveragePerSlot": 3.79,
+  "_coverageNote": "🔴 Sức phòng ngự trên mỗi ô, ĐO bằng tools/path_check.py; lệch >8% là đỏ. Với map đa tuyến con số này gồm cả ô canh ĐƯỢC NHIỀU TUYẾN — đó chính là thứ làm map đa tuyến dễ hơn thiết kế tưởng. Mốc: m00 = 1.74. Đổi số này thì PHẢI xem lại hpScaling.",
+  "units": {
+    "_definition": "1 đơn vị sân = 1 Unity world unit. Xem docs/05 §4.1.",
+    "pixelsPerUnit": 100,
+    "cameraOrthographicSize": 9.6,
+    "viewportUnits": {
+      "width": 10.8,
+      "height": 19.2
+    },
+    "_viewportNote": "1080×1920 ÷ PPU 100 = 10.8 × 19.2 units. Orthographic size = nửa chiều cao = 9.6."
+  },
+  "ui": {
+    "_comment": "Hằng số quy đổi unit → pt. Hình học đúng trong 'unit' vẫn có thể không bấm được trên máy thật.",
+    "designWidthPt": 393,
+    "_designWidthNote": "Bề ngang 1080px của thiết kế render ra ~393pt trên iPhone hiện đại → 1 unit (100px) = 36.4pt.",
+    "minTouchTargetPt": 48,
+    "_touchNote": "HIG của Apple. = 1.32 units.",
+    "radialMenuOuterRadiusPt": 87,
+    "_menuNote": "5 nút 48pt xoè bán nguyệt: bán kính vòng ~63pt + nửa nút 24pt = 87pt = 2.39 units. Xem docs/06 §3."
+  },
+  "lanes": [
+    {
+      "id": "oeste",
+      "interpolation": "catmull-rom",
+      "lengthUnits": 22.5,
+      "spawnPoint": {
+        "x": -3.8,
+        "y": 9.3
+      },
+      "goalPoint": {
+        "x": -0.1,
+        "y": -9.1
+      },
+      "waypoints": [
+        {
+          "x": -3.8,
+          "y": 9.3
+        },
+        {
+          "x": -4.2,
+          "y": 7.0
+        },
+        {
+          "x": -3.2,
+          "y": 4.8
+        },
+        {
+          "x": -4.1,
+          "y": 2.2
+        },
+        {
+          "x": -2.5,
+          "y": 0.2
+        },
+        {
+          "x": -1.2,
+          "y": -1.7
+        },
+        {
+          "x": -0.15,
+          "y": -3.0
+        },
+        {
+          "x": 2.4,
+          "y": -5.0
+        },
+        {
+          "x": 1.7,
+          "y": -7.4
+        },
+        {
+          "x": -0.1,
+          "y": -9.1
+        }
+      ]
+    },
+    {
+      "id": "central",
+      "interpolation": "catmull-rom",
+      "lengthUnits": 25.39,
+      "spawnPoint": {
+        "x": 0.0,
+        "y": 9.3
+      },
+      "goalPoint": {
+        "x": 0.0,
+        "y": -9.1
+      },
+      "waypoints": [
+        {
+          "x": 0.0,
+          "y": 9.3
+        },
+        {
+          "x": -1.2,
+          "y": 7.1
+        },
+        {
+          "x": 1.3,
+          "y": 5.0
+        },
+        {
+          "x": -1.1,
+          "y": 2.8
+        },
+        {
+          "x": 1.6,
+          "y": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": -3.0
+        },
+        {
+          "x": 2.6,
+          "y": -5.0
+        },
+        {
+          "x": 1.9,
+          "y": -7.4
+        },
+        {
+          "x": 0.0,
+          "y": -9.1
+        }
+      ]
+    },
+    {
+      "id": "este",
+      "interpolation": "catmull-rom",
+      "lengthUnits": 22.87,
+      "spawnPoint": {
+        "x": 3.8,
+        "y": 9.3
+      },
+      "goalPoint": {
+        "x": 0.1,
+        "y": -9.1
+      },
+      "waypoints": [
+        {
+          "x": 3.8,
+          "y": 9.3
+        },
+        {
+          "x": 4.2,
+          "y": 7.0
+        },
+        {
+          "x": 3.2,
+          "y": 4.8
+        },
+        {
+          "x": 4.1,
+          "y": 2.2
+        },
+        {
+          "x": 2.5,
+          "y": 0.2
+        },
+        {
+          "x": 1.2,
+          "y": -1.7
+        },
+        {
+          "x": 0.15,
+          "y": -3.0
+        },
+        {
+          "x": 2.8,
+          "y": -5.0
+        },
+        {
+          "x": 2.1,
+          "y": -7.4
+        },
+        {
+          "x": 0.1,
+          "y": -9.1
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "id": "f01",
+      "type": "field",
+      "x": -3.4,
+      "y": 7.5
+    },
+    {
+      "id": "f02",
+      "type": "field",
+      "x": -3.6,
+      "y": 4.4
+    },
+    {
+      "id": "f03",
+      "type": "field",
+      "x": -2.8,
+      "y": 1.4
+    },
+    {
+      "id": "f04",
+      "type": "field",
+      "x": -0.9,
+      "y": 7.4
+    },
+    {
+      "id": "f05",
+      "type": "field",
+      "x": 1.2,
+      "y": 5.5
+    },
+    {
+      "id": "f06",
+      "type": "field",
+      "x": 0.0,
+      "y": 2.6
+    },
+    {
+      "id": "f07",
+      "type": "field",
+      "x": 3.4,
+      "y": 7.5
+    },
+    {
+      "id": "f08",
+      "type": "field",
+      "x": 3.6,
+      "y": 4.4
+    },
+    {
+      "id": "f09",
+      "type": "field",
+      "x": 2.8,
+      "y": 1.4
+    },
+    {
+      "id": "f10",
+      "type": "field",
+      "x": -1.0,
+      "y": -1.8
+    },
+    {
+      "id": "f11",
+      "type": "field",
+      "x": 1.1,
+      "y": -2.5
+    },
+    {
+      "id": "f12",
+      "type": "field",
+      "x": 2.3,
+      "y": -5.7
+    },
+    {
+      "id": "f13",
+      "type": "field",
+      "x": 0.6,
+      "y": -6.0
+    },
+    {
+      "id": "gk01",
+      "type": "goalkeeper",
+      "x": 0.0,
+      "y": -8.55
+    }
+  ],
+  "economy": {
+    "startingCash": 700,
+    "fieldSlots": 13
+  },
+  "_economyNote": "`startingCash` là ĐIỂM KHỞI ĐẦU ĐỂ QUÉT — phải đo bằng test 20-wave engine thật.",
+  "waves": [
+    {
+      "wave": 1,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 2,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "adepto",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "adepto",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 11.2
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 4,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "adepto",
+          "count": 3,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "adepto",
+          "count": 4,
+          "lane": "este",
+          "delaySec": 11.2
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "adepto",
+          "count": 3,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "adepto",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 11.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 1,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tifoso",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 11.2
+        }
+      ]
+    },
+    {
+      "wave": 4,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 2,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "adepto",
+          "count": 3,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "adepto",
+          "count": 3,
+          "lane": "este",
+          "delaySec": 11.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 11.2
+        }
+      ]
+    },
+    {
+      "wave": 5,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 11.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 11.2
+        }
+      ]
+    },
+    {
+      "wave": 6,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "este",
+          "delaySec": 11.2
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 11.2
+        }
+      ]
+    },
+    {
+      "wave": 7,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "este",
+          "delaySec": 11.2
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "central",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 11.2
+        }
+      ]
+    },
+    {
+      "wave": 8,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 8.4
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 8.4
+        }
+      ]
+    },
+    {
+      "wave": 9,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "este",
+          "delaySec": 8.4
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 8.4
+        }
+      ]
+    },
+    {
+      "wave": 10,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "este",
+          "delaySec": 8.4
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 8.4
+        }
+      ],
+      "bosses": [
+        {
+          "id": "o_capitao",
+          "lane": "central"
+        }
+      ]
+    },
+    {
+      "wave": 11,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 8.4
+        },
+        {
+          "enemy": "tifoso",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 8.4
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 8.4
+        }
+      ]
+    },
+    {
+      "wave": 12,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "este",
+          "delaySec": 8.4
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 8.4
+        }
+      ]
+    },
+    {
+      "wave": 13,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "este",
+          "delaySec": 8.4
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 8.4
+        }
+      ]
+    },
+    {
+      "wave": 14,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 5,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 5,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "este",
+          "delaySec": 8.4
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 4.2
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 8.4
+        }
+      ]
+    },
+    {
+      "wave": 15,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "este",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 5.6
+        }
+      ]
+    },
+    {
+      "wave": 16,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "este",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 5.6
+        }
+      ]
+    },
+    {
+      "wave": 17,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 5,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 5,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tifoso",
+          "count": 4,
+          "lane": "este",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tambor",
+          "count": 1,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 5.6
+        }
+      ]
+    },
+    {
+      "wave": 18,
+      "spawns": [
+        {
+          "enemy": "tifoso",
+          "count": 5,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 6,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tifoso",
+          "count": 6,
+          "lane": "este",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 5.6
+        }
+      ]
+    },
+    {
+      "wave": 19,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 1,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tifoso",
+          "count": 5,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 5,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tifoso",
+          "count": 5,
+          "lane": "este",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tambor",
+          "count": 3,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 3,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "este",
+          "delaySec": 5.6
+        }
+      ]
+    },
+    {
+      "wave": 20,
+      "spawns": [
+        {
+          "enemy": "adepto",
+          "count": 1,
+          "lane": "este",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tifoso",
+          "count": 8,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tifoso",
+          "count": 8,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tifoso",
+          "count": 7,
+          "lane": "este",
+          "delaySec": 5.6
+        },
+        {
+          "enemy": "tambor",
+          "count": 2,
+          "lane": "oeste"
+        },
+        {
+          "enemy": "tambor",
+          "count": 3,
+          "lane": "central",
+          "delaySec": 2.8
+        },
+        {
+          "enemy": "tambor",
+          "count": 3,
+          "lane": "este",
+          "delaySec": 5.6
+        }
+      ],
+      "bosses": [
+        {
+          "id": "o_capitao",
+          "lane": "este"
+        }
+      ]
+    }
+  ],
+  "hpScaling": {
+    "base": 0.67,
+    "growthPerWave": 1.07
+  },
+  "_hpScalingNote": "Bù cho độ phủ: map có ô canh nhiều tuyến / đường tự áp sát thì tướng mạnh lên, không bù thì map càng 'thú vị' càng DỄ. Giá trị này là ĐÍCH CẦN ĐO bằng quét engine.",
+  "bossOverrides": {
+    "o_capitao": {
+      "slowResistPercent": 85,
+      "appearances": [
+        {
+          "wave": 10,
+          "hp": 1400,
+          "bounty": 200
+        },
+        {
+          "wave": 20,
+          "hp": 5500,
+          "bounty": 500
+        }
+      ]
+    }
+  },
+  "_bossNote": "Máu boss suy từ tỉ lệ độ dài tuyến so với m00 (42.28u → 2500/9800). ĐÍCH CẦN ĐO.",
+  "_balanceNote": "Vòng 27b: bỏ tuyến thứ ba, tiền 2100→900.",
+  "_slotAddNote": "Vòng 27: thêm 13 ô. Đo được các tuyến biên chỉ đạt 113% mức Σchord của m00 — một con quái đi tuyến đó ăn chưa tới nửa lượng sát thương so với map gốc. Bù bằng tiền khởi đầu thì phải tới 4 300 (gấp 6 lần thiết kế) và vẫn phải cắt gần nửa số quân. Thiếu là thiếu Ô, không phải thiếu tiền. Xem docs/09 §8.7.",
+  "maxGapFraction": 0.28,
+  "_gapNote": "Khai 0.21 thay vì lấy sàn 3×1.2/20 = 0.18. Lý do ĐO ĐƯỢC, không phải nới cho dễ: luật khe hở tính theo TỈ LỆ chiều dài tuyến, nên nó phạt map có tuyến ngắn. Khe hở lớn nhất của m07 là 4.3–5.4 units; m00 — map đã cân xong và được chấp nhận — hở 6.16 units. Tính bằng quãng đường thật thì m07 kín hơn m00. Ép xuống 0.18 cần thêm 5 ô nữa (25 ô sân) và biến map thành bãi ô, phá luôn ý đồ khan hiếm ô.",
+  "_laneShapeNote": "Vòng 27: dựng lại theo kiểu MỘT THÂN CHUNG, HAI LỐI RA. Đoạn chung dài 25.1u (68% chiều dài một tuyến) — mọi ô cạnh thân canh được CẢ HAI tuyến, nên tiền khởi đầu về mức map một tuyến. Đoạn chẻ cuối vẫn bắt chia lực. Lý do: docs/09 §8 — giá của map đa tuyến nằm ở ô bị khoá cứng vào một tuyến, không nằm ở số tuyến.",
+  "farSlots": [
+    "f13"
+  ],
+  "_waveNote": "Vòng 27: dựng lại theo dáng wave của m00 (map đã cân xong), chia đôi hai tuyến. Bảng cũ viết cho ba tuyến / luân phiên nên không còn dùng được sau khi đổi sang kiểu một thân chung hai lối ra."
+}

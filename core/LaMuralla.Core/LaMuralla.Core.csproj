@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- netstandard2.1 là BẮT BUỘC, không phải lựa chọn phong cách.
+         Unity 6 (scripting runtime .NET Standard 2.1) không đọc được net10.0.
+         Máy này có dotnet 10 nên `dotnet new` mặc định ra net10.0 → Unity từ chối.
+         Xem docs/05 §1. -->
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Không dependency ngoài. Mọi thứ ở đây phải sống sót qua IL2CPP:
+         không reflection động, không codegen runtime, không dynamic. -->
+    <AssemblyName>LaMuralla.Core</AssemblyName>
+    <RootNamespace>LaMuralla.Core</RootNamespace>
+    <!-- Nguồn nằm dưới Assets/, không nằm cạnh file .csproj này. Tắt glob mặc
+         định để nó khỏi bắt nhầm rồi khai báo lại tường minh ở dưới. -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <!-- 🔴 MỘT NGUỒN, HAI TRÌNH BIÊN DỊCH.
+       Unity chỉ dịch thứ nằm dưới Assets/, nên nguồn phải sống ở đó. Nhưng
+       `dotnet test` cũng phải chạy trên ĐÚNG những file ấy — không phải bản sao,
+       không phải DLL đã build sẵn. Bản sao thì lệch nhau âm thầm; DLL thì cũ đi
+       mà không ai báo. Glob này khiến cả hai đọc chung một chỗ.
+
+       Kiểm chứng: sửa một file dưới Assets/_Project/Core/ → `dotnet test` thấy
+       ngay, không cần copy gì. -->
+  <ItemGroup>
+    <Compile Include="../../LaMuralla/Assets/_Project/Core/**/*.cs" />
+  </ItemGroup>
+
+</Project>

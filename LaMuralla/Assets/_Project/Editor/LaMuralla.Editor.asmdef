@@ -1,0 +1,20 @@
+{
+    "name": "LaMuralla.Editor",
+    "rootNamespace": "LaMuralla.EditorTools",
+    "references": [
+        "LaMuralla.Core",
+        "LaMuralla.Unity",
+        "Unity.2D.Sprite.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
